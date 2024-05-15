@@ -79,45 +79,65 @@ h6,
 /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/
+/* Default styles */
 #topbar {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  font-size: 15px;
-  height: 40px;
-  padding: 0;
-}
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    padding: 10px 0; /* Increased padding for better spacing */
+  }
 
-#topbar .contact-info a {
-  line-height: 0;
-  color: #444;
-  transition: 0.3s;
-}
+  #topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-#topbar .contact-info a:hover {
-  color: #428bca;
-}
+  #topbar .contact-info a {
+    color: #444;
+    transition: 0.3s;
+  }
 
-#topbar .contact-info i {
-  color: #428bca;
-  line-height: 0;
-  margin-right: 5px;
-}
+  #topbar .contact-info a:hover {
+    color: #428bca;
+  }
 
-#topbar .contact-info .phone-icon {
-  margin-left: 15px;
-}
+  #topbar .contact-info i {
+    color: #428bca;
+    margin-right: 5px;
+  }
 
-#topbar .social-links a {
-  color: #5c768d;
-  padding: 4px 12px;
-  display: inline-block;
-  line-height: 1px;
-  transition: 0.3s;
-}
+  #topbar .contact-info .phone-icon {
+    margin-left: 15px;
+  }
 
-#topbar .social-links a:hover {
-  color: #428bca;
-}
+  #topbar .social-links a {
+    color: #5c768d;
+    padding: 4px 8px; /* Adjusted padding for better spacing */
+    display: inline-block;
+    transition: 0.3s;
+  }
+
+  #topbar .social-links a:hover {
+    color: #428bca;
+  }
+
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    #topbar {
+      height: auto; /* Set height to auto for responsiveness */
+    }
+
+    #topbar .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #topbar .contact-info,
+    #topbar .social-links {
+      margin-top: 5px; /* Add margin between contact info and social links */
+    }
+  }
 
 /*--------------------------------------------------------------
 # Header

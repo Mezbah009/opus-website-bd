@@ -276,9 +276,9 @@
         <div class="row">
             @foreach ($home_services_section as $key => $home_services_sections)
             <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-                <div class="icon"><img src="{{ asset('uploads/first_section/' .$home_services_sections->icon) }}"
-                        class="img-fluid" alt="" width="50%"></div>
-                <h4 class="title"><a href="">{{ $home_services_sections->title }}</a></h4>
+                <div class="icon"> <a href="{{ route('front.services') }}"><img src="{{ asset('uploads/first_section/' .$home_services_sections->icon) }}"
+                        class="img-fluid" alt="" width="50%"> </a></div>
+                <h4 class="title"><a href="{{ route('front.services') }}">{{ $home_services_sections->title }}</a></h4>
                 {{-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
                     excepturi sint occaecati cupiditate non provident</p> --}}
             </div>

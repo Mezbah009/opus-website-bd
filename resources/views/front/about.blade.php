@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/contact-bg.jpg") }}');">
+<div class="contact-bg" style="background-image: url('{{asset("front-assets/img/contact-bg.jpg") }}');">
     <h2>About us</h2>
     <div class="line">
         <div></div>
@@ -19,41 +19,42 @@
         <div class="row no-gutters">
             <div class="col-lg-6 video-box">
                 <img src="{{ asset('front-assets/img/about.jpg')}}" class="img-fluid" alt="">
-<a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-</div>
+                <a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
+                    data-vbtype="video" data-autoplay="true"></a>
+            </div>
 
-<div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+            <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
-    <div class="section-title">
-        <h2>Who We Are</h2>
-        <p>Opus Technology Limited is a company that specializes in creating, designing, maintaining
-            software applications, developing custom software, mobile apps, web development,
-            artificial intelligence, games, animation and so. Opus Technology Limited started
-            operating from 2012 and since then delivering advanced software that empowers,
-            innovates, and transforms the office completely and digitally for all our clients.</p>
+                <div class="section-title">
+                    <h2>Who We Are</h2>
+                    <p>Opus Technology Limited is a company that specializes in creating, designing, maintaining
+                        software applications, developing custom software, mobile apps, web development,
+                        artificial intelligence, games, animation and so. Opus Technology Limited started
+                        operating from 2012 and since then delivering advanced software that empowers,
+                        innovates, and transforms the office completely and digitally for all our clients.</p>
+                </div>
+
+                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon"><i class="bx bx-rocket"></i></div>
+                    <h4 class="title"><a href="">Our Mission</a></h4>
+                    <p class="description">We aim to provide world-class software solutions for all our
+                        prospective clients from all over the world and build the best innovative software using
+                        our cutting edge technology and expert software development team.</p>
+                </div>
+
+                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon"><i class="bx bx-compass"></i></div>
+                    <h4 class="title"><a href="">Our Vision</a></h4>
+                    <p class="description">We want to serve customers from every corner of the world and provide
+                        them with the best IT solutions so that we are able to create a worldwide goodwill on
+                        the IT sector and achieve good worldwide recognition for being one of the best IT
+                        companies out there.</p>
+                </div>
+
+            </div>
+        </div>
+
     </div>
-
-    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-        <div class="icon"><i class="bx bx-rocket"></i></div>
-        <h4 class="title"><a href="">Our Mission</a></h4>
-        <p class="description">We aim to provide world-class software solutions for all our
-            prospective clients from all over the world and build the best innovative software using
-            our cutting edge technology and expert software development team.</p>
-    </div>
-
-    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-        <div class="icon"><i class="bx bx-compass"></i></div>
-        <h4 class="title"><a href="">Our Vision</a></h4>
-        <p class="description">We want to serve customers from every corner of the world and provide
-            them with the best IT solutions so that we are able to create a worldwide goodwill on
-            the IT sector and achieve good worldwide recognition for being one of the best IT
-            companies out there.</p>
-    </div>
-
-</div>
-</div>
-
-</div>
 </section><!-- End About Us Section --> --}}
 
 
@@ -68,7 +69,8 @@
             <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
                 <div class="section-title">
-                    <img src="{{ asset('uploads/first_section/' .$home_second_sections->logo) }}" class="img-fluid" alt="">
+                    <img src="{{ asset('uploads/first_section/' .$home_second_sections->logo) }}" class="img-fluid"
+                        alt="">
                     {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                     <p>{!! $home_second_sections->description!!} </p>
                     <!-- <a href="{{ $home_second_sections->link }}"
@@ -97,7 +99,8 @@
             <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
                 <div class="count-box">
                     <i class="bi bi-simple-smile" style="color: #20b38e;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="360" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="360" data-purecounter-duration="1"
+                        class="purecounter"></span>
                     <p>Successful Project Implementation</p>
                 </div>
             </div>
@@ -105,7 +108,8 @@
             <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
                 <div class="count-box">
                     <i class="bi bi-document-folder" style="color: #c042ff;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1"
+                        class="purecounter"></span>
                     <p>Customers Worldwide</p>
                 </div>
             </div>
@@ -113,7 +117,8 @@
             <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
                 <div class="count-box">
                     <i class="bi bi-live-support" style="color: #46d1ff;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="1"
+                        class="purecounter"></span>
                     <p>Resources</p>
                 </div>
             </div>
@@ -121,7 +126,8 @@
             <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
                 <div class="count-box">
                     <i class="bi bi-users-alt-5" style="color: #ffb459;"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="1" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="1"
+                        class="purecounter"></span>
                     <p>Technical Resources</p>
                 </div>
             </div>
@@ -212,47 +218,32 @@
 
 
 
-<!-- ======= management Section ======= -->
-<div class="section-title" style="padding-top: 30px">
-    <h2>Our Team</h2>
-    <h3>Top Management</h3>
-</div>
+{{-- management --}}
 
-<section id="management" class="management">
-    <div class="container" data-aos="fade-up">
-        <div class="row">
-            @foreach($managements as $management)
-            <div class="col-xl-6 col-lg-4 col-md-12" data-aos="fade-up">
-                <div class="management_member">
-                    <div class="pic">
-                        <img src="{{ asset('uploads/first_section/' . $management->image) }}" class="img-fluid" alt="{{ $management->name }}" height="300px" width="350px">
-                    </div>
-
-
-                    <div class="">
-                        <h4>{{ $management->name }}</h4>
-                        <span>{{ $management->designation }}</span>
-                        <p>{{ $management->description }}</p>
-                        <div class="social">
-                            <button onclick="window.location.href='{{ route('leader.show', ['link' => $management->link ?? 'default']) }}'">Read More</button>
-                            @if($management->facebook)
-                            <a href="{{ $management->facebook }}"><i class="bi bi-facebook"></i></a>
-                            @endif
-                            @if($management->linkedin)
-                            <a href="{{ $management->linkedin }}"><i class="bi bi-linkedin"></i></a>
-                            @endif
-                        </div>
-                    </div>
+<section>
+    <div class="container-manage">
+        @foreach($managements as $management)
+        <div class="card_manage">
+            <img src="{{ asset('uploads/first_section/' . $management->image) }}" alt="{{ $management->name }}">
+            <h3>{{ $management->name }}</h3>
+            <h4>{{ $management->designation }}</h4>
+            <p>{{ $management->description }}</p>
+            <div class="read-more">
+                <a href="{{ route('leader.show', ['link' => $management->link ?? 'default']) }}">Read More</a>
+                <div class="social-icons">
+                    @if($management->facebook)
+                    <a href="{{ $management->facebook }}"><i class="bi bi-facebook"></i></a>
+                    @endif
+                    @if($management->linkedin)
+                    <a href="{{ $management->linkedin }}"><i class="bi bi-linkedin"></i></a>
+                    @endif
                 </div>
             </div>
-            @endforeach
+
         </div>
-
+        @endforeach
     </div>
-</section><!-- End Our Team Section -->
-
-
-
+</section>
 
 <!-- ======= Our Team Section ======= -->
 <section id="team" class="team">
@@ -268,7 +259,8 @@
             <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
                 <div class="member">
                     <div class="pic">
-                        <img src="{{ asset('uploads/users/' . $member->image) }}" class="img-fluid" alt="{{ $member->name }}" height="300px" width="350px">
+                        <img src="{{ asset('uploads/users/' . $member->image) }}" class="img-fluid"
+                            alt="{{ $member->name }}" height="300px" width="350px">
                     </div>
 
 
