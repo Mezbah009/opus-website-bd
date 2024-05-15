@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/contact-bg.jpg") }}');">
+<div class="contact-bg" style="background-image: url('{{ asset(" front-assets/img/contact-bg.jpg") }}');">
     {{-- <h3>Get in Touch with Us</h3> --}}
     <h2>Services</h2>
     <div class="line">
@@ -473,101 +473,119 @@
             </div>
 
         </div>
-</div>
+    </div>
 
 
-<!-- =======  Audit as a Service ======= -->
+    <!-- =======  Audit as a Service ======= -->
 
-<div class="section-title">
-    <h2>Audit as a Service</h2>
-    <p></p>
-</div>
-<div id="about" class="about">
-    <div class="container" data-aos="fade-up" style="box-shadow: none;">
-        <div class="row no-gutters">
-            <div class="col-lg-6 video-box">
-                <img src="{{ asset('uploads/first_section/service11.png') }}" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                <div class="section-title">
-                    <h5 style="text-align: left"><b>Is Your Website Working for You?</b></h5>
-                    <p>Even the best websites have room for improvement. In order for your website to operate
-                        effectively as the hub of your digital marketing efforts, you need a website that is optimized
-                        for peak performance and user experience. With a website audit, you’ll discover what about your
-                        website is working and where improvements can help you grow. With new technology and strategies
-                        for online success developing every day, you need a team to stay on top of the latest trends.
-                        Web audits give you the confidence to know that your website is a valuable operational tool for
-                        cutting through the noise and conveying your message to your audience.</p>
-                    <br>
-                    <h5 style="text-align: left"><b>Areas of the website audit</b></h5>
-                    <p>Every website is unique so it has specific needs and problems to be fixed. So we start with a
-                        quick review of your site in a number of areas. This lets us know which special in-depth audits
-                        to recommend to you.</p>
+    <div class="section-title">
+        <h2>Audit as a Service</h2>
+        <p></p>
+    </div>
+    <div id="about" class="about">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            <div class="row no-gutters">
+                <div class="col-lg-6 video-box">
+                    <img src="{{ asset('uploads/first_section/service11.png') }}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                    <div class="section-title">
+                        <h5 style="text-align: left"><b>Is Your Website Working for You?</b></h5>
+                        <p>Even the best websites have room for improvement. In order for your website to operate
+                            effectively as the hub of your digital marketing efforts, you need a website that is
+                            optimized
+                            for peak performance and user experience. With a website audit, you’ll discover what about
+                            your
+                            website is working and where improvements can help you grow. With new technology and
+                            strategies
+                            for online success developing every day, you need a team to stay on top of the latest
+                            trends.
+                            Web audits give you the confidence to know that your website is a valuable operational tool
+                            for
+                            cutting through the noise and conveying your message to your audience.</p>
+                        <br>
+                        <h5 style="text-align: left"><b>Areas of the website audit</b></h5>
+                        <p>Every website is unique so it has specific needs and problems to be fixed. So we start with a
+                            quick review of your site in a number of areas. This lets us know which special in-depth
+                            audits
+                            to recommend to you.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- =======  Digital Marketing ======= -->
+    <!-- =======  Digital Marketing ======= -->
 
-<div class="section-title">
-    <h2>Digital Marketing</h2>
-    <p></p>
-</div>
-<div id="about" class="about" style="padding-bottom: 60px">
-    <div class="container" data-aos="fade-up" style="box-shadow: none;">
-        <div class="row no-gutters">
-            <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                <div class="section-title">
+    <div class="section-title">
+        <h2>Digital Marketing</h2>
+        <p></p>
+    </div>
+    <div id="about" class="about" style="padding-bottom: 60px">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            <div class="row no-gutters">
+                <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                    <div class="section-title">
 
-                    <p>Digital marketing has been in existence since the 1990’s, it gained its popularity in the early
-                        2000s and is still a growing field and it has shifted the way businesses use technology for
-                        marketing their products.Marketing is about creating a connection with your audience at the
-                        right place and time and offering value to your customers and society at large.</p>
-                    <br>
+                        <p>Digital marketing has been in existence since the 1990’s, it gained its popularity in the
+                            early
+                            2000s and is still a growing field and it has shifted the way businesses use technology for
+                            marketing their products.Marketing is about creating a connection with your audience at the
+                            right place and time and offering value to your customers and society at large.</p>
+                        <br>
 
-                    <details style="text-align: left">
-                        <summary><b>So What is Digital Marketing?</b></summary>
-                        <div>
-                            Digital Marketing is any form of creating awareness or promoting products or services that
-                            involve using an electronic device. Digital marketing can be operated in both online and
-                            offline. Offline is any media channels that aren’t connected to the internet. These channels
-                            include billboards, television ads, telemarketing, radio, print advertising, signs, and
-                            pamphlets. In this article, I will be focusing on online marketing because offline marketing
-                            is no more functioning as it used to be. Online marketing is the future now. Let’s take a
-                            tour and discuss some of the areas of online marketing that will give us a clear overview of
-                            the online world.
-                        </div>
-                    </details>
-                    <details style="text-align: left">
-                        <summary><b>Does Digital Marketing Work For Business?</b></summary>
-                        <div>
-                            <p>The answer is yes it does work</p>
-                            <br>
-                            When you use the right methods and strategies, you will surely take your business to the
-                            next level. Many businesses fail because they do not follow the right methods in approaching
-                            digital marketing. Digital marketing has its guides and steps that you must follow in order
-                            to succeed in the digital world. What are the benefits of digital marketing? Digital
-                            marketing has given you an in-depth knowledge on how the online marketing works. Through
-                            digital marketing, you will be able to strategize and put proper measures into building your
-                            business and reaching a large number of targeted customers.
-                    </details>
+                        <details style="text-align: left">
+                            <summary><b>So What is Digital Marketing?</b></summary>
+                            <div>
+                                Digital Marketing is any form of creating awareness or promoting products or services
+                                that
+                                involve using an electronic device. Digital marketing can be operated in both online and
+                                offline. Offline is any media channels that aren’t connected to the internet. These
+                                channels
+                                include billboards, television ads, telemarketing, radio, print advertising, signs, and
+                                pamphlets. In this article, I will be focusing on online marketing because offline
+                                marketing
+                                is no more functioning as it used to be. Online marketing is the future now. Let’s take
+                                a
+                                tour and discuss some of the areas of online marketing that will give us a clear
+                                overview of
+                                the online world.
+                            </div>
+                        </details>
+                        <details style="text-align: left">
+                            <summary><b>Does Digital Marketing Work For Business?</b></summary>
+                            <div>
+                                <p>The answer is yes it does work</p>
+                                <br>
+                                When you use the right methods and strategies, you will surely take your business to the
+                                next level. Many businesses fail because they do not follow the right methods in
+                                approaching
+                                digital marketing. Digital marketing has its guides and steps that you must follow in
+                                order
+                                to succeed in the digital world. What are the benefits of digital marketing? Digital
+                                marketing has given you an in-depth knowledge on how the online marketing works. Through
+                                digital marketing, you will be able to strategize and put proper measures into building
+                                your
+                                business and reaching a large number of targeted customers.
+                        </details>
+                    </div>
+                </div>
+                <div class="col-lg-6 video-box">
+                    <img src="{{ asset('uploads/first_section/service12.png') }}" class="img-fluid" alt="">
                 </div>
             </div>
-            <div class="col-lg-6 video-box">
-                <img src="{{ asset('uploads/first_section/service12.png') }}" class="img-fluid" alt="">
+            <div class="section-title">
+                <p>Digital marketing has now become the new face that is driving the internet world. Many people have
+                    heard
+                    the word internet but they do not fully understand how it works and its benefits, and this has
+                    raised
+                    curiosity in them wanting to know more about digital marketing.</p>
             </div>
         </div>
-        <div class="section-title">
-            <p>Digital marketing has now become the new face that is driving the internet world. Many people have heard
-                the word internet but they do not fully understand how it works and its benefits, and this has raised
-                curiosity in them wanting to know more about digital marketing.</p>
-        </div>
     </div>
-</div>
+    <div>Hasin</div>
 
 
 
 
-@endsection
+    @endsection
