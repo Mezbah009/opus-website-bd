@@ -219,6 +219,10 @@
 
 
 {{-- management --}}
+<div class="section-title" style="padding-top: 30px">
+    <h2>Our Team</h2>
+    <h3><strong>Top Management</strong></h3>
+</div>
 
 <section>
     <div class="container-manage">

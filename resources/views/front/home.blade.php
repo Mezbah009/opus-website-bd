@@ -317,13 +317,12 @@
                         <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
                             {{$section->description}}</p>
-                        <div class="portfolio-links">
-                            <a href="{{ asset('uploads/first_section/' . $section->logo) }}"
-                                data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i
-                                    class="bi bi-plus"></i></a>
-
-                            <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                        </div>
+                            <div class="portfolio-links">
+                                <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
+                                <a href="{{ route('product.show', ['slug' => $section->link]) }}" title="More Details"><i
+                                        class="bi bi-link"></i></a>
+                            </div>
                     </div>
                 </div>
             </div>

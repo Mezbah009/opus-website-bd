@@ -208,8 +208,8 @@
 
 .card_manage .read-more a {
     text-decoration: none;
-    color: white;
-    background-color: #007bff;
+    color: #ffffff;
+    background-color: #76ABD8; /* Change background color to #76ABD8 */
     padding: 10px 20px;
     border-radius: 4px;
     margin-right: 10px;
@@ -238,6 +238,7 @@
     margin: 0 5px; /* Adjust margin for spacing */
     font-size: 20px;
 }
+
 
 /* Media Query for smaller screens */
 @media (max-width: 768px) {

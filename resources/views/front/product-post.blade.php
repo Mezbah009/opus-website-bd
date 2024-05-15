@@ -78,17 +78,17 @@
             <div class="carousel-content">
                 <img src="{{ asset('uploads/first_section/'.$product_first_section->logo) }}" alt="Logo">
                 <h2>{{ $product_first_section->title }}</h2>
-                <button class="btn-download" style="" onclick="">Request Demo</button>
+                <button class="btn btn-primary btn-lg" style="margin-bottom: 10px; background-color: #0E72B4; color: #ffffff;" onclick="">Request Demo</button>
                 @if($product_first_section->brochure)
-                <button class="btn-download" style="margin-left: 40px"
-                    onclick="downloadBrochure('{{ asset('uploads/first_section/'.$product_first_section->brochure) }}')">Download
-                    Brochure</button>
+                <a href="{{ asset('uploads/first_section/'.$product_first_section->brochure) }}" class="btn btn-secondary btn-lg" style="background-color: #76ABD8; color: #fff; margin-left: 10px; margin-bottom: 10px;" target="_blank">Download Brochure</a>
                 @endif
             </div>
         </div>
     </section>
     @endforeach
 </div>
+
+
 
 
 {{-- second section --}}
