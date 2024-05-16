@@ -45,7 +45,7 @@
 
 </style>
 
-<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/contact-bg.jpg") }}');">
+<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/blogs.jpg") }}');">
     <h2>Blogs</h2>
     <div class="line">
         <div></div>
