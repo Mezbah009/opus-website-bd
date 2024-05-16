@@ -46,9 +46,8 @@
         <div class="row portfolio-container">
             @foreach($clients as $client)
             <div class="col-lg-4 col-md-6 portfolio-item {{$client->category}}">
-                <div class="portfolio-wrap">
-                    <img src="{{ asset('uploads/first_section/' . $client->logo) }}" class="img-fluid" alt="" style="margin: 0 auto;
-                    display: block;">
+                <div class="portfolio-wrap" data-url="{{ $client->link }}" style="cursor: pointer;">
+                    <img src="{{ asset('uploads/first_section/' . $client->logo) }}" class="img-fluid" alt="" style="margin: 0 auto; display: block;">
                     <div class="portfolio-info">
                         <h4>{{$client->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
@@ -56,8 +55,7 @@
                         <div class="portfolio-links">
                             <a href="/uploads/first_section/{{ $client->logo }}" data-gallery="portfolioGallery"
                                 class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
-                            <a href="{{ $client->link }}"" title=" More Details" target="_blank"><i
-                                    class="bi bi-link"></i></a>
+                            <a href="{{ $client->link }}" title="More Details" target="_blank"><i class="bi bi-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -67,6 +65,19 @@
 
     </div>
 </section><!-- End Our Portfolio Section -->
+
+<!-- JavaScript for click functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const portfolioWraps = document.querySelectorAll('.portfolio-wrap');
+        portfolioWraps.forEach(function(portfolioWrap) {
+            portfolioWrap.addEventListener('click', function() {
+                const url = portfolioWrap.getAttribute('data-url');
+                window.open(url, '_blank');
+            });
+        });
+    });
+</script>
 
 
 

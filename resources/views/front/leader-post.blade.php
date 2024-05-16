@@ -15,7 +15,7 @@
     }
 
     .profile-card {
-        background: #0056b3;
+        background: #76ABD8;
         color: white;
         flex: 1;
         min-width: 300px;
@@ -47,11 +47,14 @@
 
     .social-icons {
         margin-top: 20px;
+
     }
 
     .social-icons a {
         margin: 0 10px;
         display: inline-block;
+        color: #fff;
+        font-size: 24px;
     }
 
     .social-icons img {

@@ -35,7 +35,7 @@
         <div class="row portfolio-container">
             @foreach($sections as $section)
             <div class="col-lg-4 col-md-6 portfolio-item {{$section->button_name}}">
-                <div class="portfolio-wrap">
+                <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}" style="cursor: pointer;">
                     <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>{{$section->title}}</h4>
@@ -55,5 +55,18 @@
 
     </div>
 </section><!-- End Our Portfolio Section -->
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const portfolioWraps = document.querySelectorAll('.portfolio-wrap');
+        portfolioWraps.forEach(function(portfolioWrap) {
+            portfolioWrap.addEventListener('click', function() {
+                const url = portfolioWrap.getAttribute('data-url');
+                window.location.href = url;
+            });
+        });
+    });
+</script>
 
 @endsection

@@ -276,8 +276,9 @@
         <div class="row">
             @foreach ($home_services_section as $key => $home_services_sections)
             <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-                <div class="icon"> <a href="{{ route('front.services') }}"><img src="{{ asset('uploads/first_section/' .$home_services_sections->icon) }}"
-                        class="img-fluid" alt="" width="50%"> </a></div>
+                <div class="icon"> <a href="{{ route('front.services') }}"><img
+                            src="{{ asset('uploads/first_section/' .$home_services_sections->icon) }}" class="img-fluid"
+                            alt="" width="50%"> </a></div>
                 <h4 class="title"><a href="{{ route('front.services') }}">{{ $home_services_sections->title }}</a></h4>
                 {{-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
                     excepturi sint occaecati cupiditate non provident</p> --}}
@@ -311,18 +312,18 @@
         <div class="row portfolio-container">
             @foreach($sections as $section)
             <div class="col-lg-4 col-md-6 portfolio-item {{$section->button_name}}">
-                <div class="portfolio-wrap">
+                <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}" style="cursor: pointer;">
                     <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
                             {{$section->description}}</p>
-                            <div class="portfolio-links">
-                                <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
-                                <a href="{{ route('product.show', ['slug' => $section->link]) }}" title="More Details"><i
-                                        class="bi bi-link"></i></a>
-                            </div>
+                        <div class="portfolio-links">
+                            <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
+                                class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
+                            <a href="{{ route('product.show', ['slug' => $section->link]) }}" title="More Details"><i
+                                    class="bi bi-link"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -558,6 +559,20 @@
 
     </div>
 </section><!-- End Contact Us Section -->
+
+
+<!-- JavaScript for click functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const portfolioWraps = document.querySelectorAll('.portfolio-wrap');
+        portfolioWraps.forEach(function(portfolioWrap) {
+            portfolioWrap.addEventListener('click', function() {
+                const url = portfolioWrap.getAttribute('data-url');
+                window.location.href = url;
+            });
+        });
+    });
+</script>
 
 
 
