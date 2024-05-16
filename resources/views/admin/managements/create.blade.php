@@ -55,8 +55,7 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="details">Details</label>
-                                <textarea name="details" id="details" class="form-control" placeholder="Details"></textarea>
-                                <p class="error"></p>
+                                <textarea name="details" id="details" cols="30" rows="10" class="summernote" placeholder="Details"></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
