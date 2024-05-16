@@ -7,6 +7,7 @@ use App\Models\Award;
 use App\Models\Blog;
 use App\Models\Client;
 use App\Models\Contact;
+use App\Models\Demo;
 use App\Models\HomeFirstSection;
 use App\Models\HomeSecondSection;
 use App\Models\HomeServicesSection;
@@ -26,6 +27,7 @@ use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class FrontController extends Controller
 {
@@ -179,6 +181,10 @@ class FrontController extends Controller
         return view('front.services');
     }
 
+    public function demo(){
+        return view('front.demo');
+    }
+
     public function job(){
         $jobs=Job::all();
         $data['jobs']= $jobs;
@@ -186,5 +192,40 @@ class FrontController extends Controller
         return view('front.jobs',$data);
     }
 
+    public function store(Request $request)
+    {
 
+        dd($request->all());
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'email' => 'required|email',
+            'mobile' => 'required|string',
+            'prod_name' => 'required|string',
+            'org_name' => 'required|string',
+        ]);
+    
+        if ($validator->passes()) {
+            $demo = new Demo();
+            $demo->first_name = $request->first_name;
+            $demo->last_name = $request->last_name;
+            $demo->email = $request->email;
+            $demo->mobile = $request->mobile;
+            $demo->prod_name = $request->prod_name;
+            $demo->org_name = $request->org_name;
+            $demo->save();
+    
+            return response()->json([
+                'status' => true,
+                'message' => 'Demo form submitted successfully'
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'errors' => $validator->errors()
+            ]);
+        }
+    }
+    
 }

@@ -44,6 +44,8 @@ use Illuminate\Support\Str;
 
 Route::get('/', [FrontController::class, 'index'])->name('front.home');
 Route::get('/contact-us', [FrontController::class, 'contact'])->name('front.contact');
+Route::get('/request-demo', [FrontController::class, 'demo'])->name('front.demo');
+Route::post('/save-demo', [ContactController::class, 'store'])->name('demo.store');
 Route::get('/about-us', [FrontController::class, 'about'])->name('front.about');
 Route::get('/products', [FrontController::class, 'products'])->name('front.products');
 Route::get('/jobs', [FrontController::class, 'job'])->name('front.jobs');
