@@ -176,8 +176,8 @@
     display: block;
     margin: 0 auto 10px;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 
 .card_manage h3 {
@@ -195,7 +195,7 @@
 .card_manage p {
     font-size: 14px;
     color: #555;
-    text-align: left;
+    text-align: justify;
     margin-top: 10px;
 }
 
