@@ -26,24 +26,28 @@ class ManagementController extends Controller
     }
 
     public function store(Request $request)
-    {
-        // Validate the request data
-        $validator = Validator::make($request->all(), [
-            'name' => 'nullable|string',
-            'designation' => 'nullable|string',
-            'description' => 'nullable|string',
-            'link' => 'nullable|string',
-            'linkedin' => 'nullable|string',
-            'facebook' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+{
+    // Validate the request data
+    $validator = Validator::make($request->all(), [
+        'name' => 'nullable|string',
+        'designation' => 'nullable|string',
+        'description' => 'nullable|string',
+        'sub_description' => 'nullable|string', // Add sub_description validation
+        'details' => 'nullable|string', // Add details validation
+        'link' => 'nullable|string',
+        'linkedin' => 'nullable|string',
+        'facebook' => 'nullable|string',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
 
-        // If validation fails, redirect back with errors
-        if ($validator->passes()) {
+    // If validation fails, redirect back with errors
+    if ($validator->passes()) {
         $managements = new Leader();
         $managements->name = $request->name;
         $managements->designation = $request->designation;
         $managements->description = $request->description;
+        $managements->sub_description = $request->sub_description; // Assign sub_description value
+        $managements->details = $request->details; // Assign details value
         $managements->link = $request->link;
         $managements->linkedin = $request->linkedin;
         $managements->facebook = $request->facebook;
@@ -55,16 +59,15 @@ class ManagementController extends Controller
             $managements->image = $imageName;
         }
         // Save the management to the database
-        // dd($managements);
         $managements->save();
 
-
         // Redirect to index page
-        return redirect()->route('managements.index')->with('success', 'Management updated successfully');
+        return redirect()->route('managements.index')->with('success', 'Management Added successfully');
     } else {
         return back()->withErrors($validator)->withInput();
     }
-    }
+}
+
 
     public function edit($id)
 {
@@ -82,6 +85,8 @@ public function update(Request $request, $id)
         'name' => 'nullable|string',
         'designation' => 'nullable|string',
         'description' => 'nullable|string',
+        'sub_description' => 'nullable|string', // Add sub_description validation
+        'details' => 'nullable|string', // Add details validation
         'link' => 'nullable|string',
         'linkedin' => 'nullable|string',
         'facebook' => 'nullable|string',
@@ -90,31 +95,37 @@ public function update(Request $request, $id)
 
     // If validation fails, redirect back with errors
     if ($validator->passes()) {
-    // Find the Leader by id
-    $management = Leader::findOrFail($id);
-    $management->name = $request->name;
-    $management->designation = $request->designation;
-    $management->description = $request->description;
-    $management->link = $request->link;
-    $management->linkedin = $request->linkedin;
-    $management->facebook = $request->facebook;
+        // Find the leader by ID
+        $leader = Leader::findOrFail($id);
 
-    // Handle image upload
-    if ($request->hasFile('image')) {
-        $image = $request->file('image');
-        $imageName = 'image_' . time() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('uploads/first_section'), $imageName);
-        $management->image = $imageName;
-    }
+        // Update leader properties
+        $leader->name = $request->name;
+        $leader->designation = $request->designation;
+        $leader->description = $request->description;
+        $leader->sub_description = $request->sub_description; // Assign sub_description value
+        $leader->details = $request->details; // Assign details value
+        $leader->link = $request->link;
+        $leader->linkedin = $request->linkedin;
+        $leader->facebook = $request->facebook;
 
-    // Save the management to the database
-    $management->save();
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = 'image_' . time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads/first_section'), $imageName);
+            $leader->image = $imageName;
+        }
 
-    return redirect()->route('managements.index')->with('success', 'Management updated successfully');
+        // Save the leader to the database
+        $leader->save();
+
+        // Redirect to index page
+        return redirect()->route('managements.index')->with('success', 'Management Updated successfully');
     } else {
         return back()->withErrors($validator)->withInput();
     }
 }
+
 
 public function destroy($id)
 {

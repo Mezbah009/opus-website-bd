@@ -14,14 +14,12 @@
     </div>
     <!-- /.container-fluid -->
 </section>
-    <!-- /.container-fluid -->
+<!-- /.container-fluid -->
 </section>
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
     <form method="POST" action="{{ route('managements.update', $section->id) }}" enctype="multipart/form-data">
-
-
         @csrf
         @method('PUT')
 
@@ -48,6 +46,20 @@
                                 <label for="description">Description</label>
                                 <textarea name="description" id="description" class="form-control"
                                     placeholder="Description">{{ $section->description }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="sub_description">Sub Description</label>
+                                <textarea name="sub_description" id="sub_description" class="form-control"
+                                    placeholder="Sub Description">{{ $section->sub_description }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="details">Details</label>
+                                <textarea name="details" id="details" class="form-control"
+                                    placeholder="Details">{{ $section->details }}</textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -86,9 +98,9 @@
             </div>
         </div>
     </form>
-
     <!-- /.card -->
 </section>
+
 
 <!-- /.content -->
 @endsection

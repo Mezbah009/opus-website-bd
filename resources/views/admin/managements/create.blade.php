@@ -47,6 +47,20 @@
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
+                                <label for="sub_description">Sub Description</label>
+                                <textarea name="sub_description" id="sub_description" class="form-control" placeholder="Sub Description"></textarea>
+                                <p class="error"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="details">Details</label>
+                                <textarea name="details" id="details" class="form-control" placeholder="Details"></textarea>
+                                <p class="error"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
                                 <label for="link">Link</label>
                                 <input type="text" name="link" id="link" class="form-control" placeholder="Link">
                                 <p class="error"></p>
@@ -87,6 +101,7 @@
     </form>
     <!-- /.card -->
 </section>
+
 
 <!-- /.content -->
 @endsection
