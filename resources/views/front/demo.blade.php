@@ -1,28 +1,32 @@
 @extends('front.layouts.app')
 
 @section('content')
-
 <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
         <div class="row justify-content-center">
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                <form action="{{ route('demo.store') }}" method="post" role="form" class="php-email-form" id="demoForm" enctype="multipart/form-data">
+                <form action="{{ route('demo.store') }}" method="post" role="form" class="php-email-form" id="demoForm"
+                    enctype="multipart/form-data">
                     @csrf
                     <!-- Form fields -->
                     <div class="row">
                         <div class="col-lg-6 form-group">
-                            <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" required>
+                            <input type="text" name="first_name" class="form-control" id="first_name"
+                                placeholder="First Name" required>
                         </div>
                         <div class="col-lg-6 form-group">
-                            <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name" required>
+                            <input type="text" name="last_name" class="form-control" id="last_name"
+                                placeholder="Last Name" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                                required>
                         </div>
                         <div class="col-lg-6 form-group">
-                            <input type="tel" class="form-control" name="mobile" id="mobile" placeholder="Your Phone Number" required>
+                            <input type="tel" class="form-control" name="mobile" id="mobile"
+                                placeholder="Your Phone Number" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -34,14 +38,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="org_name" id="org_name" placeholder="Organization Name" required>
+                        <input type="text" class="form-control" name="org_name" id="org_name"
+                            placeholder="Organization Name" required>
                     </div>
-                    <!-- <div class="my-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div> -->
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                    <div class="text-center">
+                        <button type="submit" id="submitBtn">Send Message</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -50,7 +52,7 @@
 @endsection
 
 @section('customJs')
-<script>
+{{-- <script>
     $("#demoForm").submit(function(event) {
         event.preventDefault();
         var element = $(this);
@@ -83,5 +85,33 @@
             }
         });
     });
+</script> --}}
+
+
+<!-- Add any necessary JavaScript code -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('demoForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Validate email format
+      const emailInput = document.querySelector('input[name="email"]');
+      const email = emailInput.value.trim();
+      if (!isValidEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      // If validation passes, submit the form
+      this.submit();
+    });
+
+    function isValidEmail(email) {
+      const regex = /\S+@\S+\.\S+/;
+      return regex.test(email);
+    }
+  });
 </script>
 @endsection

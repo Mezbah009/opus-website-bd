@@ -56,10 +56,9 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <label for="details">Details</label>
-                                <textarea name="details" id="details" class="form-control"
-                                    placeholder="Details">{{ $section->details }}</textarea>
+                                <textarea name="details" id="details" cols="30" rows="10" class="summernote" placeholder="details">{{ $section->details }}</textarea>
                             </div>
                         </div>
                         <div class="col-md-6">

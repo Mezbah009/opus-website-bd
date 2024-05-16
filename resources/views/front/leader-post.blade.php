@@ -88,7 +88,7 @@
 
         <h2>{{$leaderPost->name }}</h2>
         <h3>{{$leaderPost->designation }}</h3>
-        <p style="text-align: justify">{{$leaderPost->description }}</p>
+        <p style="text-align: justify">{{$leaderPost->sub_description }}</p>
         <div class="social-icons">
             <a href="{{ $leaderPost->facebook }}"><i class="bi bi-facebook"></i></a>
             <a href="{{ $leaderPost->linkedin }}"><i class="bi bi-linkedin"></i></a>
@@ -96,7 +96,7 @@
     </div>
     <div class="about-section">
         <h2>About {{$leaderPost->name }}</h2>
-        <p style="text-align: justify">{{$leaderPost->description }}</p>
+        <p style="text-align: justify">{!! $leaderPost->details !!}</p>
     </div>
 </div>
 

@@ -27,6 +27,7 @@ use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class FrontController extends Controller
@@ -194,9 +195,8 @@ class FrontController extends Controller
 
     public function store(Request $request)
     {
-
-        dd($request->all());
         // Validate the request data
+        dd($request->all());
         $validator = Validator::make($request->all(), [
             'first_name' => 'required|string',
             'last_name' => 'required|string',
@@ -205,7 +205,7 @@ class FrontController extends Controller
             'prod_name' => 'required|string',
             'org_name' => 'required|string',
         ]);
-    
+
         if ($validator->passes()) {
             $demo = new Demo();
             $demo->first_name = $request->first_name;
@@ -215,7 +215,10 @@ class FrontController extends Controller
             $demo->prod_name = $request->prod_name;
             $demo->org_name = $request->org_name;
             $demo->save();
-    
+
+            // Send email notification
+            Mail::to('hmezbahoffice@gmail.com')->send(new DemoFormSubmitted($demo));
+
             return response()->json([
                 'status' => true,
                 'message' => 'Demo form submitted successfully'
@@ -227,5 +230,5 @@ class FrontController extends Controller
             ]);
         }
     }
-    
+
 }
