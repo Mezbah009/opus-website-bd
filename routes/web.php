@@ -203,12 +203,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.delete');
 
         // Contact
-        Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-        Route::get('/contact/create', [ContactController::class, 'create'])->name('contact.create');
-        Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-        Route::get('/contact/{contact}/edit', [ContactController::class, 'edit'])->name('contact.edit');
-        Route::put('/contact/{contact}', [ContactController::class, 'update'])->name('contact.update');
-        Route::delete('/contact/{contact}', [ContactController::class, 'destroy'])->name('contact.delete');
+        Route::resource('contact', ContactController::class)->except('show');
 
         // Number
         Route::get('/numbers', [NumberController::class, 'index'])->name('numbers.index');

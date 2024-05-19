@@ -28,10 +28,10 @@
                         <h6>{{ $contact->office_name }}</h6>
                         <p>{{ $contact->address }}</p>
                         <div class="social-links mt-3">
-                            <a href="{{ $contact->website }}" class="twitter"><i
+                            <a href="{{ $contact->website }}" class="website"><i
                                     class="bx bxl-internet-explorer"></i></a>
                             <a href="{{ $contact->facebook }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="{{ $contact->youtube }}" class="instagram"><i class="bx bxl-youtube"></i></a>
+                            <a href="{{ $contact->youtube }}" class="youtube"><i class="bx bxl-youtube"></i></a>
                             <a href="{{ $contact->linkedIn }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                         </div>
                     </div>
