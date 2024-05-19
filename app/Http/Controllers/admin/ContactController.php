@@ -5,23 +5,18 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
     public function index(Request $request)
     {
-        $sections = Contact::when(
-            $request->get('keyword'),
-            function($query) use($request) {
-                $query->where('title', 'like', '%' . $request->get('keyword') . '%');
-            }
-        )
-        ->latest()
-        ->paginate(10);
-
-        return view('admin.contact.list', compact('sections'));
+        $sections = Contact::latest();
+        if(!empty($request->get('keyword'))){
+            $sections = $sections->where('title','like','%'.$request->get('keyword').'%');
+        }
+        $sections = $sections->latest()->paginate(10);
+        return view('admin.contact.list',compact('sections'));
     }
 
     public function create()
@@ -32,7 +27,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         // Validate the request data
-        $validatedData = $request->validate([
+        $validator = Validator::make($request->all(), [
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'flag' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'country_name' => 'nullable|string',
@@ -44,36 +39,63 @@ class ContactController extends Controller
             'facebook' => 'nullable|string',
             'youtube' => 'nullable|string',
         ]);
-        // Handle image update
+
+        // If validation fails, redirect back with errors
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        // Create a new Contact instance
+        $contact = new Contact();
+
+        // Set properties from the request
+        $contact->country_name = $request->country_name;
+        $contact->company_name = $request->company_name;
+        $contact->office_name = $request->office_name;
+        $contact->address = $request->address;
+        $contact->website = $request->website;
+        $contact->linkedIn = $request->linkedIn;
+        $contact->facebook = $request->facebook;
+        $contact->youtube = $request->youtube;
+
+        // Handle image upload
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $validatedData['image'] = $image->store('contact');
+            $imageName = 'image_' . time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads/first_section'), $imageName);
+            $contact->image = $imageName;
         }
 
-        // Handle flag update
+        // Update flag if provided
         if ($request->hasFile('flag')) {
             $flag = $request->file('flag');
-            $validatedData['flag'] = $flag->store('contact');
+            $flagName = 'flag_' . time() . '.' . $flag->getClientOriginalExtension();
+            $flag->move(public_path('uploads/first_section'), $flagName);
+            $contact->flag = $flagName;
+
+            // Save the contact to the database
+            $contact->save();
+
+            // Redirect to index page
+            return redirect()->route('contact.index')->with('success', 'Contact updated successfully');
+        } else {
+            return back()->withErrors($validator)->withInput();
         }
-
-        Contact::create($validatedData);
-
-        return redirect()->route('contact.index')->with('success', 'Contact updated successfully');
     }
 
     // Edit method
 
-    public function edit(Contact $contact)
+    public function edit($id)
     {
-        // dd($contact);
+        $contact = Contact::findOrFail($id);
         return view('admin.contact.edit', compact('contact'));
     }
 
     // Update method
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, $id)
     {
         // Validate the request data
-        $validatedData = $request->validate([
+        $validator = Validator::make($request->all(), [
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'flag' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'country_name' => 'nullable|string',
@@ -86,55 +108,57 @@ class ContactController extends Controller
             'youtube' => 'nullable|string',
         ]);
 
+        // If validation fails, redirect back with errors
+        if ($validator->passes()) {
+        $contact = Contact::findOrFail($id);
+        $contact->country_name = $request->country_name;
+        $contact->company_name = $request->company_name;
+        $contact->office_name = $request->office_name;
+        $contact->address = $request->address;
+        $contact->website = $request->website;
+        $contact->linkedIn = $request->linkedIn;
+        $contact->facebook = $request->facebook;
+        $contact->youtube = $request->youtube;
 
         // Handle image update
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $validatedData['image'] = $image->store('contact');
-
-            if(file_exists(public_path('uploads/' . $contact->image))){
-                unlink(public_path('uploads/' . $contact->image));
-            }
-        } else {
-            $validatedData['image'] = $contact->image;
+            $imageName = 'image_' . time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads/first_section'), $imageName);
+            $contact->image = $imageName;
         }
 
         // Handle flag update
         if ($request->hasFile('flag')) {
             $flag = $request->file('flag');
-            $validatedData['flag'] = $flag->store('contact');
+            $flagName = 'flag_' . time() . '.' . $flag->getClientOriginalExtension();
+            $flag->move(public_path('uploads/first_section'), $flagName);
+            $contact->flag = $flagName;
 
-            if(file_exists(public_path('uploads/' . $contact->flag))){
-                unlink(public_path('uploads/' . $contact->flag));
-            }
-        } else {
-            $validatedData['flag'] = $contact->flag;
         }
-
-        $contact->update($validatedData);
+        // Save the contact to the database
+        $contact->save();
 
         return redirect()->route('contact.index')->with('success', 'Contact US updated successfully');
+    } else {
+        return back()->withErrors($validator)->withInput();
+    }
     }
 
-    public function destroy(Contact $contact)
-    {
-        $contact->delete();
+public function destroy($id)
+{
+    $clients = Contact::findOrFail($id);
+    $clients->delete();
 
-        if(file_exists(public_path('uploads/' . $contact->flag))){
-            unlink(public_path('uploads/' . $contact->flag));
-        }
+    // Flash success message
+    session()->flash('success', 'Contact deleted successfully');
 
-        if(file_exists(public_path('uploads/' . $contact->image))){
-            unlink(public_path('uploads/' . $contact->image));
-        }
+    // Return JSON response
+    return response()->json([
+        'status' => true,
+        'message' => 'Contact deleted successfully'
+    ]);
+}
 
-        // Flash success message
-        session()->flash('success', 'Contact deleted successfully');
 
-        // Return JSON response
-        return response()->json([
-            'status' => true,
-            'message' => 'Contact deleted successfully'
-        ]);
-    }
 }

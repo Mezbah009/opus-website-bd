@@ -21,8 +21,8 @@
                 @foreach($contacts as $contact)
                 <div class="col-lg-4 d-flex" data-aos="fade-up">
                     <div class="info-box">
-                        <img src="{{ asset('uploads/first_section/' . $contact->flag) }}" alt="..." width="80px"
-                            style="padding: 8px">
+                        <img src="{{ asset('uploads/first_section/' . $contact->flag) }}" alt="..." width="80px" style="padding: 8px">
+
                         <h3>{{ $contact->country_name }}</h3>
                         <h5>{{ $contact->company_name }}</h5>
                         <h6>{{ $contact->office_name }}</h6>

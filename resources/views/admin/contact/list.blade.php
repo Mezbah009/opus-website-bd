@@ -59,7 +59,7 @@
                             <td>{{$section->id}}</td>
                             <td>
                                 @if(!empty($section->image))
-                                <img src="{{asset('uploads/'.$section->image)}}" class="img-thumbnail"
+                                <img src="{{asset('uploads/first_section/'.$section->image)}}" class="img-thumbnail"
                                     alt="{{$section->title}}" width="50">
                                 @else
                                 <img src="{{asset('admin-assets/img/default.png')}}" class="img-thumbnail"
@@ -68,7 +68,7 @@
                             </td>
                             <td>
                                 @if(!empty($section->flag))
-                                <img src="{{asset('uploads/'.$section->flag)}}" class="img-thumbnail"
+                                <img src="{{asset('uploads/first_section/'.$section->flag)}}" class="img-thumbnail"
                                     alt="{{$section->title}}" width="50">
                                 @else
                                 <img src="{{asset('admin-assets/img/default.png')}}" class="img-thumbnail"
