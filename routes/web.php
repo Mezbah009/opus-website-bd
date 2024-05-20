@@ -44,10 +44,6 @@ use Illuminate\Support\Str;
 
 Route::get('/', [FrontController::class, 'index'])->name('front.home');
 Route::get('/contact-us', [FrontController::class, 'contact'])->name('front.contact');
-
-// Route::get('/request-demo', [FrontController::class, 'demo'])->name('front.demo');
-// Route::post('/save-demo', [FrontController::class, 'store'])->name('demo.store');
-
 Route::get('/about-us', [FrontController::class, 'about'])->name('front.about');
 Route::get('/products', [FrontController::class, 'products'])->name('front.products');
 Route::get('/jobs', [FrontController::class, 'job'])->name('front.jobs');
@@ -55,7 +51,6 @@ Route::get('products/{slug}', [FrontController::class, 'showProduct'])->name('pr
 Route::get('blogs/{slug}', [FrontController::class, 'showBlogPost'])->name('blog.show');
 Route::get('jobs/{slug}', [FrontController::class, 'showJobPost'])->name('job.show');
 Route::get('leaders/{link}', [FrontController::class, 'showLeaderPost'])->name('leader.show');
-
 Route::get('/fintech', [FrontController::class, 'fintech'])->name('front.fintech');
 Route::get('/clients', [FrontController::class, 'clients'])->name('front.clients');
 Route::get('/blog', [FrontController::class, 'blog'])->name('front.blog');

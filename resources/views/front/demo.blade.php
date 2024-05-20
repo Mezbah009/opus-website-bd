@@ -1,7 +1,50 @@
 @extends('front.layouts.app')
 
+<style>
+    .contact {
+        background: #ffffff;
+        padding: 50px 0;
+    }
+    .contact .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 0px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .contact .form-control {
+        border-radius: 4px;
+        padding: 10px 15px;
+        margin-bottom: 20px;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        transition: border-color 0.3s;
+    }
+    .contact .form-control:focus {
+        border-color: #007bff;
+    }
+    .contact .btn-primary {
+        background: #007bff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    .contact .btn-primary:hover {
+        background: #0056b3;
+    }
+    .alert {
+        margin-bottom: 20px;
+    }
+</style>
+
 @section('content')
-<section id="contact" class="contact">
+
+<section>
+    <div class="container" style="text-align: center">
+        <h1>Discover How Simple It Is,To Simplify Your Business</h1>
+    </div>
+</section>
+<section id="contact" class="contact py-5">
     <div class="container" data-aos="fade-up">
         <div class="row justify-content-center">
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
@@ -24,7 +67,12 @@
                     </div>
                 @endif
 
-                <form action="{{ route('demo.store') }}" method="post" role="form" class="php-email-form" id="demoForm" enctype="multipart/form-data">
+
+                <div style="text-align: center">
+                    <h3>Request for Software Demo</h3>
+                </div>
+
+                <form action="{{ route('demo.store') }}" method="post" id="demoForm" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-lg-6 form-group">
@@ -55,7 +103,7 @@
                         <input type="text" class="form-control" name="org_name" id="org_name" placeholder="Organization Name" required>
                     </div>
                     <div class="text-center">
-                        <button type="submit" id="submitBtn">Send Message</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
                     </div>
                 </form>
             </div>
@@ -63,4 +111,5 @@
     </div>
 </section>
 @endsection
+
 

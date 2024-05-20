@@ -61,6 +61,49 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+     .navbar .btn {
+        padding: 8px 20px;
+        border-radius: 4px;
+        background-color: #007bff; /* Change this to match your site's color scheme */
+        color: #fff;
+        margin-left: 40px;
+    }
+    .navbar .btn:hover {
+        background-color: #0056b3; /* Darker shade for hover effect */
+        color: #fff;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 991.98px) {
+        .navbar ul {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .navbar ul li {
+            width: 35%;
+            text-align: left;
+            padding: 10px 0;
+        }
+        .navbar ul li a {
+            width: 100%;
+        }
+        .navbar .btn {
+            width: 100%;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .mobile-nav-toggle {
+            display: block;
+        }
+    }
+    @media (min-width: 992px) {
+        .mobile-nav-toggle {
+            display: none;
+        }
+    }
+</style>
 </head>
 
 <body>
@@ -111,6 +154,9 @@
                     </li>
                     <li><a class="nav-link scrollto {{ Request::is('contact-us') ? 'active' : '' }}"
                             href="{{ route('front.contact') }}">Contact</a></li>
+
+                            <!-- New Request Demo Button -->
+                <li><a class="nav-link btn btn-primary text-white" href="{{ route('front.demo') }}">Request Demo</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
