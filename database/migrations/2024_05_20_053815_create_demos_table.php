@@ -17,9 +17,12 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->string('mobile');
-            $table->string('prod_name');
+            $table->unsignedBigInteger('product_id'); // Add this line
             $table->string('org_name');
             $table->timestamps();
+
+            // Define the foreign key constraint
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

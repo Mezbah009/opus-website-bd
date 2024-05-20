@@ -54,4 +54,8 @@ class Product extends Model
     {
         return $this->hasMany(ProductSeventhSection::class);
     }
+    public function demos()
+    {
+        return $this->hasMany(Demo::class);
+    }
 }

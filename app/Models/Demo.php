@@ -13,7 +13,12 @@ class Demo extends Model
         'last_name',
         'email',
         'mobile',
-        'prod_name',
+        'product_id',
         'org_name',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

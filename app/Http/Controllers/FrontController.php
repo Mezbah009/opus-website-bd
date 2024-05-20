@@ -182,9 +182,9 @@ class FrontController extends Controller
         return view('front.services');
     }
 
-    public function demo(){
-        return view('front.demo');
-    }
+    // public function demo(){
+    //     return view('front.demo');
+    // }
 
     public function job(){
         $jobs=Job::all();
@@ -193,42 +193,29 @@ class FrontController extends Controller
         return view('front.jobs',$data);
     }
 
+
+    // demo request from
+
+    public function demo()
+    {
+        $products = Product::all(); // Retrieve all products
+        return view('front.demo', compact('products'));
+    }
+
     public function store(Request $request)
     {
-        // Validate the request data
-        dd($request->all());
-        $validator = Validator::make($request->all(), [
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'email' => 'required|email',
-            'mobile' => 'required|string',
-            'prod_name' => 'required|string',
-            'org_name' => 'required|string',
+        $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'mobile' => 'required|string|max:20',
+            'product_id' => 'required|exists:products,id',
+            'org_name' => 'required|string|max:255',
         ]);
 
-        if ($validator->passes()) {
-            $demo = new Demo();
-            $demo->first_name = $request->first_name;
-            $demo->last_name = $request->last_name;
-            $demo->email = $request->email;
-            $demo->mobile = $request->mobile;
-            $demo->prod_name = $request->prod_name;
-            $demo->org_name = $request->org_name;
-            $demo->save();
+        Demo::create($request->all());
 
-            // Send email notification
-            Mail::to('hmezbahoffice@gmail.com')->send(new DemoFormSubmitted($demo));
-
-            return response()->json([
-                'status' => true,
-                'message' => 'Demo form submitted successfully'
-            ]);
-        } else {
-            return response()->json([
-                'status' => false,
-                'errors' => $validator->errors()
-            ]);
-        }
+        return redirect()->back()->with('success', 'Your message has been sent!');
     }
 
 }
