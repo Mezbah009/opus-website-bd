@@ -68,7 +68,7 @@
                 @endif
 
 
-                <div style="text-align: center">
+                <div style="text-align: center; padding-bottom: 30px;">
                     <h3>Request for Software Demo</h3>
                 </div>
 
@@ -91,7 +91,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="product_id">Select Product Name</label>
                         <select class="form-control" id="product_id" name="product_id" required>
                             <option value="" disabled selected>Select a product</option>
                             @foreach($products as $product)

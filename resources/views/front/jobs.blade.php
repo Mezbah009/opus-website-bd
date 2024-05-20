@@ -2,10 +2,6 @@
 
 @section('content')
 <style>
-    body {
-        margin-top: 20px;
-    }
-
     .shadow {
         box-shadow: 0 0 3px rgb(53 64 78 / 20%) !important;
     }
