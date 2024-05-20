@@ -147,7 +147,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
 
-<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/Jobs.jpg") }}');">
+<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/jobs.jpg") }}');">
     <h2>Jobs</h2>
     <div class="line">
         <div></div>
