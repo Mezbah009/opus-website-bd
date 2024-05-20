@@ -11,6 +11,14 @@
     </div>
 </div>
 
+<div class="container" style="margin-top: 49px;
+margin-bottom: 1rem;
+text-align: justify;">
+    <p>
+        Opus Technology Ltd is a leading Software Development and IT consulting service provider company. Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across various industries & business functions, it collaborates with customers to help them effectively address their operational challenges & grow their businesses stronger.
+    </p>
+</div>
+
 
 
 <div class="contact-body">

@@ -294,9 +294,7 @@
 
         <div class="section-title">
             <h2>Our Portfolio</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <p>Our fintech portfolio features innovative solutions in payment processing, risk management, and financial services, enhancing efficiency, security, and user experience for businesses and consumers.</p>
         </div>
 
         <div class="row">
@@ -340,7 +338,7 @@
 
         <div class="section-title">
             <h2>Our Team</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+            <p>Our team consists of skilled professionals dedicated to innovation, excellence, and delivering top-notch solutions.</p>
         </div>
 
         <div class="row">
