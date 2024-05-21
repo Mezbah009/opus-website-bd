@@ -257,49 +257,22 @@
 
 /* navbar request demo button */
 
-.navbar .btn-primary.text-white {
-    padding: 8px 20px;
+.custom-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary color */
+    color: #fff; /* Text color */
+    text-decoration: none;
     border-radius: 4px;
-    background-color: #007bff; /* Change this to match your site's color scheme */
-    color: #fff;
-    margin-left: 40px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-left:px;
 }
 
-.navbar .btn-primary.text-white:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
-    color: #fff;
+.custom-btn:hover {
+    background-color: #0056b3; /* Darker shade of primary color on hover */
 }
 
-/* Responsive adjustments */
-@media (max-width: 991.98px) {
-    .navbar ul {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-    .navbar ul li {
-        width: 35%;
-        text-align: left;
-        padding: 10px 0;
-    }
-    .navbar ul li a {
-        width: 100%;
-    }
-    .navbar .btn.nav-link.btn-primary.text-white {
-        width: 100%;
-        text-align: center;
-        margin: 10px 0;
-    }
-    .mobile-nav-toggle {
-        display: block;
-    }
-}
-
-@media (min-width: 992px) {
-    .mobile-nav-toggle {
-        display: none;
-    }
-}
 
 
 /* jobs page */
@@ -330,4 +303,3 @@ a {
 
 
 /* blog page */
-
