@@ -2,7 +2,7 @@
 
 @section('content')
 <style>
-   
+
 
 </style>
 
@@ -26,11 +26,11 @@
             <div class="col-md-6 mb-4">
                 <div class="card">
                     <img class="card-img-top img-responsive max-width-100" src="{{ asset('uploads/blogs/' . $post->image) }}" alt="{{ $post->title }}">
-                    <div class="card-block">
-                        <p class="card-text"><small class="text-muted blog-category">{{ $post->category }}</small></p>
-                        <h4 class="card-title">{{ $post->title }}</h4>
-                        <p class="card-text"><small class="text-muted italic">{{ $post->date }}</small></p>
-                        <p class="card-text">{{ $post->excerpt }}</p>
+                    <div class="card-blocks">
+                        <p class="card-texts"><small class="text-muted blog-category">{{ $post->category }}</small></p>
+                        <h4 class="card-titles">{{ $post->title }}</h4>
+                        <p class="card-texts"><small class="text-muted italic">{{ $post->date }}</small></p>
+                        <p class="card-texts">{{ $post->excerpt }}</p>
                         <a href="{{ route('blog.show', ['slug' => $post->slug]) }}" class="btn btn-link">read more <span><i class="ion-ios-arrow-thin-right"></i></span></a>
                     </div>
                 </div>
