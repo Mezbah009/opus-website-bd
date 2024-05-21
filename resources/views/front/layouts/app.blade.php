@@ -114,7 +114,7 @@
                             href="{{ route('front.contact') }}">Contact</a></li>
 
                             <!-- New Request Demo Button -->
-                <li><a class="nav-link btns btns-primary text-white" href="{{ route('front.demo') }}">Request Demo</a></li>
+                <li><a class="nav-link btn btn-primary text-white" href="{{ route('front.demo') }}">Request Demo</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

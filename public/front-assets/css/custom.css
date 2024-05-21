@@ -257,14 +257,14 @@
 
 /* navbar request demo button */
 
-.navbar .btns {
+.navbar .btn {
     padding: 8px 20px;
     border-radius: 4px;
     background-color: #007bff; /* Change this to match your site's color scheme */
     color: #fff;
     margin-left: 40px;
 }
-.navbar .btns:hover {
+.navbar .btn:hover {
     background-color: #0056b3; /* Darker shade for hover effect */
     color: #fff;
 }
@@ -283,7 +283,7 @@
     .navbar ul li a {
         width: 100%;
     }
-    .navbar .btns {
+    .navbar .btn {
         width: 100%;
         text-align: center;
         margin: 10px 0;
@@ -297,3 +297,131 @@
         display: none;
     }
 }
+
+
+/* jobs page */
+
+.shadow {
+    box-shadow: 0 0 3px rgb(53 64 78 / 20%) !important;
+}
+
+.rounded {
+    border-radius: 5px !important;
+}
+
+.bg-light {
+    background-color: #f7f8fa !important;
+}
+
+/* .bg-primary, */
+.badge-primary,
+.nav-pills .nav-link.active,
+.pagination .active a,
+.custom-control-input:checked~.custom-control-label:before,
+::selection,
+.social-icon li a:hover,
+.watch-video a .play-icon-circle,
+.sidebar .widget .tagcloud>a:hover,
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover,
+.tns-nav button.tns-nav-active,
+
+
+.badge {
+    padding: 5px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+    box-shadow: 0 3px 7px rgba(155, 201, 255, 0.5) !important;
+}
+
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.bg-soft-primary .border,
+.alert-primary,
+.alert-outline-primary,
+.badge-outline-primary,
+.nav-pills .nav-link.active,
+.pagination .active a,
+.form-group .form-control:focus,
+.form-group .form-control.active,
+.custom-control-input:checked~.custom-control-label:before,
+.custom-control-input:focus~.custom-control-label::before,
+.form-control:focus,
+.social-icon li a:hover,
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover,
+.form-check-input:focus,
+.form-check-input.form-check-input:checked,
+.container-filter li.active,
+.container-filter li:hover {
+    border-color: #5AB2FF !important;
+}
+
+.btn {
+    padding: 8px 20px;
+    outline: none;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    font-weight: 600;
+    border-radius: 5px;
+}
+/*
+.btn-primary {
+    background-color: #064780 !important;
+    border: 1px solid #5AB2FF !important;
+    color: #fff !important;
+    box-shadow: 0 3px 7px rgba(155, 201, 255, 0.5);
+} */
+
+a {
+    text-decoration: none;
+}
+
+
+/* blog page */
+
+.card {
+    box-shadow: 0px 4px 15px 0px rgba(191, 195, 198, 0.29);
+}
+
+.card-title {
+    color: #5a5a5a;
+    text-transform: none; /* Changed 'initial' to 'none' for clarity */
+}
+
+.card-block {
+    padding: 4rem;
+}
+
+.blog-category {
+    background-color: #5295CE;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.btn-link {
+    padding: 0;
+    box-shadow: none;
+}
+
