@@ -75,9 +75,12 @@
                 <i class="bi bi-phone-fill phone-icon"></i> +88-01811317129
             </div>
             <div class="social-links d-none d-md-block">
-                <a href="https://www.facebook.com/opustechnologylimited/" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.linkedin.com/company/opus-technology-limited/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-                <a href="https://www.youtube.com/@opustechnologylimited" class="youtube"><i class="bi bi-youtube"></i></a>
+                <a href="https://www.facebook.com/opustechnologylimited/" class="facebook"><i
+                        class="bi bi-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/opus-technology-limited/" class="linkedin"><i
+                        class="bi bi-linkedin"></i></i></a>
+                <a href="https://www.youtube.com/@opustechnologylimited" class="youtube"><i
+                        class="bi bi-youtube"></i></a>
             </div>
         </div>
     </section>
@@ -108,15 +111,17 @@
                             href="{{ route('front.services') }}">Services</a></li>
                     <li><a class="nav-link scrollto {{ Request::is('blogs') ? 'active' : '' }}"
                             href="{{ route('front.blog') }}">Blogs</a></li>
-                    <li><a class="nav-link scrollto {{ Request::is('jobs') ? 'active' : '' }}"  href="{{ route('front.jobs') }}">Jobs</a>
+                    <li><a class="nav-link scrollto {{ Request::is('jobs') ? 'active' : '' }}"
+                            href="{{ route('front.jobs') }}">Jobs</a>
                     </li>
                     <li><a class="nav-link scrollto {{ Request::is('contact-us') ? 'active' : '' }}"
                             href="{{ route('front.contact') }}">Contact</a></li>
 
-                            <!-- New Request Demo Button -->
-                            <li>
-                                <a class="nav-link btn btn-primary text-white custom-text-white" href="{{ route('front.demo') }}">Request Demo</a>
-                            </li>
+                    <!-- New Request Demo Button -->
+                    <li>
+                        <a class="nav-link btn btn-primary text-whites custom-text-white"
+                            href="{{ route('front.demo') }}">Request Demo</a>
+                    </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -153,9 +158,11 @@
                                 <div class="social-links mt-3">
                                     <a href="{{ $contact->website }}" class="website"><i
                                             class="bx bxl-internet-explorer"></i></a>
-                                    <a href="{{ $contact->facebook }}" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="{{ $contact->facebook }}" class="facebook"><i
+                                            class="bx bxl-facebook"></i></a>
                                     <a href="{{ $contact->youtube }}" class="youtube"><i class="bx bxl-youtube"></i></a>
-                                    <a href="{{ $contact->linkedIn }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                    <a href="{{ $contact->linkedIn }}" class="linkedin"><i
+                                            class="bx bxl-linkedin"></i></a>
                                 </div>
                             </div>
 

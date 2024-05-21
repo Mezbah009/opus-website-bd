@@ -257,13 +257,8 @@
 
 /* navbar request demo button */
 
-.custom-text-white {
-    /* Uncomment the following line if needed for Bootstrap 5 */
-    /* --bs-text-opacity: 1; */
-    color: rgba(255, 255, 255, var(--bs-text-opacity, 1)) !important;
-}
 
-.navbar .btn.nav-link.btn-primary.text-white {
+.navbar .btn.nav-link.btn-primary.text-whites {
     padding: 8px 20px;
     border-radius: 4px;
     background-color: #007bff; /* Change this to match your site's color scheme */
@@ -271,7 +266,7 @@
     margin-left: 40px;
 }
 
-.navbar .btn.nav-link.btn-primary.text-white:hover {
+.navbar .btn.nav-link.btn-primary.text-whites:hover {
     background-color: #0056b3; /* Darker shade for hover effect */
     color: #fff;
 }
