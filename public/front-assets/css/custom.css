@@ -331,28 +331,129 @@ a {
 
 /* blog page */
 
-.cards {
-    box-shadow: 0px 4px 15px 0px rgba(191, 195, 198, 0.29);
+
+#blog-card {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    background-color: #f8f9fa; /* Light background for contrast */
 }
 
-.card-titles {
-    color: #5a5a5a;
-    text-transform: initial;
+#blog-card .heading-wraper {
+    margin-bottom: 80px;
 }
 
-.card-blocks {
-    padding: 50px;
-}
-
-.blog-category {
-    background-color: #5295CE;
-    color: #fff;
-    font-size: 12px;
+#blog-card .heading-wraper h4 {
+    font-size: 2em;
     font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 20px;
-    display: inline-block;
+    color: #333;
+    text-transform: uppercase;
+}
+
+#blog-card .heading-devider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Example gradient color */
+    margin: 0 auto;
+}
+
+#blog-card .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#blog-card .col-md-6 {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 24px; /* Adjust space between cards */
+}
+
+#blog-card .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#blog-card .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#blog-card .card-img-top {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    object-fit: cover; /* Ensures the image covers the card area */
+}
+
+#blog-card .card-block {
+    flex: 1; /* Ensures this block takes up the remaining space */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#blog-card .card-text.blog-category {
+    font-size: 0.875em;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
+#blog-card .card-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
 
+#blog-card .card-text.italic {
+    font-style: italic;
+    color: #999;
+}
+
+#blog-card .card-text {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#blog-card .btn.btn-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    align-self: flex-start; /* Aligns the button to the start of the flex container */
+}
+
+#blog-card .btn.btn-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+#blog-card .btn.btn-link span i {
+    margin-left: 5px;
+    font-size: 1.2em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    #blog-card .heading-wraper h4 {
+        font-size: 1.5em;
+    }
+
+    #blog-card .card-title {
+        font-size: 1.25em;
+    }
+
+    #blog-card .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
