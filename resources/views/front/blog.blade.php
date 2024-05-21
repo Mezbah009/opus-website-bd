@@ -2,45 +2,7 @@
 
 @section('content')
 <style>
-    .card {
-    box-shadow: 0px 4px 15px 0px rgba(191, 195, 198, 0.29);
-}
-
-.card-title {
-    color: #5a5a5a;
-    text-transform: initial;
-}
-
-.card-block {
-    padding: 4rem;
-}
-
-.blog-category {
-    background-color: #5295CE;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-/* .btn {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.707em;
-    text-transform: uppercase;
-    font-weight: 600;
-    box-shadow: 0px 4px 10px 0px rgba(91, 91, 91, 0.45);
-    line-height: 1;
-    transition: all .5s ease;
-    letter-spacing: 1px;
-}
-
-.btn-link {
-    padding: 0;
-    box-shadow: none;
-} */
+   
 
 </style>
 
