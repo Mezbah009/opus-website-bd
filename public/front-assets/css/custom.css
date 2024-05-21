@@ -298,7 +298,6 @@
     }
 }
 
-
 /* jobs page */
 
 .shadow {
@@ -313,19 +312,6 @@
     background-color: #f7f8fa !important;
 }
 
-/* .bg-primary, */
-.badge-primary,
-.nav-pills .nav-link.active,
-.pagination .active a,
-.custom-control-input:checked~.custom-control-label:before,
-::selection,
-.social-icon li a:hover,
-.watch-video a .play-icon-circle,
-.sidebar .widget .tagcloud>a:hover,
-.flatpickr-day.selected,
-.flatpickr-day.selected:hover,
-.tns-nav button.tns-nav-active,
-
 
 .badge {
     padding: 5px 8px;
@@ -333,61 +319,6 @@
     letter-spacing: 0.5px;
     font-size: 12px;
 }
-
-.btn-outline-primary:hover,
-.btn-outline-primary:focus,
-.btn-outline-primary:active,
-.btn-outline-primary.active,
-.btn-outline-primary.focus,
-.btn-outline-primary:not(:disabled):not(.disabled):active {
-    box-shadow: 0 3px 7px rgba(155, 201, 255, 0.5) !important;
-}
-
-.btn-outline-primary,
-.btn-outline-primary:hover,
-.btn-outline-primary:focus,
-.btn-outline-primary:active,
-.btn-outline-primary.active,
-.btn-outline-primary.focus,
-.btn-outline-primary:not(:disabled):not(.disabled):active,
-.bg-soft-primary .border,
-.alert-primary,
-.alert-outline-primary,
-.badge-outline-primary,
-.nav-pills .nav-link.active,
-.pagination .active a,
-.form-group .form-control:focus,
-.form-group .form-control.active,
-.custom-control-input:checked~.custom-control-label:before,
-.custom-control-input:focus~.custom-control-label::before,
-.form-control:focus,
-.social-icon li a:hover,
-.flatpickr-day.selected,
-.flatpickr-day.selected:hover,
-.form-check-input:focus,
-.form-check-input.form-check-input:checked,
-.container-filter li.active,
-.container-filter li:hover {
-    border-color: #5AB2FF !important;
-}
-
-.btn {
-    padding: 8px 20px;
-    outline: none;
-    text-decoration: none;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    transition: all 0.3s;
-    font-weight: 600;
-    border-radius: 5px;
-}
-/*
-.btn-primary {
-    background-color: #064780 !important;
-    border: 1px solid #5AB2FF !important;
-    color: #fff !important;
-    box-shadow: 0 3px 7px rgba(155, 201, 255, 0.5);
-} */
 
 a {
     text-decoration: none;

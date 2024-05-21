@@ -34,7 +34,7 @@
     <div class="container">
         <h2>{{$job->designation}}</h2>
         <button onclick="window.location.href= '' "
-            style="background-color: #76ABD8; color: #FFFFFF; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Apply
+            style="background-color: #0d6efd; color: #FFFFFF; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Apply
             Now</button>
     </div>
 
@@ -51,7 +51,7 @@
         <h6>+8801715437373 (HR Department)</h6>
         <h6>hr@opus-bd.com</h6>
         <button onclick="window.location.href='' "
-            style="background-color: #76ABD8; color: #FFFFFF; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Apply
+            style="background-color: #0d6efd; color: #FFFFFF; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Apply
             Now</button>
     </div>
 
