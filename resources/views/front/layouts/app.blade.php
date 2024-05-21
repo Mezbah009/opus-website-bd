@@ -119,7 +119,7 @@
 
                     <!-- New Request Demo Button -->
                     <li>
-                        <a class="nav-link btn btn-primary text-whites custom-text-white"
+                        <a class="nav-link btns btns-primary text-whites custom-text-white"
                             href="{{ route('front.demo') }}">Request Demo</a>
                     </li>
                 </ul>

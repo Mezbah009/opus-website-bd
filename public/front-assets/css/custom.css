@@ -258,7 +258,7 @@
 /* navbar request demo button */
 
 
-.navbar .btn.nav-link.btn-primary.text-whites {
+.navbar .btns.nav-link.btns-primary.text-whites {
     padding: 8px 20px;
     border-radius: 4px;
     background-color: #007bff; /* Change this to match your site's color scheme */
@@ -266,7 +266,7 @@
     margin-left: 40px;
 }
 
-.navbar .btn.nav-link.btn-primary.text-whites:hover {
+.navbar .btns.nav-link.btns-primary.text-whites:hover {
     background-color: #0056b3; /* Darker shade for hover effect */
     color: #fff;
 }
