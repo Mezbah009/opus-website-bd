@@ -118,10 +118,8 @@
                             href="{{ route('front.contact') }}">Contact</a></li>
                     <!-- New Request Demo Button -->
                     <li>
-                        <a href="{{ route('front.demo') }}" class="custom-btn text-white">Request Demo</a>
+                        <a href="{{ route('front.demo') }}">Request Demo</a>
                     </li>
-
-
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
