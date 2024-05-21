@@ -23,7 +23,7 @@
         <div class="row">
             @foreach ($blogPosts as $post)
             <div class="col-md-6 mb-4">
-                <div class="card">
+                <div class="card" style="padding:40px">
                     <img class="card-img-top img-responsive max-width-100" src="{{ asset('uploads/blogs/' . $post->image) }}" alt="{{ $post->title }}">
                     <div class="card-block">
                         <p class="card-text"><small class="text-muted blog-category">{{ $post->category }}</small></p>
