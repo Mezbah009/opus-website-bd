@@ -257,7 +257,7 @@
 
 /* navbar request demo button */
 
-.navbar .btn-primarys.text-whites {
+.navbar .btn-primary.text-whites {
     padding: 8px 20px;
     border-radius: 4px;
     background-color: #007bff; /* Change this to match your site's color scheme */
@@ -265,7 +265,7 @@
     margin-left: 40px;
 }
 
-.navbar .btn-primarys.text-whites:hover {
+.navbar .btn-primary.text-whites:hover {
     background-color: #0056b3; /* Darker shade for hover effect */
     color: #fff;
 }
@@ -289,7 +289,7 @@
     .navbar ul li a {
         width: 100%;
     }
-    .navbar .btn.nav-link.btn-primarys.text-white {
+    .navbar .btn.nav-link.btn-primary.text-white {
         width: 100%;
         text-align: center;
         margin: 10px 0;

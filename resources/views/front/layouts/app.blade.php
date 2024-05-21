@@ -119,7 +119,7 @@
 
                     <!-- New Request Demo Button -->
                     <li>
-                        <a class="btn-primarys text-whites " href="{{ route('front.demo') }}">Request Demo</a>
+                        <a class="btn-primary text-whites " href="{{ route('front.demo') }}">Request Demo</a>
                     </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
