@@ -116,9 +116,10 @@
                     </li>
                     <li><a class="nav-link scrollto {{ Request::is('contact-us') ? 'active' : '' }}"
                             href="{{ route('front.contact') }}">Contact</a></li>
+
                     <!-- New Request Demo Button -->
                     <li>
-                        <a href="{{ route('front.demo') }}">Request Demo</a>
+                        <a class="btn-primarys text-whites " href="{{ route('front.demo') }}">Request Demo</a>
                     </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
