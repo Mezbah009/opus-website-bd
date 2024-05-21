@@ -337,7 +337,7 @@ a {
 
 .card-title {
     color: #5a5a5a;
-    text-transform: none; /* Changed 'initial' to 'none' for clarity */
+    text-transform: initial;
 }
 
 .card-block {
@@ -354,9 +354,21 @@ a {
     display: inline-block;
     margin-bottom: 10px;
 }
-/*
+
+/* .btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.707em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 12px 40px;
+    box-shadow: 0px 4px 10px 0px rgba(91, 91, 91, 0.45);
+    line-height: 1;
+    transition: all .5s ease;
+    letter-spacing: 1px;
+} */
+
 .btn-link {
     padding: 0;
     box-shadow: none;
-} */
+}
 
