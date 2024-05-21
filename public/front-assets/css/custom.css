@@ -257,6 +257,12 @@
 
 /* navbar request demo button */
 
+.custom-text-white {
+    /* Uncomment the following line if needed for Bootstrap 5 */
+    /* --bs-text-opacity: 1; */
+    color: rgba(255, 255, 255, var(--bs-text-opacity, 1)) !important;
+}
+
 .navbar .btn.nav-link.btn-primary.text-white {
     padding: 8px 20px;
     border-radius: 4px;
@@ -354,9 +360,9 @@ a {
     display: inline-block;
     margin-bottom: 10px;
 }
-
+/*
 .btn-link {
     padding: 0;
     box-shadow: none;
-}
+} */
 
