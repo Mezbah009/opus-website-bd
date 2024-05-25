@@ -77,7 +77,7 @@ class ProductController extends Controller
 
                 $extArray = explode('.', $tempImage->name);
                 $ext = last($extArray);
-                $newImageName = uniqid() . '.' . $ext; // Generate a unique filename
+                $newImageName = $section->id . '.' . $ext; // Generate a unique filename
                 $sPath = public_path() . '/temp/' . $tempImage->name;
                 $dPath = public_path() . '/uploads/first_section/' . $newImageName;
 
@@ -131,7 +131,7 @@ class ProductController extends Controller
 
                 $extArray = explode('.', $tempImage->name);
                 $ext = last($extArray);
-                $newImageName = $product->id . '.' . $ext;
+                $newImageName = $product->id.'-'.time().'.'.$ext;
                 $sPath = public_path() . '/temp/' . $tempImage->name;
                 $dPath = public_path() . '/uploads/first_section/' . $newImageName;
 
