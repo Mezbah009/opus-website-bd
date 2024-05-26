@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/") }}');">
+<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/product.jpg") }}');">
     <h2>Our Products</h2>
     <div class="line">
         <div></div>
