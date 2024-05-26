@@ -1,8 +1,6 @@
 .contact-bg {
     position: relative; /* Ensure proper positioning for the overlay */
     height: 40vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.253)),
-        url('{{ asset("front-assets/img/contact-bg.jpg") }}');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover; /* Ensure the background covers the entire element */
