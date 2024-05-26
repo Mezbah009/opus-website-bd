@@ -1,6 +1,6 @@
 .contact-bg {
     position: relative; /* Ensure proper positioning for the overlay */
-    height: 40vh;
+    height: 50vh;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover; /* Ensure the background covers the entire element */
