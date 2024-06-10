@@ -332,3 +332,70 @@ a {
 
 
 /* blog page */
+
+/* footer */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+footer {
+    background-color: #4A4A4A;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.certification,
+.services,
+.company,
+.quick-connect {
+    flex: 1;
+    margin: 10px;
+}
+
+.certification img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.certification p {
+    margin: 10px 0;
+}
+
+.quote-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #4A4A4A;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+h3 {
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+

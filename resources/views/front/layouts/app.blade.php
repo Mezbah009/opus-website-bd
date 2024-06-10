@@ -150,11 +150,11 @@
                             <div class="info-box">
                                 <img src="{{ asset('uploads/first_section/' . $contact->image) }}" alt="Contact Image"
                                     width="150px">
-                                <h3>{{ $contact->country_name }}</h3>
-                                <h5>{{ $contact->company_name }}</h5>
-                                <h6>{{ $contact->office_name }}</h6>
+                                {{-- <h3>{{ $contact->country_name }}</h3> --}}
+                                {{-- <h5>{{ $contact->company_name }}</h5> --}}
+                                <h3>{{ $contact->office_name }}</h3>
                                 <p>{{ $contact->address }}</p>
-                                <div class="social-links mt-3">
+                                {{-- <div class="social-links mt-3">
                                     <a href="{{ $contact->website }}" class="website"><i
                                             class="bx bxl-internet-explorer"></i></a>
                                     <a href="{{ $contact->facebook }}" class="facebook"><i
@@ -162,7 +162,7 @@
                                     <a href="{{ $contact->youtube }}" class="youtube"><i class="bx bxl-youtube"></i></a>
                                     <a href="{{ $contact->linkedIn }}" class="linkedin"><i
                                             class="bx bxl-linkedin"></i></a>
-                                </div>
+                                </div> --}}
                             </div>
 
                         </div>
@@ -172,7 +172,7 @@
                 </div>
                 <br>
                 <br>
-                <div style="text-align: center">
+                {{-- <div style="text-align: center">
                     @if(isset(footer()['numbers']) && footer()['numbers']->isNotEmpty())
                     @foreach(footer()['numbers'] as $number)
                     <p>{{ $number->phone }}</p>
@@ -183,7 +183,7 @@
                     @endif
 
 
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="container">
@@ -193,6 +193,56 @@
             </div>
         </div>
     </footer><!-- End Footer -->
+
+    {{-- 2nd footer --}}
+
+    {{-- <footer>
+        <div class="footer-container">
+            <div class="certification">
+                <img src="path-to-iso-image.png" alt="ISO 9001:2015 Certified">
+                <p>Make a deal with an ISO 9001:2015 Certified Company</p>
+                <p>Kolpolok Limited is a full-service custom mobile app development company in Bangladesh. We are a team of professional developers, designers and digital strategists. DBID NO: 8 6 8 7 7 8 8 2 5</p>
+                <button class="quote-button">Get a Quote</button>
+            </div>
+            <div class="services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li>VPN App Development</li>
+                    <li>Mobile Applications</li>
+                    <li>Web Applications</li>
+                    <li>Desktop Applications</li>
+                    <li>White Label VPN</li>
+                    <li>Kolpolok Technologies</li>
+                </ul>
+            </div>
+            <div class="company">
+                <h3>Company</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>Services</li>
+                    <li>About Us</li>
+                    <li>Our Team</li>
+                    <li>Career</li>
+                    <li>Testimonial</li>
+                    <li>FAQ</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Condition</li>
+                    <li>Contact Us</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div class="quick-connect">
+                <h3>Quick Connect</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>LinkedIn</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+    </footer> --}}
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
