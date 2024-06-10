@@ -142,7 +142,6 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-
                     <div class="row" style="text-align: center">
                         @if(isset(footer()['contacts']) && footer()['contacts']->isNotEmpty())
                         @foreach(footer()['contacts'] as $contact)
@@ -186,63 +185,55 @@
                 </div> --}}
             </div>
         </div>
+    </footer><!-- End Footer -->
+
+    {{-- 2nd footer --}}
+
+    <footer class="bg-dark text-white pt-4" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex">
+                    <img src="{{ asset('front-assets/img/9001.png')}}" alt="ISO 9001:2015 Certified" class="img-fluid mb-3" style="max-width: 170px; margin-right: 20px;">
+                    <div>
+                        <p>Make a deal with an ISO 9001:2015 Certified Company</p>
+                        <p>ISO 9001 : 2015 is the international standard that specifies requirements for Quality Management System (QMS). Opus Technology Limited is an ISO 9001 : 2015 certified company, ensuring high quality and standards in our services.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5>Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Mobile Applications</a></li>
+                        <li><a href="#" class="text-white">Web Applications</a></li>
+                        <li><a href="#" class="text-white">Desktop Applications</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Importace Link</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">Services</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
         <div class="container">
             <div class="copyright">
                 &copy; Copyright <strong><span>Opus</span></strong>. All Rights Reserved
                 Designed by <a href="https://opus-bd.com/">Opus Technology Limited</a>
             </div>
         </div>
-    </footer><!-- End Footer -->
+    </footer>
 
-    {{-- 2nd footer --}}
+    {{--  --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    {{-- <footer>
-        <div class="footer-container">
-            <div class="certification">
-                <img src="path-to-iso-image.png" alt="ISO 9001:2015 Certified">
-                <p>Make a deal with an ISO 9001:2015 Certified Company</p>
-                <p>Kolpolok Limited is a full-service custom mobile app development company in Bangladesh. We are a team of professional developers, designers and digital strategists. DBID NO: 8 6 8 7 7 8 8 2 5</p>
-                <button class="quote-button">Get a Quote</button>
-            </div>
-            <div class="services">
-                <h3>Our Services</h3>
-                <ul>
-                    <li>VPN App Development</li>
-                    <li>Mobile Applications</li>
-                    <li>Web Applications</li>
-                    <li>Desktop Applications</li>
-                    <li>White Label VPN</li>
-                    <li>Kolpolok Technologies</li>
-                </ul>
-            </div>
-            <div class="company">
-                <h3>Company</h3>
-                <ul>
-                    <li>Home</li>
-                    <li>Services</li>
-                    <li>About Us</li>
-                    <li>Our Team</li>
-                    <li>Career</li>
-                    <li>Testimonial</li>
-                    <li>FAQ</li>
-                    <li>Privacy Policy</li>
-                    <li>Terms & Condition</li>
-                    <li>Contact Us</li>
-                    <li>Blog</li>
-                </ul>
-            </div>
-            <div class="quick-connect">
-                <h3>Quick Connect</h3>
-                <ul>
-                    <li>Facebook</li>
-                    <li>Twitter</li>
-                    <li>LinkedIn</li>
-                    <li>Instagram</li>
-                    <li>Youtube</li>
-                </ul>
-            </div>
-        </div>
-    </footer> --}}
+    {{--  --}}
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>

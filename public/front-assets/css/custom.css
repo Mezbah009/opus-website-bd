@@ -339,53 +339,12 @@ body {
     font-family: Arial, sans-serif;
 }
 
-footer {
-    background-color: #4A4A4A;
-    color: white;
-    padding: 40px 0;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.certification,
-.services,
-.company,
-.quick-connect {
-    flex: 1;
-    margin: 10px;
-}
-
-.certification img {
-    width: 100px;
-    margin-bottom: 20px;
-}
-
 .certification p {
     margin: 10px 0;
 }
 
-.quote-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #4A4A4A;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin-top: 20px;
-}
-
-h3 {
-    border-bottom: 2px solid white;
+h5 {
+    /* border-bottom: 2px solid white; */
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -399,3 +358,29 @@ ul li {
     margin: 10px 0;
 }
 
+a.text-white {
+    text-decoration: none;
+}
+
+a.text-white:hover {
+    text-decoration: underline;
+}
+
+/* .btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #4A4A4A;
+} */
+
+/* .img-fluid{
+    max-width: 15%;
+    height: auto;
+} */
+.copyright{
+    text-align: center;
+    padding: 20px;
+}
