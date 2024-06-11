@@ -31,6 +31,8 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('front-assets/css/style.css')}}" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
 
 
     {{-- others CSS--}}
@@ -52,6 +54,7 @@
     {{--
     <link href="{{ asset('front-assets/others/css/style.css')}}" rel="stylesheet"> --}}
     <link href="{{ asset('front-assets/others/css/responsive.css')}}" rel="stylesheet">
+
 
 
     <!-- =======================================================
@@ -190,33 +193,81 @@
     {{-- 2nd footer --}}
 
     <footer class="bg-dark text-white pt-4" id="footer">
-        <div class="container">
+        <div class="container" style="padding-top: 30px">
             <div class="row">
                 <div class="col-md-6 d-flex">
-                    <img src="{{ asset('front-assets/img/9001.png')}}" alt="ISO 9001:2015 Certified" class="img-fluid mb-3" style="max-width: 170px; margin-right: 20px;">
-                    <div>
-                        <p>Make a deal with an ISO 9001:2015 Certified Company</p>
-                        <p>ISO 9001 : 2015 is the international standard that specifies requirements for Quality Management System (QMS). Opus Technology Limited is an ISO 9001 : 2015 certified company, ensuring high quality and standards in our services.</p>
+
+                    <div class="col-12">
+                        <div class="row" style="padding: 0% 10% 0% 0%">
+                            <div class="d-flex" style="margin-bottom: 20px;">
+
+                                <img src="{{ asset('front-assets/img/9001.png')}}" alt="ISO 9001:2015 Certified"
+                                    class="img-fluid" style="width: 25%;height: auto; margin-right: 10px;">
+
+                                <div style="text-align: justify">
+                                    <p>Make a deal with an ISO 9001:2015 Certified Company</p>
+                                    <p>ISO 9001 : 2015 is the international standard that specifies requirements for
+                                        Quality
+                                        Management System (QMS). Opus Technology Limited is an ISO 9001 : 2015 certified
+                                        company,
+                                        ensuring high quality and standards in our services.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <img src="{{ asset('front-assets/img/27001.png')}}" alt="ISO 9001:2015 Certified"
+                                    class="img-fluid" style="width: 25%;height: auto; margin-right: 10px;">
+                                <div style="text-align: justify">
+                                    <p>Make a deal with an ISO 27001:2022 Certified Company</p>
+                                    <p>Being Certified indicates that an organization has implemented an information
+                                        security
+                                        management system (ISMS) in accordance with the requirements specified in the
+                                        2022
+                                        version
+                                        of the ISO 27001 standard.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <h5>Our Services</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Mobile Applications</a></li>
-                        <li><a href="#" class="text-white">Web Applications</a></li>
-                        <li><a href="#" class="text-white">Desktop Applications</a></li>
-                    </ul>
                 </div>
                 <div class="col-md-3">
                     <h5>Importace Link</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Home</a></li>
-                        <li><a href="#" class="text-white">Services</a></li>
-                        <li><a href="#" class="text-white">About Us</a></li>
-                        <li><a href="#" class="text-white">Contact Us</a></li>
-                        <li><a href="#" class="text-white">Blog</a></li>
+                        <li><a href="{{ route('front.home') }}" class="text-white">Home</a></li>
+                        <li><a href="{{ route('front.about') }}" class="text-white">About</a></li>
+                        <li><a href="{{ route('front.products') }}" class="text-white">Product</a></li>
+                        <li><a href="{{ route('front.fintech') }}" class="text-white">Fintech</a></li>
+                        <li><a href="{{ route('front.clients') }}" class="text-white">Clients</a></li>
+                        <li><a href="{{ route('front.clients') }}" class="text-white">Clients</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Services</a></li>
+                        <li><a href="{{ route('front.blog') }}" class="text-white">Blogs</a></li>
+                        <li><a href="{{ route('front.jobs') }}" class="text-white">Jobs</a></li>
+                        <li><a href="{{ route('front.contact') }}" class="text-white">Contact</a></li>
+
                     </ul>
                 </div>
+                <div class="col-md-3">
+                    <h5>Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('front.services') }}" class="text-white">Custom Software Development</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Mobile Application Development</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Web Application Development</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Business Intelligence</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Artificial Intelligence (AI)</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Blockchain</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Re-engineering & Migration</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Digital Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div class="social-links" style="text-align: center; padding:10px; font-size: 30px; color:#ffffff">
+                    {{-- <a href="{{ $contact->website }}" class="website"><i class="bx bxl-internet-explorer"></i></a>
+                    --}}
+                    <a href="{{ $contact->facebook }}" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="{{ $contact->youtube }}" class="youtube"><i class="bx bxl-youtube"></i></a>
+                    <a href="{{ $contact->linkedIn }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+
+
 
             </div>
         </div>
@@ -229,11 +280,11 @@
         </div>
     </footer>
 
-    {{--  --}}
+    {{-- --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    {{--  --}}
+    {{-- --}}
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>

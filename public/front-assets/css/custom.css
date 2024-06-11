@@ -207,7 +207,7 @@
 .card_manage .read-more a {
     text-decoration: none;
     color: #ffffff;
-    background-color: #76ABD8; /* Change background color to #76ABD8 */
+    background-color: #76abd8; /* Change background color to #76ABD8 */
     padding: 10px 20px;
     border-radius: 4px;
     margin-right: 10px;
@@ -237,7 +237,6 @@
     font-size: 20px;
 }
 
-
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
     .card_manage .social-icons {
@@ -251,7 +250,6 @@
         width: 100%; /* Full width on smaller screens */
     }
 }
-
 
 /* navbar request demo button */
 
@@ -303,7 +301,6 @@
     }
 }
 
-
 /* jobs page */
 
 .shadow {
@@ -318,7 +315,6 @@
     background-color: #f7f8fa !important;
 }
 
-
 .badge {
     padding: 5px 8px;
     border-radius: 3px;
@@ -329,7 +325,6 @@
 a {
     text-decoration: none;
 }
-
 
 /* blog page */
 
@@ -355,7 +350,7 @@ ul {
 }
 
 ul li {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 a.text-white {
@@ -376,11 +371,30 @@ a.text-white:hover {
     color: #4A4A4A;
 } */
 
-/* .img-fluid{
-    max-width: 15%;
+/* .img-fluid {
+    max-width: 40%;
     height: auto;
 } */
-.copyright{
+.copyright {
     text-align: center;
     padding: 20px;
+}
+
+.col-md-6.d-flex {
+    display: flex;
+    align-items: center; /* Vertically center items */
+}
+
+.col-md-6.d-flex > div {
+    margin-left: 10px; /* Adjust margin as needed */
+}
+
+
+.col-md-3 ul li a::before {
+    position: relative;
+    content: "\f105";
+    font-family: "font awesome 5 free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: #9b9b9b;
 }
