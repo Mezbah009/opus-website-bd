@@ -205,8 +205,8 @@
                                     class="img-fluid" style="width: 150px;height: 150px; margin-right: 10px;">
 
                                 <div style="text-align: justify">
-                                    <p>Make a deal with an ISO 9001:2015 Certified Company</p>
-                                    <p>ISO 9001 : 2015 is the international standard that specifies requirements for
+
+                                    <p>Make a deal with an ISO 9001:2015 Certified Company.ISO 9001 : 2015 is the international standard that specifies requirements for
                                         Quality
                                         Management System (QMS). Opus Technology Limited is an ISO 9001 : 2015 certified
                                         company,
@@ -218,7 +218,7 @@
                                     class="img-fluid" style="width: 150px;height: 150px; margin-right: 10px;">
                                 <div style="text-align: justify">
                                     <p>Make a deal with an ISO 27001:2022 Certified Company</p>
-                                    <p>Being Certified indicates that an organization has implemented an information
+                                    <p>Make a deal with an ISO 27001:2022 Certified Company Being Certified indicates that an organization has implemented an information
                                         security
                                         management system (ISMS) in accordance with the requirements specified in the
                                         2022
