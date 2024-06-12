@@ -202,7 +202,7 @@
                             <div class="d-flex" style="margin-bottom: 20px;">
 
                                 <img src="{{ asset('front-assets/img/9001.png')}}" alt="ISO 9001:2015 Certified"
-                                    class="img-fluid" style="width: 25%;height: auto; margin-right: 10px;">
+                                    class="img-fluid" style="width: 150px;height: 150px; margin-right: 10px;">
 
                                 <div style="text-align: justify">
                                     <p>Make a deal with an ISO 9001:2015 Certified Company</p>
@@ -215,7 +215,7 @@
                             </div>
                             <div class="d-flex">
                                 <img src="{{ asset('front-assets/img/27001.png')}}" alt="ISO 9001:2015 Certified"
-                                    class="img-fluid" style="width: 25%;height: auto; margin-right: 10px;">
+                                    class="img-fluid" style="width: 150px;height: 150px; margin-right: 10px;">
                                 <div style="text-align: justify">
                                     <p>Make a deal with an ISO 27001:2022 Certified Company</p>
                                     <p>Being Certified indicates that an organization has implemented an information
