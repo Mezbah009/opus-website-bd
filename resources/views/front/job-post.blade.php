@@ -3,7 +3,7 @@
 @section('content')
 
 <style>
-    .container {
+    .designation {
         display: grid;
         grid-template-columns: auto 1fr;
         /* Auto for h2 width, 1fr for button width */
@@ -32,6 +32,7 @@
 <br>
 <section>
     <div class="container">
+        <div class="designation">
         <h2>{{$job->designation}}</h2>
         <button id="jobButton" onclick="window.location.href= '' "
             style="background-color: #0d6efd; color: #FFFFFF; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Apply
@@ -39,6 +40,10 @@
     </div>
 
     <p>{!! $job->description !!}</p>
+
+</div>
+
+
 </section>
 
 <br>

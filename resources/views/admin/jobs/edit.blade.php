@@ -14,7 +14,24 @@
     </div>
 </section>
 
+@section('content')
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid my-2">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Edit Job Post</h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a href="{{ route('jobs.index') }}" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- Main content -->
 <section class="content">
+    <!-- Default box -->
     <form method="POST" action="{{ route('jobs.update', $jobs->id) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
@@ -28,7 +45,9 @@
                                 <label for="designation">Designation</label>
                                 <input type="text" name="designation" id="designation" class="form-control"
                                     placeholder="Designation" value="{{ $jobs->designation }}">
-                                <p class=" error"></p>
+                                @error('designation')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -36,46 +55,58 @@
                                 <label for="slug">Slug</label>
                                 <input type="text" readonly name="slug" id="slug" class="form-control"
                                     placeholder="Slug" value="{{ $jobs->slug }}">
-                                <p class=" error"></p>
+                                @error('slug')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="job_type">Job Type</label>
                                 <input type="text" class="form-control" id="job_type" name="job_type" value="{{ $jobs->job_type }}" required>
-                                <p class=" error"></p>
+                                @error('job_type')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="start_date">Start Date</label>
                                 <input type="date" name="start_date" id="start_date" class="form-control" value="{{ $jobs->start_date }}" required>
+                                @error('start_date')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
-                        <div class=" col-md-4">
-                                <div class="mb-3">
-                                    <label for="end_date">End Date</label>
-                                    <input type="date" name="end_date" id="end_date" class="form-control" value="{{ $jobs->end_date }}" required>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="end_date">End Date</label>
+                                <input type="date" name="end_date" id="end_date" class="form-control" value="{{ $jobs->end_date }}" required>
+                                @error('end_date')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
-                        <div class=" col-md-12">
-                                    <div class="mb-3">
-                                        <label for="description">Description</label>
-                                        <textarea name="description" id="description" cols="30" rows="10"
-                                            class="summernote"
-                                            placeholder="Description">value="{{ $jobs->description }}</textarea>
-                                    </div>
-                                </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="description">Description</label>
+                                <textarea name="description" id="description" cols="30" rows="10"
+                                    class="summernote" placeholder="Description">{{ $jobs->description }}</textarea>
+                                @error('description')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="pb-5 pt-3">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                    <a href="{{ route('jobs.index') }}" class="btn btn-outline-dark ml-3">Cancel</a>
-                </div>
             </div>
+            <div class="pb-5 pt-3">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <a href="{{ route('jobs.index') }}" class="btn btn-outline-dark ml-3">Cancel</a>
+            </div>
+        </div>
     </form>
+    <!-- /.card -->
 </section>
 @endsection
 
@@ -86,7 +117,7 @@
         var element = $(this);
         $("button[type=submit]").prop('disabled', true);
         $.ajax({
-            url: '{{ route("blog.store") }}',
+            url: '{{ route("jobs.store") }}',
             type: 'POST',
             data: element.serializeArray(),
             dataType: 'json',

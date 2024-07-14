@@ -100,7 +100,7 @@
 @section('customJs')
 <script>
     function destroySection(id){
-            var url = '{{ route("blog.delete", "ID") }}';
+            var url = '{{ route("jobs.delete", "ID") }}';
 
             var newUrl  = url.replace("ID",id)
             if (confirm("Are you sure you want to delete")) {
@@ -116,7 +116,7 @@
                         // Handle success response here
                         $("button[type=submit]").prop('disabled', false);
                         if (response["status"]) {
-                            window.location.href = "{{route('blog.index')}}";
+                            window.location.href = "{{route('jobs.index')}}";
                         } else {
                             // Handle other cases if needed
                         }

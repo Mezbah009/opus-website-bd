@@ -25,82 +25,92 @@ class JobController extends Controller
     }
 
     public function store(Request $request)
-    {
-        // dd($request->all());
+{
+    // Validate the request data
+    $validator = Validator::make($request->all(), [
+        'designation' => 'required|string',
+        'slug' => 'required|string|unique:jobs,slug',
+        'job_type' => 'required|string',
+        'start_date' => 'required|date',
+        'end_date' => 'required|date',
+        'description' => 'nullable|string',
+    ]);
 
-        // Validate the request data
-        $validator = Validator::make($request->all(), [
-            'designation' => 'required|string',
-            'slug' => 'required|string|unique:jobs,slug',
-            'job_type' => 'required|string',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date',
-            'description' => 'nullable',
-        ]);
-
-        if ($validator->passes()) {
-            $jobPost = new Job();
-
-            $jobPost->designation = $request->designation;
-            $jobPost->slug = $request->slug;
-            $jobPost->job_type = $request->job_type;
-            $jobPost->start_date = $request->start_date;
-            $jobPost->end_date = $request->end_date;
-            $jobPost->description = $request->description;
-
-            // dd($blogPost);
-            $jobPost->save();
-
-            return redirect()->route('jobs.index')->with('success', 'Job added successfully');
-        } else {
+    if ($validator->fails()) {
+        if ($request->ajax()) {
             return response()->json([
                 'status' => false,
                 'errors' => $validator->errors()
             ]);
         }
+
+        return redirect()->back()
+            ->withErrors($validator)
+            ->withInput();
     }
 
-    public function edit($id)
-    {
-        $jobs = Job::findOrFail($id);
-        return view('admin.jobs.edit', compact('jobs'));
-    }
+    // Create a new job post
+    $jobPost = new Job();
+    $jobPost->designation = $request->designation;
+    $jobPost->slug = $request->slug;
+    $jobPost->job_type = $request->job_type;
+    $jobPost->start_date = $request->start_date;
+    $jobPost->end_date = $request->end_date;
+    $jobPost->description = $request->description ?? null; // Handle nullable description
 
-    public function update(Request $request, $id)
-    {
-        // Validate the request data
-        $validator = Validator::make($request->all(), [
-            'designation' => 'required|string',
-            'slug' => 'required|string|unique:jobs,slug,' . $id,
-            'job_type' => 'required|string',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date',
-            'description' => 'nullable',
-        ]);
+    // Save the job post
+    $jobPost->save();
 
-        if ($validator->passes()) {
-            // Find the blog post by its ID
-            $jobPost = Job::findOrFail($id);
+    return redirect()->route('jobs.index')->with('success', 'Job added successfully');
+}
 
-            // Update the blog post attributes
-            $jobPost->designation = $request->designation;
-            $jobPost->slug = $request->slug;
-            $jobPost->job_type = $request->job_type;
-            $jobPost->start_date = $request->start_date;
-            $jobPost->end_date = $request->end_date;
-            $jobPost->description = $request->description;
+public function edit($id)
+{
+    $jobs = Job::findOrFail($id);
+    return view('admin.jobs.edit', compact('jobs'));
+}
+public function update(Request $request, $id)
+{
+    // Validate the request data
+    $validator = Validator::make($request->all(), [
+        'designation' => 'required|string',
+        'slug' => 'required|string|unique:jobs,slug,' . $id,
+        'job_type' => 'required|string',
+        'start_date' => 'required|date',
+        'end_date' => 'required|date',
+        'description' => 'nullable|string',
+    ]);
 
-            // Save the updated blog post
-            $jobPost->save();
-
-            return redirect()->route('jobs.index')->with('success', 'Job post updated successfully');
-        } else {
+    if ($validator->fails()) {
+        if ($request->ajax()) {
             return response()->json([
                 'status' => false,
                 'errors' => $validator->errors()
             ]);
         }
+
+        return redirect()->back()
+            ->withErrors($validator)
+            ->withInput();
     }
+
+    // Find the job post by its ID
+    $jobPost = Job::findOrFail($id);
+
+    // Update the job post attributes
+    $jobPost->designation = $request->designation;
+    $jobPost->slug = $request->slug;
+    $jobPost->job_type = $request->job_type;
+    $jobPost->start_date = $request->start_date;
+    $jobPost->end_date = $request->end_date;
+    $jobPost->description = $request->description ?? null; // Handle nullable description
+
+    // Save the updated job post
+    $jobPost->save();
+
+    return redirect()->route('jobs.index')->with('success', 'Job post updated successfully');
+}
+
 
     public function destroy($id)
     {
