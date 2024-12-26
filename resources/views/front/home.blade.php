@@ -508,11 +508,12 @@
                 </div>
             </div>
 
+            @foreach($numbers as $number)
             <div class="col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="100">
                 <div class="info-box">
                     <i class="bx bx-envelope"></i>
                     <h3>Email Us</h3>
-                    <p>info@opus-bd.com<br>support@opus-bd.com</p>
+                    <p>{{ $number->email }}</p>
                 </div>
             </div>
 
@@ -520,9 +521,11 @@
                 <div class="info-box ">
                     <i class="bx bx-phone-call"></i>
                     <h3>Call Us</h3>
-                    <p>+8801811317129<br>+8801765258599</p>
+                    <p>{{ $number->phone }}</p>
                 </div>
             </div>
+
+             @endforeach
 
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
                 <form action="forms/contact.php" method="post" role="form" class="php-email-form">

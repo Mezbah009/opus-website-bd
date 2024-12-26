@@ -65,6 +65,10 @@ class FrontController extends Controller
         $sections = $sectionsFilterFin->merge($sectionsFilterSig);
 
         $data['sections'] = $sections;
+        $contacts = Contact::all();
+        $numbers = Number::all();
+        $data['contacts']= $contacts;
+        $data['numbers']= $numbers;
 
         return view('front.home',$data);
     }

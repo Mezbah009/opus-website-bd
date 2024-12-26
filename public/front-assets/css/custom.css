@@ -100,7 +100,7 @@
 .contact .info-boxs {
     color: #444;
     box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
-    padding: 20px 0 30px 0;
+    padding: 20px 10px 30px 10px;
     margin-bottom: 30px;
     width: 100%;
 }
@@ -388,7 +388,6 @@ a.text-white:hover {
 .col-md-6.d-flex > div {
     margin-left: 10px; /* Adjust margin as needed */
 }
-
 
 .col-md-3 ul li a::before {
     position: relative;

@@ -74,11 +74,11 @@
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">info@opus-bd.com</a>
-                <i class="bi bi-phone-fill phone-icon"></i> +88-02 58316738
+                <i class="bi bi-phone-fill phone-icon"></i> +8802222225006
                 <i class="bi bi-phone-fill phone-icon"></i> +88-01811317129
             </div>
             <div class="social-links d-none d-md-block">
-                <a href="https://www.facebook.com/opustechnologylimited/" class="facebook"><i
+                <a href="https://www.facebook.com/OpusTechnologyGlobal/" class="facebook"><i
                         class="bi bi-facebook"></i></a>
                 <a href="https://www.linkedin.com/company/opus-technology-limited/" class="linkedin"><i
                         class="bi bi-linkedin"></i></i></a>
