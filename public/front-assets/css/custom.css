@@ -12,6 +12,15 @@
     align-items: center;
 }
 
+
+
+.content-item i {
+    font-size: 3rem;
+    color: #428BCA; /* Example color */
+    margin-bottom: 10px;
+}
+
+
 /* Add overlay */
 .contact-bg::before {
     content: "";
@@ -207,7 +216,7 @@
 .card_manage .read-more a {
     text-decoration: none;
     color: #ffffff;
-    background-color: #76abd8; /* Change background color to #76ABD8 */
+    background-color: #428BCA; /* Change background color to #76ABD8 */
     padding: 10px 20px;
     border-radius: 4px;
     margin-right: 10px;
@@ -234,7 +243,7 @@
     text-decoration: none;
     color: #ffffff;
     margin: 0 5px; /* Adjust margin for spacing */
-    font-size: 20px;
+    font-size: 16px;
 }
 
 /* Media Query for smaller screens */
@@ -256,7 +265,7 @@
 .navbar .btn-primary.text-whites {
     padding: 8px 20px;
     border-radius: 4px;
-    background-color: #007bff; /* Change this to match your site's color scheme */
+    background-color: #428BCA; /* Change this to match your site's color scheme */
     color: #fff;
     margin-left: 40px;
 }

@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{asset('front-assets/img/favicon.png')}}" rel="icon">
-    <link href="{{asset('front-assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <link href="{{ asset('front-assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('front-assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -29,31 +29,34 @@
 
 
     <!-- Template Main CSS File -->
-    <link href="{{ asset('front-assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('front-assets/css/style.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 
-    {{-- others CSS--}}
+
+
+    {{-- others CSS --}}
 
     {{--
     <link href="{{ asset('front-assets/others/asset/css/bootstrap.min.css')}}" rel="stylesheet"> --}}
 
     <!-- Font Awesome CSS -->
-    <link href="{{ asset('front-assets/others/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('front-assets/others/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- Animate CSS -->
-    <link href="{{ asset('front-assets/others/css/animate.css')}}" rel="stylesheet">
+    <link href="{{ asset('front-assets/others/css/animate.css') }}" rel="stylesheet">
     <!-- Owl-Carousel -->
-    <link rel="stylesheet" href="{{ asset('front-assets/others/css/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{ asset('front-assets/others/css/owl.theme.css')}}">
-    <link rel="stylesheet" href="{{ asset('front-assets/others/css/owl.transitions.css')}}">
+    <link rel="stylesheet" href="{{ asset('front-assets/others/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('front-assets/others/css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('front-assets/others/css/owl.transitions.css') }}">
     <!-- Custom CSS -->
 
-    <link rel="stylesheet" href="{{ asset('front-assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{ asset('front-assets/css/custom.css') }}">
     {{--
     <link href="{{ asset('front-assets/others/css/style.css')}}" rel="stylesheet"> --}}
-    <link href="{{ asset('front-assets/others/css/responsive.css')}}" rel="stylesheet">
+    <link href="{{ asset('front-assets/others/css/responsive.css') }}" rel="stylesheet">
 
 
 
@@ -78,13 +81,17 @@
                 <i class="bi bi-phone-fill phone-icon"></i> +88-01811317129
             </div>
             <div class="social-links d-none d-md-block">
-                <a href="https://www.facebook.com/OpusTechnologyGlobal/" class="facebook"><i
-                        class="bi bi-facebook"></i></a>
-                <a href="https://www.linkedin.com/company/opus-technology-limited/" class="linkedin"><i
-                        class="bi bi-linkedin"></i></i></a>
-                <a href="https://www.youtube.com/@opustechnologylimited" class="youtube"><i
-                        class="bi bi-youtube"></i></a>
+                <a href="https://www.facebook.com/OpusTechnologyGlobal/" class="facebook" target="_blank">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/opus-technology-limited/" class="linkedin" target="_blank">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://www.youtube.com/@opustechnologylimited" class="youtube" target="_blank">
+                    <i class="bi bi-youtube"></i>
+                </a>
             </div>
+
         </div>
     </section>
 
@@ -94,8 +101,8 @@
             <div class="logo me-auto">
                 <!-- <h1><a href="index.html">OPUS</a></h1> -->
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="{{ route('front.home') }}"><img src="{{ asset('front-assets/img/opus-logo.png')}}" alt=""
-                        class="img-fluid"></a>
+                <a href="{{ route('front.home') }}"><img src="{{ asset('front-assets/img/opus-logo.png') }}"
+                        alt="" class="img-fluid"></a>
             </div>
 
             <nav id="navbar" class="navbar">
@@ -146,17 +153,17 @@
             <div class="container">
                 <div class="row">
                     <div class="row" style="text-align: center">
-                        @if(isset(footer()['contacts']) && footer()['contacts']->isNotEmpty())
-                        @foreach(footer()['contacts'] as $contact)
-                        <div class="col-lg-4 d-flex" data-aos="fade-up">
-                            <div class="info-box">
-                                <img src="{{ asset('uploads/first_section/' . $contact->image) }}" alt="Contact Image"
-                                    width="150px">
-                                {{-- <h3>{{ $contact->country_name }}</h3> --}}
-                                {{-- <h5>{{ $contact->company_name }}</h5> --}}
-                                <h3>{{ $contact->office_name }}</h3>
-                                <p>{{ $contact->address }}</p>
-                                {{-- <div class="social-links mt-3">
+                        @if (isset(footer()['contacts']) && footer()['contacts']->isNotEmpty())
+                            @foreach (footer()['contacts'] as $contact)
+                                <div class="col-lg-4 d-flex" data-aos="fade-up">
+                                    <div class="info-box">
+                                        <img src="{{ asset('uploads/first_section/' . $contact->image) }}"
+                                            alt="Contact Image" width="150px">
+                                        {{-- <h3>{{ $contact->country_name }}</h3> --}}
+                                        {{-- <h5>{{ $contact->company_name }}</h5> --}}
+                                        <h3>{{ $contact->office_name }}</h3>
+                                        <p>{{ $contact->address }}</p>
+                                        {{-- <div class="social-links mt-3">
                                     <a href="{{ $contact->website }}" class="website"><i
                                             class="bx bxl-internet-explorer"></i></a>
                                     <a href="{{ $contact->facebook }}" class="facebook"><i
@@ -165,18 +172,18 @@
                                     <a href="{{ $contact->linkedIn }}" class="linkedin"><i
                                             class="bx bxl-linkedin"></i></a>
                                 </div> --}}
-                            </div>
+                                    </div>
 
-                        </div>
-                        @endforeach
+                                </div>
+                            @endforeach
                         @endif
                     </div>
                 </div>
                 <br>
                 <br>
                 {{-- <div style="text-align: center">
-                    @if(isset(footer()['numbers']) && footer()['numbers']->isNotEmpty())
-                    @foreach(footer()['numbers'] as $number)
+                    @if (isset(footer()['numbers']) && footer()['numbers']->isNotEmpty())
+                    @foreach (footer()['numbers'] as $number)
                     <p>{{ $number->phone }}</p>
 
                     <p>{{ $number->email }}</p>
@@ -201,12 +208,13 @@
                         <div class="row" style="padding: 0% 10% 0% 0%">
                             <div class="d-flex" style="margin-bottom: 20px;">
 
-                                <img src="{{ asset('front-assets/img/9001.png')}}" alt="ISO 9001:2015 Certified"
+                                <img src="{{ asset('front-assets/img/9001.png') }}" alt="ISO 9001:2015 Certified"
                                     class="img-fluid" style="width: 150px;height: 150px; margin-right: 10px;">
 
                                 <div style="text-align: justify">
 
-                                    <p style="margin-top: 15px;"> Make a deal with an ISO 9001:2015 Certified Company .ISO 9001 : 2015 is the international standard that specifies requirements for
+                                    <p style="margin-top: 15px;"> Make a deal with an ISO 9001:2015 Certified Company
+                                        .ISO 9001 : 2015 is the international standard that specifies requirements for
                                         Quality
                                         Management System (QMS). Opus Technology Limited is an ISO 9001 : 2015 certified
                                         company,
@@ -214,11 +222,12 @@
                                 </div>
                             </div>
                             <div class="d-flex">
-                                <img src="{{ asset('front-assets/img/27001.png')}}" alt="ISO 9001:2015 Certified"
+                                <img src="{{ asset('front-assets/img/27001.png') }}" alt="ISO 9001:2015 Certified"
                                     class="img-fluid" style="width: 150px;height: 150px; margin-right: 10px;">
                                 <div style="text-align: justify">
 
-                                    <p style="margin-top: 15px;">Make a deal with an ISO 27001:2022 Certified Company .Being Certified indicates that an organization has implemented an information
+                                    <p style="margin-top: 15px;">Make a deal with an ISO 27001:2022 Certified Company
+                                        .Being Certified indicates that an organization has implemented an information
                                         security
                                         management system (ISMS) in accordance with the requirements specified in the
                                         2022
@@ -248,13 +257,18 @@
                 <div class="col-md-3">
                     <h5>Our Services</h5>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('front.services') }}" class="text-white">Custom Software Development</a></li>
-                        <li><a href="{{ route('front.services') }}" class="text-white">Mobile Application Development</a></li>
-                        <li><a href="{{ route('front.services') }}" class="text-white">Web Application Development</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Custom Software
+                                Development</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Mobile Application
+                                Development</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Web Application
+                                Development</a></li>
                         <li><a href="{{ route('front.services') }}" class="text-white">Business Intelligence</a></li>
-                        <li><a href="{{ route('front.services') }}" class="text-white">Artificial Intelligence (AI)</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Artificial Intelligence
+                                (AI)</a></li>
                         <li><a href="{{ route('front.services') }}" class="text-white">Blockchain</a></li>
-                        <li><a href="{{ route('front.services') }}" class="text-white">Re-engineering & Migration</a></li>
+                        <li><a href="{{ route('front.services') }}" class="text-white">Re-engineering & Migration</a>
+                        </li>
                         <li><a href="{{ route('front.services') }}" class="text-white">Digital Marketing</a></li>
                     </ul>
                 </div>
@@ -262,9 +276,16 @@
                 <div class="social-links" style="text-align: center; padding:10px; font-size: 30px; color:#ffffff">
                     {{-- <a href="{{ $contact->website }}" class="website"><i class="bx bxl-internet-explorer"></i></a>
                     --}}
-                    <a href="{{ $contact->facebook }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="{{ $contact->youtube }}" class="youtube"><i class="bx bxl-youtube"></i></a>
-                    <a href="{{ $contact->linkedIn }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    <a href="{{ $contact->facebook }}" class="facebook" target="_blank" rel="noopener noreferrer">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="{{ $contact->youtube }}" class="youtube" target="_blank" rel="noopener noreferrer">
+                        <i class="bx bxl-youtube"></i>
+                    </a>
+                    <a href="{{ $contact->linkedIn }}" class="linkedin" target="_blank" rel="noopener noreferrer">
+                        <i class="bx bxl-linkedin"></i>
+                    </a>
+
                 </div>
 
 
@@ -300,31 +321,31 @@
 
 
     <!-- Template Main JS File -->
-    <script src="{{ asset('front-assets/js/main.js')}}"></script>
+    <script src="{{ asset('front-assets/js/main.js') }}"></script>
 
 
 
 
-    {{-- others JS--}}
+    {{-- others JS --}}
 
     <!-- jQuery Version 2.1.1 -->
-    <script src="{{ asset('front-assets/others/js/jquery-2.1.1.min.js')}}"></script>
+    <script src="{{ asset('front-assets/others/js/jquery-2.1.1.min.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ asset('front-assets/others/asset/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('front-assets/others/asset/js/bootstrap.min.js') }}"></script>
     <!-- Plugin JavaScript -->
-    <script src="{{ asset('front-assets/others/js/jquery.easing.1.3.js')}}"></script>
-    <script src="{{ asset('front-assets/others/js/classie.js')}}"></script>
-    <script src="{{ asset('front-assets/others/js/count-to.js')}}"></script>
-    <script src="{{ asset('front-assets/others/js/jquery.appear.js')}}"></script>
-    <script src="{{ asset('front-assets/others/js/cbpAnimatedHeader.js')}}"></script>
-    <script src="{{ asset('front-assets/others/js/owl.carousel.min.js')}}"></script>
-    <script src="{{ asset('front-assets/others/js/jquery.fitvids.js')}}"></script>
-    <script src="{{ asset('front-assets/others/js/styleswitcher.js')}}"></script>
+    <script src="{{ asset('front-assets/others/js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ asset('front-assets/others/js/classie.js') }}"></script>
+    <script src="{{ asset('front-assets/others/js/count-to.js') }}"></script>
+    <script src="{{ asset('front-assets/others/js/jquery.appear.js') }}"></script>
+    <script src="{{ asset('front-assets/others/js/cbpAnimatedHeader.js') }}"></script>
+    <script src="{{ asset('front-assets/others/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('front-assets/others/js/jquery.fitvids.js') }}"></script>
+    <script src="{{ asset('front-assets/others/js/styleswitcher.js') }}"></script>
     <!-- Contact Form JavaScript -->
-    <script src="{{ asset('front-assets/others/js/jqBootstrapValidation.js')}}"></script>
-    <script src="{{ asset('front-assets/others/js/contact_me.js')}}"></script>
+    <script src="{{ asset('front-assets/others/js/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ asset('front-assets/others/js/contact_me.js') }}"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="{{ asset('front-assets/others/js/script.js')}}"></script>
+    <script src="{{ asset('front-assets/others/js/script.js') }}"></script>
 
 </body>
 

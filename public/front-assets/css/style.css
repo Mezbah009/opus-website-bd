@@ -845,7 +845,8 @@ section {
 # Counts
 --------------------------------------------------------------*/
 .counts {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+    padding-top: 50px;
 }
 
 .counts .count-box {
@@ -853,6 +854,14 @@ section {
     padding: 30px;
     background: #fff;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Set a fixed height */
+    text-align: center;
+    overflow: hidden;
+    border-radius: 0px; /* Optional, for rounded corners */
 }
 
 .counts .count-box i {
@@ -866,6 +875,7 @@ section {
     display: block;
     font-weight: 700;
     color: #1c5c93;
+    margin-bottom: 10px; /* Add margin to separate counter from text */
 }
 
 .counts .count-box p {
@@ -873,6 +883,7 @@ section {
     margin: 0;
     font-family: "Raleway", sans-serif;
     font-size: 14px;
+    word-wrap: break-word; /* Ensure long text wraps and doesn't overflow */
 }
 
 /*--------------------------------------------------------------
@@ -905,10 +916,18 @@ section {
 .services .icon i {
     font-size: 36px;
     line-height: 0;
+    transition: color 0.3s ease;
 }
 
 .services .icon-box:hover .icon {
+    background-color: #86bef7;
     box-shadow: 0px 0 30px rgba(66, 139, 202, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+}
+
+.services .icon-box:hover .icon i {
+    color: #fff;
 }
 
 .services .title {
@@ -1137,7 +1156,7 @@ section {
 --------------------------------------------------------------*/
 .team {
     background: #fff;
-    padding: 60px 0 30px 0;
+    padding: 60px 0 70px 0;
 }
 
 .team .member {
@@ -1161,7 +1180,7 @@ section {
 
 .team .member .member-info {
     position: absolute;
-    bottom: -48px;
+    bottom: -70px;
     left: 20px;
     right: 20px;
     background: linear-gradient(
@@ -1170,14 +1189,20 @@ section {
         rgba(92, 118, 141, 0.9) 35%,
         rgba(140, 167, 191, 0.8) 100%
     );
-    padding: 15px 0;
+    padding: 15px 10px;
     border-radius: 4px;
+    height: 110px; /* Fixed height for consistency */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* Center align text */
+    word-wrap: break-word; /* Allow word wrap when the text is too long */
 }
 
 .team .member h4 {
     font-weight: 700;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 18px; /* Increased font size */
     color: #fff;
     position: relative;
     padding-bottom: 10px;
@@ -1197,8 +1222,9 @@ section {
 .team .member span {
     font-style: italic;
     display: block;
-    font-size: 13px;
+    font-size: 12px; /* Increased font size */
     color: #fff;
+    word-wrap: break-word; /* Allow word wrapping */
 }
 
 .team .member .social {

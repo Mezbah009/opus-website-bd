@@ -95,11 +95,12 @@
         @foreach ($home_first_section as $key => $home_first_sections)
 
         <div class="row no-gutters">
-            <div class="col-lg-6 video-box">
-                <img src="{{ asset('uploads/first_section/' .$home_first_sections->image) }}" class="img-fluid" alt="">
-                <a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
-                    data-vbtype="video" data-autoplay="true"></a>
-            </div>
+           <div class="col-lg-6 video-box">
+    <img src="{{ asset('uploads/first_section/' . $home_first_sections->image) }}" class="img-fluid" alt="">
+    <a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
+       data-vbtype="video" data-autoplay="true" target="_blank" rel="noopener noreferrer"></a>
+</div>
+
 
             <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
@@ -168,56 +169,54 @@
 <!-- ======= About Lists Section ======= -->
 <section class="about-lists">
     <div class="container">
-
         <div class="row no-gutters">
 
             <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up">
-                <span>01</span>
+                <i class="fas fa-code"></i> <!-- Replace this icon with your choice -->
                 <h4>First Class Developers</h4>
                 <p>When you work with Opus you strengthen your project with top talents. All of our developers
-                    have 5+ years of expresiences.</p>
+                    have 5+ years of experiences.</p>
             </div>
 
             <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="100">
-                <span>02</span>
+                <i class="fas fa-industry"></i> <!-- Replace this icon with your choice -->
                 <h4>Software Industry Leader</h4>
                 <p>United Nation, DB Schenker, Bangladesh Government, BRAC, Bangladesh Police, bKash and
                     hundreds of world-wide use Opus software every day.</p>
             </div>
 
             <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
-                <span>03</span>
-                <h4> We Build Relationships</h4>
+                <i class="fas fa-handshake"></i> <!-- Replace this icon with your choice -->
+                <h4>We Build Relationships</h4>
                 <p>Our clients trust us to deliver just what they need and we do just that. Always on time, with
-                    zero hassle. So they will give us new project most of the time.</p>
+                    zero hassle. So they will give us new projects most of the time.</p>
             </div>
 
             <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="300">
-                <span>04</span>
+                <i class="fas fa-dollar-sign"></i> <!-- Replace this icon with your choice -->
                 <h4>Cost Effective</h4>
-                <p>Our costs are determined by one single factor: Your budget. We adapt yo you and stick to the
+                <p>Our costs are determined by one single factor: Your budget. We adapt to you and stick to the
                     numbers we agree on. From the beginning to the very end.</p>
             </div>
 
             <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="400">
-                <span>05</span>
+                <i class="fas fa-lightbulb"></i> <!-- Replace this icon with your choice -->
                 <h4>Innovative Solutions</h4>
                 <p>We specialize in creating innovative solutions tailored to your specific needs. Our team
                     stays updated with the latest technologies to deliver cutting-edge products.</p>
             </div>
 
             <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="500">
-                <span>06</span>
+                <i class="fas fa-headset"></i> <!-- Replace this icon with your choice -->
                 <h4>Customer Support</h4>
                 <p>Our commitment doesn't end with project delivery. We provide exceptional customer support,
                     ensuring that your questions and concerns are addressed promptly and professionally.</p>
             </div>
 
-
         </div>
-
     </div>
-</section><!-- End About Lists Section -->
+</section>
+<!-- End About Lists Section -->
 
 <!-- ======= Counts Section ======= -->
 <section class="counts section-bg">
@@ -373,7 +372,8 @@
         </div>
 
     </div>
-</section><!-- End Our Team Section -->
+</section>
+<!-- End Our Team Section -->
 
 <!-- ======= Frequently Asked Questions Section ======= -->
 
@@ -386,42 +386,42 @@
 
         <div class="row  d-flex align-items-stretch">
 
-            <div class="col-lg-6 faq-item" data-aos="fade-up">
-                <h4>Why Microfinance Institute should adopt TURBO?</h4>
-                <p>
+             <details class="col-lg-6 faq-item" data-aos="fade-up">
+                <summary><b>Why Microfinance Institute should adopt TURBO?</b></summary>
+                <div>
                     TURBO brings several benefits, including improved operational efficiency, enhanced client
                     management, accurate financial reporting, streamlined loan processing, better risk management,
                     compliance with regulatory requirements, and access to insightful analytics for informed
                     decision-making.
-                </p>
-            </div>
+                </div>
+             </details>
 
-            <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="100">
-                <h4>Can a TURBO handle multiple types of loans?</h4>
-                <p>
+            <details class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="100">
+                <summary><b>Can a TURBO handle multiple types of loans?</b></summary>
+                <div>
                     Yes, TURBO can handle various types of loans, including individual loans, group loans, agricultural
                     loans, business loans, and more. It offers flexible features to customize loan products and
                     repayment schedules based on the specific needs of microfinance clients.
-                </p>
-            </div>
+                </div>
+            </details>
 
-            <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="200">
-                <h4>Is data security ensured with TURBO?</h4>
-                <p>
+            <details class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="200">
+                <summary><b>Is data security ensured with TURBO?</b></summary>
+                <div>
                     Yes. TURBO incorporates robust security measures to protect sensitive client information,
                     transaction records, and financial data. This includes encryption protocols, user access controls,
                     regular data backups, and adherence to data protection regulations.
-                </p>
-            </div>
+                </div>
+            </details>
 
-            <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="300">
-                <h4>Can TURBO integrate with other financial systems?</h4>
-                <p>
+            <details class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="300">
+                <summary><b>Can TURBO integrate with other financial systems?</b></summary>
+                <div>
                     Yes, TURBO can integrate with other financial systems such as core banking systems, payment
                     processors, credit bureaus, and mobile money platforms. This integration enables seamless data
                     exchange, facilitates transaction processing, and enhances operational efficiency.
-                </p>
-            </div>
+                </div>
+            </details>
         </div>
 
     </div>
