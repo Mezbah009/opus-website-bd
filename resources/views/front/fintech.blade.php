@@ -15,7 +15,7 @@
     </div>
 
     <!-- ======= Our Portfolio Section ======= -->
-    {{-- <section id="portfolio" class="portfolio section-bg">
+    <section id="portfolio" class="portfolio section-bg">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="section-title">
@@ -44,14 +44,14 @@
                     style="cursor: pointer;">
                     <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>{{$section->title}}</h4>
+                        {{-- <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
-                            {{$section->description}}</p>
+                            {{$section->description}}</p> --}}
                         <div class="portfolio-links">
-                            <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
+                            {{-- <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
                                 class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
                             <a href="{{ route('product.show', ['slug' => $section->link]) }}" title="More Details"><i
-                                    class="bi bi-link"></i></a>
+                                    class="bi bi-arrow-right"></i></a> --}}
                         </div>
                     </div>
                 </div>
@@ -60,14 +60,14 @@
         </div>
 
     </div>
-</section> --}}
+</section>
 
 
-    <section id="portfolio" class="portfolio section-bg">
+    {{-- <section id="portfolio" class="portfolio section-bg">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="section-title">
-                {{-- <h2>Our Fintech Products</h2> --}}
+                <h2>Our Fintech Products</h2>
                 <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company.
                     Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across
                     various industries & business functions, it collaborates with customers to help them effectively address
@@ -118,7 +118,7 @@
             </div>
 
         </div>
-    </section>
+    </section> --}}
 
     <!-- End Our Portfolio Section -->
 

@@ -33,33 +33,33 @@
             </div>
         </div> --}}
 
-        {{-- <div class="row portfolio-container">
+        <div class="row portfolio-container">
             @foreach($sections as $section)
             <div class="col-lg-4 col-md-6 portfolio-item {{$section->button_name}}">
                 <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                     style="cursor: pointer;">
                     <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>{{$section->title}}</h4>
+                        {{-- <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
-                            {{$section->description}}</p>
+                            {{$section->description}}</p> --}}
                         <div class="portfolio-links">
-                            <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
+                            {{-- <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
                                 class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
                             <a href="{{ route('product.show', ['slug' => $section->link]) }}" title="More Details"><i
-                                    class="bi bi-link"></i></a>
+                                    class="bi bi-link"></i></a> --}}
                         </div>
                     </div>
                 </div>
             </div>
             @endforeach
-        </div> --}}
+        </div>
 
 
 
 
 
-            <div class="row portfolio-container">
+            {{-- <div class="row portfolio-container">
                 @foreach ($sections as $section)
                     <div class="col-lg-4 col-md-6 portfolio-item {{ $section->button_name }}">
                         <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
+            </div> --}}
 
     </div>
 </section><!-- End Our Portfolio Section -->

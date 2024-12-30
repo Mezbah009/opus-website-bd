@@ -21,6 +21,7 @@
     <!-- Vendor CSS Files -->
     <link href="{{ asset('front-assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front-assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('front-assets/vendor/aos_team/aos.css') }}" rel="stylesheet">
     <link href="{{ asset('front-assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front-assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('front-assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">

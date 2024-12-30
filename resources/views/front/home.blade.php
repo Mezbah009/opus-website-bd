@@ -306,30 +306,22 @@
                 </div>
             </div>
 
-
             <div class="row portfolio-container">
                 @foreach ($sections as $section)
                     <div class="col-lg-4 col-md-6 portfolio-item {{ $section->button_name }}">
                         <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                             style="cursor: pointer;">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <!-- Front Side -->
-                                    <div class="front">
-                                        <img src="{{ asset('uploads/first_section/' . $section->logo) }}"
-                                            class="img-fluid" alt="{{ $section->title }}">
-                                    </div>
-                                    <!-- Back Side -->
-                                    <div class="back">
-                                        <div class="portfolio-info">
-                                            <h4>{{ $section->title }}</h4>
-                                            <p>{{ $section->description }}</p>
-                                            <a href="{{ route('product.show', ['slug' => $section->link]) }}"
-                                                title="More Details">
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                            <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid"
+                                alt="">
+                            <div class="portfolio-info">
+                                {{-- <h4>{{$section->title}}</h4>
+                        <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
+                            {{$section->description}}</p> --}}
+                                <div class="portfolio-links">
+                                    {{-- <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
+                                class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
+                            <a href="{{ route('product.show', ['slug' => $section->link]) }}" title="More Details"><i
+                                    class="bi bi-link"></i></a> --}}
                                 </div>
                             </div>
                         </div>
