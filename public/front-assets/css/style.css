@@ -562,7 +562,7 @@ h6,
 # Sections General
 --------------------------------------------------------------*/
 section {
-    padding: 10px 30px 0;
+    padding: 60px 30px 0;
     overflow: hidden;
 }
 
@@ -908,7 +908,7 @@ section {
     background: #fff;
     border-radius: 50%;
     transition: 0.5s;
-    color: #428BCA;
+    color: #428bca;
     box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
     overflow: hidden;
 }
@@ -920,7 +920,7 @@ section {
 }
 
 .services .icon-box:hover .icon {
-    background-color: #428BCA;
+    background-color: #86bef7;
     box-shadow: 0px 0 30px rgba(66, 139, 202, 0.5);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     color: #fff;
@@ -966,7 +966,7 @@ section {
 /*--------------------------------------------------------------
 # Our Portfolio
 --------------------------------------------------------------*/
-.portfolio .portfolio-item {
+/* .portfolio .portfolio-item {
     margin-bottom: 30px;
 }
 
@@ -1078,6 +1078,138 @@ section {
 
 .portfolio .portfolio-wrap:hover img {
     transform: scale(1.1);
+} */
+
+.portfolio .portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio #portfolio-flters {
+    padding: 0;
+    margin: 0 0 35px 0;
+    list-style: none;
+    text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+    cursor: pointer;
+    margin: 0 15px 15px 0;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #444;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background: #fff;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+    background: #428bca;
+    color: #fff;
+}
+
+.portfolio #portfolio-flters li:last-child {
+    margin-right: 0;
+}
+
+/* General Portfolio Styling */
+.portfolio .portfolio-wrap {
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Ensure full-width in grid */
+    aspect-ratio: 5/ 5; /* Maintain a 4:3 ratio */
+    perspective: 1000px; /* Enable 3D flip effect */
+}
+
+.flip-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.portfolio-wrap:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+/* Front Side (Image) */
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Responsive image scaling */
+    display: block;
+}
+
+/* Back Side (Content) */
+.back {
+    background: #428bca;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+}
+
+.back h4 {
+    font-size: 25px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.back p {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.back a {
+    color: #ffffff;
+    margin-top: 10px;
+    font-size: 22px;
+    transition: color 0.3s ease-in-out;
+}
+
+.back a:hover {
+    color: #2a6496;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .portfolio .portfolio-wrap {
+        aspect-ratio: 16 / 9; /* Adjust for smaller screens */
+    }
+
+    .back h4 {
+        font-size: 16px;
+    }
+
+    .back p {
+        font-size: 12px;
+    }
 }
 
 /*--------------------------------------------------------------
