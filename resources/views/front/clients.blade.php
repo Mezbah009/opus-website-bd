@@ -53,9 +53,9 @@
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
                             {{$client->description}}</p>
                         <div class="portfolio-links">
-                            <a href="/uploads/first_section/{{ $client->logo }}" data-gallery="portfolioGallery"
+                            {{-- <a href="/uploads/first_section/{{ $client->logo }}" data-gallery="portfolioGallery"
                                 class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
-                            <a href="{{ $client->link }}" title="More Details" target="_blank"><i class="bi bi-link"></i></a>
+                            <a href="{{ $client->link }}" title="More Details" target="_blank"><i class="bi bi-link"></i></a> --}}
                         </div>
                     </div>
                 </div>

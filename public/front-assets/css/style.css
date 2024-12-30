@@ -966,7 +966,7 @@ section {
 /*--------------------------------------------------------------
 # Our Portfolio
 --------------------------------------------------------------*/
-/* .portfolio .portfolio-item {
+.portfolio .portfolio-item {
     margin-bottom: 30px;
 }
 
@@ -1078,7 +1078,25 @@ section {
 
 .portfolio .portfolio-wrap:hover img {
     transform: scale(1.1);
-} */
+}
+
+
+
+
+
+
+.portfolio .portfolio-wrap {
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+
 
 .portfolio .portfolio-item {
     margin-bottom: 30px;
@@ -1108,7 +1126,7 @@ section {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-    background: #428bca;
+    background: #428BCA;
     color: #fff;
 }
 
@@ -1117,7 +1135,7 @@ section {
 }
 
 /* General Portfolio Styling */
-.portfolio .portfolio-wrap {
+.portfolio .portfolio-wraps {
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
     transition: 0.3s;
     position: relative;
@@ -1141,7 +1159,7 @@ section {
     transition: transform 0.6s ease-in-out;
 }
 
-.portfolio-wrap:hover .flipper {
+.portfolio-wraps:hover .flipper {
     transform: rotateY(180deg);
 }
 
@@ -1199,7 +1217,7 @@ section {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .portfolio .portfolio-wrap {
+    .portfolio .portfolio-wraps {
         aspect-ratio: 16 / 9; /* Adjust for smaller screens */
     }
 
