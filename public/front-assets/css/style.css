@@ -908,7 +908,7 @@ section {
     background: #fff;
     border-radius: 50%;
     transition: 0.5s;
-    color: #428bca;
+    color: #428BCA;
     box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
     overflow: hidden;
 }
@@ -920,7 +920,7 @@ section {
 }
 
 .services .icon-box:hover .icon {
-    background-color: #86bef7;
+    background-color: #428BCA;
     box-shadow: 0px 0 30px rgba(66, 139, 202, 0.5);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     color: #fff;

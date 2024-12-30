@@ -285,7 +285,8 @@
             @endforeach
         </div>
     </div>
-</section><!-- End Services Section -->
+</section>
+<!-- End Services Section -->
 
 <!-- ======= Our Portfolio Section ======= -->
 <section id="portfolio" class="portfolio section-bg">
@@ -312,14 +313,14 @@
                 <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}" style="cursor: pointer;">
                     <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        <h4>{{$section->title}}</h4>
+                        {{-- <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
-                            {{$section->description}}</p>
+                            {{$section->description}}</p> --}}
                         <div class="portfolio-links">
-                            <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
+                            {{-- <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
+                                class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a> --}}
                             <a href="{{ route('product.show', ['slug' => $section->link]) }}" title="More Details"><i
-                                    class="bi bi-link"></i></a>
+                                    class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
