@@ -1,28 +1,29 @@
 @extends('front.layouts.app')
 
 @section('content')
-    <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/product-banner.jpg') }}');">
-        <h2>Our Products</h2>
-        <div class="line">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+
+<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/product-banner.jpg") }}');">
+    <h2>Our Products</h2>
+    <div class="line">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
+</div>
 
-    <!-- ======= Our Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+<!-- ======= Our Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-bg">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="section-title">
-                {{-- <h2>Our Products</h2> --}}
-                <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company.
-                    Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across
-                    various industries & business functions, it collaborates with customers to help them effectively address
-                    their operational challenges & grow their businesses stronger.</p>
-            </div>
+        <div class="section-title">
+            {{-- <h2>Our Products</h2> --}}
+            <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company.
+                Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across
+                various industries & business functions, it collaborates with customers to help them effectively address
+                their operational challenges & grow their businesses stronger.</p>
+        </div>
 
-            {{-- <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-12">
                 <ul id="portfolio-flters">
                     <li data-filter="*" class="filter-active">All</li>
@@ -32,8 +33,8 @@
             </div>
         </div> --}}
 
-            {{-- <div class="row portfolio-container">
-            @foreach ($sections as $section)
+        {{-- <div class="row portfolio-container">
+            @foreach($sections as $section)
             <div class="col-lg-4 col-md-6 portfolio-item {{$section->button_name}}">
                 <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                     style="cursor: pointer;">
@@ -61,7 +62,7 @@
             <div class="row portfolio-container">
                 @foreach ($sections as $section)
                     <div class="col-lg-4 col-md-6 portfolio-item {{ $section->button_name }}">
-                        <div class="portfolio-wraps" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
+                        <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                             style="cursor: pointer;">
                             <div class="flip-container">
                                 <div class="flipper">
@@ -88,19 +89,20 @@
                 @endforeach
             </div>
 
-        </div>
-    </section><!-- End Our Portfolio Section -->
+    </div>
+</section><!-- End Our Portfolio Section -->
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const portfolioWraps = document.querySelectorAll('.portfolio-wrap');
-            portfolioWraps.forEach(function(portfolioWrap) {
-                portfolioWrap.addEventListener('click', function() {
-                    const url = portfolioWrap.getAttribute('data-url');
-                    window.location.href = url;
-                });
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const portfolioWraps = document.querySelectorAll('.portfolio-wrap');
+        portfolioWraps.forEach(function(portfolioWrap) {
+            portfolioWrap.addEventListener('click', function() {
+                const url = portfolioWrap.getAttribute('data-url');
+                window.location.href = url;
             });
         });
-    </script>
+    });
+</script>
+
 @endsection

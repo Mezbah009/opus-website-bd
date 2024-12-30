@@ -86,10 +86,11 @@
             </div>
 
 
+
             <div class="row portfolio-container">
                 @foreach ($sections as $section)
                     <div class="col-lg-4 col-md-6 portfolio-item {{ $section->fin_cat }}">
-                        <div class="portfolio-wraps" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
+                        <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                             style="cursor: pointer;">
                             <div class="flip-container">
                                 <div class="flipper">

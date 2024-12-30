@@ -46,7 +46,7 @@
         <div class="row portfolio-container">
             @foreach($clients as $client)
             <div class="col-lg-4 col-md-6 portfolio-item {{$client->category}}">
-                <div class="portfolio-wrap" data-url="{{ $client->link }}" style="cursor: pointer;">
+                <div class="portfolio-wraps" data-url="{{ $client->link }}" style="cursor: pointer;">
                     <img src="{{ asset('uploads/first_section/' . $client->logo) }}" class="img-fluid" alt="" style="margin: 0 auto; display: block;">
                     <div class="portfolio-info">
                         <h4>{{$client->title}}</h4>
@@ -69,7 +69,7 @@
 <!-- JavaScript for click functionality -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const portfolioWraps = document.querySelectorAll('.portfolio-wrap');
+        const portfolioWraps = document.querySelectorAll('.portfolio-wraps');
         portfolioWraps.forEach(function(portfolioWrap) {
             portfolioWrap.addEventListener('click', function() {
                 const url = portfolioWrap.getAttribute('data-url');
