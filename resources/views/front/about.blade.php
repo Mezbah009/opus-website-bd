@@ -72,12 +72,12 @@
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
                             <!-- <a href="{{ $home_second_sections->link }}"
-                                    class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
+                                        class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
                         </div>
                     </div>
-                    <div class="col-lg-6 video-box">
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
                         <img src="{{ asset('uploads/first_section/' . $home_second_sections->image) }}" class="img-fluid"
-                            alt="">
+                            alt="" style="max-width: 100%; max-height: 400px; object-fit: cover; border-radius: 0px;">
                     </div>
                 </div>
             @endforeach
@@ -187,7 +187,7 @@
 
     {{-- quality section --}}
 
-    <div class="section-title" style="padding-top: 30px">
+    {{-- <div class="section-title" style="padding-top: 30px">
         <h2></h2>
         <h2>Quality Management</h2>
     </div>
@@ -210,7 +210,34 @@
             @endforeach
 
         </div>
+    </div> --}}
+
+
+
+    <div class="section-title" style="padding-top: 30px">
+        <h2></h2>
+        <h2>Quality Management</h2>
     </div>
+
+    <div id="about" class="about">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            @foreach ($qualities as $key => $quality)
+                <div class="row no-gutters align-items-center">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                        <div class="section-title">
+                            <h1>{{ $quality->title }}</h1>
+                            <p>{!! $quality->description !!}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid" alt=""
+                            style="max-width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
 
 
 
@@ -295,53 +322,50 @@
 
 
 
-
-
-
-
-
     <section id="team" class="team section light-background">
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-        <h2>Core Management Team</h2>
-        {{-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> --}}
-    </div><!-- End Section Title -->
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Core Management Team</h2>
+            <p>Our team consists of skilled professionals dedicated to innovation, excellence, and delivering top-notch
+                    solutions.</p>
+        </div><!-- End Section Title -->
 
-    <div class="container">
+        <div class="container">
 
-        <div class="row justify-content-center">
-            @foreach ($teamMembers as $member)
-                <div class="col-lg-3 col-md-3 col-sm-6 d-flex flex-column align-items-center member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="{{ asset('uploads/users/' . $member->image) }}" class="img-fluid rounded-circle"
-                            alt="{{ $member->name }}">
-                        <div class="social">
-                            @if ($member->twitter)
-                                <a href="{{ $member->twitter }}"><i class="bi bi-twitter"></i></a>
-                            @endif
-                            @if ($member->facebook)
-                                <a href="{{ $member->facebook }}"><i class="bi bi-facebook"></i></a>
-                            @endif
-                            @if ($member->instagram)
-                                <a href="{{ $member->instagram }}"><i class="bi bi-instagram"></i></a>
-                            @endif
-                            @if ($member->linkedin)
-                                <a href="{{ $member->linkedin }}"><i class="bi bi-linkedin"></i></a>
-                            @endif
+            <div class="row justify-content-center">
+                @foreach ($teamMembers as $member)
+                    <div class="col-lg-3 col-md-3 col-sm-6 d-flex flex-column align-items-center member"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="member-img">
+                            <img src="{{ asset('uploads/users/' . $member->image) }}" class="img-fluid rounded-circle"
+                                alt="{{ $member->name }}">
+                            <div class="social">
+                                @if ($member->twitter)
+                                    <a href="{{ $member->twitter }}"><i class="bi bi-twitter"></i></a>
+                                @endif
+                                @if ($member->facebook)
+                                    <a href="{{ $member->facebook }}"><i class="bi bi-facebook"></i></a>
+                                @endif
+                                @if ($member->instagram)
+                                    <a href="{{ $member->instagram }}"><i class="bi bi-instagram"></i></a>
+                                @endif
+                                @if ($member->linkedin)
+                                    <a href="{{ $member->linkedin }}"><i class="bi bi-linkedin"></i></a>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>{{ $member->name }}</h4>
-                        <span>{{ $member->designation }}</span>
-                    </div>
-                </div><!-- End Team Member -->
-            @endforeach
+                        <div class="member-info text-center">
+                            <h4>{{ $member->name }}</h4>
+                            <span>{{ $member->designation }}</span>
+                        </div>
+                    </div><!-- End Team Member -->
+                @endforeach
+            </div>
+
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
     <!-- End Our Team Section -->

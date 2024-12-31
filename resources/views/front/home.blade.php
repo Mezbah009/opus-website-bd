@@ -334,7 +334,7 @@
 
 
     <!-- ======= Our Team Section ======= -->
-    <section id="team" class="team">
+    {{-- <section id="team" class="team">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -375,6 +375,56 @@
             </div>
 
         </div>
+    </section> --}}
+
+
+
+
+
+
+        <section id="team" class="team section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Core Management Team</h2>
+            <p>Our team consists of skilled professionals dedicated to innovation, excellence, and delivering top-notch
+                    solutions.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+                @foreach ($teamMembers as $member)
+                    <div class="col-lg-3 col-md-3 col-sm-6 d-flex flex-column align-items-center member"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="member-img">
+                            <img src="{{ asset('uploads/users/' . $member->image) }}" class="img-fluid rounded-circle"
+                                alt="{{ $member->name }}">
+                            <div class="social">
+                                @if ($member->twitter)
+                                    <a href="{{ $member->twitter }}"><i class="bi bi-twitter"></i></a>
+                                @endif
+                                @if ($member->facebook)
+                                    <a href="{{ $member->facebook }}"><i class="bi bi-facebook"></i></a>
+                                @endif
+                                @if ($member->instagram)
+                                    <a href="{{ $member->instagram }}"><i class="bi bi-instagram"></i></a>
+                                @endif
+                                @if ($member->linkedin)
+                                    <a href="{{ $member->linkedin }}"><i class="bi bi-linkedin"></i></a>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="member-info text-center">
+                            <h4>{{ $member->name }}</h4>
+                            <span>{{ $member->designation }}</span>
+                        </div>
+                    </div><!-- End Team Member -->
+                @endforeach
+            </div>
+
+        </div>
+
     </section>
     <!-- End Our Team Section -->
 
