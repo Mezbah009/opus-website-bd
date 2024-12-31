@@ -146,9 +146,9 @@
         <div class="container" data-aos="fade-up" style="box-shadow: none;">
             @foreach ($accreditations as $key => $accreditation)
                 <div class="row no-gutters">
-                    <div class="col-lg-6 video-box">
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
                         <img src="{{ asset('uploads/first_section/' . $accreditation->image) }}" class="img-fluid"
-                            alt="">
+                            alt="" style="max-width: 100%; max-height: 200px; object-fit: cover; border-radius: 0px;">
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
                         <div class="section-title">

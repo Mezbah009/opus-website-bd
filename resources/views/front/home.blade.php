@@ -92,7 +92,7 @@
         <div class="container" data-aos="fade-up">
             @foreach ($home_first_section as $key => $home_first_sections)
                 <div class="row no-gutters">
-                    <div class="col-lg-6 video-box">
+                    <div class="col-lg-6 video-box" >
                         <img src="{{ asset('uploads/first_section/' . $home_first_sections->image) }}" class="img-fluid"
                             alt="">
                         <a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
