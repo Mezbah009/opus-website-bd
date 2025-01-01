@@ -15,7 +15,7 @@ body {
 }
 
 a {
-    color: #428bca;
+    color: #0E72B4;
     text-decoration: none;
 }
 
@@ -112,14 +112,14 @@ h6,
 }
 
 #topbar .social-links a {
-    color: #5c768d;
+    color: #428BCA;
     padding: 4px 8px; /* Adjusted padding for better spacing */
     display: inline-block;
     transition: 0.3s;
 }
 
 #topbar .social-links a:hover {
-    color: #428bca;
+    color: #0D4472;
 }
 
 /* Media query for responsiveness */
@@ -527,7 +527,7 @@ h6,
     color: #fff;
     animation-delay: 0.8s;
     border: 0;
-    background: #428bca;
+    background: #0E72B4;
 }
 
 #hero .btn-get-started:hover {
@@ -683,7 +683,7 @@ section {
 }
 
 .about .icon-box:hover .icon {
-    background: #428bca;
+    background: #0D4472;
 }
 
 .about .icon-box:hover .icon i {
@@ -920,7 +920,7 @@ section {
 }
 
 .services .icon-box:hover .icon {
-    background-color: #428BCA;
+    background-color: #0E72B4;
     box-shadow: 0px 0 30px rgba(66, 139, 202, 0.5);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     color: #fff;
@@ -1003,7 +1003,7 @@ section {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-    background: #428bca;
+    background: #0E72B4;
     color: #fff;
 }
 
@@ -1013,13 +1013,13 @@ section {
 
 .portfolio .portfolio-wrap {
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
+    transition: 2.0s;
     position: relative;
     overflow: hidden;
 }
 
 .portfolio .portfolio-wrap img {
-    transition: 0.3s;
+    transition: 2.0s;
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
@@ -1086,7 +1086,7 @@ section {
 }
 
 .portfolio .portfolio-wrap:hover img {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 
@@ -1526,7 +1526,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-    background: #428bca;
+    background: #0E72B4;
     border: 0;
     padding: 10px 30px;
     color: #fff;

@@ -14,7 +14,7 @@
         }
 
         .profile-card {
-            background: #428BCA;
+            background: #0E72B4;
             color: white;
             flex: 1;
             min-width: 300px;

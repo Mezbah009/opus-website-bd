@@ -14,7 +14,7 @@
 
 .content-item i {
     font-size: 3rem;
-    color: #428bca; /* Example color */
+    color: #0E72B4; /* Example color */
     margin-bottom: 10px;
 }
 
@@ -213,7 +213,7 @@
 .card_manage .read-more a {
     text-decoration: none;
     color: #ffffff;
-    background-color: #428bca; /* Change background color to #76ABD8 */
+    background-color: #0E72B4; /* Change background color to #76ABD8 */
     padding: 10px 20px;
     border-radius: 4px;
     margin-right: 10px;
@@ -261,14 +261,14 @@
 
 .navbar .btn-primary.text-whites {
     padding: 8px 20px;
-    border-radius: 4px;
-    background-color: #428bca; /* Change this to match your site's color scheme */
+    border-radius: 0px;
+    background-color: #0E72B4; /* Change this to match your site's color scheme */
     color: #fff;
     margin-left: 40px;
 }
 
 .navbar .btn-primary.text-whites:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
+    background-color: #0D4472; /* Darker shade for hover effect */
     color: #fff;
 }
 .text-whites {
