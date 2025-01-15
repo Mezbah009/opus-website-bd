@@ -265,7 +265,7 @@ class FrontController extends Controller
             $jobs = $response->json(); // Fetch the jobs
             return view('front.jobs', compact('jobs'));
         }
-    
+
         return back()->with('error', 'Failed to fetch job data.');
     }
 }
