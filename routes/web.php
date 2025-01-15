@@ -57,6 +57,10 @@ Route::get('/blog', [FrontController::class, 'blog'])->name('front.blog');
 Route::get('/services', [FrontController::class, 'services'])->name('front.services');
 
 
+Route::get('/categories', [FrontController::class, 'showCategories'])->name('categories.index');
+
+
+
 // Demo route
 Route::get('/request-demo', [FrontController::class, 'demo'])->name('front.demo');
 Route::post('/save-demo', [FrontController::class, 'store'])->name('demo.store');
@@ -278,5 +282,3 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/test', function (Request $request) {
     dd($request->all());
 });
-
-

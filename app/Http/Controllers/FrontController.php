@@ -27,35 +27,37 @@ use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class FrontController extends Controller
 {
-    public function index(){
-        $sliders = Slider::where('active','Yes')
-                ->orderBy('id','desc')->take(3)
-                ->get();
-        $data['slider']= $sliders;
+    public function index()
+    {
+        $sliders = Slider::where('active', 'Yes')
+            ->orderBy('id', 'desc')->take(3)
+            ->get();
+        $data['slider'] = $sliders;
 
 
         $home_first_section = HomeFirstSection::all();
-        $data['home_first_section']= $home_first_section;
+        $data['home_first_section'] = $home_first_section;
 
         $home_second_section = HomeSecondSection::all();
-        $data['home_second_section']= $home_second_section;
+        $data['home_second_section'] = $home_second_section;
 
         $home_services_section = HomeServicesSection::all();
-        $data['home_services_section']= $home_services_section;
+        $data['home_services_section'] = $home_services_section;
 
         $testimonials = Testimonial::all();
-        $data['testimonials']= $testimonials;
+        $data['testimonials'] = $testimonials;
 
         $clients = Client::all();
-        $data['clients']= $clients;
+        $data['clients'] = $clients;
 
         $teamMembers = User::where('role', '!=', 2)->get();
-        $data['teamMembers']= $teamMembers;
+        $data['teamMembers'] = $teamMembers;
 
         // $sections = Product::all()->take(6);
         // $data['sections']= $sections;
@@ -67,52 +69,54 @@ class FrontController extends Controller
         $data['sections'] = $sections;
         $contacts = Contact::all();
         $numbers = Number::all();
-        $data['contacts']= $contacts;
-        $data['numbers']= $numbers;
+        $data['contacts'] = $contacts;
+        $data['numbers'] = $numbers;
 
-        return view('front.home',$data);
+        return view('front.home', $data);
     }
 
-    public function contact(){
+    public function contact()
+    {
         $contacts = Contact::all();
         $numbers = Number::all();
-        $data['numbers']= $numbers;
-        $data['contacts']= $contacts;
-        return view('front.contact',$data);
-
+        $data['numbers'] = $numbers;
+        $data['contacts'] = $contacts;
+        return view('front.contact', $data);
     }
 
-    public function about(){
+    public function about()
+    {
 
         $home_second_section = HomeSecondSection::all();
-        $data['home_second_section']= $home_second_section;
+        $data['home_second_section'] = $home_second_section;
 
         $managements = Leader::all();
-        $data['managements']= $managements;
+        $data['managements'] = $managements;
 
-        $accreditations= Accreditation::all();
-        $data['accreditations']= $accreditations;
+        $accreditations = Accreditation::all();
+        $data['accreditations'] = $accreditations;
 
-        $awards= Award::all();
-        $data['awards']= $awards;
+        $awards = Award::all();
+        $data['awards'] = $awards;
 
-        $qualities= Quality::all();
-        $data['qualities']= $qualities;
+        $qualities = Quality::all();
+        $data['qualities'] = $qualities;
 
         $teamMembers = User::where('role', '!=', 2)->get();
-        $data['teamMembers']= $teamMembers;
+        $data['teamMembers'] = $teamMembers;
 
-        return view('front.about',$data);
-
+        return view('front.about', $data);
     }
 
-    public function products(){
+    public function products()
+    {
         $sections = Product::where("button_name", "filter-sig")->get();
-        $data['sections']= $sections;
-        return view('front.products',$data);
+        $data['sections'] = $sections;
+        return view('front.products', $data);
     }
 
-    public function showProduct($slug){
+    public function showProduct($slug)
+    {
 
         // Retrieve the product based on the slug
         $sections = Product::where('link', $slug)->firstOrFail();
@@ -129,36 +133,40 @@ class FrontController extends Controller
 
 
         // Pass the retrieved data to the view
-        return view('front.product-post', compact('sections', 'product_first_sections','product_second_sections','product_third_sections','product_fourth_sections','product_fifth_sections','product_sixth_sections','product_seventh_sections'));
+        return view('front.product-post', compact('sections', 'product_first_sections', 'product_second_sections', 'product_third_sections', 'product_fourth_sections', 'product_fifth_sections', 'product_sixth_sections', 'product_seventh_sections'));
     }
 
 
 
-    public function fintech(){
+    public function fintech()
+    {
         $sections = Product::where("button_name", "filter-fin")->get();
-        $data['sections']= $sections;
-        return view('front.fintech',$data);
+        $data['sections'] = $sections;
+        return view('front.fintech', $data);
     }
 
-    public function clients(){
+    public function clients()
+    {
 
         $clients = Client::all();
-        $data['clients']= $clients;
+        $data['clients'] = $clients;
 
-        return view('front.clients',$data);
+        return view('front.clients', $data);
     }
 
-    public function blog(){
-        $blogPosts=Blog::all();
-        $data['blogPosts']= $blogPosts;
+    public function blog()
+    {
+        $blogPosts = Blog::all();
+        $data['blogPosts'] = $blogPosts;
 
-        return view('front.blog',$data);
+        return view('front.blog', $data);
     }
 
-    public function showBlogPost($slug, Request $request){
+    public function showBlogPost($slug, Request $request)
+    {
         $query = Blog::where('slug', $slug);
 
-        if(!empty($request->get('keyword'))){
+        if (!empty($request->get('keyword'))) {
             $query->where('description', 'like', '%' . $request->get('keyword') . '%');
         }
 
@@ -166,14 +174,16 @@ class FrontController extends Controller
         return view('front.blog-post', compact('blogPost'));
     }
 
-    public function showLeaderPost($link, Request $request){
+    public function showLeaderPost($link, Request $request)
+    {
         $query = Leader::where('link', $link);
         $leaderPost = $query->firstOrFail();
 
         return view('front.leader-post', compact('leaderPost'));
     }
 
-    public function showJobPost($slug, Request $request){
+    public function showJobPost($slug, Request $request)
+    {
         $query = Job::where('slug', $slug);
         $job = $query->firstOrFail();
 
@@ -181,7 +191,8 @@ class FrontController extends Controller
     }
 
 
-    public function services(){
+    public function services()
+    {
 
         return view('front.services');
     }
@@ -190,12 +201,15 @@ class FrontController extends Controller
     //     return view('front.demo');
     // }
 
-    public function job(){
-        $jobs=Job::all();
-        $data['jobs']= $jobs;
 
-        return view('front.jobs',$data);
-    }
+
+    // public function job()
+    // {
+    //     $jobs = Job::all();
+    //     $data['jobs'] = $jobs;
+
+    //     return view('front.jobs', $data);
+    // }
 
 
     // demo request from
@@ -222,4 +236,36 @@ class FrontController extends Controller
         return redirect()->back()->with('success', 'Your message has been sent!');
     }
 
+
+
+
+
+    //test api --------
+
+    public function showCategories()
+    {
+        $response = Http::get('https://medicus-ecommerce.opusdemo.com/public/api/categories');
+
+        if ($response->successful()) {
+            $categories = $response->json('data'); // Fetch only the 'data' key
+            return view('front.categories.index', compact('categories'));
+        }
+
+        return back()->with('error', 'Failed to fetch categories.');
+    }
+
+
+
+
+    public function job()
+    {
+        $response = Http::withOptions(['verify' => false])->get('https://e-hrm.opuserp.com/api/recruitment/gt-all-jobs');
+
+        if ($response->successful()) {
+            $jobs = $response->json(); // Fetch the jobs
+            return view('front.jobs', compact('jobs'));
+        }
+    
+        return back()->with('error', 'Failed to fetch job data.');
+    }
 }
