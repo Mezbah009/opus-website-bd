@@ -124,7 +124,7 @@
                                         <a
                                     href="https://e-hrm.opuserp.com/Recruitment/JobRequisition/JobGridById/{{ $job['Id'] }}"
                                     class="view-details-btn"
-                                    target="_blank"
+                                    {{-- target="_blank" --}}
                                     rel="noopener noreferrer">
                                     View Details
                                 </a>
