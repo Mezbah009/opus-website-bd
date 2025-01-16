@@ -121,7 +121,13 @@
 
                                     <!-- View Details Button -->
                                     <div class="mt-3">
-                                        <a href="#" class="view-details-btn">View Details</a>
+                                        <a
+                                    href="https://e-hrm.opuserp.com/Recruitment/JobRequisition/JobGridById/{{ $job['Id'] }}"
+                                    class="view-details-btn"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    View Details
+                                </a>
                                     </div>
                                 </div>
                             </div>
