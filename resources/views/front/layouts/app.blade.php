@@ -156,10 +156,11 @@
                     <li class="dropdown">
                         <a href="#" class="nav-link scrollto dropdown-toggle {{ Request::is('products') ? 'active' : '' }}" data-bs-toggle="dropdown">Product</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('front.products') }}">Enterprise</a></li>
-                            <li><a class="dropdown-item" href="{{ route('front.fintech') }}">Fintech</a></li>
-                            <li><a class="dropdown-item" href="">Mobile App</a></li>
-                            <li><a class="dropdown-item" href="">AI</a></li>
+                            <li><a class="dropdown-item" href="{{ route('front.products') }}">Enterprise Solutions</a></li>
+                            <li><a class="dropdown-item" href="{{ route('front.fintech') }}">Fintech Solutions</a></li>
+                            <li><a class="dropdown-item" href="">Mobile App Solutions</a></li>
+                            <li><a class="dropdown-item" href="">AI Solutions</a></li>
+                            <li><a class="dropdown-item" href="">System Solutions</a></li>
                         </ul>
                     </li>
 
