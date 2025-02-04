@@ -267,7 +267,13 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Services</h2>
+                <h2>Our Services</h2>
+                <p>Our company specializes in creating bespoke software solutions across
+                    various domains, ensuring top-quality, efficiency, and innovation in
+                    each project. Our expertise spans custom software development,
+                    mobile and web application development, business intelligence, AI,
+                    blockchain, IoT, outsourcing, process consulting, re-engineering &
+                    migration, and digital marketing.</p>
             </div>
             <div class="row">
                 @foreach ($home_services_section as $key => $home_services_sections)
