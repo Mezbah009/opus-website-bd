@@ -137,6 +137,13 @@ class FrontController extends Controller
         return view('front.system-solutions', $data);
     }
 
+    public function cyberSecurity()
+    {
+        $sections = Product::where("button_name", "filter-sys")->get();
+        $data['sections'] = $sections;
+        return view('front.cyber-security', $data);
+    }
+
 
 
     public function showProduct($slug)
