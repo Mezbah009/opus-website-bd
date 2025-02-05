@@ -13,13 +13,16 @@ class BlogController extends Controller
 {
     public function index(Request $request)
     {
-        $blogs = Blog::latest();
+        $blogs = Blog::query()->latest(); // Order by created_at DESC
+
         if (!empty($request->get('keyword'))) {
-            $blogs = $blogs->where('title', 'like', '%' . $request->get('keyword') . '%');
+            $blogs->where('title', 'like', '%' . $request->get('keyword') . '%');
         }
-        $blogs = $blogs->latest()->paginate(10);
+
+        $blogs = $blogs->paginate(10); // No need for another latest() call
         return view('admin.blog.list', compact('blogs'));
     }
+
 
     public function create()
     {

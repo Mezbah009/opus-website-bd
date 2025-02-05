@@ -156,11 +156,11 @@ class FrontController extends Controller
 
     public function blog()
     {
-        $blogPosts = Blog::all();
-        $data['blogPosts'] = $blogPosts;
+        $data['blogPosts'] = Blog::orderBy('date', 'desc')->get(); // Order by date in descending order
 
         return view('front.blog', $data);
     }
+    
 
     public function showBlogPost($slug, Request $request)
     {
