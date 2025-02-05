@@ -51,52 +51,107 @@ class ProductController extends Controller
     }
 
 
+    // public function store(Request $request)
+    // {
+    //     // dd($request->all());
+    //     // Validate the request data
+    //     $validator = Validator::make($request->all(), [
+    //         'title' => 'required|string',
+    //         'description' => 'nullable|string',
+    //         'button_name' => 'nullable|string',
+    //         'slug' => 'nullable|string',
+    //         'fin_cat' => 'nullable|string',
+    //         'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validation rules for logo
+    //     ]);
+
+    //     if ($validator->passes()) {
+    //         $section = new Product();
+    //         $section->title = $request->title;
+    //         $section->description = $request->description;
+    //         $section->button_name = $request->button_name;
+    //         $section->fin_cat = $request->fin_cat;
+    //         $section->link = $request->slug;
+
+    //         if (!empty($request->image_id)) {
+    //             $tempImage = TempImage::find($request->image_id);
+
+    //             $extArray = explode('.', $tempImage->name);
+    //             $ext = last($extArray);
+    //             $newImageName = $section->id . '.' . $ext; // Generate a unique filename
+    //             $sPath = public_path() . '/temp/' . $tempImage->name;
+    //             $dPath = public_path() . '/uploads/first_section/' . $newImageName;
+
+    //             File::copy($sPath, $dPath);
+
+    //             $section->logo = $newImageName;
+    //         }
+
+    //         $section->save();
+
+    //         // Redirect to index page
+    //         return redirect()->route('products.index')->with('success', 'Section added successfully');
+    //     } else {
+    //         return response()->json([
+    //             'status' => false,
+    //             'errors' => $validator->errors()
+    //         ]);
+    //     }
+    // }
+
+
+
+
     public function store(Request $request)
-    {
-        // dd($request->all());
-        // Validate the request data
-        $validator = Validator::make($request->all(), [
-            'title' => 'required|string',
-            'description' => 'nullable|string',
-            'button_name' => 'nullable|string',
-            'slug' => 'nullable|string',
-            'fin_cat' => 'nullable|string',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validation rules for logo
-        ]);
+{
+    // Validate the request data
+    $validator = Validator::make($request->all(), [
+        'title' => 'required|string',
+        'description' => 'nullable|string',
+        'button_name' => 'nullable|string',
+        'slug' => 'nullable|string',
+        'fin_cat' => 'nullable|string',
+        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
 
-        if ($validator->passes()) {
-            $section = new Product();
-            $section->title = $request->title;
-            $section->description = $request->description;
-            $section->button_name = $request->button_name;
-            $section->fin_cat = $request->fin_cat;
-            $section->link = $request->slug;
+    if ($validator->passes()) {
+        $section = new Product();
+        $section->title = $request->title;
+        $section->description = $request->description;
+        $section->button_name = $request->button_name;
+        $section->fin_cat = $request->fin_cat;
+        $section->link = $request->slug;
 
-            if (!empty($request->image_id)) {
-                $tempImage = TempImage::find($request->image_id);
+        // First, save to get an ID
+        $section->save();
 
+        if (!empty($request->image_id)) {
+            $tempImage = TempImage::find($request->image_id);
+
+            if ($tempImage) {
                 $extArray = explode('.', $tempImage->name);
                 $ext = last($extArray);
-                $newImageName = $section->id . '.' . $ext; // Generate a unique filename
-                $sPath = public_path() . '/temp/' . $tempImage->name;
-                $dPath = public_path() . '/uploads/first_section/' . $newImageName;
+                $newImageName = $section->id . '.' . $ext; // Use the newly created ID
 
-                File::copy($sPath, $dPath);
+                $sPath = public_path('temp/' . $tempImage->name);
+                $dPath = public_path('uploads/first_section/' . $newImageName);
 
-                $section->logo = $newImageName;
+                if (File::exists($sPath)) {
+                    File::copy($sPath, $dPath);
+                    $section->logo = $newImageName;
+                    $section->save(); // Save the updated logo filename
+                }
             }
-
-            $section->save();
-
-            // Redirect to index page
-            return redirect()->route('products.index')->with('success', 'Section added successfully');
-        } else {
-            return response()->json([
-                'status' => false,
-                'errors' => $validator->errors()
-            ]);
         }
+
+        return redirect()->route('products.index')->with('success', 'Section added successfully');
+    } else {
+        return response()->json([
+            'status' => false,
+            'errors' => $validator->errors()
+        ]);
     }
+}
+
 
 
 
@@ -115,43 +170,55 @@ class ProductController extends Controller
             'button_name' => 'nullable|string',
             'fin_cat' => 'nullable|string',
             'slug' => 'nullable|string',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validation rules for logo
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        if ($validator->passes()) {
-            $product = Product::findOrFail($id);
-            $product->title = $request->title;
-            $product->description = $request->description;
-            $product->button_name = $request->button_name;
-            $product->fin_cat = $request->fin_cat;
-            $product->link = $request->slug;
-
-            if (!empty($request->image_id)) {
-                $tempImage = TempImage::find($request->image_id);
-
-                $extArray = explode('.', $tempImage->name);
-                $ext = last($extArray);
-                $newImageName = $product->id.'-'.time().'.'.$ext;
-                $sPath = public_path() . '/temp/' . $tempImage->name;
-                $dPath = public_path() . '/uploads/first_section/' . $newImageName;
-
-                File::copy($sPath, $dPath);
-
-                $product->logo = $newImageName;
-                $product->save();
-            }
-
-            $product->save();
-
-            // Redirect to index page
-            return redirect()->route('products.index')->with('success', 'Product updated successfully');
-        } else {
+        if ($validator->fails()) {
             return response()->json([
                 'status' => false,
-                'errors' => $validator->errors()
+                'errors' => $validator->errors(),
             ]);
         }
+
+        $product = Product::findOrFail($id);
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->button_name = $request->button_name;
+        $product->fin_cat = $request->fin_cat;
+        $product->link = $request->slug;
+
+        // Handle Image Update
+        if (!empty($request->image_id)) {
+            $tempImage = TempImage::find($request->image_id);
+
+            if ($tempImage) {
+                // Delete old image if exists
+                if ($product->logo) {
+                    $oldImagePath = public_path('uploads/first_section/' . $product->logo);
+                    if (File::exists($oldImagePath)) {
+                        File::delete($oldImagePath);
+                    }
+                }
+
+                // Generate a new unique filename
+                $extArray = explode('.', $tempImage->name);
+                $ext = last($extArray);
+                $newImageName = $product->id . '-' . time() . '.' . $ext;
+                $sPath = public_path('temp/' . $tempImage->name);
+                $dPath = public_path('uploads/first_section/' . $newImageName);
+
+                if (File::exists($sPath)) {
+                    File::copy($sPath, $dPath);
+                    $product->logo = $newImageName;
+                }
+            }
+        }
+
+        $product->save();
+
+        return redirect()->route('products.index')->with('success', 'Product updated successfully');
     }
+
 
     public function destroy($id)
     {

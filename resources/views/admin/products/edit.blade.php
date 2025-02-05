@@ -38,8 +38,13 @@
                                 <label for="button_name">Product Category</label>
                                 <select name="button_name" id="button_name" class="form-control">
                                     <option value="" disabled>Select Product Category</option>
-                                    <option value="filter-sig" <?php echo ($product->button_name === 'Signature') ? 'selected' : ''; ?>>Signature</option>
-                                    <option value="filter-fin" <?php echo ($product->button_name === 'Fintech') ? 'selected' : ''; ?>>Fintech</option>
+                                    <option value="filter-sig" <?php echo ($product->button_name === 'Signature') ? 'selected' : ''; ?>>Enterprise Solutions</option>
+                                    <option value="filter-fin" <?php echo ($product->button_name === 'Fintech') ? 'selected' : ''; ?>>Fintech Solutions</option>
+                                    <option value="filter-mob" <?php echo ($product->button_name === 'Signature') ? 'selected' : ''; ?>>Mobile App Solutions</option>
+                                    <option value="filter-ai" <?php echo ($product->button_name === 'Signature') ? 'selected' : ''; ?>>AI Solutions</option>
+                                    <option value="filter-sys" <?php echo ($product->button_name === 'Signature') ? 'selected' : ''; ?>>System Solutions</option>
+
+
                                     <!-- Add more options as needed -->
                                 </select>
                             </div>
