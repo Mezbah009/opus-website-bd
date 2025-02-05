@@ -63,9 +63,15 @@
                             <td>{{$section->title}}</td>
                             <td>
                                 @if($section->button_name == 'filter-sig')
-                                Signature
+                                Enterprise Solutions
                                 @elseif($section->button_name == 'filter-fin')
-                                Fintech
+                                Fintech Solutions
+                                @elseif($section->button_name == 'filter-mob')
+                                Mobile App Solutions
+                                @elseif($section->button_name == 'filter-ai')
+                                AI Solutions
+                                @elseif($section->button_name == 'filter-sys')
+                                System Solutions
                                 @endif
                             </td>
 

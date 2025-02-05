@@ -115,6 +115,30 @@ class FrontController extends Controller
         return view('front.products', $data);
     }
 
+
+    public function mobileApp()
+    {
+        $sections = Product::where("button_name", "filter-mob")->get();
+        $data['sections'] = $sections;
+        return view('front.mobile-app', $data);
+    }
+
+    public function aiSolutions()
+    {
+        $sections = Product::where("button_name", "filter-ai")->get();
+        $data['sections'] = $sections;
+        return view('front.ai-solutions', $data);
+    }
+
+    public function systemSolutions()
+    {
+        $sections = Product::where("button_name", "filter-sys")->get();
+        $data['sections'] = $sections;
+        return view('front.system-solutions', $data);
+    }
+
+
+
     public function showProduct($slug)
     {
 
@@ -160,7 +184,7 @@ class FrontController extends Controller
 
         return view('front.blog', $data);
     }
-    
+
 
     public function showBlogPost($slug, Request $request)
     {

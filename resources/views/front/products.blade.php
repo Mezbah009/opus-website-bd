@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/product-banner.jpg") }}');">
-    <h2>Our Products</h2>
+    <h2>Our Enterprise Solutions</h2>
     <div class="line">
         <div></div>
         <div></div>
@@ -16,7 +16,7 @@
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="section-title">
-            {{-- <h2>Our Products</h2> --}}
+            <h2>Our Enterprise Solutions</h2>
             <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company.
                 Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across
                 various industries & business functions, it collaborates with customers to help them effectively address

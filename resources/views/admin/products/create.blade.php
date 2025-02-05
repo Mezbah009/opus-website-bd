@@ -36,8 +36,11 @@
                                 <label for="button_name">Product Category</label>
                                 <select name="button_name" id="button_name" class="form-control">
                                     <option value="" selected disabled>Select Product Category</option>
-                                    <option value="filter-sig"> Signature </option>
-                                    <option value="filter-fin">Fintech</option>
+                                    <option value="filter-sig"> Enterprise Solutions </option>
+                                    <option value="filter-fin">Fintech Solutions</option>
+                                    <option value="filter-mob">Mobile App Solutions</option>
+                                    <option value="filter-ai">AI Solutions</option>
+                                    <option value="filter-sys">System Solutions</option>
                                 </select>
                             </div>
                         </div>

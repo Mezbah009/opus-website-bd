@@ -158,9 +158,9 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('front.products') }}">Enterprise Solutions</a></li>
                             <li><a class="dropdown-item" href="{{ route('front.fintech') }}">Fintech Solutions</a></li>
-                            <li><a class="dropdown-item" href="">Mobile App Solutions</a></li>
-                            <li><a class="dropdown-item" href="">AI Solutions</a></li>
-                            <li><a class="dropdown-item" href="">System Solutions</a></li>
+                            <li><a class="dropdown-item" href="{{ route('front.mobileApp') }}">Mobile App Solutions</a></li>
+                            <li><a class="dropdown-item" href="{{ route('front.aiSolutions') }}">AI Solutions</a></li>
+                            <li><a class="dropdown-item" href="{{ route('front.systemSolutions') }}">System Solutions</a></li>
                         </ul>
                     </li>
 

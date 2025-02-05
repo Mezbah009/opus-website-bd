@@ -46,6 +46,16 @@ Route::get('/', [FrontController::class, 'index'])->name('front.home');
 Route::get('/contact-us', [FrontController::class, 'contact'])->name('front.contact');
 Route::get('/about-us', [FrontController::class, 'about'])->name('front.about');
 Route::get('/products', [FrontController::class, 'products'])->name('front.products');
+
+
+Route::get('/mobile', [FrontController::class, 'mobileApp'])->name('front.mobileApp');
+Route::get('/ai-solutions', [FrontController::class, 'aiSolutions'])->name('front.aiSolutions');
+Route::get('/system-solutions', [FrontController::class, 'systemSolutions'])->name('front.systemSolutions');
+
+
+
+
+
 Route::get('/jobs', [FrontController::class, 'job'])->name('front.jobs');
 Route::get('products/{slug}', [FrontController::class, 'showProduct'])->name('product.show');
 Route::get('blogs/{slug}', [FrontController::class, 'showBlogPost'])->name('blog.show');
