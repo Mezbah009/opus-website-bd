@@ -15,7 +15,7 @@
     <!-- =======  Custom Software ======= -->
 
     <div class="section-title" style="padding-top: 60px">
-        <h2>Custom Software Development</h2>
+        <h2>Software Development</h2>
         <p></p>
     </div>
 
@@ -61,7 +61,7 @@
     <!-- =======  Mobile Application ======= -->
 
     <div class="section-title">
-        <h2>Mobile Application Development</h2>
+        <h2>Mobile App Development</h2>
         <p></p>
     </div>
 
@@ -111,7 +111,7 @@
     <!-- =======  Web Application Development ======= -->
 
     <div class="section-title">
-        <h2>Web Application Development</h2>
+        <h2>Web App Development</h2>
         <p></p>
     </div>
 
@@ -124,28 +124,42 @@
                 <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
                     <div class="section-title">
-                        <p>Web application development is the process and practice of developing web applications.
-                            Considering this, along with its unique characteristics, popular frameworks used include the
-                            spiral approach and business-oriented approach to application development, among other models
-                            that address the requirements for an iterative process.There is a consensus that the processes
-                            involved are extensions of standard software engineering processes.</p>
+                        <p>Web Application Development Services by Opus Technology
+                            Empower your business with Opus Technology’s Web Application Development services. We design and
+                            develop secure, scalable, and high-performance web applications tailored to your unique business
+                            needs.
+                        </p>
                         <br>
-                        <p>Web application development Just as with a traditional desktop application, web applications have
-                            varying levels of risk. A personal home page is much less risky than, for example, a stock
-                            trading web site. For some projects security, software bugs, etc. are major issues. If time to
-                            market, or technical complexity is a concern, documentation, test planning, change control,
-                            requirements analysis, architectural description and formal design and construction practices
-                            can mitigate risk.</p>
+                        <div class="section-title">
+                            <ul style="list-style-type: disc; padding-left: 20px; margin: 0; text-align: left;">
+                                <li style="font-weight: bold; list-style-type: none; padding-left: 0;">Our Services:</li>
+                                <li style="padding-left: 10px;">Custom Web Application Development – Build dynamic,
+                                    feature-rich web
+                                    applications.
+                                </li>
+                                <li style="padding-left: 10px;">Scalable & Secure Architecture – Ensure performance,
+                                    security, and
+                                    reliability.
+                                </li>
+                                <li style="padding-left: 10px;">Enterprise & Business Solutions – Optimize operations with
+                                    industry-specific applications.
+                                </li>
+                                <li style="padding-left: 10px;">Agile Development & Rapid Deployment – Accelerate
+                                    time-to-market
+                                    with iterative development.
+                                </li>
+                                <li style="padding-left: 10px;">Maintenance & Support – Keep your web applications updated
+                                    and
+                                    secure.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-
                 </div>
-                <div class="section-title">
-                    <p>A study conducted involving web engineering practice revealed that web application development has
-                        several characteristics that have to be addressed and these include: short development life-cycle
-                        times; different business models; multi-disciplinary development teams; small development teams
-                        working on similar tasks; business analysis and evaluation with end-users; explicit requirement and
-                        rigorous training against requirements; and, maintenance.</p>
-                </div>
+                <p>
+                    From small businesses to large enterprises, we create tailored solutions that enhance efficiency, user
+                    experience, and business growth.
+                </p>
 
             </div>
 
@@ -169,30 +183,38 @@
                 </div>
             </div>
             <div class="section-title">
-                <p>
-                    Business intelligence (BI) comprises the strategies and technologies used by enterprises for the data
-                    analysis of business information. BI technologies provide historical, current and predictive views of
-                    business operations. Common functions of business intelligence technologies include reporting, online
-                    analytical processing, analytics, data mining, process mining, complex event processing, business
-                    performance management, benchmarking, text mining, predictive analytics and prescriptive analytics. BI
-                    technologies can handle large amounts of structured and sometimes unstructured data to help identify,
-                    develop and otherwise create new strategic business opportunities. They aim to allow for the easy
-                    interpretation of these big data. Identifying new opportunities and implementing an effective strategy
-                    based on insights can provide businesses with a competitive market advantage and long-term stability.
+
+                <p>Business Intelligence (BI) Services by Opus Technology Unlock data-driven success with Opus Technology’s
+                    Business Intelligence (BI) Solutions. Our BI services empower enterprises with actionable insights,
+                    helping businesses make informed decisions, optimize operations, and drive growth.
                 </p>
-                <br>
-                <p>
-                    It can be used by enterprises to support a wide range of business decisions ranging from operational to
-                    strategic. Basic operating decisions include product positioning or pricing. Strategic business
-                    decisions involve priorities, goals and directions at the broadest level. In all cases, BI is most
-                    effective when it combines data derived from the market in which a company operates (external data) with
-                    data from company sources internal to the business such as financial and operations data (internal
-                    data). When combined, external and internal data can provide a complete picture which, in effect,
-                    creates an "intelligence" that cannot be derived from any singular set of data. Amongst myriad uses,
-                    business intelligence tools empower organizations to gain insight into new markets, to assess demand and
-                    suitability of products and services for different market segments and to gauge the impact of marketing
-                    efforts.
-                </p>
+                <ul style="list-style-type: disc; padding-left: 20px; margin: 0; text-align: left;">
+                    <li style="font-weight: bold; list-style-type: none; padding-left: 0;">Our BI Solutions Include:
+                    </li>
+                    <li style="padding-left: 10px;">Data Analytics & Visualization – Transform raw data into meaningful
+                        insights through interactive dashboards and reports.
+
+                    </li>
+                    <li style="padding-left: 10px;">Predictive & Prescriptive Analytics – Leverage AI-powered analytics to
+                        forecast trends and optimize business strategies.
+
+                    </li>
+                    <li style="padding-left: 10px;">Performance Monitoring & Benchmarking – Track key metrics and compare
+                        performance for continuous improvement.
+
+                    </li>
+                    <li style="padding-left: 10px;">Data Mining & Process Automation – Extract valuable patterns and
+                        automate workflows for better efficiency.
+
+                    </li>
+                    <li style="padding-left: 10px;">Market & Competitive Analysis – Gain insights into market trends,
+                        customer behavior, and competitive positioning.
+
+                    </li>
+                </ul>
+
+                <p>With our advanced BI solutions, businesses can identify new opportunities, enhance decision-making, and
+                    gain a competitive edge.</p>
             </div>
 
         </div>
@@ -227,10 +249,9 @@
 
 
             <div class="section-title">
-
-                <ul style="list-style:none; padding: 0; margin: 0; text-align: left;">
-
-                    <strong>Discover the power of AI with Opus Technology:</strong>
+                <ul style="list-style-type: disc; padding-left: 20px; margin: 0; text-align: left;">
+                    <li style="font-weight: bold; list-style-type: none; padding-left: 0;">Discover the power of AI with
+                        Opus Technology:</li>
                     <li style="padding-left: 10px;">Intelligent Automation: Automate your business processes for higher
                         efficiency.</li>
                     <li style="padding-left: 10px;">Predictive Analytics: Make data-driven decisions that anticipate trends
@@ -243,6 +264,7 @@
                         AI-driven experiences.</li>
                 </ul>
             </div>
+
 
 
         </div>
@@ -496,12 +518,25 @@
                             </p>
                             <br>
                             <h5 style="text-align: left"><b>Our Security Services Include:
-                            </b></h5>
-                            <p>Threat Intelligence & Risk Management – Identify and eliminate vulnerabilities before they become threats.
-                                🔐 End-to-End Data Protection – Secure sensitive data with encryption and access control.
-                                🌐 Network & Cloud Security – Safeguard your infrastructure against cyber intrusions.
-                                🚀 Incident Response & Recovery – Rapid response to minimize downtime and restore operations.
-                                ✅ Regulatory Compliance Support – Ensure your business meets industry security standards.</p>
+                                </b></h5>
+                            <p>Threat Intelligence & Risk Management – Identify and eliminate vulnerabilities before they
+                                become threats.
+                            <div>
+
+                                <p>
+                                    🔐 End-to-End Data Protection – Secure sensitive data with encryption and access
+                                    control.
+                                    🌐 Network & Cloud Security – Safeguard your infrastructure against cyber
+                                    intrusions.
+                                    🚀Incident Response & Recovery – Rapid response to minimize downtime and restore
+                                    operations.
+                                    ✅ Regulatory Compliance Support – Ensure your business meets industry
+                                    security standards.
+
+                                </p>
+
+                            </div>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -527,40 +562,17 @@
                                 right place and time and offering value to your customers and society at large.</p>
                             <br>
 
-                            <details style="text-align: left">
-                                <summary><b>So What is Digital Marketing?</b></summary>
-                                <div>
-                                    Digital Marketing is any form of creating awareness or promoting products or services
-                                    that
-                                    involve using an electronic device. Digital marketing can be operated in both online and
-                                    offline. Offline is any media channels that aren’t connected to the internet. These
-                                    channels
-                                    include billboards, television ads, telemarketing, radio, print advertising, signs, and
-                                    pamphlets. In this article, I will be focusing on online marketing because offline
-                                    marketing
-                                    is no more functioning as it used to be. Online marketing is the future now. Let’s take
-                                    a
-                                    tour and discuss some of the areas of online marketing that will give us a clear
-                                    overview of
-                                    the online world.
-                                </div>
-                            </details>
-                            <details style="text-align: left">
-                                <summary><b>Does Digital Marketing Work For Business?</b></summary>
-                                <div>
-                                    <p>The answer is yes it does work</p>
-                                    <br>
-                                    When you use the right methods and strategies, you will surely take your business to the
-                                    next level. Many businesses fail because they do not follow the right methods in
-                                    approaching
-                                    digital marketing. Digital marketing has its guides and steps that you must follow in
-                                    order
-                                    to succeed in the digital world. What are the benefits of digital marketing? Digital
-                                    marketing has given you an in-depth knowledge on how the online marketing works. Through
-                                    digital marketing, you will be able to strategize and put proper measures into building
-                                    your
-                                    business and reaching a large number of targeted customers.
-                            </details>
+                            <div>
+                                <p>Our services include:</p>
+                                <ul style="padding-left: 20px; list-style-type: disc; text-align: left; margin: 0;">
+                                    <li style="margin-bottom: 10px;">SEO & SEM – Improve search rankings and visibility.</li>
+                                    <li style="margin-bottom: 10px;">Social Media Marketing – Engage and grow your audience.</li>
+                                    <li style="margin-bottom: 10px;">Email Marketing – Deliver personalized, high-impact campaigns.</li>
+                                    <li style="margin-bottom: 10px;">PPC Advertising – Maximize ROI with targeted ads.</li>
+                                </ul>
+                            </div>
+
+
                         </div>
                     </div>
                     <div class="col-lg-6 video-box">
@@ -568,11 +580,9 @@
                     </div>
                 </div>
                 <div class="section-title">
-                    <p>Digital marketing has now become the new face that is driving the internet world. Many people have
-                        heard
-                        the word internet but they do not fully understand how it works and its benefits, and this has
-                        raised
-                        curiosity in them wanting to know more about digital marketing.</p>
+                    {{-- <p>By leveraging these strategies, Opus Technology ensures that your business not only reaches a wider
+                        audience but also engages them effectively, leading to increased brand loyalty and business growth.
+                    </p> --}}
                 </div>
             </div>
         </div>
