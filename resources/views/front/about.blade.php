@@ -205,7 +205,7 @@
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
                             <!-- <a href="{{ $home_second_sections->link }}"
-                                                                        class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
+                                                                            class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
@@ -695,7 +695,9 @@
                     style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
             </div>
         </div>
-    </section><!-- End Our Journey Section -->
+    </section>
+
+    {{-- End Our Journey Section  --}}
 
     <br><br><br><br>
 
