@@ -1,5 +1,138 @@
 @extends('front.layouts.app')
 
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .header {
+        margin-bottom: 50px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        color: #cc2b2b;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .subtitle {
+        font-size: 2rem;
+        color: #89a7e0;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline {
+        position: relative;
+        padding-top: 20px;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 100px;
+        height: 100%;
+        background: repeating-linear-gradient(0deg,
+                rgba(0, 0, 0, 0.2) 0px,
+                rgba(0, 0, 0, 0.2) 2px,
+                transparent 2px,
+                transparent 20px);
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        display: flex;
+        margin-bottom: 30px;
+        position: relative;
+        min-height: 150px;
+    }
+
+    .timeline-content {
+        width: 45%;
+        padding: 15px;
+    }
+
+    .timeline-image {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        height: 170px;
+        background: #000;
+        border: 3px solid #7fc0eb;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .timeline-image::before,
+    .timeline-image::after {
+        content: '';
+        position: absolute;
+        top: -8px;
+        bottom: -8px;
+        width: 24px;
+        background: repeating-linear-gradient(0deg,
+                #000,
+                #000 4px,
+                #333 4px,
+                #333 12px);
+    }
+
+    .timeline-image::before {
+        left: -24px;
+    }
+
+    .timeline-image::after {
+        right: -24px;
+    }
+
+    .timeline-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .year {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #000000;
+    }
+
+    .description {
+        font-size: 1rem;
+        line-height: 1.4;
+        color: #000000;
+    }
+
+    /* Left side content */
+    .timeline-item:nth-child(odd) .timeline-content {
+        margin-right: auto;
+        text-align: right;
+        padding-right: 120px;
+    }
+
+    /* Right side content */
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: auto;
+        text-align: left;
+        padding-left: 120px;
+    }
+</style>
+
 @section('content')
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/about-us.jpg') }}');">
         <h2>About us</h2>
@@ -72,12 +205,13 @@
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
                             <!-- <a href="{{ $home_second_sections->link }}"
-                                        class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
+                                                                        class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
                         <img src="{{ asset('uploads/first_section/' . $home_second_sections->image) }}" class="img-fluid"
-                            alt="" style="max-width: 100%; max-height: 400px; object-fit: cover; border-radius: 0px;">
+                            alt=""
+                            style="max-width: 100%; max-height: 400px; object-fit: cover; border-radius: 0px;">
                     </div>
                 </div>
             @endforeach
@@ -148,7 +282,8 @@
                 <div class="row no-gutters">
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
                         <img src="{{ asset('uploads/first_section/' . $accreditation->image) }}" class="img-fluid"
-                            alt="" style="max-width: 100%; max-height: 200px; object-fit: cover; border-radius: 0px;">
+                            alt=""
+                            style="max-width: 100%; max-height: 200px; object-fit: cover; border-radius: 0px;">
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
                         <div class="section-title">
@@ -230,13 +365,339 @@
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid" alt=""
+                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid"
+                            alt=""
                             style="max-width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
+
+
+
+    {{-- Our Journey --}}
+
+    <section class="counts section-bg">
+        <div class="section-title" style="padding-top: 0px">
+            <h2>Our Journey creating memories</h2>
+        </div>
+
+        <div class="container">
+            {{-- <div class="header">
+            <h1>Our Journey</h1>
+            <div class="subtitle">creating memories</div>
+        </div> --}}
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2012</h4>
+
+                        <p style="color: #5f6061; font-size: 18px;">Company Establishment & BASIS Membership Acquisition
+                        </p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/1.png" alt="2012 milestone">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2013</h4>
+
+
+                        <p style="color: #5f6061; font-size: 18px;">Software Implementation for Nokia Care Service Center.
+                        </p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/2.png" alt="2013 milestone">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2014</h4>
+
+                        <p style="color: #5f6061; font-size: 18px;">Implemented an ERP Solution for bKash Limited</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/3.png" alt="2014 milestone">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2015</h4>
+
+
+                        <p style="color: #5f6061; font-size: 18px;">Implemented Payroll Management Software for Agrani Bank
+                            PLC.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/4.png" alt="2015 milestone">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2016</h4>
+
+                        <p style="color: #5f6061; font-size: 18px;">Started working with Overseas client: Japan project.
+                        </p>
+
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/5.png" alt="2016 milestone">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2017</h4>
+
+                        <p style="color: #5f6061; font-size: 18px;"> Implemented RTGS Fintech System.<br>Achieved ISO
+                            Certification.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/6.png" alt="2017 milestone">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2018</h4>
+
+
+                        <p style="color: #5f6061; font-size: 18px;"> Recipient of BASIS
+                            National ICT Award
+                            for Business Service.</p>
+
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/7.png" alt="2017 milestone">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2019</h4>
+
+
+                        <p style="color: #5f6061; font-size: 18px;"> Recipient of BASIS
+                            National ICT Award
+                            for Inclusion
+                            Communication
+                            Service..</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/8.png" alt="2017 milestone">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2020</h4>
+
+
+                        <p style="color: #5f6061; font-size: 18px;"> Implemented Artificial
+                            Intelligence (AI)
+                            Project for Sweden
+                            and Denmark.<br>
+                            First Fintech Solution:
+                            RTGS Provided to
+                            Government Bank.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/9.png" alt="2017 milestone">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2021</h4>
+
+
+                        <p style="color: #5f6061; font-size: 18px;"> Implemented an
+                            Online General Diary
+                            (GD) Service for the
+                            Bangladesh Police.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/10.png" alt="2017 milestone">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2022</h4>
+
+
+                        <p style="color: #5f6061; font-size: 18px;"> Launch of
+                            Microfinance
+                            Banking System
+                            in Uganda, Kenya,
+                            Zambia & Tanzania</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/11.png" alt="2017 milestone">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2023</h4>
+
+
+                        <p style="color: #5f6061; font-size: 18px;"> Implemented
+                            Digital Banking
+                            Solution for
+                            Lanka Bangla
+                            Finance Ltd.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/9.png" alt="2017 milestone">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2024</h4>
+
+                        <p style="color: #5f6061; font-size: 18px;"> Launched an AI-Based
+                            Chatbot &Launched
+                            a Credit Scoring System
+                            for a Government Bank.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/8.png" alt="2017 milestone">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2025</h4>
+
+                        <p style="color: #5f6061; font-size: 18px;"> Implemented Nationwide
+                            Commodities Market
+                            Monitoring System
+                            with government
+                            agencies..</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="front-assets/img/our-journey/12.png" alt="2017 milestone">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    {{-- end section --}}
+
+
+    {{-- Global Presence section --}}
+
+    <div class="section-title" style="padding-top: 60px">
+        <h2></h2>
+        <h2>Global Presence</h2>
+    </div>
+
+    <div id="about" class="about">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            @foreach ($accreditations as $key => $accreditation)
+                <div class="row no-gutters">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                        <div class="section-title">
+                            {{-- <h1>{{ $accreditation->title }} </h1> --}}
+                            <p>With a proven track record of delivering innovative software solutions,
+                                Opus has established a strong presence in various countries worldwide.
+                                Our team of skilled engineers has successfully implemented projects in
+                                diverse regions, including USA, Australia, Sweden, Denmark, UAE,
+                                Malaysia, Uganda, Kenya, Zambia and Tanzania. This global reach
+                                enables us to understand and cater to the unique requirements of
+                                different markets, ensuring our solutions are culturally relevant and
+                                effective. </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <img src="front-assets/img/Global-Presence.png" class="img-fluid" alt=""
+                            style="max-width: 100%; max-height: 350px; object-fit: cover; border-radius: 0px;">
+                    </div>
+
+
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+    <!-- end  -->
+
+
+    <!-- journey -->
+    <section class="counts section-bg">
+        <div class="section-title">
+            <h2></h2>
+            <h2>Service Showcase</h2>
+        </div>
+        <div class="container" style="position: relative; padding: 50px 0;">
+            <div
+                style="content: ''; position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: rgb(162, 206, 232); transform: translateX(-50%);">
+            </div>
+
+            <div
+                style="position: relative; width: 50%; padding: 20px; box-sizing: border-box; left: 0; text-align: right;">
+                <div
+                    style="position: absolute; top: 20px; width: 20px; height: 20px; background: rgb(162, 206, 232); border-radius: 50%; left: calc(50% - 10px);">
+                </div>
+                <h4 style="color: gray; font-size: 24px; font-weight: bold;">2017</h4>
+                <p style="color: gray; font-size: 18px;">JAPAN IT WEEK SPRING</p>
+                <img src="front-assets/img/service-howcase/s1.png" alt="Description"
+                    style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
+            </div>
+
+            <div
+                style="position: relative; width: 50%; padding: 20px; box-sizing: border-box; left: 50%; text-align: left;">
+                <div
+                    style="position: absolute; top: 20px; width: 20px; height: 20px; background: rgb(162, 206, 232); border-radius: 50%; left: calc(50% - 10px);">
+                </div>
+                <h4 style="color: gray; font-size: 24px; font-weight: bold;">2018</h4>
+                <p style="color: gray; font-size: 18px;">CEBIT ASEAN, THAILAND JAPAN IT WEEK SPRING<br>BASIS SOFTEXPO,
+                    BANGLADESH</p>
+                <img src="front-assets/img/service-howcase/s2.png" alt="Description"
+                    style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
+            </div>
+
+            <div
+                style="position: relative; width: 50%; padding: 20px; box-sizing: border-box; left: 0; text-align: right;">
+                <div
+                    style="position: absolute; top: 20px; width: 20px; height: 20px; background: rgb(162, 206, 232); border-radius: 50%; left: calc(50% - 10px);">
+                </div>
+                <h4 style="color: gray; font-size: 24px; font-weight: bold;">2019</h4>
+                <p style="color: gray; font-size: 18px;">JAPAN IT WEEK SPRING CHINA INTERNATIONAL IMPORT EXPO <br> ITU
+                    TELECOM WORLD, HUNGARY. BASIS SOFTEXPO, BANGLADESH</p>
+                <img src="front-assets/img/service-howcase/s3.png" alt="Description"
+                    style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
+            </div>
+
+            <div
+                style="position: relative; width: 50%; padding: 20px; box-sizing: border-box; left: 50%; text-align: left;">
+                <div
+                    style="position: absolute; top: 20px; width: 20px; height: 20px; background: rgb(162, 206, 232); border-radius: 50%; left: calc(50% - 10px);">
+                </div>
+                <h4 style="color: gray; font-size: 24px; font-weight: bold;">2024</h4>
+                <p style="color: gray; font-size: 18px;">WTO & ITC CO-ORGANIZED SHETRADES SUMMIT, ABU DHABI</p>
+                <img src="front-assets/img/service-howcase/s4.png" alt="Description"
+                    style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
+            </div>
+
+            <div
+                style="position: relative; width: 50%; padding: 20px; box-sizing: border-box; left: 0; text-align: right;">
+                <div
+                    style="position: absolute; top: 20px; width: 20px; height: 20px; background: rgb(162, 206, 232); border-radius: 50%; left: calc(50% - 10px);">
+                </div>
+                <h4 style="color: gray; font-size: 24px; font-weight: bold;">2025</h4>
+                <p style="color: gray; font-size: 18px;">PARTICIPATE CES 2025 IN USA<br>POWERED BY THE CONSUMER TECHNOLOGY
+                    ASSOCIATION</p>
+                <img src="front-assets/img/service-howcase/s5.png" alt="Description"
+                    style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
+            </div>
+        </div>
+    </section><!-- End Our Journey Section -->
+
+    <br><br><br><br>
 
 
 
@@ -328,7 +789,7 @@
         <div class="container section-title" data-aos="fade-up">
             <h2>Core Management Team</h2>
             <p>Our team consists of skilled professionals dedicated to innovation, excellence, and delivering top-notch
-                    solutions.</p>
+                solutions.</p>
         </div><!-- End Section Title -->
 
         <div class="container">
