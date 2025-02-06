@@ -380,7 +380,7 @@
 
     <section class="counts section-bg">
         <div class="section-title" style="padding-top: 0px">
-            <h2>Our Journey creating memories</h2>
+            <h2>Our Journey Creating Memories</h2>
         </div>
 
         <div class="container">
@@ -520,7 +520,7 @@
                             Bangladesh Police.</p>
                     </div>
                     <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/10.png" alt="2017 milestone">
+                        <img src="front-assets/img/our-journey/11.png" alt="2017 milestone">
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -535,7 +535,7 @@
                             Zambia & Tanzania</p>
                     </div>
                     <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/11.png" alt="2017 milestone">
+                        <img src="front-assets/img/our-journey/10.png" alt="2017 milestone">
                     </div>
                 </div>
                 <div class="timeline-item">
