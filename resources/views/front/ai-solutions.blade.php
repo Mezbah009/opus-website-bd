@@ -17,80 +17,115 @@
 
         <div class="section-title">
             <h2>Our AI Solutions </h2>
-            <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company.
-                Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across
-                various industries & business functions, it collaborates with customers to help them effectively address
-                their operational challenges & grow their businesses stronger.</p>
+            <p>At Opus Technology, we are committed to helping businesses harness the transformative potential of artificial intelligence. Whether you’re looking to streamline operations, enhance customer experiences, or innovate your offerings, our AI solutions are your gateway to a smarter, more efficient future.
+            </p>
         </div>
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up" style="box-shadow: none;">
+                <div class="row no-gutters">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
-        {{-- <div class="row">
-            <div class="col-lg-12">
-                <ul id="portfolio-flters">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-fin">Fintech</li>
-                    <li data-filter=".filter-sig">Signature</li>
-                </ul>
-            </div>
-        </div> --}}
+                        <div class="section-title">
 
-        <div class="row portfolio-container">
-            @foreach($sections as $section)
-            <div class="col-lg-4 col-md-6 portfolio-item {{$section->button_name}}">
-                <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
-                    style="cursor: pointer;">
-                    <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        {{-- <h4>{{$section->title}}</h4>
-                        <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
-                            {{$section->description}}</p> --}}
-                        <div class="portfolio-links">
-                            {{-- <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
-                            <a href="{{ route('product.show', ['slug' => $section->link]) }}" title="More Details"><i
-                                    class="bi bi-link"></i></a> --}}
+                            <p>Take your business to the next level with AI Solutions by Opus Technology. Our innovative artificial intelligence technologies empower organizations to automate processes, unlock data-driven insights, and deliver exceptional customer experiences. From intelligent automation to advanced analytics, our AI solutions are designed to optimize operations, drive innovation, and fuel growth across industries.
+                            </p>
                         </div>
+                    </div>
+                    <div class="col-lg-6 video-box">
+                        <img src="{{ asset('front-assets/img/ai2.jpg') }}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
-            @endforeach
-        </div>
+        </section>
 
+        {{-- Fifth section --}}
 
-
-
-
-            {{-- <div class="row portfolio-container">
-                @foreach ($sections as $section)
-                    <div class="col-lg-4 col-md-6 portfolio-item {{ $section->button_name }}">
-                        <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
-                            style="cursor: pointer;">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <!-- Front Side -->
-                                    <div class="front">
-                                        <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid"
-                                            alt="{{ $section->title }}">
-                                    </div>
-                                    <!-- Back Side -->
-                                    <div class="back">
-                                        <div class="portfolio-info">
-                                            <h4>{{ $section->title }}</h4>
-                                            <p>{{ $section->description }}</p>
-                                            <a href="{{ route('product.show', ['slug' => $section->link]) }}"
-                                                title="More Details">
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+        <div class="contact-body">
+            <section id="contact" class="contact">
+                <div class="container" data-aos="fade-up">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-lg-3 d-flex" data-aos="fade-up">
+                                <div class="info-boxs">
+                                    <img src="{{ asset('front-assets/img/ailogo/1.png') }}"
+                                        alt="..." width="80px" style="padding: 8px; display: block; margin: 0 auto;">
+                                    <h3 style="text-align:center; margin-bottom: 10px;">TOTA: Your Smart Virtual Assistant
+                                    </h3>
+                                    <p>TOTA is an AI chatbot offering 24/7 instant responses,
+                                        personalized support, and task automation to improve
+                                        customer interaction and streamline communication.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-flex" data-aos="fade-up">
+                                <div class="info-boxs">
+                                    <img src="{{ asset('front-assets/img/ailogo/2.png') }}"
+                                        alt="..." width="80px" style="padding: 8px; display: block; margin: 0 auto;">
+                                    <h3 style="text-align:center; margin-bottom: 10px;">AI-Powered Media Analysis
+                                    </h3>
+                                    <p>Our AI media analysis tool tracks trends, measures
+                                        sentiment, and offers real-time insights, helping businesses
+                                        make data-driven decisions and stay competitive.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-flex" data-aos="fade-up">
+                                <div class="info-boxs">
+                                    <img src="{{ asset('front-assets/img/ailogo/3.png') }}"
+                                        alt="..." width="80px" style="padding: 8px; display: block; margin: 0 auto;">
+                                    <h3 style="text-align:center; margin-bottom: 10px;">AI Based Data-Driven Insights
+                                    </h3>
+                                    <p>Our AI Date-Driven tools offer advanced analytics, real-time
+                                        reporting, and interactive dashboards, turning complex data
+                                        into actionable insights for growth and performance.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-flex" data-aos="fade-up">
+                                <div class="info-boxs">
+                                    <img src="{{ asset('front-assets/img/ailogo/4.png') }}"
+                                        alt="..." width="80px" style="padding: 8px; display: block; margin: 0 auto;">
+                                    <h3 style="text-align:center; margin-bottom: 10px;">AI-Powered Credit Scoring Engine
+                                    </h3>
+                                    <p>Our AI engine uses alternative data to deliver accurate
+                                        credit scores, expanding credit access and enhancing
+                                        decision-making for financial institutions
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-flex" data-aos="fade-up">
+                                <div class="info-boxs">
+                                    <img src="{{ asset('front-assets/img/ailogo/5.png') }}"
+                                        alt="..." width="80px" style="padding: 8px; display: block; margin: 0 auto;">
+                                    <h3 style="text-align:center; margin-bottom: 10px;">Real-Time Human Movement Analysis
+                                    </h3>
+                                    <p>Our AI camera system analyzes human movement in
+                                        real-time, boosting security and efficiency with accurate
+                                        tracking and actionable insights.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-flex" data-aos="fade-up">
+                                <div class="info-boxs">
+                                    <img src="{{ asset('front-assets/img/ailogo/6.png') }}"
+                                        alt="..." width="80px" style="padding: 8px; display: block; margin: 0 auto;">
+                                    <h3 style="text-align:center; margin-bottom: 10px;">RPA-Based Financial Transaction Analysis
+                                    </h3>
+                                    <p>Our RPA solution automates financial transaction analysis,
+                                        ensuring fast, accurate processing, streamlining workflows,
+                                        detecting anomalies, and improving decision-making.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div> --}}
-
-    </div>
+                </div>
+            </section>
+        </div>
+        <!-- End  Section -->
 </section><!-- End Our Portfolio Section -->
+
+
 
 
 <script>
