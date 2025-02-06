@@ -137,6 +137,13 @@ class FrontController extends Controller
         return view('front.system-solutions', $data);
     }
 
+    public function cyberSecurity()
+    {
+        $sections = Product::where("button_name", "filter-sys")->get();
+        $data['sections'] = $sections;
+        return view('front.cyber-security', $data);
+    }
+
 
 
     public function showProduct($slug)
@@ -283,7 +290,7 @@ class FrontController extends Controller
 
     public function job()
     {
-        $response = Http::withOptions(['verify' => false])->get('https://e-hrm.opuserp.com/api/recruitment/gt-all-jobs');
+        $response = Http::withOptions(['verify' => false])->get('https://e-recruitment-admin.opuserp.com/api/recruitment/gt-all-jobs');
 
         if ($response->successful()) {
             $jobs = $response->json(); // Fetch the jobs

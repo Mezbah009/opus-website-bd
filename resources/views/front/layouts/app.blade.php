@@ -161,6 +161,7 @@
                             <li><a class="dropdown-item" href="{{ route('front.mobileApp') }}">Mobile App Solutions</a></li>
                             <li><a class="dropdown-item" href="{{ route('front.aiSolutions') }}">AI Solutions</a></li>
                             <li><a class="dropdown-item" href="{{ route('front.systemSolutions') }}">System Solutions</a></li>
+                            <li><a class="dropdown-item" href="{{ route('front.cyberSecurity') }}">Cyber Security Solutions</a></li>
                         </ul>
                     </li>
 

@@ -122,7 +122,7 @@
                                     <!-- View Details Button -->
                                     <div class="mt-3">
                                         <a
-                                    href="https://e-hrm.opuserp.com/Recruitment/JobRequisition/JobGridById/{{ $job['Id'] }}"
+                                    href="https://e-recruitment-admin.opuserp.com/Recruitment/JobRequisition/JobGridById/{{ $job['Id'] }}"
                                     class="view-details-btn"
                                     target="_blank"
                                     rel="noopener noreferrer">
