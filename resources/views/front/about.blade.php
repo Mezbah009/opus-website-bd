@@ -45,11 +45,11 @@
         left: 50%;
         width: 100px;
         height: 100%;
-        background: repeating-linear-gradient(0deg,
+        /* background: repeating-linear-gradient(0deg,
                 rgba(0, 0, 0, 0.2) 0px,
                 rgba(0, 0, 0, 0.2) 2px,
                 transparent 2px,
-                transparent 20px);
+                transparent 20px); */
         transform: translateX(-50%);
     }
 
@@ -205,7 +205,7 @@
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
                             <!-- <a href="{{ $home_second_sections->link }}"
-                                                                                    class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
+                                                                                        class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
