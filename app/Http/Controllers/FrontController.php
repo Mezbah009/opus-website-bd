@@ -228,6 +228,13 @@ class FrontController extends Controller
         return view('front.services');
     }
 
+
+    public function caseStudy()
+    {
+
+        return view('front.case-study');
+    }
+
     // public function demo(){
     //     return view('front.demo');
     // }

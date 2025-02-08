@@ -53,6 +53,8 @@ Route::get('/ai-solutions', [FrontController::class, 'aiSolutions'])->name('fron
 Route::get('/system-solutions', [FrontController::class, 'systemSolutions'])->name('front.systemSolutions');
 Route::get('/cyber-security', [FrontController::class, 'cyberSecurity'])->name('front.cyberSecurity');
 
+Route::get('/case-study', [FrontController::class, 'caseStudy'])->name('front.caseStudy');
+
 
 
 
