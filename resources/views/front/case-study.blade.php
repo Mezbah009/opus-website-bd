@@ -4,7 +4,7 @@
 <style>
     .fixed-card {
         height: 100%;
-        /* Ensures all cards are equal height */
+        /* Ensure all cards are equal height */
         display: flex;
         flex-direction: column;
     }
@@ -18,26 +18,31 @@
 
     .card-block {
         flex-grow: 1;
-        /* Expands to fill available space */
+        /* Makes sure the card content expands */
         display: flex;
         flex-direction: column;
     }
 
     .card-title {
-        min-height: 20px;
-        /* Ensures all titles take up same space */
+        min-height: 50px;
+        /* Ensures all titles take up the same space */
+        font-size: 18px;
+        font-weight: bold;
     }
 
     .card-text {
         flex-grow: 1;
         /* Makes the excerpt area flexible */
         min-height: 20px;
-        /* Ensures all excerpts take up same space */
+        /* Adjust this based on content */
+        overflow: hidden;
     }
 
     .card .btn {
         margin-top: auto;
         /* Pushes the button to the bottom */
+        width: 100%;
+        /* Ensures button is consistent */
     }
 </style>
 
