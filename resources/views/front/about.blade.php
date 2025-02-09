@@ -45,11 +45,11 @@
         left: 50%;
         width: 100px;
         height: 100%;
-        background: repeating-linear-gradient(0deg,
+        /* background: repeating-linear-gradient(0deg,
                 rgba(0, 0, 0, 0.2) 0px,
                 rgba(0, 0, 0, 0.2) 2px,
                 transparent 2px,
-                transparent 20px);
+                transparent 20px); */
         transform: translateX(-50%);
     }
 
@@ -205,7 +205,7 @@
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
                             <!-- <a href="{{ $home_second_sections->link }}"
-                                                                            class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
+                                                                                        class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
@@ -269,112 +269,6 @@
         </div>
     </section><!-- End Counts Section -->
 
-    {{-- Accreditation section --}}
-
-    <div class="section-title" style="padding-top: 60px">
-        <h2></h2>
-        <h2>Accreditation</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($accreditations as $key => $accreditation)
-                <div class="row no-gutters">
-                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('uploads/first_section/' . $accreditation->image) }}" class="img-fluid"
-                            alt=""
-                            style="max-width: 100%; max-height: 200px; object-fit: cover; border-radius: 0px;">
-                    </div>
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                        <div class="section-title">
-                            <h1>{{ $accreditation->title }} </h1>
-                            <p>{!! $accreditation->description !!} </p>
-                        </div>
-                    </div>
-
-                </div>
-            @endforeach
-
-        </div>
-    </div>
-
-    {{-- Awards section --}}
-
-    <div class="section-title">
-        <h2></h2>
-        <h2>Awards</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($awards as $key => $award)
-                <div class="row no-gutters">
-                    <div class="col-lg-12 video-box">
-                        <img src="{{ asset('uploads/first_section/' . $award->image) }}" class="img-fluid" alt="">
-                    </div>
-
-                </div>
-            @endforeach
-
-        </div>
-    </div>
-
-
-    {{-- quality section --}}
-
-    {{-- <div class="section-title" style="padding-top: 30px">
-        <h2></h2>
-        <h2>Quality Management</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($qualities as $key => $quality)
-                <div class="row no-gutters">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                        <div class="section-title">
-                            <h1>{{ $quality->title }} </h1>
-                            <p>{!! $quality->description !!} </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 video-box">
-                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid" alt="">
-                    </div>
-
-                </div>
-            @endforeach
-
-        </div>
-    </div> --}}
-
-
-
-    <div class="section-title" style="padding-top: 30px">
-        <h2></h2>
-        <h2>Quality Management</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($qualities as $key => $quality)
-                <div class="row no-gutters align-items-center">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                        <div class="section-title">
-                            <h1>{{ $quality->title }}</h1>
-                            <p>{!! $quality->description !!}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid"
-                            alt=""
-                            style="max-width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-
-
 
     {{-- Our Journey --}}
 
@@ -385,9 +279,9 @@
 
         <div class="container">
             {{-- <div class="header">
-            <h1>Our Journey</h1>
-            <div class="subtitle">creating memories</div>
-        </div> --}}
+                <h1>Our Journey</h1>
+                <div class="subtitle">creating memories</div>
+            </div> --}}
 
             <div class="timeline">
                 <div class="timeline-item">
@@ -590,43 +484,45 @@
 
     {{-- Global Presence section --}}
 
-    <div class="section-title" style="padding-top: 60px">
-        <h2></h2>
-        <h2>Global Presence</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($accreditations as $key => $accreditation)
-                <div class="row no-gutters">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                        <div class="section-title">
-                            {{-- <h1>{{ $accreditation->title }} </h1> --}}
-                            <p>With a proven track record of delivering innovative software solutions,
-                                Opus has established a strong presence in various countries worldwide.
-                                Our team of skilled engineers has successfully implemented projects in
-                                diverse regions, including USA, Australia, Sweden, Denmark, UAE,
-                                Malaysia, Uganda, Kenya, Zambia and Tanzania. This global reach
-                                enables us to understand and cater to the unique requirements of
-                                different markets, ensuring our solutions are culturally relevant and
-                                effective. </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                        <img src="front-assets/img/Global-Presence.png" class="img-fluid" alt=""
-                            style="max-width: 100%; max-height: 350px; object-fit: cover; border-radius: 0px;">
-                    </div>
-
-
-                </div>
-            @endforeach
-
+    <section>
+        <div class="section-title" style="padding-top: 60px">
+            <h2></h2>
+            <h2>Global Presence</h2>
         </div>
-    </div>
+
+        <div id="about" class="about">
+            <div class="container" data-aos="fade-up" style="box-shadow: none;">
+                @foreach ($accreditations as $key => $accreditation)
+                    <div class="row no-gutters">
+                        <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                            <div class="section-title">
+                                {{-- <h1>{{ $accreditation->title }} </h1> --}}
+                                <p>With a proven track record of delivering innovative software solutions,
+                                    Opus has established a strong presence in various countries worldwide.
+                                    Our team of skilled engineers has successfully implemented projects in
+                                    diverse regions, including USA, Australia, Sweden, Denmark, UAE,
+                                    Malaysia, Uganda, Kenya, Zambia and Tanzania. This global reach
+                                    enables us to understand and cater to the unique requirements of
+                                    different markets, ensuring our solutions are culturally relevant and
+                                    effective. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                            <img src="front-assets/img/Global-Presence.png" class="img-fluid" alt=""
+                                style="max-width: 100%; max-height: 350px; object-fit: cover; border-radius: 0px;">
+                        </div>
+
+
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
     <!-- end  -->
 
 
-    <!-- journey -->
+    <!-- Service Showcase -->
     <section class="counts section-bg">
         <div class="section-title">
             <h2></h2>
@@ -700,6 +596,116 @@
     {{-- End Our Journey Section  --}}
 
     <br><br><br><br>
+
+    {{-- Accreditation section --}}
+
+    <div class="section-title" style="padding-top: 60px">
+        <h2></h2>
+        <h2>Accreditation</h2>
+    </div>
+
+    <div id="about" class="about">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            @foreach ($accreditations as $key => $accreditation)
+                <div class="row no-gutters">
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <img src="{{ asset('uploads/first_section/' . $accreditation->image) }}" class="img-fluid"
+                            alt=""
+                            style="max-width: 100%; max-height: 200px; object-fit: cover; border-radius: 0px;">
+                    </div>
+                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                        <div class="section-title">
+                            <h1>{{ $accreditation->title }} </h1>
+                            <p>{!! $accreditation->description !!} </p>
+                        </div>
+                    </div>
+
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+
+    {{-- Awards section --}}
+
+    <div class="section-title">
+        <h2></h2>
+        <h2>Awards</h2>
+    </div>
+
+    <div id="about" class="about">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            @foreach ($awards as $key => $award)
+                <div class="row no-gutters">
+                    <div class="col-lg-12 video-box">
+                        <img src="{{ asset('uploads/first_section/' . $award->image) }}" class="img-fluid"
+                            alt="">
+                    </div>
+
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+
+
+    {{-- quality section --}}
+
+    {{-- <div class="section-title" style="padding-top: 30px">
+        <h2></h2>
+        <h2>Quality Management</h2>
+    </div>
+
+    <div id="about" class="about">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            @foreach ($qualities as $key => $quality)
+                <div class="row no-gutters">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                        <div class="section-title">
+                            <h1>{{ $quality->title }} </h1>
+                            <p>{!! $quality->description !!} </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 video-box">
+                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid" alt="">
+                    </div>
+
+                </div>
+            @endforeach
+
+        </div>
+    </div> --}}
+
+
+
+    <div class="section-title" style="padding-top: 30px">
+        <h2></h2>
+        <h2>Quality Management</h2>
+    </div>
+
+    <div id="about" class="about">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            @foreach ($qualities as $key => $quality)
+                <div class="row no-gutters align-items-center">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                        <div class="section-title">
+                            <h1>{{ $quality->title }}</h1>
+                            <p>{!! $quality->description !!}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid"
+                            alt=""
+                            style="max-width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+
+
+
 
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Accreditation;
 use App\Models\Award;
 use App\Models\Blog;
+use App\Models\CaseStudy;
 use App\Models\Client;
 use App\Models\Contact;
 use App\Models\Demo;
@@ -227,6 +228,30 @@ class FrontController extends Controller
 
         return view('front.services');
     }
+
+
+    public function caseStudy()
+    {
+
+
+        $caseStudy = CaseStudy::all();
+        $data['caseStudy'] = $caseStudy;
+        return view('front.case-study', $data);
+    }
+
+
+    public function showCaseStudy($slug, Request $request)
+    {
+        $query = CaseStudy::where('slug', $slug);
+
+        if (!empty($request->get('keyword'))) {
+            $query->where('description', 'like', '%' . $request->get('keyword') . '%');
+        }
+
+        $caseStudyPost = $query->firstOrFail();
+        return view('front.case-post', compact('caseStudyPost'));
+    }
+
 
     // public function demo(){
     //     return view('front.demo');

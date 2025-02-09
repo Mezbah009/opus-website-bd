@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AccreditationController;
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\AwardController;
 use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\CaseStudyController;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\HomeController;
@@ -52,6 +53,10 @@ Route::get('/mobile', [FrontController::class, 'mobileApp'])->name('front.mobile
 Route::get('/ai-solutions', [FrontController::class, 'aiSolutions'])->name('front.aiSolutions');
 Route::get('/system-solutions', [FrontController::class, 'systemSolutions'])->name('front.systemSolutions');
 Route::get('/cyber-security', [FrontController::class, 'cyberSecurity'])->name('front.cyberSecurity');
+
+Route::get('/case-study', [FrontController::class, 'caseStudy'])->name('front.caseStudy');
+
+Route::get('/case-study/{slug}', [FrontController::class, 'showCaseStudy'])->name('front.showCaseStudy');
 
 
 
@@ -196,7 +201,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/home_services/{home_services}', [HomeServicesSectionController::class, 'update'])->name('home_services_section.update');
         Route::delete('/home_services/{home_services}', [HomeServicesSectionController::class, 'destroy'])->name('home_services_section.delete');
 
-         // Testimonials
+        // Testimonials
         Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials.index');
         Route::get('/testimonials/create', [TestimonialController::class, 'create'])->name('testimonials.create');
         Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
@@ -219,6 +224,20 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/blog/{blog}/edit', [BlogController::class, 'edit'])->name('blog.edit');
         Route::put('/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
         Route::delete('/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.delete');
+
+
+        // Case Study
+        Route::get('/casestudy', [CaseStudyController::class, 'index'])->name('casestudy.index');
+        Route::get('/casestudy/create', [CaseStudyController::class, 'create'])->name('casestudy.create');
+        Route::post('/casestudy', [CaseStudyController::class, 'store'])->name('casestudy.store');
+        Route::get('/casestudy/{blog}/edit', [CaseStudyController::class, 'edit'])->name('casestudy.edit');
+        Route::put('/casestudy/{blog}', [CaseStudyController::class, 'update'])->name('casestudy.update');
+        Route::delete('/casestudy/{blog}', [CaseStudyController::class, 'destroy'])->name('casestudy.delete');
+
+
+
+
+
 
         // Contact
         Route::resource('contact', ContactController::class)->except('show');
@@ -284,10 +303,7 @@ Route::group(['prefix' => 'admin'], function () {
                 'slug' => $slug,
             ]);
         })->name('getSlug');
-
     });
-
-
 });
 
 
