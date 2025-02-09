@@ -421,7 +421,7 @@
     {{-- Our Journey --}}
 
 
-    {{-- <section class="counts section-bg">
+    <section class="counts section-bg">
         <div class="section-title" style="padding-top: 0px">
             <h2>Our Journey Creating Memories</h2>
         </div>
@@ -440,9 +440,9 @@
                 @endforeach
             </div>
         </div>
-    </section> --}}
+    </section>
 
-    <section class="counts section-bg">
+    {{-- <section class="counts section-bg">
         <div class="section-title" style="padding-top: 0px">
             <h2>Our Journey Creating Memories</h2>
         </div>
@@ -644,7 +644,7 @@
         </div>
 
 
-    </section>
+    </section> --}}
     {{-- end section --}}
 
 
@@ -689,7 +689,7 @@
 
     <!-- Service Showcase -->
 
-    {{-- <section class="service-showcase">
+    <section class="service-showcase">
         <div class="section-title">
             <h2>Service Showcase</h2>
         </div>
@@ -703,7 +703,7 @@
                 </div>
             @endforeach
         </div>
-    </section> --}}
+    </section>
 
 
 
@@ -781,7 +781,7 @@
         </div>
     </section> --}}
 
-    <section class="service-showcase">
+    {{-- <section class="service-showcase">
         <div class="section-title">
             <h2>Service Showcase</h2>
         </div>
@@ -822,7 +822,7 @@
                 <img src="front-assets/img/service-howcase/s5.png" alt="Description">
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
 
