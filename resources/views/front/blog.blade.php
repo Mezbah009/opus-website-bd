@@ -1,41 +1,107 @@
 @extends('front.layouts.app')
 
 @section('content')
-<style>
+    <style>
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* Ensures proper alignment */
+        }
 
-</style>
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/blogs.jpg") }}');">
-    <h2>Blogs</h2>
-    <div class="line">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</div>
+        .card-img-top {
+            height: 350px;
+            /* Ensures uniform image size */
+            object-fit: cover;
+            width: 100%;
+        }
 
-<section id="blog-card" class="padding-top-bottom-90">
-    <div class="container">
-        <div class="heading-wraper text-center margin-bottom-80">
-            <h4>latest published</h4>
-            <hr class="heading-devider gradient-orange">
+        .card-block {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card-title {
+            min-height: 50px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            flex-grow: 1;
+        }
+
+        .card-text-excerpt {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            /* Limits to 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 14px;
+            min-height: 4.5em;
+            /* Adjust based on line-clamp */
+        }
+
+        .card .btn {
+            width: 25%;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: auto;
+        }
+    </style>
+
+    <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/blogs.jpg') }}');">
+        <h2>Blogs</h2>
+        <div class="line">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-        <div class="row">
-            @foreach ($blogPosts as $post)
-            <div class="col-md-6 mb-4">
-                <div class="card" >
-                    <img class="card-img-top img-responsive max-width-100" src="{{ asset('uploads/blogs/' . $post->image) }}" alt="{{ $post->title }}">
-                    <div class="card-block" style="padding:40px">
-                        <p class="card-text"><small class="text-muted blog-category">{{ $post->category }}</small></p>
-                        <h4 class="card-title">{{ $post->title }}</h4>
-                        <p class="card-text"><small class="text-muted italic">{{ $post->date }}</small></p>
-                        <p class="card-text">{{ $post->excerpt }}</p>
-                        <a href="{{ route('blog.show', ['slug' => $post->slug]) }}" class="btn btn-link">read more <span><i class="ion-ios-arrow-thin-right"></i></span></a>
-                    </div>
-                </div>
+    </div>
+
+    <section id="blog-card" class="padding-top-bottom-90">
+        <div class="container">
+            <div class="heading-wraper text-center margin-bottom-80">
+                <h4>Latest Published</h4>
+                <hr class="heading-devider gradient-orange">
             </div>
-            @endforeach
+            <div class="row">
+                @foreach ($blogPosts as $post)
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <img class="card-img-top img-responsive" src="{{ asset('uploads/blogs/' . $post->image) }}"
+                                alt="{{ $post->title }}">
+                            <div class="card-block">
+                                <p class="card-text"><small class="text-muted blog-category">{{ $post->category }}</small>
+                                </p>
+                                <h4 class="card-title">{{ $post->title }}</h4>
+                                <p class="card-text"><small class="text-muted italic">{{ $post->date }}</small></p>
+                                <p class="card-text-excerpt">{{ $post->excerpt }}</p>
+                                <a href="{{ route('blog.show', ['slug' => $post->slug]) }}" class="btn">Read More <i
+                                        class="ion-ios-arrow-thin-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection
