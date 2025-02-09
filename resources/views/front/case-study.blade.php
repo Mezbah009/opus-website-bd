@@ -2,72 +2,92 @@
 
 
 <style>
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* Ensures proper alignment */
+    }
+
     .fixed-card {
-        height: 100%;
-        /* Ensure all cards are equal height */
         display: flex;
         flex-direction: column;
+        height: 100%;
+        border: 1px solid #ddd;
+        /* Optional: Adds a border */
+        border-radius: 8px;
+        /* Optional: Rounds corners */
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        /* Optional: Adds shadow */
     }
 
     .card-img-top {
-        height: 200px;
-        /* Adjust image height */
-        object-fit: cover;
-        /* Crop image to fit */
+        height: 150px;
+        /* Ensures images are same size */
+        object-fit: contain;
+        /* Ensures the image fits */
+        padding: 10px;
+        /* Optional: Adds spacing */
     }
 
     .card-block {
         flex-grow: 1;
-        /* Makes sure the card content expands */
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        /* Ensures content is balanced */
+        padding: 15px;
     }
 
     .card-title {
         min-height: 50px;
-        /* Ensures all titles take up the same space */
-        font-size: 18px;
+        /* Ensures uniformity */
+        font-size: 16px;
         font-weight: bold;
+        text-align: center;
     }
 
-    .card-text {
-        flex-grow: 1;
-        /* Makes the excerpt area flexible */
-        min-height: 20px;
-        /* Adjust this based on content */
+    .card-text-excerpt {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        /* Limits text to 3 lines */
+        -webkit-box-orient: vertical;
         overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        min-height: 4.5em;
+        /* Adjust based on line-clamp */
     }
 
     .card .btn {
-        margin-top: auto;
-        /* Pushes the button to the bottom */
         width: 100%;
-        /* Ensures button is consistent */
+        /* Ensures consistency */
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: auto;
+        /* Pushes to bottom */
     }
 </style>
 
 @section('content')
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/case.jpg') }}');">
-        {{-- <h3>Get in Touch with Us</h3> --}}
         <h2>Case Study</h2>
         <div class="line">
-            <div></div>
-            <div></div>
-            <div></div>
         </div>
-        {{-- <p class="text">We provide Amazing Solutions</p> --}}
+
     </div>
 
 
     <section id="blog-card" class="padding-top-bottom-90">
         <div class="container">
-            {{-- <div class="heading-wraper text-center margin-bottom-80">
-                <h4>latest published</h4>
-                <hr class="heading-devider gradient-orange">
-            </div> --}}
             <div class="row">
                 @foreach ($caseStudy as $case)
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-3 mb-4">
                         <div class="card fixed-card clickable-card"
                             data-url="{{ route('front.showCaseStudy', ['slug' => $case->slug]) }}">
                             <img class="card-img-top img-responsive max-width-100"
@@ -77,7 +97,7 @@
                                 </p>
                                 <h4 class="card-title">{{ $case->title }}</h4>
                                 <p class="card-text"><small class="text-muted italic">{{ $case->date }}</small></p>
-                                <p class="card-text">{{ $case->excerpt }}</p>
+                                <p class="card-text-excerpt">{{ $case->excerpt }}</p>
                                 <a href="{{ route('front.showCaseStudy', ['slug' => $case->slug]) }}"
                                     class="btn btn-primary mt-auto">
                                     Read More <i class="ion-ios-arrow-thin-right"></i>
