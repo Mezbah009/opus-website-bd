@@ -14,10 +14,12 @@ use App\Http\Controllers\admin\HomeServicesSectionController;
 use App\Http\Controllers\admin\JobController;
 use App\Http\Controllers\admin\ManagementController;
 use App\Http\Controllers\admin\NumberController;
+use App\Http\Controllers\admin\OurJourneyController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductFirstSectionController;
 use App\Http\Controllers\admin\QualityController;
 use App\Http\Controllers\admin\SettingController;
+use App\Http\Controllers\admin\ShowcaseController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\TeamController;
 use App\Http\Controllers\admin\TempImagesController;
@@ -282,6 +284,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/quality/{quality}/edit', [QualityController::class, 'edit'])->name('quality.edit');
         Route::put('/quality/{quality}', [QualityController::class, 'update'])->name('quality.update');
         Route::delete('/quality/{quality}', [QualityController::class, 'destroy'])->name('quality.delete');
+
+
+        //about our journey
+        Route::resource('journeys', OurJourneyController::class);
+
+        //about showcases
+        Route::resource('showcases', ShowcaseController::class);
 
         // Jobs
         Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');

@@ -353,7 +353,7 @@
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
                             <!-- <a href="{{ $home_second_sections->link }}"
-                                                                                                            class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
+                                                                                                                class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
@@ -420,16 +420,34 @@
 
     {{-- Our Journey --}}
 
+
     <section class="counts section-bg">
+        <div class="section-title" style="padding-top: 0px">
+            <h2>Our Journey Creating Memories</h2>
+        </div>
+        <div class="container">
+            <div class="timeline">
+                @foreach ($journeys as $key => $journey)
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4 style="color: gray; font-size: 40px; font-weight: bold;">{{ $journey->year }}</h4>
+                            <p style="color: #5f6061; font-size: 18px;">{{ $journey->title }}</p>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="{{ asset($journey->image) }}" class="img-fluid" alt="{{ $journey->title }}">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- <section class="counts section-bg">
         <div class="section-title" style="padding-top: 0px">
             <h2>Our Journey Creating Memories</h2>
         </div>
 
         <div class="container">
-            {{-- <div class="header">
-                <h1>Our Journey</h1>
-                <div class="subtitle">creating memories</div>
-            </div> --}}
 
             <div class="timeline">
                 <div class="timeline-item">
@@ -626,7 +644,7 @@
         </div>
 
 
-    </section>
+    </section> --}}
     {{-- end section --}}
 
 
@@ -660,7 +678,6 @@
                                 style="max-width: 100%; max-height: 350px; object-fit: cover; border-radius: 0px;">
                         </div>
 
-
                     </div>
                 @endforeach
 
@@ -671,6 +688,29 @@
 
 
     <!-- Service Showcase -->
+
+    <section class="service-showcase">
+        <div class="section-title">
+            <h2>Service Showcase</h2>
+        </div>
+        <div class="container">
+            @foreach ($showcases as $index => $showcase)
+                <div class="showcase-item {{ $index % 2 == 0 ? 'left' : 'right' }}">
+                    <div class="dot"></div>
+                    <h4>{{ $showcase->year }}</h4>
+                    <p>{!! nl2br(e($showcase->title)) !!}</p>
+                    <img src="{{ asset($showcase->image) }}" alt="Showcase Image">
+                </div>
+            @endforeach
+        </div>
+    </section>
+
+
+
+
+
+
+
     {{-- <section class="counts section-bg">
         <div class="section-title">
             <h2></h2>
@@ -741,8 +781,7 @@
         </div>
     </section> --}}
 
-
-    <section class="service-showcase">
+    {{-- <section class="service-showcase">
         <div class="section-title">
             <h2>Service Showcase</h2>
         </div>
@@ -783,10 +822,11 @@
                 <img src="front-assets/img/service-howcase/s5.png" alt="Description">
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
-    {{-- End Our Journey Section  --}}
+
+    {{-- End Service ShowcaseSection  --}}
 
     <br><br><br><br>
 

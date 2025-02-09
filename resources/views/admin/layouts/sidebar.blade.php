@@ -85,6 +85,19 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('journeys.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-route"></i> <!-- Represents a journey or path -->
+                                <p>Our Journey</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('showcases.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-briefcase"></i> <!-- Represents services or business showcase -->
+                                <p>Service Showcase</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="{{ route('accreditation.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-ribbon"></i>
                                 <p>Accreditation Section</p>

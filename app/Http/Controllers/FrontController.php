@@ -15,6 +15,7 @@ use App\Models\HomeServicesSection;
 use App\Models\Job;
 use App\Models\Leader;
 use App\Models\Number;
+use App\Models\OurJourney;
 use App\Models\Product;
 use App\Models\ProductFifthSection;
 use App\Models\ProductFirstSection;
@@ -24,6 +25,7 @@ use App\Models\ProductSeventhSection;
 use App\Models\ProductSixthSection;
 use App\Models\ProductThirdSection;
 use App\Models\Quality;
+use App\Models\Showcase;
 use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
@@ -105,6 +107,12 @@ class FrontController extends Controller
 
         $teamMembers = User::where('role', '!=', 2)->get();
         $data['teamMembers'] = $teamMembers;
+
+        $journeys = OurJourney::all();
+        $data['journeys'] = $journeys;
+
+        $showcases = Showcase::all();
+        $data['showcases'] = $showcases;
 
         return view('front.about', $data);
     }
