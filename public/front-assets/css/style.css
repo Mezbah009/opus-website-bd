@@ -1705,7 +1705,7 @@ section {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    padding-top: 120px;
+    padding-top: 0px;
     padding-bottom: 120px;
     color: #000000;
     text-align: center;
