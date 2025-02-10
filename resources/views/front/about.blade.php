@@ -45,11 +45,11 @@
         left: 50%;
         width: 100px;
         height: 100%;
-        background: repeating-linear-gradient(0deg,
+        /* background: repeating-linear-gradient(0deg,
                 rgba(0, 0, 0, 0.2) 0px,
                 rgba(0, 0, 0, 0.2) 2px,
                 transparent 2px,
-                transparent 20px);
+                transparent 20px); */
         transform: translateX(-50%);
     }
 
@@ -131,6 +131,154 @@
         text-align: left;
         padding-left: 120px;
     }
+
+
+    @media (max-width: 768px) {
+        .timeline {
+            padding-top: 10px;
+        }
+
+        .timeline-item {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: auto;
+            margin-bottom: 40px;
+        }
+
+        .timeline-content {
+            width: 90%;
+            text-align: center !important;
+            padding: 10px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content,
+        .timeline-item:nth-child(even) .timeline-content {
+            padding: 0;
+        }
+
+        .timeline-image {
+            position: static;
+            width: 80%;
+            /* Adjust width for mobile */
+            height: auto;
+            margin: 15px auto 0;
+            /* Centers the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timeline-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        h4 {
+            font-size: 30px;
+        }
+
+        .timeline-content p {
+            font-size: 16px;
+        }
+    }
+
+
+
+    /* Service Showcase */
+
+    /* Service Showcase Section Styles */
+    .service-showcase {
+        position: relative;
+        padding: 50px 0;
+        background: #F5F9FC;
+    }
+
+    .service-showcase::before {
+        content: '';
+        position: absolute;
+        top: 120;
+        left: 50%;
+        width: 4px;
+        height: 100%;
+        background: rgb(162, 206, 232);
+        transform: translateX(-50%);
+    }
+
+    .service-showcase .showcase-item {
+        position: relative;
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .service-showcase .showcase-item img {
+        width: 350px;
+        height: 200px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .service-showcase .showcase-item h4 {
+        color: gray;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .service-showcase .showcase-item p {
+        color: gray;
+        font-size: 18px;
+    }
+
+    .service-showcase .left {
+        left: 0;
+        text-align: right;
+    }
+
+    .service-showcase .right {
+        left: 50%;
+        text-align: left;
+    }
+
+    .service-showcase .dot {
+        position: absolute;
+        top: 20px;
+        width: 20px;
+        height: 20px;
+        /* background: rgb(162, 206, 232); */
+        border-radius: 50%;
+        left: calc(50% - 10px);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .service-showcase {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-showcase::before {
+            left: 50%;
+        }
+
+        .service-showcase .showcase-item {
+            width: 90%;
+            text-align: center !important;
+            left: 0 !important;
+        }
+
+        .service-showcase .showcase-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .service-showcase .dot {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
 </style>
 
 @section('content')
@@ -205,7 +353,7 @@
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
                             <!-- <a href="{{ $home_second_sections->link }}"
-                                                                            class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
+                                                                                                                class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
@@ -269,125 +417,37 @@
         </div>
     </section><!-- End Counts Section -->
 
-    {{-- Accreditation section --}}
-
-    <div class="section-title" style="padding-top: 60px">
-        <h2></h2>
-        <h2>Accreditation</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($accreditations as $key => $accreditation)
-                <div class="row no-gutters">
-                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('uploads/first_section/' . $accreditation->image) }}" class="img-fluid"
-                            alt=""
-                            style="max-width: 100%; max-height: 200px; object-fit: cover; border-radius: 0px;">
-                    </div>
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                        <div class="section-title">
-                            <h1>{{ $accreditation->title }} </h1>
-                            <p>{!! $accreditation->description !!} </p>
-                        </div>
-                    </div>
-
-                </div>
-            @endforeach
-
-        </div>
-    </div>
-
-    {{-- Awards section --}}
-
-    <div class="section-title">
-        <h2></h2>
-        <h2>Awards</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($awards as $key => $award)
-                <div class="row no-gutters">
-                    <div class="col-lg-12 video-box">
-                        <img src="{{ asset('uploads/first_section/' . $award->image) }}" class="img-fluid" alt="">
-                    </div>
-
-                </div>
-            @endforeach
-
-        </div>
-    </div>
-
-
-    {{-- quality section --}}
-
-    {{-- <div class="section-title" style="padding-top: 30px">
-        <h2></h2>
-        <h2>Quality Management</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($qualities as $key => $quality)
-                <div class="row no-gutters">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                        <div class="section-title">
-                            <h1>{{ $quality->title }} </h1>
-                            <p>{!! $quality->description !!} </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 video-box">
-                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid" alt="">
-                    </div>
-
-                </div>
-            @endforeach
-
-        </div>
-    </div> --}}
-
-
-
-    <div class="section-title" style="padding-top: 30px">
-        <h2></h2>
-        <h2>Quality Management</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($qualities as $key => $quality)
-                <div class="row no-gutters align-items-center">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                        <div class="section-title">
-                            <h1>{{ $quality->title }}</h1>
-                            <p>{!! $quality->description !!}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid"
-                            alt=""
-                            style="max-width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-
-
 
     {{-- Our Journey --}}
 
+
     <section class="counts section-bg">
         <div class="section-title" style="padding-top: 0px">
-            <h2>Our Journey creating memories</h2>
+            <h2>Our Journey Creating Memories</h2>
+        </div>
+        <div class="container">
+            <div class="timeline">
+                @foreach ($journeys as $key => $journey)
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4 style="color: gray; font-size: 40px; font-weight: bold;">{{ $journey->year }}</h4>
+                            <p style="color: #5f6061; font-size: 18px;">{{ $journey->title }}</p>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="{{ asset($journey->image) }}" class="img-fluid" alt="{{ $journey->title }}">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- <section class="counts section-bg">
+        <div class="section-title" style="padding-top: 0px">
+            <h2>Our Journey Creating Memories</h2>
         </div>
 
         <div class="container">
-            {{-- <div class="header">
-            <h1>Our Journey</h1>
-            <div class="subtitle">creating memories</div>
-        </div> --}}
 
             <div class="timeline">
                 <div class="timeline-item">
@@ -520,7 +580,7 @@
                             Bangladesh Police.</p>
                     </div>
                     <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/10.png" alt="2017 milestone">
+                        <img src="front-assets/img/our-journey/11.png" alt="2017 milestone">
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -535,7 +595,7 @@
                             Zambia & Tanzania</p>
                     </div>
                     <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/11.png" alt="2017 milestone">
+                        <img src="front-assets/img/our-journey/10.png" alt="2017 milestone">
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -584,50 +644,74 @@
         </div>
 
 
-    </section>
+    </section> --}}
     {{-- end section --}}
 
 
     {{-- Global Presence section --}}
 
-    <div class="section-title" style="padding-top: 60px">
-        <h2></h2>
-        <h2>Global Presence</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($accreditations as $key => $accreditation)
-                <div class="row no-gutters">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                        <div class="section-title">
-                            {{-- <h1>{{ $accreditation->title }} </h1> --}}
-                            <p>With a proven track record of delivering innovative software solutions,
-                                Opus has established a strong presence in various countries worldwide.
-                                Our team of skilled engineers has successfully implemented projects in
-                                diverse regions, including USA, Australia, Sweden, Denmark, UAE,
-                                Malaysia, Uganda, Kenya, Zambia and Tanzania. This global reach
-                                enables us to understand and cater to the unique requirements of
-                                different markets, ensuring our solutions are culturally relevant and
-                                effective. </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                        <img src="front-assets/img/Global-Presence.png" class="img-fluid" alt=""
-                            style="max-width: 100%; max-height: 350px; object-fit: cover; border-radius: 0px;">
-                    </div>
-
-
-                </div>
-            @endforeach
-
+    <section>
+        <div class="section-title" style="padding-top: 60px">
+            <h2></h2>
+            <h2>Global Presence</h2>
         </div>
-    </div>
+
+        <div id="about" class="about">
+            <div class="container" data-aos="fade-up" style="box-shadow: none;">
+                @foreach ($accreditations as $key => $accreditation)
+                    <div class="row no-gutters">
+                        <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                            <div class="section-title">
+                                {{-- <h1>{{ $accreditation->title }} </h1> --}}
+                                <p>With a proven track record of delivering innovative software solutions,
+                                    Opus has established a strong presence in various countries worldwide.
+                                    Our team of skilled engineers has successfully implemented projects in
+                                    diverse regions, including USA, Australia, Sweden, Denmark, UAE,
+                                    Malaysia, Uganda, Kenya, Zambia and Tanzania. This global reach
+                                    enables us to understand and cater to the unique requirements of
+                                    different markets, ensuring our solutions are culturally relevant and
+                                    effective. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                            <img src="front-assets/img/Global-Presence.png" class="img-fluid" alt=""
+                                style="max-width: 100%; max-height: 350px; object-fit: cover; border-radius: 0px;">
+                        </div>
+
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
     <!-- end  -->
 
 
-    <!-- journey -->
-    <section class="counts section-bg">
+    <!-- Service Showcase -->
+
+    <section class="service-showcase">
+        <div class="section-title">
+            <h2>Service Showcase</h2>
+        </div>
+        <div class="container">
+            @foreach ($showcases as $index => $showcase)
+                <div class="showcase-item {{ $index % 2 == 0 ? 'left' : 'right' }}">
+                    <div class="dot"></div>
+                    <h4>{{ $showcase->year }}</h4>
+                    <p>{!! nl2br(e($showcase->title)) !!}</p>
+                    <img src="{{ asset($showcase->image) }}" alt="Showcase Image">
+                </div>
+            @endforeach
+        </div>
+    </section>
+
+
+
+
+
+
+
+    {{-- <section class="counts section-bg">
         <div class="section-title">
             <h2></h2>
             <h2>Service Showcase</h2>
@@ -695,16 +779,175 @@
                     style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    {{-- End Our Journey Section  --}}
+    {{-- <section class="service-showcase">
+        <div class="section-title">
+            <h2>Service Showcase</h2>
+        </div>
+        <div class="container">
+            <div class="showcase-item left">
+                <div class="dot"></div>
+                <h4>2017</h4>
+                <p>JAPAN IT WEEK SPRING</p>
+                <img src="front-assets/img/service-howcase/s1.png" alt="Description">
+            </div>
+
+            <div class="showcase-item right">
+                <div class="dot"></div>
+                <h4>2018</h4>
+                <p>CEBIT ASEAN, THAILAND JAPAN IT WEEK SPRING<br>BASIS SOFTEXPO, BANGLADESH</p>
+                <img src="front-assets/img/service-howcase/s2.png" alt="Description">
+            </div>
+
+            <div class="showcase-item left">
+                <div class="dot"></div>
+                <h4>2019</h4>
+                <p>JAPAN IT WEEK SPRING CHINA INTERNATIONAL IMPORT EXPO <br> ITU TELECOM WORLD, HUNGARY. BASIS SOFTEXPO,
+                    BANGLADESH</p>
+                <img src="front-assets/img/service-howcase/s3.png" alt="Description">
+            </div>
+
+            <div class="showcase-item right">
+                <div class="dot"></div>
+                <h4>2024</h4>
+                <p>WTO & ITC CO-ORGANIZED SHETRADES SUMMIT, ABU DHABI</p>
+                <img src="front-assets/img/service-howcase/s4.png" alt="Description">
+            </div>
+
+            <div class="showcase-item left">
+                <div class="dot"></div>
+                <h4>2025</h4>
+                <p>PARTICIPATE CES 2025 IN USA<br>POWERED BY THE CONSUMER TECHNOLOGY ASSOCIATION</p>
+                <img src="front-assets/img/service-howcase/s5.png" alt="Description">
+            </div>
+        </div>
+    </section> --}}
+
+
+
+    {{-- End Service ShowcaseSection  --}}
 
     <br><br><br><br>
 
+    {{-- Accreditation section --}}
+
+    <div class="section-title" style="padding-top: 60px">
+        <h2></h2>
+        <h2>Accreditation</h2>
+    </div>
+
+    <div id="about" class="about">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            @foreach ($accreditations as $key => $accreditation)
+                <div class="row no-gutters">
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <img src="{{ asset('uploads/first_section/' . $accreditation->image) }}" class="img-fluid"
+                            alt=""
+                            style="max-width: 100%; max-height: 200px; object-fit: cover; border-radius: 0px;">
+                    </div>
+                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                        <div class="section-title">
+                            <h1>{{ $accreditation->title }} </h1>
+                            <p>{!! $accreditation->description !!} </p>
+                        </div>
+                    </div>
+
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+
+    {{-- Awards section --}}
+
+    <div class="section-title">
+        <h2></h2>
+        <h2>Awards</h2>
+    </div>
+
+    <div id="about" class="about">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            @foreach ($awards as $key => $award)
+                <div class="row no-gutters">
+                    <div class="col-lg-12 video-box">
+                        <img src="{{ asset('uploads/first_section/' . $award->image) }}" class="img-fluid"
+                            alt="">
+                    </div>
+
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+
+
+    {{-- quality section --}}
+
+    {{-- <div class="section-title" style="padding-top: 30px">
+        <h2></h2>
+        <h2>Quality Management</h2>
+    </div>
+
+    <div id="about" class="about">
+        <div class="container" data-aos="fade-up" style="box-shadow: none;">
+            @foreach ($qualities as $key => $quality)
+                <div class="row no-gutters">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                        <div class="section-title">
+                            <h1>{{ $quality->title }} </h1>
+                            <p>{!! $quality->description !!} </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 video-box">
+                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid" alt="">
+                    </div>
+
+                </div>
+            @endforeach
+
+        </div>
+    </div> --}}
+
+    {{-- Quality Management --}}
+
+
+    <section>
+        <div class="section-title" style="padding-top: 30px">
+            <h2></h2>
+            <h2>Quality Management</h2>
+        </div>
+
+        <div id="about" class="about">
+            <div class="container" data-aos="fade-up" style="box-shadow: none;">
+                @foreach ($qualities as $key => $quality)
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                            <div class="section-title">
+                                <h1>{{ $quality->title }}</h1>
+                                <p>{!! $quality->description !!}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                            <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid"
+                                alt=""
+                                style="max-width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
 
 
-    {{-- management --}}
+
+
+
+
+
+
+    {{-- Top management --}}
     <div class="section-title" style="padding-top: 30px">
         <h2>Our Team</h2>
         <h3><strong>Top Management</strong></h3>
@@ -729,61 +972,12 @@
                             @endif
                         </div>
                     </div>
-
                 </div>
             @endforeach
         </div>
     </section>
 
     <!-- ======= Our Team Section ======= -->
-    {{-- <section id="team" class="team">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Core Management Team</h2>
-                <p></p>
-            </div>
-
-            <div class="row">
-                @foreach ($teamMembers as $member)
-                    <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
-                        <div class="member">
-                            <div class="pic">
-                                <img src="{{ asset('uploads/users/' . $member->image) }}" class="img-fluid"
-                                    alt="{{ $member->name }}" height="300px" width="350px">
-                            </div>
-
-
-                            <div class="member-info">
-                                <h4>{{ $member->name }}</h4>
-                                <span>{{ $member->designation }}</span>
-                                <div class="social">
-                                    @if ($member->twitter)
-                                        <a href="{{ $member->twitter }}"><i class="bi bi-twitter"></i></a>
-                                    @endif
-                                    @if ($member->facebook)
-                                        <a href="{{ $member->facebook }}"><i class="bi bi-facebook"></i></a>
-                                    @endif
-                                    @if ($member->instagram)
-                                        <a href="{{ $member->instagram }}"><i class="bi bi-instagram"></i></a>
-                                    @endif
-                                    @if ($member->linkedin)
-                                        <a href="{{ $member->linkedin }}"><i class="bi bi-linkedin"></i></a>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-
-        </div>
-    </section> --}}
-
-
-
-
-
 
     <section id="team" class="team section light-background">
 
@@ -795,7 +989,6 @@
         </div><!-- End Section Title -->
 
         <div class="container">
-
             <div class="row justify-content-center">
                 @foreach ($teamMembers as $member)
                     <div class="col-lg-3 col-md-3 col-sm-6 d-flex flex-column align-items-center member"
@@ -825,11 +1018,8 @@
                     </div><!-- End Team Member -->
                 @endforeach
             </div>
-
         </div>
-
     </section>
-
 
     <!-- End Our Team Section -->
 @endsection

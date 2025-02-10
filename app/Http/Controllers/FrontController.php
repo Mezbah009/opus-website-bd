@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Accreditation;
 use App\Models\Award;
 use App\Models\Blog;
+use App\Models\CaseStudy;
 use App\Models\Client;
 use App\Models\Contact;
 use App\Models\Demo;
@@ -14,6 +15,7 @@ use App\Models\HomeServicesSection;
 use App\Models\Job;
 use App\Models\Leader;
 use App\Models\Number;
+use App\Models\OurJourney;
 use App\Models\Product;
 use App\Models\ProductFifthSection;
 use App\Models\ProductFirstSection;
@@ -23,6 +25,7 @@ use App\Models\ProductSeventhSection;
 use App\Models\ProductSixthSection;
 use App\Models\ProductThirdSection;
 use App\Models\Quality;
+use App\Models\Showcase;
 use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
@@ -104,6 +107,12 @@ class FrontController extends Controller
 
         $teamMembers = User::where('role', '!=', 2)->get();
         $data['teamMembers'] = $teamMembers;
+
+        $journeys = OurJourney::all();
+        $data['journeys'] = $journeys;
+
+        $showcases = Showcase::all();
+        $data['showcases'] = $showcases;
 
         return view('front.about', $data);
     }
@@ -227,6 +236,30 @@ class FrontController extends Controller
 
         return view('front.services');
     }
+
+
+    public function caseStudy()
+    {
+
+
+        $caseStudy = CaseStudy::all();
+        $data['caseStudy'] = $caseStudy;
+        return view('front.case-study', $data);
+    }
+
+
+    public function showCaseStudy($slug, Request $request)
+    {
+        $query = CaseStudy::where('slug', $slug);
+
+        if (!empty($request->get('keyword'))) {
+            $query->where('description', 'like', '%' . $request->get('keyword') . '%');
+        }
+
+        $caseStudyPost = $query->firstOrFail();
+        return view('front.case-post', compact('caseStudyPost'));
+    }
+
 
     // public function demo(){
     //     return view('front.demo');
