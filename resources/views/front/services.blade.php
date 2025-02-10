@@ -27,25 +27,25 @@
     <div id="about" class="about showcase-item {{ $index % 2 == 0 ? 'left' : 'right' }}">
         <div class="row no-gutters">
             @if ($index % 2 == 0)
-                <!-- Image on the left, content on the right -->
-                <div class="col-lg-6 video-box">
-                    <img src="{{ asset('uploads/services/' . $service->image) }}" class="img-fluid" alt="{{ $service->title }}">
+            <!-- Image on the left, content on the right -->
+            <div class="col-lg-6 video-box">
+                <img src="{{ asset('uploads/services/' . $service->image) }}" class="img-fluid" alt="{{ $service->title }}">
+            </div>
+            <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                <div>
+                    <p class="fs-5 mb-4 service-description">{!! $service->description !!}</p>
                 </div>
-                <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                    <div class="section-title">
-                        <p class="fs-5 mb-4">{!! $service->description !!}</p>
-                    </div>
-                </div>
+            </div>
             @else
-                <!-- Content on the left, image on the right -->
-                <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                    <div class="section-title">
-                        <p class="fs-5 mb-4">{!! $service->description !!}</p>
-                    </div>
+            <!-- Content on the left, image on the right -->
+            <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                <div>
+                    <p class="fs-5 mb-4 service-description">{!! $service->description !!}</p>
                 </div>
-                <div class="col-lg-6 video-box">
-                    <img src="{{ asset('uploads/services/' . $service->image) }}" class="img-fluid" alt="{{ $service->title }}">
-                </div>
+            </div>
+            <div class="col-lg-6 video-box">
+                <img src="{{ asset('uploads/services/' . $service->image) }}" class="img-fluid" alt="{{ $service->title }}">
+            </div>
             @endif
         </div>
     </div>
