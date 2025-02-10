@@ -144,6 +144,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('services.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-newspaper"></i>
+                        <p>Service</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('blog.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-newspaper"></i>
                         <p>Blogs</p>
