@@ -18,6 +18,7 @@ use App\Http\Controllers\admin\OurJourneyController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductFirstSectionController;
 use App\Http\Controllers\admin\QualityController;
+use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\ShowcaseController;
 use App\Http\Controllers\admin\SliderController;
@@ -218,6 +219,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/clients/{clients}/edit', [ClientController::class, 'edit'])->name('clients.edit');
         Route::put('/clients/{clients}', [ClientController::class, 'update'])->name('clients.update');
         Route::delete('/clients/{clients}', [ClientController::class, 'destroy'])->name('clients.delete');
+
+        // Services
+        Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
+        Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
+        Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
+        Route::get('/services/{services}/edit', [ServiceController::class, 'edit'])->name('services.edit');
+        Route::put('/services/{services}', [ServiceController::class, 'update'])->name('services.update');
+        Route::delete('/services/{services}', [ServiceController::class, 'destroy'])->name('services.delete');
 
         // Blog
         Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
