@@ -12,7 +12,7 @@
     <p class="text">We provide Amazing Solutions</p>
 </div>
 
-<div class="section-title" style="padding-top: 60px">
+<div class="section-title">
 
 </div>
 
@@ -20,7 +20,7 @@
 
 <div class="container" data-aos="fade-up" style="box-shadow: none;">
     @foreach ($services as $index => $service)
-    <div class="section-title">
+    <div class="section-title" style="padding-top: 60px; padding-bottom: 0 !important;">
         <h2>{{ $service->title }}</h2>
     </div>
 
