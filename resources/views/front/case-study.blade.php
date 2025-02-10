@@ -84,7 +84,19 @@
 
 
     <section id="blog-card" class="padding-top-bottom-90">
+
+
+
+
+
         <div class="container">
+            <div class="section-title">
+                <h2>Case Study</h2>
+                <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company.
+                    Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across
+                    various industries & business functions, it collaborates with customers to help them effectively address
+                    their operational challenges & grow their businesses stronger.</p>
+            </div>
             <div class="row">
                 @foreach ($caseStudy as $case)
                     <div class="col-md-3 mb-4">
