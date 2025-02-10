@@ -25,6 +25,7 @@ use App\Models\ProductSeventhSection;
 use App\Models\ProductSixthSection;
 use App\Models\ProductThirdSection;
 use App\Models\Quality;
+use App\Models\Service;
 use App\Models\Showcase;
 use App\Models\Slider;
 use App\Models\Testimonial;
@@ -233,8 +234,8 @@ class FrontController extends Controller
 
     public function services()
     {
-
-        return view('front.services');
+        $services = Service::all();
+        return view('front.services', compact('services'));
     }
 
 
