@@ -84,11 +84,7 @@
         top: -8px;
         bottom: -8px;
         width: 24px;
-        background: repeating-linear-gradient(0deg,
-                #000,
-                #000 4px,
-                #333 4px,
-                #333 12px);
+
     }
 
     .timeline-image::before {
@@ -164,7 +160,7 @@
             height: auto;
             margin: 15px auto 0;
             /* Centers the image */
-            display: flex;
+            display: contents;
             justify-content: center;
             align-items: center;
         }
@@ -190,95 +186,97 @@
 
     /* Service Showcase Section Styles */
     .service-showcase {
-        position: relative;
-        padding: 50px 0;
-        background: #F5F9FC;
+    position: relative;
+    padding: 50px 0;
+    background: #F5F9FC;
+}
+
+.service-showcase::before {
+    content: '';
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: rgb(162, 206, 232); /* Keep for desktop view */
+    transform: translateX(-50%);
+}
+
+.service-showcase .showcase-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.service-showcase .showcase-item img {
+    width: 350px;
+    height: 200px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.service-showcase .showcase-item h4 {
+    color: gray;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.service-showcase .showcase-item p {
+    color: gray;
+    font-size: 18px;
+}
+
+.service-showcase .left {
+    left: 0;
+    text-align: right;
+}
+
+.service-showcase .right {
+    left: 50%;
+    text-align: left;
+}
+
+.service-showcase .dot {
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: calc(50% - 10px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .service-showcase {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .service-showcase::before {
-        content: '';
-        position: absolute;
-        top: 120;
-        left: 50%;
-        width: 4px;
-        height: 100%;
-        background: rgb(162, 206, 232);
-        transform: translateX(-50%);
+        background: none !important; /* Remove background only in mobile view */
     }
 
     .service-showcase .showcase-item {
-        position: relative;
-        width: 50%;
-        padding: 20px;
-        box-sizing: border-box;
+        width: 90%;
+        text-align: center !important;
+        left: 0 !important;
+        padding: 15px;
     }
 
     .service-showcase .showcase-item img {
-        width: 350px;
-        height: 200px;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
-
-    .service-showcase .showcase-item h4 {
-        color: gray;
-        font-size: 30px;
-        font-weight: bold;
-    }
-
-    .service-showcase .showcase-item p {
-        color: gray;
-        font-size: 18px;
-    }
-
-    .service-showcase .left {
-        left: 0;
-        text-align: right;
-    }
-
-    .service-showcase .right {
-        left: 50%;
-        text-align: left;
+        width: 100%;
+        height: auto;
     }
 
     .service-showcase .dot {
-        position: absolute;
-        top: 20px;
-        width: 20px;
-        height: 20px;
-        /* background: rgb(162, 206, 232); */
-        border-radius: 50%;
-        left: calc(50% - 10px);
+        left: 50%;
+        transform: translateX(-50%);
     }
+}
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-        .service-showcase {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
-        .service-showcase::before {
-            left: 50%;
-        }
-
-        .service-showcase .showcase-item {
-            width: 90%;
-            text-align: center !important;
-            left: 0 !important;
-        }
-
-        .service-showcase .showcase-item img {
-            width: 100%;
-            height: auto;
-        }
-
-        .service-showcase .dot {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
 </style>
 
 @section('content')
