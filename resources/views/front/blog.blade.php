@@ -57,7 +57,7 @@
         }
 
         .card .btn {
-            width: 25%;
+            width: 37%;
             background-color: #007bff;
             color: white;
             font-weight: bold;
