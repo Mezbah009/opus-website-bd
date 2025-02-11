@@ -324,7 +324,7 @@ class FrontController extends Controller
 
     public function job()
     {
-        $response = Http::withOptions(['verify' => false])->get('https://career.opuserp.com/api/recruitment/gt-all-jobs');
+        $response = Http::withOptions(['verify' => false])->get('https://e-recruitment-admin.opuserp.com/api/recruitment/gt-all-jobs');
 
         if ($response->successful()) {
             $jobs = $response->json(); // Fetch the jobs
