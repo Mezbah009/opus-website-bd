@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\CaseStudyController;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\CyberSecurityFirstSectionController;
+use App\Http\Controllers\admin\CyberSecuritySecondSectionController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\HomeFirstSectionController;
 use App\Http\Controllers\admin\HomeSecondSectionController;
@@ -304,6 +305,8 @@ Route::group(['prefix' => 'admin'], function () {
 
         // Cyber Security First Section
         Route::resource('cyber_security', CyberSecurityFirstSectionController::class);
+
+        Route::resource('cyber_security_second_section', CyberSecuritySecondSectionController::class);
 
         // Jobs
         Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
