@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class CyberSecuritySecondSection extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = [
+        'icon',
+        'title',
+        'description'
+    ];
+
+
 }

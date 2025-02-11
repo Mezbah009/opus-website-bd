@@ -40,7 +40,7 @@ class FrontController extends Controller
     public function index()
     {
         $sliders = Slider::where('active', 'Yes')
-            ->orderBy('id', 'desc')->take(3)
+            ->orderBy('id', 'desc')->take(10)
             ->get();
         $data['slider'] = $sliders;
 
