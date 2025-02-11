@@ -75,6 +75,8 @@
             color: #ffffff;
             border-radius: 0px; /* Add rounded corners */
             transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: 10px;
+            padding: 10px;
             /* Smooth transition for hover effects */
         }
 
@@ -90,6 +92,8 @@
             color: #0D4472;
             border-radius: 0px; /* Add rounded corners */
             transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: 10px;
+            padding: 10px;
         }
 
         .btn-secondary:hover {
