@@ -136,6 +136,7 @@ h6,
     #topbar .contact-info,
     #topbar .social-links {
         margin-top: 5px; /* Add margin between contact info and social links */
+        font-size: 13px;
     }
 }
 
