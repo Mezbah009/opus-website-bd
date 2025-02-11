@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cyber_security_second_section', function (Blueprint $table) {
+        Schema::create('cyber_security_second_sections', function (Blueprint $table) {
             $table->id();
             $table->string('icon')->nullable();
             $table->string('title')->nullable();
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cyber_security_second_section');
+        Schema::dropIfExists('cyber_security_second_sections');
     }
 };
