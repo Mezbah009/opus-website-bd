@@ -137,6 +137,15 @@
                         <p>Cyber Security</p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('ai_solutions.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-brain"></i>
+                        <p>Ai Solutions</p>
+                    </a>
+                </li>
+
+
                 <li class="nav-item">
                     <a href="{{ route('team_members.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-user-friends"></i>

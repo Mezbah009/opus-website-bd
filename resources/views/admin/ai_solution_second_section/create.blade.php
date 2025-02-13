@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h2>Add New Section</h2>
-        <form action="{{ route('secondSection.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('aiSecondSection.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label>Title</label>

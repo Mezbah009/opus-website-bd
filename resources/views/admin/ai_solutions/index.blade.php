@@ -9,8 +9,8 @@
                         <h1> Cyber Security First Sections</h1>
                     </div>
                     <div class="col-sm-6 text-right">
-                        <a href="{{ route('secondSection.create') }}" class="btn btn-primary">Second Section</a>
-                        <a href="{{ route('cyber_security.create') }}" class="btn btn-primary">First Section</a>
+                        <a href="{{ route('aiSecondSection.create') }}" class="btn btn-primary">Second Section</a>
+                        <a href="{{ route('ai_solutions.create') }}" class="btn btn-primary">First Section</a>
                         {{-- <a href="{{ route('products.index') }}" class="btn btn-primary">Back</a> --}}
                     </div>
                 </div>
@@ -51,9 +51,9 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a style="margin-bottom: 10px;" href="{{ route('cyber_security.edit', $section->id) }}"
+                                            <a style="margin-bottom: 10px;" href="{{ route('ai_solutions.edit', $section->id) }}"
                                                 class="btn btn-warning">Edit</a>
-                                            <form action="{{ route('cyber_security.destroy', $section->id) }}"
+                                            <form action="{{ route('ai_solutions.destroy', $section->id) }}"
                                                 method="POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
@@ -96,7 +96,6 @@
                                 <tr>
                                     <td>{{ $second_section->id }}</td>
                                     <td>
-                                        {{-- <p>{{ $second_section->icon }}</p> <!-- Debugging: Show path --> --}}
                                         @if ($second_section->icon)
                                             <img src="{{ asset($second_section->icon) }}" width="50" height="50">
                                         @else
@@ -107,9 +106,9 @@
                                     <td>{{ $second_section->title }}</td>
 
                                     <td>
-                                        <a href="{{ route('secondSection.edit', $second_section->id) }}"
+                                        <a href="{{ route('aiSecondSection.edit', $second_section->id) }}"
                                             class="btn btn-warning btn-sm">Edit</a>
-                                        <form action="{{ route('secondSection.destroy', $second_section->id) }}"
+                                        <form action="{{ route('aiSecondSection.destroy', $second_section->id) }}"
                                             method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')

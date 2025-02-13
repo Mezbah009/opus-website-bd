@@ -39,7 +39,6 @@
 
 
 
-
             {{-- <div class="row portfolio-container">
                 @foreach ($sections as $section)
                     <div class="col-lg-4 col-md-6 portfolio-item {{ $section->button_name }}">
@@ -72,126 +71,67 @@
 
 
 
+            {{-- First section --}}
+
+
+
             <section id="about" class="about">
                 <div class="container" data-aos="fade-up" style="box-shadow: none;">
-                    <div class="row no-gutters">
-                        <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-
-                            <div class="section-title">
-
-                                <p>In today’s digital world, safeguarding your data, systems, and networks is more critical
-                                    than ever. Cyber threats are evolving rapidly, making it essential to have robust
-                                    security measures in place. At Opus Technology, we offer cutting-edge Cyber Security
-                                    Solutions designed to provide comprehensive protection against cyberattacks, data
-                                    breaches, and emerging threats. Our expert team ensures your business remains secure,
-                                    resilient, and fully compliant with industry regulations. Whether you need threat
-                                    detection, risk assessment, or incident response, we tailor our solutions to fit your
-                                    unique IT infrastructure. Stay ahead of cyber threats with Opus Technology—because
-                                    security is not an option, it’s a necessity.
-                                </p>
+                    @foreach ($first_sections as $index => $first_section)
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                                <div class="section-title">
+                                    <p>{{ $first_section->description }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 video-box">
+                                <img src="{{ asset($first_section->image) }}" class="img-fluid" alt="">
                             </div>
                         </div>
-                        <div class="col-lg-6 video-box">
-                            <img src="{{ asset('front-assets/img/cyber1.jpg') }}" class="img-fluid" alt="">
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </section>
 
-        </div>
 
-        {{-- Fifth section --}}
-
-        <div class="contact-body">
-            <section id="contact" class="contact">
-                <div class="container" data-aos="fade-up">
-                    <div class="row">
-                        <div class="row">
-                            <div class="col-lg-3 d-flex" data-aos="fade-up">
-                                <div class="info-boxs">
-                                    <img src="{{ asset('front-assets/img/cyberlogo/1.png') }}" alt="..." width="80px"
-                                        style="padding: 8px; display: block; margin: 0 auto;">
-                                    <h3 style="text-align:center; margin-bottom: 10px;">Network Security
-                                    </h3>
-                                    <p>Protect your business from unauthorized access with robust network security measures,
-                                        including firewalls, intrusion detection systems, and secure VPNs.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 d-flex" data-aos="fade-up">
-                                <div class="info-boxs">
-                                    <img src="{{ asset('front-assets/img/cyberlogo/2.png') }}" alt="..." width="80px"
-                                        style="padding: 8px; display: block; margin: 0 auto;">
-                                    <h3 style="text-align:center; margin-bottom: 10px;">Cloud Security
-                                    </h3>
-                                    <p>Secure your data and applications in the cloud. We ensure that your cloud
-                                        infrastructure is safe, scalable, and compliant with industry standards.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 d-flex" data-aos="fade-up">
-                                <div class="info-boxs">
-                                    <img src="{{ asset('front-assets/img/cyberlogo/3.png') }}" alt="..." width="80px"
-                                        style="padding: 8px; display: block; margin: 0 auto;">
-                                    <h3 style="text-align:center; margin-bottom: 10px;">Endpoint Security
-                                    </h3>
-                                    <p>Safeguard all your devices, from desktops to mobile devices, with advanced endpoint
-                                        protection that ensures no device goes unprotected.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 d-flex" data-aos="fade-up">
-                                <div class="info-boxs">
-                                    <img src="{{ asset('front-assets/img/cyberlogo/4.png') }}" alt="..." width="80px"
-                                        style="padding: 8px; display: block; margin: 0 auto;">
-                                    <h3 style="text-align:center; margin-bottom: 10px;">Incident Response & Recovery
-                                    </h3>
-                                    <p>In the event of a cyber attack or data breach, we provide immediate support to
-                                        minimize damage and quickly restore your systems to full functionality.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 d-flex" data-aos="fade-up">
-                                <div class="info-boxs">
-                                    <img src="{{ asset('front-assets/img/cyberlogo/5.png') }}" alt="..." width="80px"
-                                        style="padding: 8px; display: block; margin: 0 auto;">
-                                    <h3 style="text-align:center; margin-bottom: 10px;">Data Encryption & Protection
-                                    </h3>
-                                    <p>We use advanced encryption techniques to secure your sensitive information, ensuring
-                                        that it is protected from data breaches and unauthorized access.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 d-flex" data-aos="fade-up">
-                                <div class="info-boxs">
-                                    <img src="{{ asset('front-assets/img/cyberlogo/6.png') }}" alt="..." width="80px"
-                                        style="padding: 8px; display: block; margin: 0 auto;">
-                                    <h3 style="text-align:center; margin-bottom: 10px;">Compliance & Regulatory Solutions
-                                    </h3>
-                                    <p>We help you stay compliant with various regulations such as GDPR, PCI-DSS, and HIPAA
-                                        by providing tailored security solutions that align with industry standards.
-                                    </p>
-                                </div>
+            {{-- second  section --}}
+            <section>
+                <div class="contact-body">
+                    <section id="contact" class="contact">
+                        <div class="container" data-aos="fade-up">
+                            <div class="row">
+                                @foreach ($second_sections as $index => $second_section)
+                                    <div class="col-lg-3 d-flex" data-aos="fade-up">
+                                        <div class="info-boxs">
+                                            <img src="{{ asset($second_section->icon) }}" alt="..." width="80px"
+                                                style="padding: 8px; display: block; margin: 0 auto;">
+                                            <h3 style="text-align:center; margin-bottom: 10px;">{{ $second_section->title }}
+                                            </h3>
+                                            <p>{{ $second_section->description }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </section>
-        </div>
-        <!-- End  Section -->
-    </section><!-- End Our Portfolio Section -->
+
+            <br>
+            <!-- End Section -->
 
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const portfolioWraps = document.querySelectorAll('.portfolio-wrap');
-            portfolioWraps.forEach(function(portfolioWrap) {
-                portfolioWrap.addEventListener('click', function() {
-                    const url = portfolioWrap.getAttribute('data-url');
-                    window.location.href = url;
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const portfolioWraps = document.querySelectorAll('.portfolio-wrap');
+                    portfolioWraps.forEach(function(portfolioWrap) {
+                        portfolioWrap.addEventListener('click', function() {
+                            const url = portfolioWrap.getAttribute('data-url');
+                            window.location.href = url;
+                        });
+                    });
                 });
-            });
-        });
-    </script>
-@endsection
+            </script>
+        @endsection

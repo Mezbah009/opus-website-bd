@@ -3,22 +3,22 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\CyberSecurityFirstSection;
-use App\Models\CyberSecuritySecondSection;
+use App\Models\AiSolution;
+use App\Models\AiSolutionSecondSection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class CyberSecurityFirstSectionController extends Controller
+class AiSolutionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $sections = CyberSecurityFirstSection::all();
-        $second_sections = CyberSecuritySecondSection::all(); // Fetch second section data
+        $sections = AiSolution::all();
+        $second_sections = AiSolutionSecondSection::all(); // Fetch second section data
 
-        return view('admin.cyber_security.index', compact('sections', 'second_sections'));
+        return view('admin.ai_solutions.index', compact('sections', 'second_sections'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CyberSecurityFirstSectionController extends Controller
      */
     public function create()
     {
-        return view('admin.cyber_security.create');
+        return view('admin.ai_solutions.create');
     }
 
     /**
@@ -43,16 +43,16 @@ class CyberSecurityFirstSectionController extends Controller
         $imagePath = null;
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('front-assets/img/cyber-security'), $imageName);
-            $imagePath = 'front-assets/img/cyber-security/' . $imageName;
+            $request->image->move(public_path('front-assets/img/ai-solution'), $imageName);
+            $imagePath = 'front-assets/img/ai-solution/' . $imageName;
         }
 
-        CyberSecurityFirstSection::create([
+        AiSolution::create([
             'description' => $request->description,
             'image' => $imagePath,
         ]);
 
-        return redirect()->route('cyber_security.index')->with('success', 'Section created successfully.');
+        return redirect()->route('ai_solutions.index')->with('success', 'Section created successfully.');
     }
 
     /**
@@ -60,8 +60,8 @@ class CyberSecurityFirstSectionController extends Controller
      */
     public function edit($id)
     {
-        $section = CyberSecurityFirstSection::findOrFail($id);
-        return view('admin.cyber_security.edit', compact('section'));
+        $section = AiSolution::findOrFail($id);
+        return view('admin.ai_solutions.edit', compact('section'));
     }
 
     /**
@@ -69,7 +69,7 @@ class CyberSecurityFirstSectionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $section = CyberSecurityFirstSection::findOrFail($id);
+        $section = AiSolution::findOrFail($id);
 
         $request->validate([
             'description' => 'nullable|string',
@@ -84,14 +84,14 @@ class CyberSecurityFirstSectionController extends Controller
 
             // Upload new image
             $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('front-assets/img/cyber-security'), $imageName);
-            $section->image = 'front-assets/img/cyber-security/' . $imageName;
+            $request->image->move(public_path('front-assets/img/ai-solution'), $imageName);
+            $section->image = 'front-assets/img/ai-solution/' . $imageName;
         }
 
         $section->description = $request->description ?? $section->description;
         $section->save();
 
-        return redirect()->route('cyber_security.index')->with('success', 'Section updated successfully.');
+        return redirect()->route('ai_solutions.index')->with('success', 'Section updated successfully.');
     }
 
     /**
@@ -99,7 +99,7 @@ class CyberSecurityFirstSectionController extends Controller
      */
     public function destroy($id)
     {
-        $section = CyberSecurityFirstSection::findOrFail($id);
+        $section = AiSolution::findOrFail($id);
 
         if ($section->image && file_exists(public_path($section->image))) {
             unlink(public_path($section->image));
@@ -107,7 +107,7 @@ class CyberSecurityFirstSectionController extends Controller
 
         $section->delete();
 
-        return redirect()->route('cyber_security.index')->with('success', 'Section deleted successfully.');
+        return redirect()->route('ai_solutions.index')->with('success', 'Section deleted successfully.');
     }
 
 
@@ -123,7 +123,7 @@ class CyberSecurityFirstSectionController extends Controller
      */
     public function createSecondSection()
     {
-        return view('admin.cyber_security_second_section.create');
+        return view('admin.ai_solution_second_section.create');
     }
 
     /**
@@ -143,7 +143,7 @@ class CyberSecurityFirstSectionController extends Controller
         }
 
         // Create new section
-        $second_sections = new CyberSecuritySecondSection();
+        $second_sections = new AiSolutionSecondSection();
         $second_sections->title = $request->title;
         $second_sections->description = $request->description;
 
@@ -151,21 +151,21 @@ class CyberSecurityFirstSectionController extends Controller
         if ($request->hasFile('icon')) {
             $icon = $request->file('icon');
             $iconName = 'icon_' . time() . '.' . $icon->getClientOriginalExtension();
-            $icon->move(public_path('front-assets/img/cyber-security'), $iconName);
-            $second_sections->icon = 'front-assets/img/cyber-security/' . $iconName;
+            $icon->move(public_path('front-assets/img/ai-solution'), $iconName);
+            $second_sections->icon = 'front-assets/img/ai-solution/' . $iconName;
         }
 
         $second_sections->save();
 
-        return redirect()->route('cyber_security.index')->with('success', 'Section created successfully.');
+        return redirect()->route('ai_solutions.index')->with('success', 'Section created successfully.');
     }
     /**
      * Show the form for editing the specified resource.
      */
     public function editSecondSection($id)
     {
-        $section = CyberSecuritySecondSection::findOrFail($id);
-        return view('admin.cyber_security_second_section.edit', compact('section'));
+        $section = AiSolutionSecondSection::findOrFail($id);
+        return view('admin.ai_solution_second_section.edit', compact('section'));
     }
 
     /**
@@ -184,7 +184,7 @@ class CyberSecurityFirstSectionController extends Controller
             return back()->withErrors($validator)->withInput();
         }
 
-        $second_sections = CyberSecuritySecondSection::findOrFail($id);
+        $second_sections = AiSolutionSecondSection::findOrFail($id);
         $second_sections->title = $request->title;
         $second_sections->description = $request->description;
 
@@ -197,18 +197,18 @@ class CyberSecurityFirstSectionController extends Controller
 
             $icon = $request->file('icon');
             $iconName = 'icon_' . time() . '.' . $icon->getClientOriginalExtension();
-            $icon->move(public_path('front-assets/img/cyber-security/'), $iconName);
-            $second_sections->icon = 'front-assets/img/cyber-security/' . $iconName;
+            $icon->move(public_path('front-assets/img/ai-solution/'), $iconName);
+            $second_sections->icon = 'front-assets/img/ai-solution/' . $iconName;
         }
 
         $second_sections->save();
 
-        return redirect()->route('cyber_security.index')->with('success', 'Section updated successfully.');
+        return redirect()->route('ai_solutions.index')->with('success', 'Section updated successfully.');
     }
 
     public function destroySecondSection($id)
     {
-        $second_sections = CyberSecuritySecondSection::findOrFail($id);
+        $second_sections = AiSolutionSecondSection::findOrFail($id);
 
         // Delete associated image from `public/uploads/first_section`
         if ($second_sections->icon && file_exists(public_path($second_sections->icon))) {
@@ -217,6 +217,6 @@ class CyberSecurityFirstSectionController extends Controller
 
         $second_sections->delete();
 
-        return redirect()->route('cyber_security.index')->with('success', 'Section deleted successfully.');
+        return redirect()->route('ai_solutions.index')->with('success', 'Section deleted successfully.');
     }
 }
