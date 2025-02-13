@@ -9,7 +9,7 @@
                         <h1> Cyber Security First Sections</h1>
                     </div>
                     <div class="col-sm-6 text-right">
-                        <a href="{{ route('cyber_security_second_section.create') }}" class="btn btn-primary">Second Section</a>
+                        <a href="{{ route('secondSection.create') }}" class="btn btn-primary">Second Section</a>
                         <a href="{{ route('cyber_security.create') }}" class="btn btn-primary">First Section</a>
                         {{-- <a href="{{ route('products.index') }}" class="btn btn-primary">Back</a> --}}
                     </div>
@@ -51,7 +51,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('cyber_security.edit', $section->id) }}"
+                                            <a style="margin-bottom: 10px;" href="{{ route('cyber_security.edit', $section->id) }}"
                                                 class="btn btn-warning">Edit</a>
                                             <form action="{{ route('cyber_security.destroy', $section->id) }}"
                                                 method="POST" style="display:inline;">
@@ -87,27 +87,29 @@
                                 <th>ID</th>
                                 <th>Icon</th>
                                 <th>Title</th>
-                                {{-- <th>Description</th> --}}
+
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($sections as $section)
+                            @foreach ($second_sections as $second_section)
                                 <tr>
-                                    <td>{{ $section->id }}</td>
+                                    <td>{{ $second_section->id }}</td>
                                     <td>
-                                        @if ($section->icon)
-                                            <img src="{{ asset($section->icon) }}" width="50" height="50">
+                                        {{-- <p>{{ $second_section->icon }}</p> <!-- Debugging: Show path --> --}}
+                                        @if ($second_section->icon)
+                                            <img src="{{ asset($second_section->icon) }}" width="50" height="50">
                                         @else
                                             No Image
                                         @endif
                                     </td>
-                                    <td>{{ $section->title }}</td>
-                                    {{-- <td>{{ $section->description }}</td> --}}
+
+                                    <td>{{ $second_section->title }}</td>
+
                                     <td>
-                                        <a href="{{ route('cyber_security_second_section.edit', $section->id) }}"
+                                        <a href="{{ route('secondSection.edit', $second_section->id) }}"
                                             class="btn btn-warning btn-sm">Edit</a>
-                                        <form action="{{ route('cyber_security_second_section.destroy', $section->id) }}"
+                                        <form action="{{ route('secondSection.destroy', $second_section->id) }}"
                                             method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
@@ -123,7 +125,7 @@
 
             </div>
         </div>
-        </div>
+
     </section>
 
 

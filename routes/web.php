@@ -304,9 +304,24 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('showcases', ShowcaseController::class);
 
         // Cyber Security First Section
-        Route::resource('cyber_security', CyberSecurityFirstSectionController::class);
+        // Route::resource('cyber_security', CyberSecurityFirstSectionController::class);
 
-        Route::resource('cyber_security_second_section', CyberSecuritySecondSectionController::class);
+        Route::get('/cyber_security', [CyberSecurityFirstSectionController::class, 'index'])->name('cyber_security.index');
+        Route::get('/cyber_security/create', [CyberSecurityFirstSectionController::class, 'create'])->name('cyber_security.create');
+        Route::post('/cyber_security', [CyberSecurityFirstSectionController::class, 'store'])->name('cyber_security.store');
+        Route::get('/cyber_security/{cyber_security}/edit', [CyberSecurityFirstSectionController::class, 'edit'])->name('cyber_security.edit');
+        Route::put('/cyber_security/{cyber_security}', [CyberSecurityFirstSectionController::class, 'update'])->name('cyber_security.update');
+        Route::delete('/cyber_security/{cyber_security}', [CyberSecurityFirstSectionController::class, 'destroy'])->name('cyber_security.destroy');
+
+
+        Route::get('/cyber_security_second', [CyberSecurityFirstSectionController::class, 'indexSecondSection'])->name('secondSection.index');
+        Route::get('/cyber_security_second/create', [CyberSecurityFirstSectionController::class, 'createSecondSection'])->name('secondSection.create');
+        Route::post('/cyber_security_second', [CyberSecurityFirstSectionController::class, 'storeSecondSection'])->name('secondSection.store');
+        Route::get('/cyber_security_second/{cyber_security_second}/edit', [CyberSecurityFirstSectionController::class, 'editSecondSection'])->name('secondSection.edit');
+        Route::put('/cyber_security_second/{cyber_security_second}', [CyberSecurityFirstSectionController::class, 'updateSecondSection'])->name('secondSection.update');
+        Route::delete('/cyber_security_second/{cyber_security_second}', [CyberSecurityFirstSectionController::class, 'destroySecondSection'])->name('secondSection.destroy');
+
+        // Route::resource('cyber_security_second_section', CyberSecuritySecondSectionController::class);
 
         // Jobs
         Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');

@@ -8,6 +8,8 @@ use App\Models\Blog;
 use App\Models\CaseStudy;
 use App\Models\Client;
 use App\Models\Contact;
+use App\Models\CyberSecurityFirstSection;
+use App\Models\CyberSecuritySecondSection;
 use App\Models\Demo;
 use App\Models\HomeFirstSection;
 use App\Models\HomeSecondSection;
@@ -150,9 +152,16 @@ class FrontController extends Controller
     public function cyberSecurity()
     {
         $sections = Product::where("button_name", "filter-sys")->get();
-        $data['sections'] = $sections;
-        return view('front.cyber-security', $data);
+        $first_sections = CyberSecurityFirstSection::all();
+        $second_sections = CyberSecuritySecondSection::all();
+
+        return view('front.cyber-security', [
+            'sections' => $sections,
+            'first_sections' => $first_sections,
+            'second_sections' => $second_sections
+        ]);
     }
+
 
 
 

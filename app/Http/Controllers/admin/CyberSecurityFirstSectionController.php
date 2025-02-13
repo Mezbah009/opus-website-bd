@@ -16,7 +16,9 @@ class CyberSecurityFirstSectionController extends Controller
     public function index()
     {
         $sections = CyberSecurityFirstSection::all();
-        return view('admin.cyber_security.index', compact('sections'));
+        $second_sections = CyberSecuritySecondSection::all(); // Fetch second section data
+
+        return view('admin.cyber_security.index', compact('sections', 'second_sections'));
     }
 
     /**
@@ -105,7 +107,7 @@ class CyberSecurityFirstSectionController extends Controller
 
         $section->delete();
 
-        return redirect()->route('admin.cyber_security.index')->with('success', 'Section deleted successfully.');
+        return redirect()->route('cyber_security.index')->with('success', 'Section deleted successfully.');
     }
 
 
@@ -116,11 +118,11 @@ class CyberSecurityFirstSectionController extends Controller
 
     //---------------------------------------------------------------------------------
 
-    public function indexSecondSection()
-    {
-        $second_sections = CyberSecuritySecondSection::all();
-        return view('admin.cyber_security.index', compact('second_sections'));
-    }
+    // public function indexSecondSection()
+    // {
+    //     $second_sections = CyberSecuritySecondSection::all();
+    //     return view('admin.cyber_security.index', compact('second_sections'));
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -147,19 +149,19 @@ class CyberSecurityFirstSectionController extends Controller
         }
 
         // Create new section
-        $section = new CyberSecuritySecondSection();
-        $section->title = $request->title;
-        $section->description = $request->description;
+        $second_sections = new CyberSecuritySecondSection();
+        $second_sections->title = $request->title;
+        $second_sections->description = $request->description;
 
         // Handle image upload (store in `public/uploads/first_section`)
         if ($request->hasFile('icon')) {
             $icon = $request->file('icon');
             $iconName = 'icon_' . time() . '.' . $icon->getClientOriginalExtension();
-            $icon->move(public_path('uploads/first_section'), $iconName);
-            $section->icon = 'uploads/first_section/' . $iconName;
+            $icon->move(public_path('front-assets/img/cyber-security'), $iconName);
+            $second_sections->icon = 'front-assets/img/cyber-security/' . $iconName;
         }
 
-        $section->save();
+        $second_sections->save();
 
         return redirect()->route('cyber_security.index')->with('success', 'Section created successfully.');
     }
@@ -188,38 +190,38 @@ class CyberSecurityFirstSectionController extends Controller
             return back()->withErrors($validator)->withInput();
         }
 
-        $section = CyberSecuritySecondSection::findOrFail($id);
-        $section->title = $request->title;
-        $section->description = $request->description;
+        $second_sections = CyberSecuritySecondSection::findOrFail($id);
+        $second_sections->title = $request->title;
+        $second_sections->description = $request->description;
 
         // Handle image update
         if ($request->hasFile('icon')) {
             // Delete old image if exists
-            if ($section->icon && file_exists(public_path($section->icon))) {
-                unlink(public_path($section->icon));
+            if ($second_sections->icon && file_exists(public_path($second_sections->icon))) {
+                unlink(public_path($second_sections->icon));
             }
 
             $icon = $request->file('icon');
             $iconName = 'icon_' . time() . '.' . $icon->getClientOriginalExtension();
-            $icon->move(public_path('uploads/first_section'), $iconName);
-            $section->icon = 'uploads/first_section/' . $iconName;
+            $icon->move(public_path('front-assets/img/cyber-security/'), $iconName);
+            $second_sections->icon = 'front-assets/img/cyber-security/' . $iconName;
         }
 
-        $section->save();
+        $second_sections->save();
 
         return redirect()->route('cyber_security.index')->with('success', 'Section updated successfully.');
     }
 
     public function destroySecondSection($id)
     {
-        $section = CyberSecuritySecondSection::findOrFail($id);
+        $second_sections = CyberSecuritySecondSection::findOrFail($id);
 
         // Delete associated image from `public/uploads/first_section`
-        if ($section->icon && file_exists(public_path($section->icon))) {
-            unlink(public_path($section->icon));
+        if ($second_sections->icon && file_exists(public_path($second_sections->icon))) {
+            unlink(public_path($second_sections->icon));
         }
 
-        $section->delete();
+        $second_sections->delete();
 
         return redirect()->route('cyber_security.index')->with('success', 'Section deleted successfully.');
     }

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h2>Cyber Security Second Section</h2>
-        <a href="{{ route('cyber_security_second_section.create') }}" class="btn btn-primary mb-3">Add New</a>
+        <a href="{{ route('secondSection.create') }}" class="btn btn-primary mb-3">Add New</a>
 
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
@@ -33,8 +33,8 @@
                         <td>{{ $section->title }}</td>
                         <td>{{ $section->description }}</td>
                         <td>
-                            <a href="{{ route('cyber_security_second_section.edit', $section->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('cyber_security_second_section.destroy', $section->id) }}" method="POST" style="display:inline;">
+                            <a href="{{ route('secondSection.edit', $section->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="{{ route('secondSection.destroy', $section->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>

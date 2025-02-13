@@ -3,23 +3,36 @@
 @section('content')
     <div class="container">
         <h2>Edit Section</h2>
-        <form action="{{ route('cyber_security_second_section.update', $section->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('secondSection.update', $section->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
+
             <div class="form-group">
                 <label>Title</label>
                 <input type="text" name="title" class="form-control" value="{{ $section->title }}">
             </div>
+
             <div class="form-group">
                 <label>Description</label>
                 <textarea name="description" class="form-control">{{ $section->description }}</textarea>
             </div>
+
             <div class="form-group">
-                <label>Icon</label>
-                <input type="file" name="icon" class="form-control">
-                <img src="{{ asset('storage/'.$section->icon) }}" width="50">
+                <label>Current Icon</label> <br>
+                @if ($section->icon)
+                    <img src="{{ asset($section->icon) }}" width="100" height="100">
+                @else
+                    No Image
+                @endif
             </div>
-            <button type="submit" class="btn btn-success">Update</button>
+
+            <div class="form-group">
+                <label>Change Icon</label>
+                <input type="file" name="icon" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="{{ route('cyber_security.index') }}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 @endsection
