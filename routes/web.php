@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\AccreditationController;
 use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\admin\AiSolutionController;
 use App\Http\Controllers\admin\AwardController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\CaseStudyController;
@@ -304,8 +305,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('showcases', ShowcaseController::class);
 
         // Cyber Security First Section
-        // Route::resource('cyber_security', CyberSecurityFirstSectionController::class);
-
         Route::get('/cyber_security', [CyberSecurityFirstSectionController::class, 'index'])->name('cyber_security.index');
         Route::get('/cyber_security/create', [CyberSecurityFirstSectionController::class, 'create'])->name('cyber_security.create');
         Route::post('/cyber_security', [CyberSecurityFirstSectionController::class, 'store'])->name('cyber_security.store');
@@ -313,15 +312,31 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/cyber_security/{cyber_security}', [CyberSecurityFirstSectionController::class, 'update'])->name('cyber_security.update');
         Route::delete('/cyber_security/{cyber_security}', [CyberSecurityFirstSectionController::class, 'destroy'])->name('cyber_security.destroy');
 
-
-        Route::get('/cyber_security_second', [CyberSecurityFirstSectionController::class, 'indexSecondSection'])->name('secondSection.index');
+        // Cyber Security second Section
         Route::get('/cyber_security_second/create', [CyberSecurityFirstSectionController::class, 'createSecondSection'])->name('secondSection.create');
         Route::post('/cyber_security_second', [CyberSecurityFirstSectionController::class, 'storeSecondSection'])->name('secondSection.store');
         Route::get('/cyber_security_second/{cyber_security_second}/edit', [CyberSecurityFirstSectionController::class, 'editSecondSection'])->name('secondSection.edit');
         Route::put('/cyber_security_second/{cyber_security_second}', [CyberSecurityFirstSectionController::class, 'updateSecondSection'])->name('secondSection.update');
         Route::delete('/cyber_security_second/{cyber_security_second}', [CyberSecurityFirstSectionController::class, 'destroySecondSection'])->name('secondSection.destroy');
 
-        // Route::resource('cyber_security_second_section', CyberSecuritySecondSectionController::class);
+        // ai solution First Section
+        Route::get('/ai_solutions', [AiSolutionController::class, 'index'])->name('ai_solutions.index');
+        Route::get('/ai_solutions/create', [AiSolutionController::class, 'create'])->name('ai_solutions.create');
+        Route::post('/ai_solutions', [AiSolutionController::class, 'store'])->name('ai_solutions.store');
+        Route::get('/ai_solutions/{ai_solutions}/edit', [AiSolutionController::class, 'edit'])->name('ai_solutions.edit');
+        Route::put('/ai_solutions/{ai_solutions}', [AiSolutionController::class, 'update'])->name('ai_solutions.update');
+        Route::delete('/ai_solutions/{ai_solutions}', [AiSolutionController::class, 'destroy'])->name('ai_solutions.destroy');
+
+        // ai solution First Section
+        // Route::get('/ai_solutions_second', [AiSolutionController::class, 'index'])->name('ai_solutions.index');
+        Route::get('/ai_solutions_second/create', [AiSolutionController::class, 'createSecondSection'])->name('aiSecondSection.create');
+        Route::post('/ai_solutions_second', [AiSolutionController::class, 'storeSecondSection'])->name('aiSecondSection.store');
+        Route::get('/ai_solutions_second/{ai_solutions_second}/edit', [AiSolutionController::class, 'editSecondSection'])->name('aiSecondSection.edit');
+        Route::put('/ai_solutions_second/{ai_solutions_second}', [AiSolutionController::class, 'updateSecondSection'])->name('aiSecondSection.update');
+        Route::delete('/ai_solutions_second/{ai_solutions_second}', [AiSolutionController::class, 'destroySecondSection'])->name('aiSecondSection.destroy');
+
+
+
 
         // Jobs
         Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');

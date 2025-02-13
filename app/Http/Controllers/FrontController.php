@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accreditation;
+use App\Models\AiSolution;
+use App\Models\AiSolutionSecondSection;
 use App\Models\Award;
 use App\Models\Blog;
 use App\Models\CaseStudy;
@@ -138,9 +140,16 @@ class FrontController extends Controller
     public function aiSolutions()
     {
         $sections = Product::where("button_name", "filter-ai")->get();
-        $data['sections'] = $sections;
-        return view('front.ai-solutions', $data);
+        $first_sections = AiSolution::all();
+        $second_sections = AiSolutionSecondSection::all();
+
+        return view('front.ai-solutions', [
+            'sections' => $sections,
+            'first_sections' => $first_sections,
+            'second_sections' => $second_sections
+        ]);
     }
+
 
     public function systemSolutions()
     {
@@ -161,6 +170,9 @@ class FrontController extends Controller
             'second_sections' => $second_sections
         ]);
     }
+
+
+
 
 
 

@@ -39,7 +39,6 @@
 
 
 
-
             {{-- <div class="row portfolio-container">
                 @foreach ($sections as $section)
                     <div class="col-lg-4 col-md-6 portfolio-item {{ $section->button_name }}">
@@ -78,14 +77,10 @@
 
             <section id="about" class="about">
                 <div class="container" data-aos="fade-up" style="box-shadow: none;">
-
                     @foreach ($first_sections as $index => $first_section)
                         <div class="row no-gutters">
-
                             <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-
                                 <div class="section-title">
-
                                     <p>{{ $first_section->description }}
                                     </p>
                                 </div>
@@ -121,8 +116,10 @@
                         </div>
                     </section>
                 </div>
-                <!-- End  Section -->
-            </section><!-- End Our Portfolio Section -->
+            </section>
+
+            <br>
+            <!-- End Section -->
 
 
 
