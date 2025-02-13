@@ -6,7 +6,7 @@
             <div class="container-fluid my-2">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1> Cyber Security First Sections</h1>
+                        <h1> Ai solution</h1>
                     </div>
                     <div class="col-sm-6 text-right">
                         <a href="{{ route('aiSecondSection.create') }}" class="btn btn-primary">Second Section</a>
