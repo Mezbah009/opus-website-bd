@@ -377,7 +377,7 @@
                 <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
                     <div class="count-box">
                         <i class="bi bi-simple-smile" style="color: #20b38e;"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="360" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1"
                             class="purecounter"></span>
                         <p>Successful Project Implementation</p>
                     </div>
