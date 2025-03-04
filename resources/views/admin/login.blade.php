@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Laravel Shop :: Administrative Panel</title>
+		<title>Opus Technology Limited  :: Administrative Panel</title>
 		<!-- Google Font: Source Sans Pro -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 		<!-- Font Awesome -->
@@ -18,7 +18,7 @@
 			<!-- /.login-logo -->
 			<div class="card card-outline card-primary">
 			  	<div class="card-header text-center">
-					<a href="#" class="h3">Administrative Panel</a>
+					<a href="#" class="h3">Opus Website Admin Panel</a>
 			  	</div>
 			  	<div class="card-body">
 					<p class="login-box-msg">Sign in to start your session</p>
@@ -64,7 +64,7 @@
 					</form>
 		  			<p class="mb-1 mt-3">
 				  		<a href="forgot-password.html">I forgot my password</a>
-					</p>					
+					</p>
 			  	</div>
 			  	<!-- /.card-body -->
 			</div>

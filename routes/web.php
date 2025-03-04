@@ -250,10 +250,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/casestudy/{blog}', [CaseStudyController::class, 'destroy'])->name('casestudy.delete');
 
 
-
-
-
-
         // Contact
         Route::resource('contact', ContactController::class)->except('show');
 
