@@ -3,15 +3,61 @@
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Opus Technology Limited</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
+    <meta name="description"
+        content="Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.">
+    <meta name="keywords"
+        content="Software Company in Bangladesh, IT Solutions, Enterprise Software, Fintech, AI, Cybersecurity, Mobile Apps, Web Development">
+    <meta name="author" content="Opus Technology Limited">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://opus-bd.com/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Opus Technology Limited - Software & IT Solutions in Bangladesh">
+    <meta property="og:description"
+        content="We offer cutting-edge software solutions, fintech services, and enterprise IT consultancy.">
+    <meta property="og:image" content="{{ asset('front-assets/img/opus-logo.png') }}">
+    <meta property="og:url" content="https://opus-bd.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Opus Technology Limited - Software & IT Solutions in Bangladesh">
+    <meta name="twitter:description"
+        content="We offer cutting-edge software solutions, fintech services, and enterprise IT consultancy.">
+    <meta name="twitter:image" content="{{ asset('front-assets/img/opus-logo.png') }}">
 
     <!-- Favicons -->
-    <link href="{{ asset('front-assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('front-assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    {{-- <link href="{{ asset('front-assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('front-assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon"> --}}
+
+    <link rel="icon" href="{{ asset('front-assets/img/favicon.png') }}" type="image/png">
+
+    <!-- Structured Data (JSON-LD Schema) -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Opus Technology Limited",
+        "url": "https://opus-bd.com/",
+        "logo": "{{ asset('front-assets/img/opus-logo.png') }}",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+8802222225006",
+            "contactType": "customer service",
+            "areaServed": "BD",
+            "availableLanguage": "en"
+        },
+        "sameAs": [
+            "https://www.facebook.com/OpusTechnologyGlobal/",
+            "https://www.linkedin.com/company/opus-technology-limited/",
+            "https://www.youtube.com/@opustechnologylimited"
+        ]
+        }
+        </script>
 
     <!-- Google Fonts -->
     <link
@@ -27,6 +73,11 @@
     <link href="{{ asset('front-assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front-assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front-assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+
+    <!-- Existing Stylesheets -->
+    <link href="{{ asset('front-assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('front-assets/css/style.css') }}" rel="stylesheet">
 
 
     <!-- Template Main CSS File -->
@@ -161,12 +212,16 @@
                             class="nav-link scrollto dropdown-toggle {{ Request::is('products') ? 'active' : '' }}"
                             data-bs-toggle="dropdown">Product</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('front.products') }}">Enterprise Solutions</a>
+                            <li><a class="dropdown-item" href="{{ route('front.products') }}">Enterprise
+                                    Solutions</a>
                             </li>
-                            <li><a class="dropdown-item" href="{{ route('front.fintech') }}">Fintech Solutions</a></li>
-                            <li><a class="dropdown-item" href="{{ route('front.mobileApp') }}">Mobile App Solutions</a>
+                            <li><a class="dropdown-item" href="{{ route('front.fintech') }}">Fintech Solutions</a>
                             </li>
-                            <li><a class="dropdown-item" href="{{ route('front.aiSolutions') }}">AI Solutions</a></li>
+                            <li><a class="dropdown-item" href="{{ route('front.mobileApp') }}">Mobile App
+                                    Solutions</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ route('front.aiSolutions') }}">AI Solutions</a>
+                            </li>
                             <li><a class="dropdown-item" href="{{ route('front.systemSolutions') }}">System
                                     Solutions</a></li>
                             <li><a class="dropdown-item" href="{{ route('front.cyberSecurity') }}">Cyber Security

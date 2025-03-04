@@ -29,6 +29,7 @@ use App\Http\Controllers\admin\TeamController;
 use App\Http\Controllers\admin\TempImagesController;
 use App\Http\Controllers\admin\TestimonialController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -365,3 +366,6 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/test', function (Request $request) {
     dd($request->all());
 });
+
+Route::get('/sitemap.xml', [SitemapController::class, 'generate']);
+Route::get('/robots.txt', [SitemapController::class, 'robots']);
