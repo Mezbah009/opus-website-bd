@@ -5,7 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
+    {{-- <title>Opus Technology Limited - Software & IT Solutions in Bangladesh</title> --}}
+
+    @yield('title')
+
     <meta name="description"
         content="Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.">
     <meta name="keywords"

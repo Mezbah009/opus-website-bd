@@ -1,5 +1,9 @@
 @extends('front.layouts.app')
 
+@section('title')
+<title> Fintech Solutions || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
+@endsection
+
 @section('content')
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/Fintech.jpg') }}');">
         {{-- <h3>Get in Touch with Us</h3> --}}

@@ -53,19 +53,17 @@ use Illuminate\Support\Str;
 Route::get('/', [FrontController::class, 'index'])->name('front.home');
 Route::get('/contact-us', [FrontController::class, 'contact'])->name('front.contact');
 Route::get('/about-us', [FrontController::class, 'about'])->name('front.about');
-Route::get('/products', [FrontController::class, 'products'])->name('front.products');
+Route::get('/enterprise-solutions', [FrontController::class, 'products'])->name('front.products');
 
 
-Route::get('/mobile', [FrontController::class, 'mobileApp'])->name('front.mobileApp');
+Route::get('/mobile-app-solutions', [FrontController::class, 'mobileApp'])->name('front.mobileApp');
 Route::get('/ai-solutions', [FrontController::class, 'aiSolutions'])->name('front.aiSolutions');
 Route::get('/system-solutions', [FrontController::class, 'systemSolutions'])->name('front.systemSolutions');
-Route::get('/cyber-security', [FrontController::class, 'cyberSecurity'])->name('front.cyberSecurity');
+Route::get('/cyber-security-solutions', [FrontController::class, 'cyberSecurity'])->name('front.cyberSecurity');
 
 Route::get('/case-study', [FrontController::class, 'caseStudy'])->name('front.caseStudy');
 
 Route::get('/case-study/{slug}', [FrontController::class, 'showCaseStudy'])->name('front.showCaseStudy');
-
-
 
 
 
@@ -75,7 +73,7 @@ Route::get('products/{slug}', [FrontController::class, 'showProduct'])->name('pr
 Route::get('blogs/{slug}', [FrontController::class, 'showBlogPost'])->name('blog.show');
 Route::get('jobs/{slug}', [FrontController::class, 'showJobPost'])->name('job.show');
 Route::get('leaders/{link}', [FrontController::class, 'showLeaderPost'])->name('leader.show');
-Route::get('/fintech', [FrontController::class, 'fintech'])->name('front.fintech');
+Route::get('/fintech-solutions', [FrontController::class, 'fintech'])->name('front.fintech');
 Route::get('/clients', [FrontController::class, 'clients'])->name('front.clients');
 Route::get('/blog', [FrontController::class, 'blog'])->name('front.blog');
 Route::get('/services', [FrontController::class, 'services'])->name('front.services');

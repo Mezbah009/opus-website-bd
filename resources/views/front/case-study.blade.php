@@ -1,5 +1,9 @@
 @extends('front.layouts.app')
 
+@section('title')
+<title> Case Study || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
+@endsection
+
 
 <style>
     .row {
