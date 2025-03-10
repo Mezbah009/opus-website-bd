@@ -1,5 +1,9 @@
 @extends('front.layouts.app')
 
+@section('title')
+<title> Cyber Security Solutions || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
+@endsection
+
 @section('content')
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/cyber.jpg') }}');">
         <h2>Our Cyber Security Solutions</h2>

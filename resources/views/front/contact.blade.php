@@ -1,5 +1,9 @@
 @extends('front.layouts.app')
 
+@section('title')
+<title> Contact Us || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
+@endsection
+
 @section('content')
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/Contact.jpg') }}');">
         <h2>contact us</h2>

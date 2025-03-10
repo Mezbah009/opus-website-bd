@@ -1,5 +1,9 @@
 @extends('front.layouts.app')
 
+@section('title')
+<title> Blogs || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
+@endsection
+
 @section('content')
     <style>
         .row {
