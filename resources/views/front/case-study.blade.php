@@ -1,8 +1,10 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Case Study || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "Case Study - Opus Technology Limited";
+    $description = "Explore the case studies of how Opus Technology has helped businesses achieve remarkable results through our innovative technology solutions. Learn about our successful projects and their impact on various industries.";
+    $keywords = "case study, technology solutions, business success, Opus Technology, case studies, technology impact, business transformation, project success";
+@endphp
 
 
 <style>

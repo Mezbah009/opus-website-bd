@@ -1,13 +1,15 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Clients || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "Our Clients - Opus Technology Limited";
+    $description = "Explore the diverse industries and businesses that trust Opus Technology to deliver innovative solutions and support their growth.";
+    $keywords = "clients, partners, business success, Opus Technology, industry solutions, client portfolio, technology solutions";
+@endphp
 
 @section('content')
 
 <div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/clients.jpg") }}');">
-    <h2>Our Valuable Clients</h2>
+    <h1>Our Valuable Clients</h1>
     <div class="line">
         <div></div>
         <div></div>

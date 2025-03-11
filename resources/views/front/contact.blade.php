@@ -1,12 +1,14 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Contact Us || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "Contact Us - Opus Technology Limited";
+    $description = "Get in touch with Opus Technology to learn more about our solutions or ask any questions. Our team is here to help you with all your technology needs.";
+    $keywords = "contact us, Opus Technology, customer support, contact, inquiries, get in touch, technology solutions";
+@endphp
 
 @section('content')
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/Contact.jpg') }}');">
-        <h2>contact us</h2>
+        <h1>contact us</h1>
         <div class="line">
             <div></div>
             <div></div>
@@ -21,7 +23,7 @@ text-align: justify;">
             Opus Technology Ltd is a leading Software Development and IT consulting service provider company. Combining
             unparalleled experience, domain expertise, best practices & comprehensive capabilities across various industries
             & business functions, it collaborates with customers to help them effectively address their operational
-            challenges & grow their businesses stronger.
+            challenges & grow their businesses stronger. We would love to hear from you! Please reach out for inquiries, support, or to learn more about how we can help your business grow.
         </p>
     </div>
 

@@ -1,13 +1,15 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Ai Solutions || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "AI Solutions - Opus Technology";
+    $description = "Opus Technology delivers cutting-edge AI solutions to help businesses optimize processes, enhance customer experiences, and drive innovation.";
+    $keywords = "AI solutions, artificial intelligence, machine learning, deep learning, business automation, data analytics, Opus Technology";
+@endphp
 
 @section('content')
 
 <div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/ai.jpg") }}');">
-    <h2>Our AI Solutions </h2>
+    <h1>Our AI Solutions </h1>
     <div class="line">
         <div></div>
         <div></div>
@@ -21,7 +23,7 @@
 
         <div class="section-title">
             <h2>Our AI Solutions </h2>
-            <p>At Opus Technology, we are committed to helping businesses harness the transformative potential of artificial intelligence. Whether you’re looking to streamline operations, enhance customer experiences, or innovate your offerings, our AI solutions are your gateway to a smarter, more efficient future.
+            <p>We specialize in AI-driven solutions that enable businesses to automate processes, gain insights from data, and create intelligent systems for the future. Our AI solutions are designed to help businesses optimize operations, enhance customer experiences, and drive innovation.</p>
             </p>
         </div>
 

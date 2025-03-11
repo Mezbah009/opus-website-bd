@@ -1,8 +1,10 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Blogs || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "Blogs - Opus Technology Limited";
+    $description = "Read the latest blogs from Opus Technology, where we share insights on the latest trends, technological advancements, and industry news. Stay updated with expert opinions and thought leadership.";
+    $keywords = "blogs, technology trends, industry news, Opus Technology, expert opinions, tech blogs, technology insights, thought leadership";
+@endphp
 
 @section('content')
     <style>
@@ -73,7 +75,7 @@
     </style>
 
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/blogs.jpg') }}');">
-        <h2>Blogs</h2>
+        <h1>Blogs</h1>
         <div class="line">
             <div></div>
             <div></div>

@@ -1,13 +1,15 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Fintech Solutions || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "Fintech Solutions - Opus Technology";
+    $description = "Opus Technology offers innovative fintech solutions to revolutionize financial services, enhance security, and improve transaction efficiency.";
+    $keywords = "fintech solutions, financial technology, payment processing, blockchain, digital banking, mobile payments, Opus Technology";
+@endphp
 
 @section('content')
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/Fintech.jpg') }}');">
         {{-- <h3>Get in Touch with Us</h3> --}}
-        <h2>Our Fintech Solutions</h2>
+        <h1>Our Fintech Solutions</h1>
         <div class="line">
             <div></div>
             <div></div>
@@ -24,10 +26,7 @@
 
         <div class="section-title">
             <h2>Our Fintech Products</h2>
-            <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company.
-                Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across
-                various industries & business functions, it collaborates with customers to help them effectively address
-                their operational challenges & grow their businesses stronger.</p>
+            <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company. We provide state-of-the-art fintech solutions designed to transform financial services and empower businesses to thrive in the digital economy.</p>
         </div>
 
         <div class="row">
