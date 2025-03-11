@@ -1,13 +1,15 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Enterprise Solutions || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "Enterprise Solutions - Opus Technology";
+    $description = "Opus Technology provides cutting-edge enterprise solutions to streamline business operations, enhance efficiency, and drive digital transformation.";
+    $keywords = "enterprise solutions, business automation, ERP, CRM, cloud computing, digital transformation, Opus Technology";
+@endphp
 
 @section('content')
 
 <div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/product-banner.jpg") }}');">
-    <h2>Our Enterprise Solutions</h2>
+    <h1>Our Enterprise Solutions</h1>
     <div class="line">
         <div></div>
         <div></div>

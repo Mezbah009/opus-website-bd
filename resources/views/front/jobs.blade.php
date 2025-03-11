@@ -1,8 +1,10 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Jobs || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "Jobs - Careers at Opus Technology Limited";
+    $description = "Explore exciting job opportunities at Opus Technology. Join our dynamic team and help us drive innovative technology solutions. Find your next career here!";
+    $keywords = "jobs, careers, employment opportunities, tech jobs, Opus Technology, job openings, technology careers, join our team";
+@endphp
 
 @section('content')
 
@@ -40,7 +42,7 @@
     </style>
 
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/jobs.jpg') }}');">
-        <h2>Jobs</h2>
+        <h1>Jobs</h1>
         <div class="line">
             <div></div>
             <div></div>

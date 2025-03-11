@@ -1,13 +1,15 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Mobile App Solutions|| Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "Mobile App Solutions - Opus Technology Limited";
+    $description = "Discover custom mobile app development solutions at Opus Technology. We create innovative and user-friendly apps for both Android and iOS platforms.";
+    $keywords = "mobile app development, custom mobile apps, Android apps, iOS apps, mobile solutions, app development company, Opus Technology, mobile application services";
+@endphp
 
 @section('content')
 
 <div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/mobile.jpg") }}');">
-    <h2>Our Mobile App Solutions</h2>
+    <h1>Our Mobile App Solutions</h1>
     <div class="line">
         <div></div>
         <div></div>
@@ -24,7 +26,7 @@
             <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company.
                 Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across
                 various industries & business functions, it collaborates with customers to help them effectively address
-                their operational challenges & grow their businesses stronger.</p>
+                their operational challenges & grow their businesses stronger. Opus Technology specializes in building cutting-edge mobile applications that deliver seamless user experiences. Our team excels in designing and developing apps tailored to your business needs.</p>
         </div>
 
         {{-- <div class="row">

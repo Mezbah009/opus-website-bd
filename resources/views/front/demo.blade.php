@@ -1,8 +1,10 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "Opus Technology Limited - Software & IT Solutions in Bangladesh";
+    $description = "Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.";
+    $keywords = "Software Company in Bangladesh, IT Solutions, Enterprise Software, Fintech, AI, Cybersecurity, Mobile Apps, Web Development";
+@endphp
 
 
 <style>

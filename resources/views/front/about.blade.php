@@ -1,8 +1,11 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> About Us || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+
+@php
+    $title = "About Us - Opus Technology Limited";
+    $description = "Learn more about Opus Technology, our mission, and our expert team.";
+    $keywords = "about opus technology, company history, our team, technology solutions ,Top Management,Md.Jafar Iqbal, MANAGING DIRECTOR & CEO,Bipasha Afrin,DIRECTOR";
+@endphp
 
 
 
@@ -285,7 +288,7 @@
 
 @section('content')
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/about-us.jpg') }}');">
-        <h2>About us</h2>
+        <h1>About us</h1>
         <div class="line">
             <div></div>
             <div></div>

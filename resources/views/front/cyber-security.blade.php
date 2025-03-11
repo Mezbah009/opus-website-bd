@@ -1,12 +1,14 @@
 @extends('front.layouts.app')
 
-@section('title')
-<title> Cyber Security Solutions || Opus Technology Limited - Software & IT Solutions in Bangladesh</title>
-@endsection
+@php
+    $title = "Cyber Security Solutions - Opus Technology Limited";
+    $description = "Opus Technology offers robust cyber security solutions to protect your business from digital threats. Our services ensure your data, networks, and systems remain secure against evolving cyber risks.";
+    $keywords = "cyber security, digital security solutions, network security, data protection, cyber threats, security services, Opus Technology";
+@endphp
 
 @section('content')
     <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/cyber.jpg') }}');">
-        <h2>Our Cyber Security Solutions</h2>
+        <h1>Our Cyber Security Solutions</h1>
         <div class="line">
             <div></div>
             <div></div>
