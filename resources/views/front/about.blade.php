@@ -353,7 +353,7 @@
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
                         <div class="section-title">
-                            <img src="{{ asset('uploads/first_section/' . $home_second_sections->logo) }}" class="img-fluid"
+                            <img src="{{ asset('uploads/first_section/' . $home_second_sections->logo) }}" class="img-fluid" loading="lazy"
                                 alt="">
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
@@ -362,8 +362,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('uploads/first_section/' . $home_second_sections->image) }}" class="img-fluid"
-                            alt=""
+                        <img src="{{ asset('uploads/first_section/' . $home_second_sections->image) }}" class="img-fluid" loading="lazy"
+                            alt="SEO Image"
                             style="max-width: 100%; max-height: 400px; object-fit: cover; border-radius: 0px;">
                     </div>
                 </div>
