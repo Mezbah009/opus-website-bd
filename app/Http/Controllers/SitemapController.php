@@ -10,6 +10,9 @@ class SitemapController extends Controller
 {
     public function generate()
     {
+        // Clear any accidental whitespace before output
+        ob_clean();
+
         $urls = [
             URL::to('/'),
             URL::to('/about-us'),
@@ -27,22 +30,24 @@ class SitemapController extends Controller
             URL::to('/contact-us'),
         ];
 
-        $sitemap = '<?xml version="1.0" encoding="UTF-8"?>';
-        $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+        // Start XML document
+        $sitemap = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+        $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
 
         foreach ($urls as $url) {
-            $sitemap .= '<url>';
-            $sitemap .= '<loc>' . $url . '</loc>';
-            $sitemap .= '<lastmod>' . now()->toAtomString() . '</lastmod>';
-            $sitemap .= '<changefreq>weekly</changefreq>';
-            $sitemap .= '<priority>0.8</priority>';
-            $sitemap .= '</url>';
+            $sitemap .= '    <url>' . PHP_EOL;
+            $sitemap .= '        <loc>' . htmlspecialchars($url, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
+            $sitemap .= '        <lastmod>' . now()->toAtomString() . '</lastmod>' . PHP_EOL;
+            $sitemap .= '        <changefreq>weekly</changefreq>' . PHP_EOL;
+            $sitemap .= '        <priority>0.8</priority>' . PHP_EOL;
+            $sitemap .= '    </url>' . PHP_EOL;
         }
 
         $sitemap .= '</urlset>';
 
-        return Response::make($sitemap, 200, ['Content-Type' => 'application/xml']);
+        return response($sitemap, 200)->header('Content-Type', 'application/xml');
     }
+
 
 
     // robots.txt
