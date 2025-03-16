@@ -13,7 +13,12 @@ class SitemapController extends Controller
         $urls = [
             URL::to('/'),
             URL::to('/about-us'),
-            URL::to('/products'),
+            URL::to('/enterprise-solutions'),
+            URL::to('/fintech-solutions'),
+            URL::to('/mobile-app-solutions'),
+            URL::to('/ai-solutions'),
+            URL::to('/system-solutions'),
+            URL::to('/cyber-security-solutions'),
             URL::to('/services'),
             URL::to('/clients'),
             URL::to('/case-study'),
