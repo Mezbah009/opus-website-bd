@@ -328,17 +328,17 @@ class FrontController extends Controller
 
     //test api --------
 
-    public function showCategories()
-    {
-        $response = Http::get('https://medicus-ecommerce.opusdemo.com/public/api/categories');
+    // public function showCategories()
+    // {
+    //     $response = Http::get('https://medicus-ecommerce.opusdemo.com/public/api/categories');
 
-        if ($response->successful()) {
-            $categories = $response->json('data'); // Fetch only the 'data' key
-            return view('front.categories.index', compact('categories'));
-        }
+    //     if ($response->successful()) {
+    //         $categories = $response->json('data'); // Fetch only the 'data' key
+    //         return view('front.categories.index', compact('categories'));
+    //     }
 
-        return back()->with('error', 'Failed to fetch categories.');
-    }
+    //     return back()->with('error', 'Failed to fetch categories.');
+    // }
 
 
 

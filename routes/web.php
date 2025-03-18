@@ -79,7 +79,7 @@ Route::get('/blog', [FrontController::class, 'blog'])->name('front.blog');
 Route::get('/services', [FrontController::class, 'services'])->name('front.services');
 
 
-Route::get('/categories', [FrontController::class, 'showCategories'])->name('categories.index');
+// Route::get('/categories', [FrontController::class, 'showCategories'])->name('categories.index');
 
 
 
