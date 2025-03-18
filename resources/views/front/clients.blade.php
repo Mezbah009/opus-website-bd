@@ -53,7 +53,7 @@
             @foreach($clients as $client)
             <div class="col-lg-4 col-md-6 portfolio-item {{$client->category}}">
                 <div class="portfolio-wrap" data-url="{{ $client->link }}" style="cursor: pointer;">
-                    <img src="{{ asset('uploads/first_section/' . $client->logo) }}" class="img-fluid" alt="" style="margin: 0 auto; display: block;">
+                    <img src="{{ asset('uploads/first_section/' . $client->logo) }}" class="img-fluid" loading="lazy" alt="{{$client->title}}" style="margin: 0 auto; display: block;">
                     <div class="portfolio-info">
                         <h4>{{$client->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">

@@ -2,9 +2,10 @@
 
 
 @php
-    $title = "About Us - Opus Technology Limited";
-    $description = "Learn more about Opus Technology, our mission, and our expert team.";
-    $keywords = "about opus technology, company history, our team, technology solutions ,Top Management,Md.Jafar Iqbal, MANAGING DIRECTOR & CEO,Bipasha Afrin,DIRECTOR";
+    $title = 'About Us - Opus Technology Limited';
+    $description = 'Learn more about Opus Technology, our mission, and our expert team.';
+    $keywords =
+        'about opus technology, company history, our team, technology solutions ,Top Management,Md.Jafar Iqbal, MANAGING DIRECTOR & CEO,Bipasha Afrin,DIRECTOR';
 @endphp
 
 
@@ -193,97 +194,97 @@
 
     /* Service Showcase Section Styles */
     .service-showcase {
-    position: relative;
-    padding: 50px 0;
-    background: #F5F9FC;
-}
-
-.service-showcase::before {
-    content: '';
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-    background: rgb(162, 206, 232); /* Keep for desktop view */
-    transform: translateX(-50%);
-}
-
-.service-showcase .showcase-item {
-    position: relative;
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.service-showcase .showcase-item img {
-    width: 350px;
-    height: 200px;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.service-showcase .showcase-item h4 {
-    color: gray;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.service-showcase .showcase-item p {
-    color: gray;
-    font-size: 18px;
-}
-
-.service-showcase .left {
-    left: 0;
-    text-align: right;
-}
-
-.service-showcase .right {
-    left: 50%;
-    text-align: left;
-}
-
-.service-showcase .dot {
-    position: absolute;
-    top: 20px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    left: calc(50% - 10px);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .service-showcase {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        position: relative;
+        padding: 50px 0;
+        background: #F5F9FC;
     }
 
     .service-showcase::before {
-        background: none !important; /* Remove background only in mobile view */
+        content: '';
+        position: absolute;
+        top: 120px;
+        left: 50%;
+        width: 4px;
+        height: 100%;
+        background: rgb(162, 206, 232);
+        /* Keep for desktop view */
+        transform: translateX(-50%);
     }
 
     .service-showcase .showcase-item {
-        width: 90%;
-        text-align: center !important;
-        left: 0 !important;
-        padding: 15px;
+        position: relative;
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .service-showcase .showcase-item img {
-        width: 100%;
-        height: auto;
+        width: 350px;
+        height: 200px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .service-showcase .showcase-item h4 {
+        color: gray;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .service-showcase .showcase-item p {
+        color: gray;
+        font-size: 18px;
+    }
+
+    .service-showcase .left {
+        left: 0;
+        text-align: right;
+    }
+
+    .service-showcase .right {
+        left: 50%;
+        text-align: left;
     }
 
     .service-showcase .dot {
-        left: 50%;
-        transform: translateX(-50%);
+        position: absolute;
+        top: 20px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        left: calc(50% - 10px);
     }
-}
 
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .service-showcase {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        .service-showcase::before {
+            background: none !important;
+            /* Remove background only in mobile view */
+        }
+
+        .service-showcase .showcase-item {
+            width: 90%;
+            text-align: center !important;
+            left: 0 !important;
+            padding: 15px;
+        }
+
+        .service-showcase .showcase-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .service-showcase .dot {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
 </style>
 
 @section('content')
@@ -353,17 +354,17 @@
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
                         <div class="section-title">
-                            <img src="{{ asset('uploads/first_section/' . $home_second_sections->logo) }}" class="img-fluid" loading="lazy"
-                                alt="">
+                            <img src="{{ asset('uploads/first_section/' . $home_second_sections->logo) }}" class="img-fluid"
+                                loading="lazy" alt="">
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
                             <!-- <a href="{{ $home_second_sections->link }}"
-                                                                                                                class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
+                                                                                                                    class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('uploads/first_section/' . $home_second_sections->image) }}" class="img-fluid" loading="lazy"
-                            alt="SEO Image"
+                        <img src="{{ asset('uploads/first_section/' . $home_second_sections->image) }}" class="img-fluid"
+                            loading="lazy" alt="SEO Image"
                             style="max-width: 100%; max-height: 400px; object-fit: cover; border-radius: 0px;">
                     </div>
                 </div>
@@ -439,7 +440,8 @@
                             <p style="color: #5f6061; font-size: 18px;">{{ $journey->title }}</p>
                         </div>
                         <div class="timeline-image">
-                            <img src="{{ asset($journey->image) }}" class="img-fluid" alt="{{ $journey->title }}">
+                            <img src="{{ asset($journey->image) }}" class="img-fluid" loading="lazy"
+                                alt="{{ $journey->title }}">
                         </div>
                     </div>
                 @endforeach
@@ -679,7 +681,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                            <img src="front-assets/img/Global-Presence.png" class="img-fluid" alt=""
+                            <img src="front-assets/img/Global-Presence.png" class="img-fluid" loading="lazy" alt=""
                                 style="max-width: 100%; max-height: 350px; object-fit: cover; border-radius: 0px;">
                         </div>
 
@@ -704,7 +706,7 @@
                     <div class="dot"></div>
                     <h4>{{ $showcase->year }}</h4>
                     <p>{!! nl2br(e($showcase->title)) !!}</p>
-                    <img src="{{ asset($showcase->image) }}" alt="Showcase Image">
+                    <img src="{{ asset($showcase->image) }}" loading="lazy" alt="{!! nl2br(e($showcase->title)) !!}">
                 </div>
             @endforeach
         </div>
@@ -848,7 +850,7 @@
                 <div class="row no-gutters">
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
                         <img src="{{ asset('uploads/first_section/' . $accreditation->image) }}" class="img-fluid"
-                            alt=""
+                            loading="lazy" alt="{{ $accreditation->title }}"
                             style="max-width: 100%; max-height: 200px; object-fit: cover; border-radius: 0px;">
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
@@ -877,7 +879,7 @@
                 <div class="row no-gutters">
                     <div class="col-lg-12 video-box">
                         <img src="{{ asset('uploads/first_section/' . $award->image) }}" class="img-fluid"
-                            alt="">
+                            loading="lazy" alt="">
                     </div>
 
                 </div>
@@ -935,7 +937,7 @@
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center align-items-center">
                             <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid"
-                                alt=""
+                                loading="lazy" alt="$quality->title }}"
                                 style="max-width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
                         </div>
                     </div>
@@ -962,7 +964,8 @@
         <div class="container-manage">
             @foreach ($managements as $management)
                 <div class="card_manage">
-                    <img src="{{ asset('uploads/first_section/' . $management->image) }}" alt="{{ $management->name }}">
+                    <img src="{{ asset('uploads/first_section/' . $management->image) }}" loading="lazy"
+                        alt="{{ $management->name }}">
                     <h3>{{ $management->name }}</h3>
                     <h4>{{ $management->designation }}</h4>
                     <p>{{ $management->description }}</p>
@@ -1000,7 +1003,7 @@
                         data-aos="fade-up" data-aos-delay="100">
                         <div class="member-img">
                             <img src="{{ asset('uploads/users/' . $member->image) }}" class="img-fluid rounded-circle"
-                                alt="{{ $member->name }}">
+                                loading="lazy" alt="{{ $member->name }}">
                             <div class="social">
                                 @if ($member->twitter)
                                     <a href="{{ $member->twitter }}"><i class="bi bi-twitter"></i></a>
