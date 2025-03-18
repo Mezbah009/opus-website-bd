@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\URL;
-use App\Models\Blog;  // Import Models
+use App\Models\Blog;
 use App\Models\Job;
 use App\Models\CaseStudy;
 use App\Models\Product;
@@ -14,8 +14,7 @@ class SitemapController extends Controller
 {
     public function generate()
     {
-        // Clear any accidental whitespace before output
-        ob_clean();
+        ob_clean(); // Clear whitespace
 
         // Static URLs
         $staticUrls = [
@@ -35,50 +34,10 @@ class SitemapController extends Controller
             URL::to('/contact-us'),
         ];
 
-        // Fetch Dynamic URLs from Database
-        $dynamicUrls = [];
-
-        // Add Products
-        $products = Product::select('link', 'updated_at')->get();
-        foreach ($products as $product) {
-            $dynamicUrls[] = [
-                'loc' => URL::to('/products/' . $product->link),
-                'lastmod' => $product->updated_at->toAtomString(),
-            ];
-        }
-
-        // Add Blogs
-        $blogs = Blog::select('slug', 'updated_at')->get();
-        foreach ($blogs as $blog) {
-            $dynamicUrls[] = [
-                'loc' => URL::to('/blogs/' . $blog->slug),
-                'lastmod' => $blog->updated_at->toAtomString(),
-            ];
-        }
-
-        // Add Jobs
-        // $jobs = Job::select('slug', 'updated_at')->get();
-        // foreach ($jobs as $job) {
-        //     $dynamicUrls[] = [
-        //         'loc' => URL::to('/jobs/' . $job->slug),
-        //         'lastmod' => $job->updated_at->toAtomString(),
-        //     ];
-        // }
-
-        // Add Case Studies
-        $caseStudies = CaseStudy::select('slug', 'updated_at')->get();
-        foreach ($caseStudies as $caseStudy) {
-            $dynamicUrls[] = [
-                'loc' => URL::to('/case-study/' . $caseStudy->slug),
-                'lastmod' => $caseStudy->updated_at->toAtomString(),
-            ];
-        }
-
-
-
         // Start XML document
         $sitemap = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
-        $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
+        $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ';
+        $sitemap .= 'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . PHP_EOL;
 
         // Add Static URLs
         foreach ($staticUrls as $url) {
@@ -90,11 +49,57 @@ class SitemapController extends Controller
             $sitemap .= '    </url>' . PHP_EOL;
         }
 
-        // Add Dynamic URLs
-        foreach ($dynamicUrls as $data) {
+        // Add Products with Images & Titles
+        $products = Product::select('link', 'updated_at', 'logo', 'title')->get();
+        foreach ($products as $product) {
+            $productUrl = URL::to('/products/' . $product->link);
+            $imageUrl = asset('uploads/first_section/' . $product->logo);
+
             $sitemap .= '    <url>' . PHP_EOL;
-            $sitemap .= '        <loc>' . htmlspecialchars($data['loc'], ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
-            $sitemap .= '        <lastmod>' . $data['lastmod'] . '</lastmod>' . PHP_EOL;
+            $sitemap .= '        <loc>' . htmlspecialchars($productUrl, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
+            $sitemap .= '        <lastmod>' . $product->updated_at->toAtomString() . '</lastmod>' . PHP_EOL;
+            $sitemap .= '        <changefreq>weekly</changefreq>' . PHP_EOL;
+            $sitemap .= '        <priority>0.7</priority>' . PHP_EOL;
+
+            // Add Product Image with Title
+            if (!empty($product->logo)) {
+                $sitemap .= '        <image:image>' . PHP_EOL;
+                $sitemap .= '            <image:loc>' . htmlspecialchars($imageUrl, ENT_XML1, 'UTF-8') . '</image:loc>' . PHP_EOL;
+                $sitemap .= '            <image:title>' . htmlspecialchars($product->title, ENT_XML1, 'UTF-8') . '</image:title>' . PHP_EOL;
+                $sitemap .= '        </image:image>' . PHP_EOL;
+            }
+
+            $sitemap .= '    </url>' . PHP_EOL;
+        }
+
+        // Add Blogs with Images
+        $blogs = Blog::select('slug', 'updated_at', 'image', 'title')->get();
+        foreach ($blogs as $blog) {
+            $blogUrl = URL::to('/blogs/' . $blog->slug);
+            $blogImageUrl = asset('uploads/blogs/' . $blog->image);
+
+            $sitemap .= '    <url>' . PHP_EOL;
+            $sitemap .= '        <loc>' . htmlspecialchars($blogUrl, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
+            $sitemap .= '        <lastmod>' . $blog->updated_at->toAtomString() . '</lastmod>' . PHP_EOL;
+            $sitemap .= '        <changefreq>weekly</changefreq>' . PHP_EOL;
+            $sitemap .= '        <priority>0.7</priority>' . PHP_EOL;
+
+            if (!empty($blog->image)) {
+                $sitemap .= '        <image:image>' . PHP_EOL;
+                $sitemap .= '            <image:loc>' . htmlspecialchars($blogImageUrl, ENT_XML1, 'UTF-8') . '</image:loc>' . PHP_EOL;
+                $sitemap .= '            <image:title>' . htmlspecialchars($blog->title, ENT_XML1, 'UTF-8') . '</image:title>' . PHP_EOL;
+                $sitemap .= '        </image:image>' . PHP_EOL;
+            }
+
+            $sitemap .= '    </url>' . PHP_EOL;
+        }
+
+        // Add Case Studies
+        $caseStudies = CaseStudy::select('slug', 'updated_at')->get();
+        foreach ($caseStudies as $caseStudy) {
+            $sitemap .= '    <url>' . PHP_EOL;
+            $sitemap .= '        <loc>' . htmlspecialchars(URL::to('/case-study/' . $caseStudy->slug), ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
+            $sitemap .= '        <lastmod>' . $caseStudy->updated_at->toAtomString() . '</lastmod>' . PHP_EOL;
             $sitemap .= '        <changefreq>weekly</changefreq>' . PHP_EOL;
             $sitemap .= '        <priority>0.7</priority>' . PHP_EOL;
             $sitemap .= '    </url>' . PHP_EOL;
@@ -104,6 +109,7 @@ class SitemapController extends Controller
 
         return response($sitemap, 200)->header('Content-Type', 'application/xml');
     }
+
 
 
     // robots.txt
