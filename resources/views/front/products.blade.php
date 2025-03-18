@@ -44,7 +44,7 @@
             <div class="col-lg-4 col-md-6 portfolio-item {{$section->button_name}}">
                 <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                     style="cursor: pointer;">
-                    <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="">
+                    <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="{{$section->title}}">
                     <div class="portfolio-info">
                         {{-- <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
