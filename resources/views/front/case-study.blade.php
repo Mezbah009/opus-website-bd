@@ -109,7 +109,7 @@
                         <div class="card fixed-card clickable-card"
                             data-url="{{ route('front.showCaseStudy', ['slug' => $case->slug]) }}">
                             <img class="card-img-top img-responsive max-width-100"
-                                src="{{ asset('uploads/casestudies/' . $case->image) }}" alt="{{ $case->title }}">
+                                src="{{ asset('uploads/casestudies/' . $case->image) }}" loading="lazy" alt="{{ $case->title }}">
                             <div class="card-block p-3">
                                 <p class="card-text"><small class="text-muted blog-category">{{ $case->category }}</small>
                                 </p>

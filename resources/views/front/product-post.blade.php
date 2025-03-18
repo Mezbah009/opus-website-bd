@@ -118,7 +118,7 @@
                 style="background-image: url('{{ asset('uploads/first_section/' . $product_first_section->image) }}');">
                 <div class="container">
                     <div class="carousel-content">
-                        <img src="{{ asset('uploads/first_section/' . $product_first_section->logo) }}" alt="Logo">
+                        <img src="{{ asset('uploads/first_section/' . $product_first_section->logo) }}" loading="lazy" alt="Logo">
                         <h2>{{ $product_first_section->title }}</h2>
                         <button class="btn btn-primary btn-lg">Request Demo</button>
                         @if ($product_first_section->brochure)
@@ -145,12 +145,12 @@
 
                         <div class="section-title">
                             <img src="{{ asset('uploads/first_section/' . $product_second_section->logo) }}"
-                                class="img-fluid" alt="">
+                                class="img-fluid" loading="lazy" alt="">
                             <p>{!! $product_second_section->description !!} </p>
                         </div>
                     </div>
                     <div class="col-lg-6 video-box">
-                        <img src="{{ asset('uploads/first_section/' . $product_second_section->image) }}" class="img-fluid"
+                        <img src="{{ asset('uploads/first_section/' . $product_second_section->image) }}" class="img-fluid" loading="lazy"
                             alt="">
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                         <div class="col-lg-3 d-flex" data-aos="fade-up">
                             <div class="info-box">
                                 @if ($product_third_section->icon)
-                                    <img src="{{ asset('uploads/first_section/' . $product_third_section->icon) }}"
+                                    <img src="{{ asset('uploads/first_section/' . $product_third_section->icon) }}" loading="lazy"
                                         alt="..." width="80px" style="padding: 8px">
                                 @endif
                                 <h4>{{ $product_third_section->title }}</h4>
@@ -189,13 +189,13 @@
             @foreach ($product_fourth_sections as $key => $product_fourth_section)
                 <div class="row no-gutters">
                     <div class="col-lg-6 video-box">
-                        <img src="{{ asset('uploads/first_section/' . $product_fourth_section->image) }}" class="img-fluid"
+                        <img src="{{ asset('uploads/first_section/' . $product_fourth_section->image) }}" class="img-fluid" loading="lazy"
                             alt="">
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
                         <div class="">
                             <img src="{{ asset('uploads/first_section/' . $product_fourth_section->logo) }}"
-                                class="img-fluid" alt="">
+                                class="img-fluid" loading="lazy" alt="">
                             <p>{!! $product_fourth_section->description !!} </p>
                         </div>
                     </div>
@@ -216,7 +216,7 @@
                         @foreach ($product_fifth_sections as $product_fifth_section)
                             <div class="col-lg-3 d-flex" data-aos="fade-up">
                                 <div class="info-boxs">
-                                    <img src="{{ asset('uploads/first_section/' . $product_fifth_section->icon) }}"
+                                    <img src="{{ asset('uploads/first_section/' . $product_fifth_section->icon) }}" loading="lazy"
                                         alt="..." width="80px" style="padding: 8px; display: block; margin: 0 auto;">
                                     <h3 style="text-align:center; margin-bottom: 10px;">{{ $product_fifth_section->title }}
                                     </h3>
@@ -266,7 +266,7 @@
                     @foreach ($product_seventh_sections as $product_seventh_section)
                         <div class="col-md-12">
                             <a href="{{ $product_seventh_section->link }}" target="_blank">
-                                <img src="{{ asset('uploads/first_section/' . $product_seventh_section->image) }}"
+                                <img src="{{ asset('uploads/first_section/' . $product_seventh_section->image) }}" loading="lazy"
                                     alt="Client Logo" width="150px">
                             </a>
                         </div>

@@ -1,9 +1,11 @@
 @extends('front.layouts.app')
 
 @php
-    $title = "Opus Technology Limited - Software & IT Solutions in Bangladesh";
-    $description = "Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.";
-    $keywords = "Software Company in Bangladesh, IT Solutions, Enterprise Software, Fintech, AI, Cybersecurity, Mobile Apps, Web Development";
+    $title = 'Opus Technology Limited - Software & IT Solutions in Bangladesh';
+    $description =
+        'Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.';
+    $keywords =
+        'Software Company in Bangladesh, IT Solutions, Enterprise Software, Fintech, AI, Cybersecurity, Mobile Apps, Web Development';
 @endphp
 
 @section('content')
@@ -100,7 +102,8 @@
                 <div class="row no-gutters">
                     <div class="col-lg-6 video-box">
                         <img src="{{ asset('uploads/first_section/' . $home_first_sections->image) }}" class="img-fluid"
-                            alt="">
+                            loading="lazy" alt="{{ $home_first_sections->title ?? 'Image' }}">
+
                         <a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true" target="_blank" rel="noopener noreferrer"></a>
                     </div>
@@ -323,8 +326,8 @@ alt="">
                     <div class="col-lg-4 col-md-6 portfolio-item {{ $section->button_name }}">
                         <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                             style="cursor: pointer;">
-                            <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid"
-                                alt="">
+                            <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" loading="lazy"
+                                alt="{{$section->title}}">
                             <div class="portfolio-info">
                                 {{-- <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
@@ -589,7 +592,7 @@ alt="{{ $member->name }}" height="300px" width="350px">
                     @foreach ($clients as $client)
                         <div class="col-md-12">
                             <a href="{{ $client->link }}" target="_blank">
-                                <img src="{{ asset('uploads/first_section/' . $client->logo) }}" alt="Client Logo"
+                                <img src="{{ asset('uploads/first_section/' . $client->logo) }}" loading="lazy" alt="Client Logo"
                                     width="150px">
                             </a>
 
@@ -613,7 +616,7 @@ alt="{{ $member->name }}" height="300px" width="350px">
                         <!-- Testimonial {{ $loop->iteration }} -->
                         <div class="testimonials item">
                             <div class="testimonial-content">
-                                <img src="{{ asset('uploads/first_section/' . $testimonial->logo) }}"
+                                <img src="{{ asset('uploads/first_section/' . $testimonial->logo) }}" loading="lazy"
                                     alt="Testimonial Logo">
                                 <div class="testimonial-author">
                                     <div class="author">{{ $testimonial->name }}</div>

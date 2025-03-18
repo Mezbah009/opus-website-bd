@@ -93,7 +93,7 @@
                 @foreach ($blogPosts as $post)
                     <div class="col-md-6 mb-4">
                         <div class="card">
-                            <img class="card-img-top img-responsive" src="{{ asset('uploads/blogs/' . $post->image) }}"
+                            <img class="card-img-top img-responsive" src="{{ asset('uploads/blogs/' . $post->image) }}" loading="lazy"
                                 alt="{{ $post->title }}">
                             <div class="card-block">
                                 <p class="card-text"><small class="text-muted blog-category">{{ $post->category }}</small>

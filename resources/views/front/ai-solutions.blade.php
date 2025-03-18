@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 video-box">
-                            <img src="{{ asset($first_section->image) }}" class="img-fluid" alt="">
+                            <img src="{{ asset($first_section->image) }}" class="img-fluid" loading="lazy" alt="">
                         </div>
                     </div>
                 @endforeach
@@ -63,7 +63,7 @@
                                 @foreach ($second_sections as $index => $second_section)
                                     <div class="col-lg-3 d-flex" data-aos="fade-up">
                                         <div class="info-boxs">
-                                            <img src="{{ asset($second_section->icon) }}" alt="..." width="80px"
+                                            <img src="{{ asset($second_section->icon) }}" loading="lazy"  alt="{{ $second_section->title }}" width="80px"
                                                 style="padding: 8px; display: block; margin: 0 auto;">
                                             <h3 style="text-align:center; margin-bottom: 10px;">{{ $second_section->title }}
                                             </h3>

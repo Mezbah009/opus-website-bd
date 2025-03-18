@@ -88,7 +88,7 @@
     <div class="containerss">
         <div class="profile-card">
             <div class="profile-image">
-                <img src="{{ asset('uploads/first_section/' . $leaderPost->image) }}" alt="{{ $leaderPost->name }}">
+                <img src="{{ asset('uploads/first_section/' . $leaderPost->image) }}" loading="lazy" alt="{{ $leaderPost->name }}">
             </div>
 
             <h2>{{ $leaderPost->name }}</h2>

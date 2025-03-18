@@ -36,7 +36,7 @@
             @if ($index % 2 == 0)
             <!-- Image on the left, content on the right -->
             <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                <img src="{{ asset('uploads/services/' . $service->image) }}" class="img-fluid" alt="{{ $service->title }}">
+                <img src="{{ asset('uploads/services/' . $service->image) }}" class="img-fluid" loading="lazy" alt="{{ $service->title }}">
             </div>
             <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
                 <div>
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                <img src="{{ asset('uploads/services/' . $service->image) }}" class="img-fluid" alt="{{ $service->title }}">
+                <img src="{{ asset('uploads/services/' . $service->image) }}" class="img-fluid" loading="lazy" alt="{{ $service->title }}">
             </div>
             @endif
         </div>
