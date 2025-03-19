@@ -1,9 +1,11 @@
 @extends('front.layouts.app')
 
 @php
-    $title = "Case Study - Opus Technology Limited";
-    $description = "Explore the case studies of how Opus Technology has helped businesses achieve remarkable results through our innovative technology solutions. Learn about our successful projects and their impact on various industries.";
-    $keywords = "case study, technology solutions, business success, Opus Technology, case studies, technology impact, business transformation, project success";
+    $title = 'Case Study - Opus Technology Limited';
+    $description =
+        'Explore the case studies of how Opus Technology has helped businesses achieve remarkable results through our innovative technology solutions. Learn about our successful projects and their impact on various industries.';
+    $keywords =
+        'case study, technology solutions, business success, Opus Technology, case studies, technology impact, business transformation, project success';
 @endphp
 
 
@@ -81,11 +83,10 @@
 </style>
 
 @section('content')
-    <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/case.jpg') }}');">
-        <h2>Case Study</h2>
-        <div class="line">
-        </div>
 
+    <div class="contact-bg lazy-bg" data-bg="{{ asset('front-assets/img/case.jpg') }}">
+        <h1>Case Study</h1>
+        <div class="line"></div>
     </div>
 
 
@@ -109,7 +110,8 @@
                         <div class="card fixed-card clickable-card"
                             data-url="{{ route('front.showCaseStudy', ['slug' => $case->slug]) }}">
                             <img class="card-img-top img-responsive max-width-100"
-                                src="{{ asset('uploads/casestudies/' . $case->image) }}" loading="lazy" alt="{{ $case->title }}">
+                                src="{{ asset('uploads/casestudies/' . $case->image) }}" loading="lazy"
+                                alt="{{ $case->title }}">
                             <div class="card-block p-3">
                                 <p class="card-text"><small class="text-muted blog-category">{{ $case->category }}</small>
                                 </p>
@@ -117,9 +119,10 @@
                                 <p class="card-text"><small class="text-muted italic">{{ $case->date }}</small></p>
                                 <p class="card-text-excerpt">{{ $case->excerpt }}</p>
                                 <a href="{{ route('front.showCaseStudy', ['slug' => $case->slug]) }}"
-                                    class="btn btn-primary mt-auto">
+                                    class="btn btn-primary mt-auto" aria-label="Read more about {{ $case->title }}">
                                     Read More <i class="ion-ios-arrow-thin-right"></i>
                                 </a>
+
                             </div>
                         </div>
                     </div>
@@ -127,4 +130,30 @@
             </div>
         </div>
     </section>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+            lazyBackgrounds.forEach((bg) => {
+                let observer = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.backgroundImage =
+                                    `url('${entry.target.dataset.bg}')`;
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        rootMargin: "0px 0px 200px 0px"
+                    } // Load before entering the viewport
+                );
+
+                observer.observe(bg);
+            });
+        });
+    </script>
 @endsection
