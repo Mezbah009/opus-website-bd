@@ -1,9 +1,11 @@
 @extends('front.layouts.app')
 
 @php
-    $title = "Opus Technology Limited - Software & IT Solutions in Bangladesh";
-    $description = "Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.";
-    $keywords = "Software Company in Bangladesh, IT Solutions, Enterprise Software, Fintech, AI, Cybersecurity, Mobile Apps, Web Development";
+    $title = 'Opus Technology Limited - Software & IT Solutions in Bangladesh';
+    $description =
+        'Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.';
+    $keywords =
+        'Software Company in Bangladesh, IT Solutions, Enterprise Software, Fintech, AI, Cybersecurity, Mobile Apps, Web Development';
 @endphp
 
 @section('content')
@@ -21,7 +23,7 @@
 
                 <div class="carousel-inner" role="listbox">
                     @foreach ($slider as $key => $sliders)
-                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}"
+                        {{-- <div class="carousel-item {{ $key == 0 ? 'active' : '' }}"
                             style="background-image: url('{{ asset('uploads/slider/' . $sliders->image) }}');">
                             <div class="carousel-container">
                                 <div class="carousel-content container">
@@ -29,6 +31,20 @@
                                     <p class="animate__animated animate__fadeInUp">{{ $sliders->description }}</p>
                                     <a href="{{ $sliders->link }}"
                                         class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $sliders->button_name }}</a>
+                                </div>
+                            </div>
+                        </div> --}}
+
+                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}"
+                            data-bg="{{ asset('uploads/slider/' . $sliders->image) }}">
+                            <div class="carousel-container">
+                                <div class="carousel-content container">
+                                    <h2 class="animate__animated animate__fadeInDown">{{ $sliders->title }}</h2>
+                                    <p class="animate__animated animate__fadeInUp">{{ $sliders->description }}</p>
+                                    <a href="{{ $sliders->link }}"
+                                        class="btn-get-started animate__animated animate__fadeInUp scrollto">
+                                        {{ $sliders->button_name }}
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -99,8 +115,8 @@
             @foreach ($home_first_section as $key => $home_first_sections)
                 <div class="row no-gutters">
                     <div class="col-lg-6 video-box">
-                        <img src="{{ asset('uploads/first_section/' . $home_first_sections->image) }}" class="img-fluid" loading="lazy"
-                            alt="">
+                        <img src="{{ asset('uploads/first_section/' . $home_first_sections->image) }}" class="img-fluid"
+                            loading="lazy" alt="">
                         <a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true" target="_blank" rel="noopener noreferrer"></a>
                     </div>
@@ -323,8 +339,8 @@ alt="">
                     <div class="col-lg-4 col-md-6 portfolio-item {{ $section->button_name }}">
                         <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                             style="cursor: pointer;">
-                            <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" loading="lazy"
-                                alt="{{$section->title}}">
+                            <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid"
+                                alt="{{ $section->title }}">
                             <div class="portfolio-info">
                                 {{-- <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
@@ -716,6 +732,22 @@ alt="{{ $member->name }}" height="300px" width="350px">
                     const url = portfolioWrap.getAttribute('data-url');
                     window.location.href = url;
                 });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let lazyBackgrounds = document.querySelectorAll(".carousel-item");
+
+            lazyBackgrounds.forEach(function(item) {
+                let bgImage = item.getAttribute("data-bg");
+                if (bgImage) {
+                    let img = new Image();
+                    img.src = bgImage;
+                    img.onload = function() {
+                        item.style.backgroundImage = `url(${bgImage})`;
+                        item.removeAttribute("data-bg"); // Remove attribute after loading
+                    };
+                }
             });
         });
     </script>
