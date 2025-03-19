@@ -288,14 +288,11 @@
 </style>
 
 @section('content')
-    <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/about-us.jpg') }}');">
-        <h1>About us</h1>
-        <div class="line">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+    <div class="contact-bg lazy-bg" data-bg="{{ asset('front-assets/img/about-us.jpg') }}">
+        <h1>About Us</h1>
+        <div class="line"></div>
     </div>
+
 
 
     <!-- ======= About Us Section ======= -->
@@ -359,7 +356,7 @@
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
                             <!-- <a href="{{ $home_second_sections->link }}"
-                                                                                                                    class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
+                                                                                                                        class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
@@ -937,7 +934,7 @@
                         </div>
                         <div class="col-lg-6 d-flex justify-content-center align-items-center">
                             <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid"
-                                loading="lazy" alt="$quality->title }}"
+                                loading="lazy" alt="{{ $quality->title }}"
                                 style="max-width: 100%; max-height: 300px; object-fit: cover; border-radius: 10px;">
                         </div>
                     </div>
@@ -1030,4 +1027,29 @@
     </section>
 
     <!-- End Our Team Section -->
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+            lazyBackgrounds.forEach((bg) => {
+                let observer = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.backgroundImage =
+                                    `url('${entry.target.dataset.bg}')`;
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        rootMargin: "0px 0px 200px 0px"
+                    } // Load before entering the viewport
+                );
+
+                observer.observe(bg);
+            });
+        });
+    </script>
 @endsection

@@ -159,15 +159,20 @@
                 <i class="bi bi-phone-fill phone-icon"></i> +88-01811317129
             </div>
             <div class="social-links d-none d-md-block">
-                <a href="https://www.facebook.com/OpusTechnologyGlobal/" class="facebook" target="_blank">
+                <a href="https://www.facebook.com/OpusTechnologyGlobal/" class="facebook" target="_blank"
+                    aria-label="Visit our Facebook page">
                     <i class="bi bi-facebook"></i>
                 </a>
-                <a href="https://www.linkedin.com/company/opus-technology-limited/" class="linkedin" target="_blank">
+                <a href="https://www.linkedin.com/company/opus-technology-limited/" class="linkedin" target="_blank"
+                    aria-label="Visit our LinkedIn page">
                     <i class="bi bi-linkedin"></i>
                 </a>
-                <a href="https://www.youtube.com/@opustechnologylimited" class="youtube" target="_blank">
+
+                <a href="https://www.youtube.com/@opustechnologylimited" class="youtube" target="_blank"
+                    aria-label="Subscribe to our YouTube channel">
                     <i class="bi bi-youtube"></i>
                 </a>
+
             </div>
 
         </div>

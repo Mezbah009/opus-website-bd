@@ -11,7 +11,7 @@
                             <div class="col-lg-4 d-flex" data-aos="fade-up">
                                 <div class="info-box">
                                     <img src="{{ asset('uploads/first_section/' . $contact->image) }}"
-                                        alt="Contact Image" width="150px">
+                                        alt="Contact Image" width="150px" loading="lazy">
                                     {{-- <h3>{{ $contact->country_name }}</h3> --}}
                                     {{-- <h5>{{ $contact->company_name }}</h5> --}}
                                     <h3>{{ $contact->office_name }}</h3>
@@ -65,7 +65,7 @@
                     <div class="row" style="padding: 0% 10% 0% 0%">
                         <div class="d-flex" style="margin-bottom: 20px;">
 
-                            <img src="{{ asset('front-assets/img/9001.png') }}" alt="ISO 9001:2015 Certified"
+                            <img src="{{ asset('front-assets/img/9001.png') }}" alt="ISO 9001:2015 Certified" loading="lazy"
                                 class="img-fluid" style="width: 150px;height: 150px; margin-right: 10px;">
 
                             <div style="text-align: justify">
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <div class="d-flex">
-                            <img src="{{ asset('front-assets/img/27001.png') }}" alt="ISO 9001:2015 Certified"
+                            <img src="{{ asset('front-assets/img/27001.png') }}" alt="ISO 9001:2015 Certified" loading="lazy"
                                 class="img-fluid" style="width: 150px;height: 150px; margin-right: 10px;">
                             <div style="text-align: justify">
 
@@ -96,7 +96,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <h5>Importace Link</h5>
+                <h1 style="font-size: 20px;">Importace Link</h1>
                 <ul class="list-unstyled">
                     <li><a href="{{ route('front.home') }}" class="text-white">Home</a></li>
                     <li><a href="{{ route('front.about') }}" class="text-white">About</a></li>
@@ -112,7 +112,7 @@
                 </ul>
             </div>
             <div class="col-md-3">
-                <h5>Our Services</h5>
+                <h1 style="font-size: 20px;">Our Services</h1>
                 <ul class="list-unstyled">
                     <li><a href="{{ route('front.services') }}" class="text-white">Custom Software
                             Development</a></li>

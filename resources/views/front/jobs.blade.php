@@ -41,13 +41,10 @@
         }
     </style>
 
-    <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/jobs.jpg') }}');">
+
+    <div class="contact-bg lazy-bg" data-bg="{{ asset('front-assets/img/jobs.jpg') }}">
         <h1>Jobs</h1>
-        <div class="line">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <div class="line"></div>
     </div>
 
     <div class="container mt-5 pt-4">
@@ -151,6 +148,31 @@
 
     </div>
     <br><br><br>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+            lazyBackgrounds.forEach((bg) => {
+                let observer = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.backgroundImage =
+                                    `url('${entry.target.dataset.bg}')`;
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        rootMargin: "0px 0px 200px 0px"
+                    } // Load before entering the viewport
+                );
+
+                observer.observe(bg);
+            });
+        });
+    </script>
 
 
 @endsection

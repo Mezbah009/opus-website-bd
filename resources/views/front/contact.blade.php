@@ -1,19 +1,16 @@
 @extends('front.layouts.app')
 
 @php
-    $title = "Contact Us - Opus Technology Limited";
-    $description = "Get in touch with Opus Technology to learn more about our solutions or ask any questions. Our team is here to help you with all your technology needs.";
-    $keywords = "contact us, Opus Technology, customer support, contact, inquiries, get in touch, technology solutions";
+    $title = 'Contact Us - Opus Technology Limited';
+    $description =
+        'Get in touch with Opus Technology to learn more about our solutions or ask any questions. Our team is here to help you with all your technology needs.';
+    $keywords = 'contact us, Opus Technology, customer support, contact, inquiries, get in touch, technology solutions';
 @endphp
 
 @section('content')
-    <div class="contact-bg" style="background-image: url('{{ asset('front-assets/img/Contact.jpg') }}');">
+    <div class="contact-bg lazy-bg" data-bg="{{ asset('front-assets/img/Contact.jpg') }}">
         <h1>contact us</h1>
-        <div class="line">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <div class="line"></div>
     </div>
 
     <div class="container" style="margin-top: 49px;
@@ -23,7 +20,8 @@ text-align: justify;">
             Opus Technology Ltd is a leading Software Development and IT consulting service provider company. Combining
             unparalleled experience, domain expertise, best practices & comprehensive capabilities across various industries
             & business functions, it collaborates with customers to help them effectively address their operational
-            challenges & grow their businesses stronger. We would love to hear from you! Please reach out for inquiries, support, or to learn more about how we can help your business grow.
+            challenges & grow their businesses stronger. We would love to hear from you! Please reach out for inquiries,
+            support, or to learn more about how we can help your business grow.
         </p>
     </div>
 
@@ -37,7 +35,7 @@ text-align: justify;">
                     @foreach ($contacts as $contact)
                         <div class="col-lg-4 d-flex" data-aos="fade-up">
                             <div class="info-box">
-                                <img src="{{ asset('uploads/first_section/' . $contact->flag) }}" alt="..."
+                                <img src="{{ asset('uploads/first_section/' . $contact->flag) }}" loading="lazy" alt="{{ $contact->country_name }}"
                                     width="80px" style="padding: 8px">
 
                                 <h3>{{ $contact->country_name }}</h3>
@@ -128,4 +126,31 @@ text-align: justify;">
             width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
             tabindex="0"></iframe>
     </div>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+            lazyBackgrounds.forEach((bg) => {
+                let observer = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.backgroundImage =
+                                    `url('${entry.target.dataset.bg}')`;
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        rootMargin: "0px 0px 200px 0px"
+                    } // Load before entering the viewport
+                );
+
+                observer.observe(bg);
+            });
+        });
+    </script>
 @endsection

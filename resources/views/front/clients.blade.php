@@ -8,13 +8,10 @@
 
 @section('content')
 
-<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/clients.jpg") }}');">
+
+<div class="contact-bg lazy-bg" data-bg="{{ asset('front-assets/img/clients.jpg') }}">
     <h1>Our Valuable Clients</h1>
-    <div class="line">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <div class="line"></div>
 </div>
 
 <!-- ======= Our Portfolio Section ======= -->
@@ -81,6 +78,32 @@
                 const url = portfolioWrap.getAttribute('data-url');
                 window.open(url, '_blank');
             });
+        });
+    });
+</script>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+        lazyBackgrounds.forEach((bg) => {
+            let observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.backgroundImage =
+                                `url('${entry.target.dataset.bg}')`;
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    rootMargin: "0px 0px 200px 0px"
+                } // Load before entering the viewport
+            );
+
+            observer.observe(bg);
         });
     });
 </script>

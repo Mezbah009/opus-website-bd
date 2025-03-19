@@ -8,7 +8,7 @@
         <div class="logo me-auto">
             <!-- <h1><a href="index.html">OPUS</a></h1> -->
             <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="{{ route('front.home') }}"><img src="{{ asset('front-assets/img/opus-logo.png') }}" alt=""
+            <a href="{{ route('front.home') }}"><img src="{{ asset('front-assets/img/opus-logo.png') }}" alt=" Opus logo"
                     class="img-fluid"></a>
         </div>
 
@@ -45,9 +45,9 @@
                         href="{{ route('front.services') }}">Services</a></li>
                 <li><a class="nav-link scrollto {{ Request::is('clients') ? 'active' : '' }}"
                         href="{{ route('front.clients') }}">Clients</a></li>
-                <li><a class="nav-link scrollto {{ Request::is('clients') ? 'active' : '' }}"
+                <li><a class="nav-link scrollto {{ Request::is('case-study') ? 'active' : '' }}"
                         href="{{ route('front.caseStudy') }}">Case Study</a></li>
-                <li><a class="nav-link scrollto {{ Request::is('blogs') ? 'active' : '' }}"
+                <li><a class="nav-link scrollto {{ Request::is('blog') ? 'active' : '' }}"
                         href="{{ route('front.blog') }}">Blogs</a></li>
                 <li><a class="nav-link scrollto {{ Request::is('jobs') ? 'active' : '' }}"
                         href="{{ route('front.jobs') }}">Jobs</a></li>

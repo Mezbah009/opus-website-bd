@@ -133,13 +133,13 @@
 
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="bx bx-rocket"></i></div>
-                            <h4 class="title"><a href="">Our Mission</a></h4>
+                            <h2 class="title"><a href="">Our Mission</a></h2>
                             <p class="description">{{ $home_first_sections->mission }}</p>
                         </div>
 
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="bx bx-compass"></i></div>
-                            <h4 class="title"><a href="">Our Vision</a></h4>
+                            <h2 class="title"><a href="">Our Vision</a></h2>
                             <p class="description">{{ $home_first_sections->vision }}</p>
 
                         </div>
@@ -303,8 +303,8 @@ alt="">
                         <div class="icon"> <a href="{{ route('front.services') }}"><img
                                     src="{{ asset('uploads/first_section/' . $home_services_sections->icon) }}"
                                     class="img-fluid" alt="" width="50%"> </a></div>
-                        <h4 class="title"><a
-                                href="{{ route('front.services') }}">{{ $home_services_sections->title }}</a></h4>
+                        <h2 class="title"><a
+                                href="{{ route('front.services') }}">{{ $home_services_sections->title }}</a></h2>
                         {{-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
                     excepturi sint occaecati cupiditate non provident</p> --}}
                     </div>
@@ -339,8 +339,7 @@ alt="">
                     <div class="col-lg-4 col-md-6 portfolio-item {{ $section->button_name }}">
                         <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                             style="cursor: pointer;">
-                            <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid"
-                                alt="{{ $section->title }}">
+                            <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="{{ $section->title }}">
                             <div class="portfolio-info">
                                 {{-- <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
@@ -377,65 +376,65 @@ alt="">
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/1.png') }}"
                                 class="img-fluid" alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Financial</a></h4>
+                    <h2 class="title"><a href="">Financial</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/2.png') }}"
                                 class="img-fluid" alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Healthcare</a></h4>
+                    <h2 class="title"><a href="">Healthcare</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/3.png') }}"
                                 class="img-fluid" alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Education</a></h4>
+                    <h2 class="title"><a href="">Education</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/4.png') }}"
                                 class="img-fluid" alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Transportation</a></h4>
+                    <h2 class="title"><a href="">Transportation</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/5.png') }}"
                                 class="img-fluid" alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Manufacturing</a></h4>
+                    <h2 class="title"><a href="">Manufacturing</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/6.png') }}"
                                 class="img-fluid" alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Wholesale</a></h4>
+                    <h2 class="title"><a href="">Wholesale</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/7.png') }}"
                                 class="img-fluid" alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Retail</a></h4>
+                    <h2 class="title"><a href="">Retail</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/8.png') }}"
                                 class="img-fluid" alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Construction</a></h4>
+                    <h2 class="title"><a href="">Construction</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/9.png') }}"
                                 class="img-fluid" alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Entertainment</a></h4>
+                    <h2 class="title"><a href="">Entertainment</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img
                                 src="{{ asset('front-assets/img/industrylogo/10.png') }}" class="img-fluid"
                                 alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Garments</a></h4>
+                    <h2 class="title"><a href="">Garments</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img
                                 src="{{ asset('front-assets/img/industrylogo/11.png') }}" class="img-fluid"
                                 alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Tourism</a></h4>
+                    <h2 class="title"><a href="">Tourism</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img
                                 src="{{ asset('front-assets/img/industrylogo/12.png') }}" class="img-fluid"
                                 alt="" width="50%"> </a></div>
-                    <h4 class="title"><a href="">Engery</a></h4>
+                    <h2 class="title"><a href="">Engery</a></h2>
                 </div>
             </div>
         </div>
@@ -605,7 +604,7 @@ alt="{{ $member->name }}" height="300px" width="350px">
                     @foreach ($clients as $client)
                         <div class="col-md-12">
                             <a href="{{ $client->link }}" target="_blank">
-                                <img src="{{ asset('uploads/first_section/' . $client->logo) }}" alt="Client Logo"
+                                <img src="{{ asset('uploads/first_section/' . $client->logo) }}" alt="Client Logo" lazy="loading"
                                     width="150px">
                             </a>
 
@@ -630,7 +629,7 @@ alt="{{ $member->name }}" height="300px" width="350px">
                         <div class="testimonials item">
                             <div class="testimonial-content">
                                 <img src="{{ asset('uploads/first_section/' . $testimonial->logo) }}"
-                                    alt="Testimonial Logo">
+                                    alt="Testimonial Logo" lazy="loading">
                                 <div class="testimonial-author">
                                     <div class="author">{{ $testimonial->name }}</div>
                                     <div class="designation">{{ $testimonial->designation }}</div>
