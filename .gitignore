@@ -1,4 +1,5 @@
-/.phpunit.cache
+# Ignore specific files and directories
+.phpunit.cache
 /node_modules
 /public/build
 /public/hot
@@ -19,8 +20,13 @@ yarn-error.log
 /.idea
 /.vscode
 
+# Ignore the uploads folder
+/public/uploads/
 
+# Allow all other files and directories in public
+!public/
+
+# Specifically allow front-assets and its contents
 !public/front-assets/
 !public/front-assets/css/
 !public/front-assets/css/*
-

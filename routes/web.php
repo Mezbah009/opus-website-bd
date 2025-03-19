@@ -55,7 +55,6 @@ Route::get('/contact-us', [FrontController::class, 'contact'])->name('front.cont
 Route::get('/about-us', [FrontController::class, 'about'])->name('front.about');
 Route::get('/enterprise-solutions', [FrontController::class, 'products'])->name('front.products');
 
-
 Route::get('/mobile-app-solutions', [FrontController::class, 'mobileApp'])->name('front.mobileApp');
 Route::get('/ai-solutions', [FrontController::class, 'aiSolutions'])->name('front.aiSolutions');
 Route::get('/system-solutions', [FrontController::class, 'systemSolutions'])->name('front.systemSolutions');
