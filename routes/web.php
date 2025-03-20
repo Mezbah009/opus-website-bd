@@ -74,7 +74,7 @@ Route::get('jobs/{slug}', [FrontController::class, 'showJobPost'])->name('job.sh
 Route::get('leaders/{link}', [FrontController::class, 'showLeaderPost'])->name('leader.show');
 Route::get('/fintech-solutions', [FrontController::class, 'fintech'])->name('front.fintech');
 Route::get('/clients', [FrontController::class, 'clients'])->name('front.clients');
-Route::get('/blog', [FrontController::class, 'blog'])->name('front.blog');
+Route::get('/blogs', [FrontController::class, 'blog'])->name('front.blog');
 Route::get('/services', [FrontController::class, 'services'])->name('front.services');
 
 
