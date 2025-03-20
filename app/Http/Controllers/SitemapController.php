@@ -44,7 +44,7 @@ class SitemapController extends Controller
             $sitemap .= '    <url>' . PHP_EOL;
             $sitemap .= '        <loc>' . htmlspecialchars($url, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
             $sitemap .= '        <lastmod>' . now()->toAtomString() . '</lastmod>' . PHP_EOL;
-            $sitemap .= '        <changefreq>weekly</changefreq>' . PHP_EOL;
+            $sitemap .= '        <changefreq>daily</changefreq>' . PHP_EOL;
             $sitemap .= '        <priority>0.8</priority>' . PHP_EOL;
             $sitemap .= '    </url>' . PHP_EOL;
         }
@@ -58,7 +58,7 @@ class SitemapController extends Controller
             $sitemap .= '    <url>' . PHP_EOL;
             $sitemap .= '        <loc>' . htmlspecialchars($productUrl, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
             $sitemap .= '        <lastmod>' . $product->updated_at->toAtomString() . '</lastmod>' . PHP_EOL;
-            $sitemap .= '        <changefreq>weekly</changefreq>' . PHP_EOL;
+            $sitemap .= '        <changefreq>daily</changefreq>' . PHP_EOL;
             $sitemap .= '        <priority>0.7</priority>' . PHP_EOL;
 
             // Add Product Image with Title
@@ -81,7 +81,7 @@ class SitemapController extends Controller
             $sitemap .= '    <url>' . PHP_EOL;
             $sitemap .= '        <loc>' . htmlspecialchars($blogUrl, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
             $sitemap .= '        <lastmod>' . $blog->updated_at->toAtomString() . '</lastmod>' . PHP_EOL;
-            $sitemap .= '        <changefreq>weekly</changefreq>' . PHP_EOL;
+            $sitemap .= '        <changefreq>daily</changefreq>' . PHP_EOL;
             $sitemap .= '        <priority>0.7</priority>' . PHP_EOL;
 
             if (!empty($blog->image)) {
@@ -100,7 +100,7 @@ class SitemapController extends Controller
             $sitemap .= '    <url>' . PHP_EOL;
             $sitemap .= '        <loc>' . htmlspecialchars(URL::to('/case-study/' . $caseStudy->slug), ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
             $sitemap .= '        <lastmod>' . $caseStudy->updated_at->toAtomString() . '</lastmod>' . PHP_EOL;
-            $sitemap .= '        <changefreq>weekly</changefreq>' . PHP_EOL;
+            $sitemap .= '        <changefreq>daily</changefreq>' . PHP_EOL;
             $sitemap .= '        <priority>0.7</priority>' . PHP_EOL;
             $sitemap .= '    </url>' . PHP_EOL;
         }
