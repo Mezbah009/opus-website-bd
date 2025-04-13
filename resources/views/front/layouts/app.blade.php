@@ -14,7 +14,8 @@
     <meta name="author" content="Opus Technology Limited">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://opus-bd.com/">
+    <link rel="canonical" href="{{ url()->current() }}">
+
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Opus Technology Limited - Software & IT Solutions in Bangladesh">

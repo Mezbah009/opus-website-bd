@@ -37,29 +37,27 @@
                             <div class="mb-3">
                                 <label for="button_name">Product Category</label>
                                 <select name="button_name" id="button_name" class="form-control">
-                                    <option value="" disabled>Select Product Category</option>
-                                    <option value="filter-sig" <?php echo ($product->button_name === 'Signature') ? 'selected' : ''; ?>>Enterprise Solutions</option>
-                                    <option value="filter-fin" <?php echo ($product->button_name === 'Fintech') ? 'selected' : ''; ?>>Fintech Solutions</option>
-                                    <option value="filter-fin" <?php echo ($product->button_name === 'Fintech') ? 'selected' : ''; ?>>Mobile App Solutions</option>
-                                    <option value="filter-fin" <?php echo ($product->button_name === 'Fintech') ? 'selected' : ''; ?>>Fintech</option>
-                                    <option value="filter-fin" <?php echo ($product->button_name === 'Fintech') ? 'selected' : ''; ?>>Fintech</option>
-
-
-                                    <!-- Add more options as needed -->
+                                    <option value="" disabled {{ !$product->button_name ? 'selected' : '' }}>Select Product Category</option>
+                                    <option value="filter-sig" {{ $product->button_name === 'filter-sig' ? 'selected' : '' }}>Enterprise Solutions</option>
+                                    <option value="filter-fin" {{ $product->button_name === 'filter-fin' ? 'selected' : '' }}>Fintech Solutions</option>
+                                    <option value="filter-app" {{ $product->button_name === 'filter-app' ? 'selected' : '' }}>Mobile App Solutions</option>
                                 </select>
+
                             </div>
                         </div>
 
 
-                        <div class="col-md-6" id="fintechDropdown" style="{{ $product->button_name === 'Fintech' ? '' : 'display: none;' }}">
+                        <div class="col-md-6" id="fintechDropdown" style="{{ $product->button_name === 'filter-fin' ? '' : 'display: none;' }}"
+                            >
                             <div class="mb-3">
                                 <label for="fin_cat">Fintech Options</label>
                                 <select name="fin_cat" id="fintechOptions" class="form-control">
-                                    <option value="" selected disabled>Select Fintech Option</option>
-                                    <option value="filter-cb">Conventional Banking</option>
-                                    <option value="filter-ib">Islamic Banking</option>
-                                    <option value="filter-mf">Micro-Finance</option>
+                                    <option value="" disabled {{ !$product->fin_cat ? 'selected' : '' }}>Select Fintech Option</option>
+                                    <option value="filter-cb" {{ $product->fin_cat === 'filter-cb' ? 'selected' : '' }}>Conventional Banking</option>
+                                    <option value="filter-ib" {{ $product->fin_cat === 'filter-ib' ? 'selected' : '' }}>Islamic Banking</option>
+                                    <option value="filter-mf" {{ $product->fin_cat === 'filter-mf' ? 'selected' : '' }}>Micro-Finance</option>
                                 </select>
+
                             </div>
                         </div>
 
@@ -226,14 +224,15 @@
 </script>
 
 <script>
-    document.getElementById("button_name").addEventListener("change", function() {
-        var selectedValue = this.value;
-        if (selectedValue === "filter-fin") {
-            document.getElementById("fintechDropdown").style.display = "block";
-        } else {
-            document.getElementById("fintechDropdown").style.display = "none";
-        }
-    });
+   document.getElementById("button_name").addEventListener("change", function () {
+    var selectedValue = this.value;
+    if (selectedValue === "filter-fin") {
+        document.getElementById("fintechDropdown").style.display = "block";
+    } else {
+        document.getElementById("fintechDropdown").style.display = "none";
+    }
+});
+
 </script>
 
 
