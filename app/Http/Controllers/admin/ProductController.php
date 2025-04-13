@@ -42,7 +42,7 @@ class ProductController extends Controller
         $seventh_secs = ProductSeventhSection::where('product_id', $product->id)->get();
 
         // Return the view with the product details
-        return view('admin.products.show', compact('product', 'first_sec','second_sec','third_secs','fourth_sec','fifth_secs','sixth_sec','seventh_secs'));
+        return view('admin.products.show', compact('product', 'first_sec', 'second_sec', 'third_secs', 'fourth_sec', 'fifth_secs', 'sixth_sec', 'seventh_secs'));
     }
 
     public function create()
@@ -102,55 +102,63 @@ class ProductController extends Controller
 
 
     public function store(Request $request)
-{
-    // Validate the request data
-    $validator = Validator::make($request->all(), [
-        'title' => 'required|string',
-        'description' => 'nullable|string',
-        'button_name' => 'nullable|string',
-        'slug' => 'nullable|string',
-        'fin_cat' => 'nullable|string',
-        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-    ]);
+    {
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|string',
+            'description' => 'nullable|string',
+            'button_name' => 'nullable|string',
+            'slug' => 'nullable|string',
+            'fin_cat' => 'nullable|string',
+            'meta_title' => 'nullable|string',
+            'meta_description' => 'nullable|string',
+            'meta_keywords' => 'nullable|string',
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-    if ($validator->passes()) {
-        $section = new Product();
-        $section->title = $request->title;
-        $section->description = $request->description;
-        $section->button_name = $request->button_name;
-        $section->fin_cat = $request->fin_cat;
-        $section->link = $request->slug;
+        if ($validator->passes()) {
+            $section = new Product();
+            $section->title = $request->title;
+            $section->description = $request->description;
+            $section->button_name = $request->button_name;
+            $section->fin_cat = $request->fin_cat;
+            $section->link = $request->slug;
 
-        // First, save to get an ID
-        $section->save();
+            // ✅ Add Meta Fields
+            $section->meta_title = $request->meta_title;
+            $section->meta_description = $request->meta_description;
+            $section->meta_keywords = $request->meta_keywords;
 
-        if (!empty($request->image_id)) {
-            $tempImage = TempImage::find($request->image_id);
+            // First, save to get an ID
+            $section->save();
 
-            if ($tempImage) {
-                $extArray = explode('.', $tempImage->name);
-                $ext = last($extArray);
-                $newImageName = $section->id . '.' . $ext; // Use the newly created ID
+            if (!empty($request->image_id)) {
+                $tempImage = TempImage::find($request->image_id);
 
-                $sPath = public_path('temp/' . $tempImage->name);
-                $dPath = public_path('uploads/first_section/' . $newImageName);
+                if ($tempImage) {
+                    $extArray = explode('.', $tempImage->name);
+                    $ext = last($extArray);
+                    $newImageName = $section->id . '.' . $ext; // Use the newly created ID
 
-                if (File::exists($sPath)) {
-                    File::copy($sPath, $dPath);
-                    $section->logo = $newImageName;
-                    $section->save(); // Save the updated logo filename
+                    $sPath = public_path('temp/' . $tempImage->name);
+                    $dPath = public_path('uploads/first_section/' . $newImageName);
+
+                    if (File::exists($sPath)) {
+                        File::copy($sPath, $dPath);
+                        $section->logo = $newImageName;
+                        $section->save(); // Save the updated logo filename
+                    }
                 }
             }
-        }
 
-        return redirect()->route('products.index')->with('success', 'Section added successfully');
-    } else {
-        return response()->json([
-            'status' => false,
-            'errors' => $validator->errors()
-        ]);
+            return redirect()->route('products.index')->with('success', 'Section added successfully');
+        } else {
+            return response()->json([
+                'status' => false,
+                'errors' => $validator->errors()
+            ]);
+        }
     }
-}
 
 
 
@@ -170,6 +178,9 @@ class ProductController extends Controller
             'button_name' => 'nullable|string',
             'fin_cat' => 'nullable|string',
             'slug' => 'nullable|string',
+            'meta_title' => 'nullable|string',
+            'meta_description' => 'nullable|string',
+            'meta_keywords' => 'nullable|string',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -186,6 +197,9 @@ class ProductController extends Controller
         $product->button_name = $request->button_name;
         $product->fin_cat = $request->fin_cat;
         $product->link = $request->slug;
+        $product->meta_title = $request->meta_title;
+        $product->meta_description = $request->meta_description;
+        $product->meta_keywords = $request->meta_keywords;
 
         // Handle Image Update
         if (!empty($request->image_id)) {
@@ -455,37 +469,37 @@ class ProductController extends Controller
     }
 
     public function updateSecondSection(Request $request, $id)
-{
-    // Validate the request data
-    $validator = Validator::make($request->all(), [
-        'description' => 'nullable|string',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-    ]);
+    {
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-    if ($validator->passes()) {
-        // Find the ProductSecondSection record to update
-        $section = ProductSecondSection::findOrFail($id);
+        if ($validator->passes()) {
+            // Find the ProductSecondSection record to update
+            $section = ProductSecondSection::findOrFail($id);
 
-        // Update the description
-        $section->description = $request->description;
+            // Update the description
+            $section->description = $request->description;
 
-        // Handle image update
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = 'image' . time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/first_section'), $imageName);
-            $section->image = $imageName;
+            // Handle image update
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = 'image' . time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('uploads/first_section'), $imageName);
+                $section->image = $imageName;
+            }
+
+            // Save the updated section
+            $section->save();
+
+            // Redirect to index page
+            return redirect()->route('products.show', $section->product_id)->with('success', 'Product Second Section updated successfully');
+        } else {
+            return back()->withErrors($validator)->withInput();
         }
-
-        // Save the updated section
-        $section->save();
-
-        // Redirect to index page
-        return redirect()->route('products.show', $section->product_id)->with('success', 'Product Second Section updated successfully');
-    } else {
-        return back()->withErrors($validator)->withInput();
     }
-}
 
     public function destroySecondSection($id)
     {
@@ -504,7 +518,7 @@ class ProductController extends Controller
 
 
 
- // Third Section
+    // Third Section
 
     public function indexThirdSection(Request $request)
     {
@@ -693,37 +707,37 @@ class ProductController extends Controller
     }
 
     public function updateFourthSection(Request $request, $id)
-{
-    // Validate the request data
-    $validator = Validator::make($request->all(), [
-        'description' => 'nullable|string',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-    ]);
+    {
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-    if ($validator->passes()) {
-        // Find the ProductSecondSection record to update
-        $section = ProductFourthSection::findOrFail($id);
+        if ($validator->passes()) {
+            // Find the ProductSecondSection record to update
+            $section = ProductFourthSection::findOrFail($id);
 
-        // Update the description
-        $section->description = $request->description;
+            // Update the description
+            $section->description = $request->description;
 
-        // Handle image update
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = 'image' . time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/first_section'), $imageName);
-            $section->image = $imageName;
+            // Handle image update
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = 'image' . time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('uploads/first_section'), $imageName);
+                $section->image = $imageName;
+            }
+
+            // Save the updated section
+            $section->save();
+
+            // Redirect to index page
+            return redirect()->route('products.show', $section->product_id)->with('success', 'Product Fourth Section updated successfully');
+        } else {
+            return back()->withErrors($validator)->withInput();
         }
-
-        // Save the updated section
-        $section->save();
-
-        // Redirect to index page
-        return redirect()->route('products.show', $section->product_id)->with('success', 'Product Fourth Section updated successfully');
-    } else {
-        return back()->withErrors($validator)->withInput();
     }
-}
 
     public function destroyFourthSection($id)
     {
@@ -862,7 +876,7 @@ class ProductController extends Controller
     }
 
 
-     // Sixth Section
+    // Sixth Section
 
     public function indexSixthSection(Request $request)
     {
@@ -1042,37 +1056,37 @@ class ProductController extends Controller
     }
 
     public function updateSeventhSection(Request $request, $id)
-{
-    // Validate the request data
-    $validator = Validator::make($request->all(), [
-        'link' => 'nullable|string',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-    ]);
+    {
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'link' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-    if ($validator->passes()) {
-        // Find the ProductSecondSection record to update
-        $section = ProductSeventhSection::findOrFail($id);
+        if ($validator->passes()) {
+            // Find the ProductSecondSection record to update
+            $section = ProductSeventhSection::findOrFail($id);
 
-        // Update the description
-        $section->link = $request->link;
+            // Update the description
+            $section->link = $request->link;
 
-        // Handle image update
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = 'image' . time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/first_section'), $imageName);
-            $section->image = $imageName;
+            // Handle image update
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = 'image' . time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('uploads/first_section'), $imageName);
+                $section->image = $imageName;
+            }
+
+            // Save the updated section
+            $section->save();
+
+            // Redirect to index page
+            return redirect()->route('products.show', $section->product_id)->with('success', 'Product Seventh Section updated successfully');
+        } else {
+            return back()->withErrors($validator)->withInput();
         }
-
-        // Save the updated section
-        $section->save();
-
-        // Redirect to index page
-        return redirect()->route('products.show', $section->product_id)->with('success', 'Product Seventh Section updated successfully');
-    } else {
-        return back()->withErrors($validator)->withInput();
     }
-}
 
     public function destroySeventhSection($id)
     {
@@ -1088,6 +1102,4 @@ class ProductController extends Controller
             'message' => 'Product Seventh Section deleted successfully'
         ]);
     }
-
-
 }

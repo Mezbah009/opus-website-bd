@@ -78,7 +78,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-12">
                             <div class="mb-1">
                                 <label for="image">Image</label>
                                 <input type="hidden" id="image_id" name="image_id">
@@ -95,6 +95,28 @@
                             </div>
                             @endif
                         </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="meta_title">Meta Title</label>
+                                <input type="text" name="meta_title" id="meta_title" class="form-control" placeholder="Meta Title" value="{{ $product->meta_title }}">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="meta_description">Meta Description</label>
+                                <textarea name="meta_description" id="meta_description" class="form-control" placeholder="Meta Description">{{ $product->meta_description }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="meta_keywords">Meta Keywords</label>
+                                <input type="text" name="meta_keywords" id="meta_keywords" class="form-control" placeholder="e.g. fintech, banking, mobile apps" value="{{ $product->meta_keywords }}">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

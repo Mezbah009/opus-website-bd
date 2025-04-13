@@ -70,7 +70,7 @@
                                 <textarea type="text" name="description" id="description" class="form-control" placeholder="Description"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-12">
                             <div class="mb-1">
                                 <label for="image">Image</label>
                                 <input type="hidden" id="image_id" name="image_id">
@@ -82,6 +82,31 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="meta_title">Meta Title</label>
+                                <input type="text" class="form-control" id="meta_title" name="meta_title" placeholder="Enter meta title">
+                                <p class="error"></p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="meta_description">Meta Description</label>
+                                <textarea name="meta_description" id="meta_description" class="form-control" placeholder="Enter meta description"></textarea>
+                                <p class="error"></p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="meta_keywords">Meta Keywords</label>
+                                <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" placeholder="Enter meta keywords, comma separated">
+                                <p class="error"></p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

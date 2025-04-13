@@ -179,11 +179,10 @@ class FrontController extends Controller
 
     public function showProduct($slug)
     {
-
         // Retrieve the product based on the slug
         $sections = Product::where('link', $slug)->firstOrFail();
 
-        // Retrieve the first sections related to the product
+        // Retrieve the section data
         $product_first_sections = ProductFirstSection::where('product_id', $sections->id)->get();
         $product_second_sections = ProductSecondSection::where('product_id', $sections->id)->get();
         $product_third_sections = ProductThirdSection::where('product_id', $sections->id)->get();
@@ -192,11 +191,27 @@ class FrontController extends Controller
         $product_sixth_sections = ProductSixthSection::where('product_id', $sections->id)->get();
         $product_seventh_sections = ProductSeventhSection::where('product_id', $sections->id)->get();
 
+        // Prepare meta data
+        $meta_title = $sections->meta_title ?? $sections->title;
+        $meta_description = $sections->meta_description ?? \Str::limit(strip_tags($sections->description ?? ''), 150);
+        $meta_keywords = $sections->meta_keywords ?? 'Opus Technology Limited, Software, IT Solutions';
 
-
-        // Pass the retrieved data to the view
-        return view('front.product-post', compact('sections', 'product_first_sections', 'product_second_sections', 'product_third_sections', 'product_fourth_sections', 'product_fifth_sections', 'product_sixth_sections', 'product_seventh_sections'));
+        // Return view with all variables
+        return view('front.product-post', compact(
+            'sections',
+            'product_first_sections',
+            'product_second_sections',
+            'product_third_sections',
+            'product_fourth_sections',
+            'product_fifth_sections',
+            'product_sixth_sections',
+            'product_seventh_sections',
+            'meta_title',
+            'meta_description',
+            'meta_keywords'
+        ));
     }
+
 
 
 
