@@ -142,6 +142,10 @@
     </script>
     <!-- End Google Tag Manager -->
 
+
+     <!-- Google search console -->
+    <meta name="google-site-verification" content="vN7lmALCAdHCPjvy7MsmlHlxlrWetMdHv2gz8kKuNAM" />
+
 </head>
 
 <body>
