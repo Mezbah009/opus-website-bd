@@ -143,7 +143,21 @@
     <!-- End Google Tag Manager -->
 
 
-     <!-- Google search console -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-161PX6JNEZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-161PX6JNEZ');
+    </script>
+
+
+    <!-- Google search console -->
     <meta name="google-site-verification" content="vN7lmALCAdHCPjvy7MsmlHlxlrWetMdHv2gz8kKuNAM" />
 
 </head>
