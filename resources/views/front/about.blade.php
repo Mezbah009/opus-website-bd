@@ -296,52 +296,7 @@
 
 
     <!-- ======= About Us Section ======= -->
-    {{-- <section id="about" class="about">
-    <div class="container" data-aos="fade-up">
 
-        <div class="row no-gutters">
-            <div class="col-lg-6 video-box">
-                <img src="{{ asset('front-assets/img/about.jpg')}}" class="img-fluid" alt="">
-                <a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
-                    data-vbtype="video" data-autoplay="true"></a>
-            </div>
-
-            <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-
-                <div class="section-title">
-                    <h2>Who We Are</h2>
-                    <p>Opus Technology Limited is a company that specializes in creating, designing, maintaining
-                        software applications, developing custom software, mobile apps, web development,
-                        artificial intelligence, games, animation and so. Opus Technology Limited started
-                        operating from 2012 and since then delivering advanced software that empowers,
-                        innovates, and transforms the office completely and digitally for all our clients.</p>
-                </div>
-
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i class="bx bx-rocket"></i></div>
-                    <h4 class="title"><a href="">Our Mission</a></h4>
-                    <p class="description">We aim to provide world-class software solutions for all our
-                        prospective clients from all over the world and build the best innovative software using
-                        our cutting edge technology and expert software development team.</p>
-                </div>
-
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i class="bx bx-compass"></i></div>
-                    <h4 class="title"><a href="">Our Vision</a></h4>
-                    <p class="description">We want to serve customers from every corner of the world and provide
-                        them with the best IT solutions so that we are able to create a worldwide goodwill on
-                        the IT sector and achieve good worldwide recognition for being one of the best IT
-                        companies out there.</p>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-</section><!-- End About Us Section --> --}}
-
-
-    <!-- ======= Second Section ======= -->
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
             @foreach ($home_second_section as $key => $home_second_sections)
@@ -355,8 +310,6 @@
                                 loading="lazy" alt="">
                             {{-- <h2>{{ $home_second_sections->title }}</h2> --}}
                             <p>{!! $home_second_sections->description !!} </p>
-                            <!-- <a href="{{ $home_second_sections->link }}"
-                                                                                                                        class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_second_sections->button_name }}</a> -->
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-center align-items-center">
@@ -446,210 +399,6 @@
         </div>
     </section>
 
-    {{-- <section class="counts section-bg">
-        <div class="section-title" style="padding-top: 0px">
-            <h2>Our Journey Creating Memories</h2>
-        </div>
-
-        <div class="container">
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2012</h4>
-
-                        <p style="color: #5f6061; font-size: 18px;">Company Establishment & BASIS Membership Acquisition
-                        </p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/1.png" alt="2012 milestone">
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2013</h4>
-
-
-                        <p style="color: #5f6061; font-size: 18px;">Software Implementation for Nokia Care Service Center.
-                        </p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/2.png" alt="2013 milestone">
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2014</h4>
-
-                        <p style="color: #5f6061; font-size: 18px;">Implemented an ERP Solution for bKash Limited</p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/3.png" alt="2014 milestone">
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2015</h4>
-
-
-                        <p style="color: #5f6061; font-size: 18px;">Implemented Payroll Management Software for Agrani Bank
-                            PLC.</p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/4.png" alt="2015 milestone">
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2016</h4>
-
-                        <p style="color: #5f6061; font-size: 18px;">Started working with Overseas client: Japan project.
-                        </p>
-
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/5.png" alt="2016 milestone">
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2017</h4>
-
-                        <p style="color: #5f6061; font-size: 18px;"> Implemented RTGS Fintech System.<br>Achieved ISO
-                            Certification.</p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/6.png" alt="2017 milestone">
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2018</h4>
-
-
-                        <p style="color: #5f6061; font-size: 18px;"> Recipient of BASIS
-                            National ICT Award
-                            for Business Service.</p>
-
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/7.png" alt="2017 milestone">
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2019</h4>
-
-
-                        <p style="color: #5f6061; font-size: 18px;"> Recipient of BASIS
-                            National ICT Award
-                            for Inclusion
-                            Communication
-                            Service..</p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/8.png" alt="2017 milestone">
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2020</h4>
-
-
-                        <p style="color: #5f6061; font-size: 18px;"> Implemented Artificial
-                            Intelligence (AI)
-                            Project for Sweden
-                            and Denmark.<br>
-                            First Fintech Solution:
-                            RTGS Provided to
-                            Government Bank.</p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/9.png" alt="2017 milestone">
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2021</h4>
-
-
-                        <p style="color: #5f6061; font-size: 18px;"> Implemented an
-                            Online General Diary
-                            (GD) Service for the
-                            Bangladesh Police.</p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/11.png" alt="2017 milestone">
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2022</h4>
-
-
-                        <p style="color: #5f6061; font-size: 18px;"> Launch of
-                            Microfinance
-                            Banking System
-                            in Uganda, Kenya,
-                            Zambia & Tanzania</p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/10.png" alt="2017 milestone">
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2023</h4>
-
-
-                        <p style="color: #5f6061; font-size: 18px;"> Implemented
-                            Digital Banking
-                            Solution for
-                            Lanka Bangla
-                            Finance Ltd.</p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/9.png" alt="2017 milestone">
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2024</h4>
-
-                        <p style="color: #5f6061; font-size: 18px;"> Launched an AI-Based
-                            Chatbot &Launched
-                            a Credit Scoring System
-                            for a Government Bank.</p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/8.png" alt="2017 milestone">
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4 style="color: gray; font-size: 40px; font-weight: bold;">2025</h4>
-
-                        <p style="color: #5f6061; font-size: 18px;"> Implemented Nationwide
-                            Commodities Market
-                            Monitoring System
-                            with government
-                            agencies..</p>
-                    </div>
-                    <div class="timeline-image">
-                        <img src="front-assets/img/our-journey/12.png" alt="2017 milestone">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </section> --}}
-    {{-- end section --}}
 
 
     {{-- Global Presence section --}}
@@ -711,125 +460,6 @@
 
 
 
-
-
-
-
-    {{-- <section class="counts section-bg">
-        <div class="section-title">
-            <h2></h2>
-            <h2>Service Showcase</h2>
-        </div>
-        <div class="container" style="position: relative; padding: 50px 0;">
-            <div
-                style="content: ''; position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: rgb(162, 206, 232); transform: translateX(-50%);">
-            </div>
-
-            <div
-                style="position: relative; width: 50%; padding: 20px; box-sizing: border-box; left: 0; text-align: right;">
-                <div
-                    style="position: absolute; top: 20px; width: 20px; height: 20px; background: rgb(162, 206, 232); border-radius: 50%; left: calc(50% - 10px);">
-                </div>
-                <h4 style="color: gray; font-size: 24px; font-weight: bold;">2017</h4>
-                <p style="color: gray; font-size: 18px;">JAPAN IT WEEK SPRING</p>
-                <img src="front-assets/img/service-howcase/s1.png" alt="Description"
-                    style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
-            </div>
-
-            <div
-                style="position: relative; width: 50%; padding: 20px; box-sizing: border-box; left: 50%; text-align: left;">
-                <div
-                    style="position: absolute; top: 20px; width: 20px; height: 20px; background: rgb(162, 206, 232); border-radius: 50%; left: calc(50% - 10px);">
-                </div>
-                <h4 style="color: gray; font-size: 24px; font-weight: bold;">2018</h4>
-                <p style="color: gray; font-size: 18px;">CEBIT ASEAN, THAILAND JAPAN IT WEEK SPRING<br>BASIS SOFTEXPO,
-                    BANGLADESH</p>
-                <img src="front-assets/img/service-howcase/s2.png" alt="Description"
-                    style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
-            </div>
-
-            <div
-                style="position: relative; width: 50%; padding: 20px; box-sizing: border-box; left: 0; text-align: right;">
-                <div
-                    style="position: absolute; top: 20px; width: 20px; height: 20px; background: rgb(162, 206, 232); border-radius: 50%; left: calc(50% - 10px);">
-                </div>
-                <h4 style="color: gray; font-size: 24px; font-weight: bold;">2019</h4>
-                <p style="color: gray; font-size: 18px;">JAPAN IT WEEK SPRING CHINA INTERNATIONAL IMPORT EXPO <br> ITU
-                    TELECOM WORLD, HUNGARY. BASIS SOFTEXPO, BANGLADESH</p>
-                <img src="front-assets/img/service-howcase/s3.png" alt="Description"
-                    style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
-            </div>
-
-            <div
-                style="position: relative; width: 50%; padding: 20px; box-sizing: border-box; left: 50%; text-align: left;">
-                <div
-                    style="position: absolute; top: 20px; width: 20px; height: 20px; background: rgb(162, 206, 232); border-radius: 50%; left: calc(50% - 10px);">
-                </div>
-                <h4 style="color: gray; font-size: 24px; font-weight: bold;">2024</h4>
-                <p style="color: gray; font-size: 18px;">WTO & ITC CO-ORGANIZED SHETRADES SUMMIT, ABU DHABI</p>
-                <img src="front-assets/img/service-howcase/s4.png" alt="Description"
-                    style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
-            </div>
-
-            <div
-                style="position: relative; width: 50%; padding: 20px; box-sizing: border-box; left: 0; text-align: right;">
-                <div
-                    style="position: absolute; top: 20px; width: 20px; height: 20px; background: rgb(162, 206, 232); border-radius: 50%; left: calc(50% - 10px);">
-                </div>
-                <h4 style="color: gray; font-size: 24px; font-weight: bold;">2025</h4>
-                <p style="color: gray; font-size: 18px;">PARTICIPATE CES 2025 IN USA<br>POWERED BY THE CONSUMER TECHNOLOGY
-                    ASSOCIATION</p>
-                <img src="front-assets/img/service-howcase/s5.png" alt="Description"
-                    style="width: 350px; height: 200px; border-radius: 5px; margin-top: 10px;">
-            </div>
-        </div>
-    </section> --}}
-
-    {{-- <section class="service-showcase">
-        <div class="section-title">
-            <h2>Service Showcase</h2>
-        </div>
-        <div class="container">
-            <div class="showcase-item left">
-                <div class="dot"></div>
-                <h4>2017</h4>
-                <p>JAPAN IT WEEK SPRING</p>
-                <img src="front-assets/img/service-howcase/s1.png" alt="Description">
-            </div>
-
-            <div class="showcase-item right">
-                <div class="dot"></div>
-                <h4>2018</h4>
-                <p>CEBIT ASEAN, THAILAND JAPAN IT WEEK SPRING<br>BASIS SOFTEXPO, BANGLADESH</p>
-                <img src="front-assets/img/service-howcase/s2.png" alt="Description">
-            </div>
-
-            <div class="showcase-item left">
-                <div class="dot"></div>
-                <h4>2019</h4>
-                <p>JAPAN IT WEEK SPRING CHINA INTERNATIONAL IMPORT EXPO <br> ITU TELECOM WORLD, HUNGARY. BASIS SOFTEXPO,
-                    BANGLADESH</p>
-                <img src="front-assets/img/service-howcase/s3.png" alt="Description">
-            </div>
-
-            <div class="showcase-item right">
-                <div class="dot"></div>
-                <h4>2024</h4>
-                <p>WTO & ITC CO-ORGANIZED SHETRADES SUMMIT, ABU DHABI</p>
-                <img src="front-assets/img/service-howcase/s4.png" alt="Description">
-            </div>
-
-            <div class="showcase-item left">
-                <div class="dot"></div>
-                <h4>2025</h4>
-                <p>PARTICIPATE CES 2025 IN USA<br>POWERED BY THE CONSUMER TECHNOLOGY ASSOCIATION</p>
-                <img src="front-assets/img/service-howcase/s5.png" alt="Description">
-            </div>
-        </div>
-    </section> --}}
-
-
-
     {{-- End Service ShowcaseSection  --}}
 
     <br><br><br><br>
@@ -852,7 +482,7 @@
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
                         <div class="section-title">
-                            <h1>{{ $accreditation->title }} </h1>
+                            <h2>{{ $accreditation->title }} </h2>
                             <p>{!! $accreditation->description !!} </p>
                         </div>
                     </div>
@@ -886,32 +516,6 @@
     </div>
 
 
-    {{-- quality section --}}
-
-    {{-- <div class="section-title" style="padding-top: 30px">
-        <h2></h2>
-        <h2>Quality Management</h2>
-    </div>
-
-    <div id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($qualities as $key => $quality)
-                <div class="row no-gutters">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                        <div class="section-title">
-                            <h1>{{ $quality->title }} </h1>
-                            <p>{!! $quality->description !!} </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 video-box">
-                        <img src="{{ asset('uploads/first_section/' . $quality->image) }}" class="img-fluid" alt="">
-                    </div>
-
-                </div>
-            @endforeach
-
-        </div>
-    </div> --}}
 
     {{-- Quality Management --}}
 
@@ -928,7 +532,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
                             <div class="section-title">
-                                <h1>{{ $quality->title }}</h1>
+                                <h2>{{ $quality->title }}</h2>
                                 <p>{!! $quality->description !!}</p>
                             </div>
                         </div>
@@ -942,13 +546,7 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
+    <!-- Quality Management -->
 
 
     {{-- Top management --}}
