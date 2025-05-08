@@ -168,7 +168,7 @@
 
 
                     <!-- -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{ route('cyber_security.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-user-friends"></i>
                         <p>Cyber Security</p>
@@ -180,7 +180,7 @@
                         <i class="nav-icon fas fa-brain"></i>
                         <p>Ai Solutions</p>
                     </a>
-                </li>
+                </li> --}}
 
 
                 <li class="nav-item">
@@ -193,6 +193,12 @@
                     <a href="{{ route('clients.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-handshake"></i>
                         <p>Clients</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('client_categories.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-handshake"></i>
+                        <p>Client Categories</p>
                     </a>
                 </li>
 

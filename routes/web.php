@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\AwardController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\CaseStudyController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\ClientCategoryController;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\CyberSecurityFirstSectionController;
@@ -365,6 +366,9 @@ Route::group(['prefix' => 'admin'], function () {
         //subsubcategory
         Route::resource('subsubcategories', SubSubCategoryController::class);
         Route::get('subsubcategories/{id}/toggle-status', [SubSubCategoryController::class, 'toggleStatus'])->name('subsubcategories.toggleStatus');
+
+        Route::resource('client_categories', ClientCategoryController::class);
+        Route::get('client_categories/{id}/toggle-status', [ClientCategoryController::class, 'toggleStatus'])->name('client_categories.toggleStatus');
 
 
         //sitesetting
