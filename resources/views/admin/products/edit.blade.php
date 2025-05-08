@@ -33,38 +33,57 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="button_name">Product Category</label>
-                                <select name="button_name" id="button_name" class="form-control">
-                                    <option value="" disabled {{ !$product->button_name ? 'selected' : '' }}>Select Product Category</option>
-                                    <option value="filter-sig" {{ $product->button_name === 'filter-sig' ? 'selected' : '' }}>Enterprise Solutions</option>
-                                    <option value="filter-fin" {{ $product->button_name === 'filter-fin' ? 'selected' : '' }}>Fintech Solutions</option>
-                                    <option value="filter-app" {{ $product->button_name === 'filter-app' ? 'selected' : '' }}>Mobile App Solutions</option>
-                                </select>
+                             <!-- Slug -->
+                             <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="link">Link</label>
+                                    <input type="text" readonly name="slug" id="slug" class="form-control" value="{{ $product->link }}">
+                                    <p class="error"></p>
+                                </div>
+                            </div>
 
+                         <!-- Categories -->
+                         <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="category_id">Main Category</label>
+                                <select name="category_id" id="category_id" class="form-control">
+                                    <option value="" disabled>Select Main Category</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
+                                            {{ $category->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <p class="error"></p>
                             </div>
                         </div>
 
-
-                        <div class="col-md-6" id="fintechDropdown" style="{{ $product->button_name === 'filter-fin' ? '' : 'display: none;' }}"
-                            >
+                        <div class="col-md-4">
                             <div class="mb-3">
-                                <label for="fin_cat">Fintech Options</label>
-                                <select name="fin_cat" id="fintechOptions" class="form-control">
-                                    <option value="" disabled {{ !$product->fin_cat ? 'selected' : '' }}>Select Fintech Option</option>
-                                    <option value="filter-cb" {{ $product->fin_cat === 'filter-cb' ? 'selected' : '' }}>Conventional Banking</option>
-                                    <option value="filter-ib" {{ $product->fin_cat === 'filter-ib' ? 'selected' : '' }}>Islamic Banking</option>
-                                    <option value="filter-mf" {{ $product->fin_cat === 'filter-mf' ? 'selected' : '' }}>Micro-Finance</option>
+                                <label for="sub_category_id">Sub Category</label>
+                                <select name="sub_category_id" id="sub_category_id" class="form-control">
+                                    <option value="" disabled>Select Sub Category</option>
+                                    @foreach ($subCategories as $subCategory)
+                                        <option value="{{ $subCategory->id }}" {{ $product->sub_category_id == $subCategory->id ? 'selected' : '' }}>
+                                            {{ $subCategory->name }}
+                                        </option>
+                                    @endforeach
                                 </select>
-
+                                <p class="error"></p>
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="mb-3">
-                                <label for="link">Link</label>
-                                <input type="text" readonly name="slug" id="slug" class="form-control" placeholder="Link" value="{{ $product->link }}">
+                                <label for="sub_sub_category_id">Sub Sub Category</label>
+                                <select name="sub_sub_category_id" id="sub_sub_category_id" class="form-control">
+                                    <option value="" disabled>Select Sub Sub Category</option>
+                                    @foreach ($subSubCategories as $ssc)
+                                        <option value="{{ $ssc->id }}" {{ $product->sub_sub_category_id == $ssc->id ? 'selected' : '' }}>
+                                            {{ $ssc->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
                                 <p class="error"></p>
                             </div>
                         </div>
@@ -76,7 +95,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="mb-1">
                                 <label for="image">Image</label>
                                 <input type="hidden" id="image_id" name="image_id">
@@ -223,7 +242,7 @@
     });
 </script>
 
-<script>
+{{-- <script>
    document.getElementById("button_name").addEventListener("change", function () {
     var selectedValue = this.value;
     if (selectedValue === "filter-fin") {
@@ -233,7 +252,46 @@
     }
 });
 
+</script> --}}
+
+
+<script>
+    $('#category_id').change(function () {
+        let category_id = $(this).val();
+        $('#sub_category_id').html('<option value="" selected disabled>Loading...</option>');
+        $('#sub_sub_category_id').html('<option value="" selected disabled>Select Sub Sub Category</option>');
+
+        $.ajax({
+            url: "{{ route('getSubCategories') }}",
+            method: 'GET',
+            data: { category_id },
+            success: function (response) {
+                $('#sub_category_id').html('<option value="" selected disabled>Select Sub Category</option>');
+                $.each(response.subcategories, function (key, value) {
+                    $('#sub_category_id').append('<option value="' + value.id + '">' + value.name + '</option>');
+                });
+            }
+        });
+    });
+
+    $('#sub_category_id').change(function () {
+        let sub_category_id = $(this).val();
+        $('#sub_sub_category_id').html('<option value="" selected disabled>Loading...</option>');
+
+        $.ajax({
+            url: "{{ route('getSubSubCategories') }}",
+            method: 'GET',
+            data: { sub_category_id },
+            success: function (response) {
+                $('#sub_sub_category_id').html('<option value="" selected disabled>Select Sub Sub Category</option>');
+                $.each(response.sub_sub_categories, function (key, value) {
+                    $('#sub_sub_category_id').append('<option value="' + value.id + '">' + value.name + '</option>');
+                });
+            }
+        });
+    });
 </script>
+
 
 
 @endsection

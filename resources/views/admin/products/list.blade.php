@@ -45,6 +45,7 @@
                             <th>Image</th>
                             <th>Title</th>
                             <th>Category</th>
+                            <th>Sub Category</th>
                             <th width="100">Action</th>
                         </tr>
                     </thead>
@@ -62,18 +63,18 @@
                             </td>
                             <td>{{$section->title}}</td>
                             <td>
-                                @if($section->button_name == 'filter-sig')
-                                Enterprise Solutions
-                                @elseif($section->button_name == 'filter-fin')
-                                Fintech Solutions
-                                @elseif($section->button_name == 'filter-mob')
-                                Mobile App Solutions
-                                @elseif($section->button_name == 'filter-ai')
-                                AI Solutions
-                                @elseif($section->button_name == 'filter-sys')
-                                System Solutions
+                                @if($section->category)
+                                {{$section->category->name}}
+                                @else
+                                <span class="text-danger">No Category</span>
                                 @endif
                             </td>
+                            <td>
+                                @if($section->subCategory)
+                                {{$section->subCategory->name}}
+                                @else
+                                <span class="text-danger">No Sub Category</span>
+                                @endif
 
                             {{-- <td>
                                 @if ($section->active == 'Yes')
@@ -92,6 +93,7 @@
                                 @endif
                             </td> --}}
                             <td>
+                                
                                 <a href="{{ route('products.show', $section->id) }}" class="btn btn-sm btn-clean btn-icon mr-2">
                                     <span class="svg-icon svg-icon-md">
                                         <svg class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

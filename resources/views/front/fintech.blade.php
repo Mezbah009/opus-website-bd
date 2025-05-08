@@ -59,62 +59,7 @@
 </section>
 
 
-    {{-- <section id="portfolio" class="portfolio section-bg">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="section-title">
-                <h2>Our Fintech Products</h2>
-                <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company.
-                    Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across
-                    various industries & business functions, it collaborates with customers to help them effectively address
-                    their operational challenges & grow their businesses stronger.</p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-cb">Conventional Banking</li>
-                        <li data-filter=".filter-ib">Islamic Banking</li>
-                        <li data-filter=".filter-mf">Micro-Finance</li>
-                    </ul>
-                </div>
-            </div>
-
-
-
-            <div class="row portfolio-container">
-                @foreach ($sections as $section)
-                    <div class="col-lg-4 col-md-6 portfolio-item {{ $section->fin_cat }}">
-                        <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
-                            style="cursor: pointer;">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <!-- Front Side -->
-                                    <div class="front">
-                                        <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid"
-                                            alt="{{ $section->title }}">
-                                    </div>
-                                    <!-- Back Side -->
-                                    <div class="back">
-                                        <div class="portfolio-info">
-                                            <h4>{{ $section->title }}</h4>
-                                            <p>{{ $section->description }}</p>
-                                            <a href="{{ route('product.show', ['slug' => $section->link]) }}"
-                                                title="More Details">
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-
-        </div>
-    </section> --}}
+    
 
     <!-- End Our Portfolio Section -->
 

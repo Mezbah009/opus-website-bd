@@ -8,6 +8,7 @@ use App\Models\AiSolutionSecondSection;
 use App\Models\Award;
 use App\Models\Blog;
 use App\Models\CaseStudy;
+use App\Models\Category;
 use App\Models\Client;
 use App\Models\Contact;
 use App\Models\CyberSecurityFirstSection;
@@ -31,6 +32,7 @@ use App\Models\ProductThirdSection;
 use App\Models\Quality;
 use App\Models\Service;
 use App\Models\Showcase;
+use App\Models\SiteSetting;
 use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
@@ -67,21 +69,58 @@ class FrontController extends Controller
         $teamMembers = User::where('role', '!=', 2)->get();
         $data['teamMembers'] = $teamMembers;
 
-        // $sections = Product::all()->take(6);
-        // $data['sections']= $sections;
 
-        $sectionsFilterFin = Product::where('button_name', 'filter-fin')->take(3)->get();
-        $sectionsFilterSig = Product::where('button_name', 'filter-sig')->take(3)->get();
-        $sections = $sectionsFilterFin->merge($sectionsFilterSig);
-
-        $data['sections'] = $sections;
         $contacts = Contact::all();
         $numbers = Number::all();
         $data['contacts'] = $contacts;
         $data['numbers'] = $numbers;
 
+
+        $siteSetting = SiteSetting::latest()->first(); // get latest setting
+        $data['siteSetting'] = $siteSetting;
+
+
+        // Get categories
+        $enterpriseCategory = Category::where('slug', 'enterprise-solutions')->first();
+        $fintechCategory = Category::where('slug', 'fintech-products')->first();
+
+        // Fetch 3 products from each if available
+        $enterpriseProducts = $enterpriseCategory
+            ? Product::where('category_id', $enterpriseCategory->id)->take(3)->get()
+            : collect();
+
+        $fintechProducts = $fintechCategory
+            ? Product::where('category_id', $fintechCategory->id)->take(3)->get()
+            : collect();
+
+        // Merge both into a single collection
+        $data['products'] = $enterpriseProducts->merge($fintechProducts);
+
         return view('front.home', $data);
     }
+
+    public function category()
+    {
+        $categories = Category::orderBy('name')->get(); // or ->where('status', true)
+
+        return view('components.header', compact('categories'));
+    }
+
+
+    public function categoryProducts($slug)
+    {
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $data['category'] = $category;
+        $products = Product::where('category_id', $category->id)->get();
+        $data['products'] = $products;
+        $subcategories = $category->subcategories()->orderBy('name')->get();
+        $data['subcategories'] = $subcategories;
+        // $sub_subcategories = $category->subSubCategories()->orderBy('name')->get();
+        // $data['sub_subcategories'] = $sub_subcategories;
+        return view('front.products', $data);
+    }
+
+
 
     public function contact()
     {

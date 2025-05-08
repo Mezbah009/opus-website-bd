@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductFifthSection;
 use App\Models\ProductFirstSection;
@@ -11,6 +12,8 @@ use App\Models\ProductSecondSection;
 use App\Models\ProductSeventhSection;
 use App\Models\ProductSixthSection;
 use App\Models\ProductThirdSection;
+use App\Models\SubCategory;
+use App\Models\SubSubCategory;
 use App\Models\TempImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -28,6 +31,7 @@ class ProductController extends Controller
         $sections = $sections->latest()->paginate(10);
         return view('admin.products.list', compact('sections'));
     }
+
 
     public function show($id)
     {
@@ -47,8 +51,23 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('admin.products.create');
+        $categories = Category::all(); // For dropdown
+        $subcategories = []; // Initially empty, dynamically loaded via AJAX
+        return view('admin.products.create', compact('categories', 'subcategories'));
     }
+
+    public function getSubCategories(Request $request)
+    {
+        $subcategories = SubCategory::where('category_id', $request->category_id)->get();
+        return response()->json(['subcategories' => $subcategories]);
+    }
+
+    public function getSubSubCategories(Request $request)
+    {
+        $subSubCategories = SubSubCategory::where('sub_category_id', $request->sub_category_id)->get();
+        return response()->json(['sub_sub_categories' => $subSubCategories]);
+    }
+
 
 
     //------store-----------------
@@ -60,30 +79,38 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|string',
             'description' => 'nullable|string',
-            'button_name' => 'nullable|string',
             'slug' => 'nullable|string',
-            'fin_cat' => 'nullable|string',
             'meta_title' => 'nullable|string',
             'meta_description' => 'nullable|string',
             'meta_keywords' => 'nullable|string|max:300',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'category_id' => 'nullable|exists:categories,id',
+            'sub_category_id' => 'nullable|exists:sub_categories,id',
+            'sub_sub_category_id' => 'nullable|exists:sub_sub_categories,id',
+            'status' => 'nullable|boolean'
         ]);
 
         if ($validator->passes()) {
-            $section = new Product();
-            $section->title = $request->title;
-            $section->description = $request->description;
-            $section->button_name = $request->button_name;
-            $section->fin_cat = $request->fin_cat;
-            $section->link = $request->slug;
+            $product = new Product();
+            $product->title = $request->title;
+            $product->description = $request->description;
+            $product->link = $request->slug;
 
-            // ✅ Add Meta Fields
-            $section->meta_title = $request->meta_title;
-            $section->meta_description = $request->meta_description;
-            $section->meta_keywords = $request->meta_keywords;
+            // Meta fields
+            $product->meta_title = $request->meta_title;
+            $product->meta_description = $request->meta_description;
+            $product->meta_keywords = $request->meta_keywords;
 
-            // First, save to get an ID
-            $section->save();
+            // Category relationships
+            $product->category_id = $request->category_id;
+            $product->sub_category_id = $request->sub_category_id;
+            $product->sub_sub_category_id = $request->sub_sub_category_id;
+
+            // Status
+            $product->status = $request->status ?? true;
+
+            // Save to get ID
+            $product->save();
 
             if (!empty($request->image_id)) {
                 $tempImage = TempImage::find($request->image_id);
@@ -91,15 +118,15 @@ class ProductController extends Controller
                 if ($tempImage) {
                     $extArray = explode('.', $tempImage->name);
                     $ext = last($extArray);
-                    $newImageName = $section->id . '.' . $ext; // Use the newly created ID
+                    $newImageName = $product->id . '.' . $ext; // Use the newly created ID
 
                     $sPath = public_path('temp/' . $tempImage->name);
                     $dPath = public_path('uploads/first_section/' . $newImageName);
 
                     if (File::exists($sPath)) {
                         File::copy($sPath, $dPath);
-                        $section->logo = $newImageName;
-                        $section->save(); // Save the updated logo filename
+                        $product->logo = $newImageName;
+                        $product->save(); // Save the updated logo filename
                     }
                 }
             }
@@ -119,8 +146,15 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::findOrFail($id);
-        return view('admin.products.edit', compact('product'));
+
+        // Fetch category data if required for dropdowns (assumed you have these models)
+        $categories = Category::all();
+        $subCategories = SubCategory::where('category_id', $product->category_id)->get();
+        $subSubCategories = SubSubCategory::where('sub_category_id', $product->sub_category_id)->get();
+
+        return view('admin.products.edit', compact('product', 'categories', 'subCategories', 'subSubCategories'));
     }
+
 
     public function update(Request $request, $id)
     {
@@ -128,54 +162,66 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|string',
             'description' => 'nullable|string',
-            'button_name' => 'nullable|string',
-            'fin_cat' => 'nullable|string',
             'slug' => 'nullable|string',
             'meta_title' => 'nullable|string',
             'meta_description' => 'nullable|string',
             'meta_keywords' => 'nullable|string|max:300',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'category_id' => 'nullable|exists:categories,id',
+            'sub_category_id' => 'nullable|exists:sub_categories,id',
+            'sub_sub_category_id' => 'nullable|exists:sub_sub_categories,id',
+            'status' => 'nullable|boolean'
         ]);
 
         if ($validator->fails()) {
             return response()->json([
                 'status' => false,
-                'errors' => $validator->errors(),
+                'errors' => $validator->errors()
             ]);
         }
 
         $product = Product::findOrFail($id);
+
         $product->title = $request->title;
         $product->description = $request->description;
-        $product->button_name = $request->button_name;
-        $product->fin_cat = $request->fin_cat;
         $product->link = $request->slug;
+
+        // Meta fields
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
         $product->meta_keywords = $request->meta_keywords;
 
-        // Handle Image Update
+        // Category relationships
+        $product->category_id = $request->category_id;
+        $product->sub_category_id = $request->sub_category_id;
+        $product->sub_sub_category_id = $request->sub_sub_category_id;
+
+        // Status
+        $product->status = $request->status ?? true;
+
+        // Handle image update if new one is provided
         if (!empty($request->image_id)) {
             $tempImage = TempImage::find($request->image_id);
 
             if ($tempImage) {
-                // Delete old image if exists
-                if ($product->logo) {
-                    $oldImagePath = public_path('uploads/first_section/' . $product->logo);
-                    if (File::exists($oldImagePath)) {
-                        File::delete($oldImagePath);
-                    }
-                }
-
-                // Generate a new unique filename
                 $extArray = explode('.', $tempImage->name);
                 $ext = last($extArray);
-                $newImageName = $product->id . '-' . time() . '.' . $ext;
+                $newImageName = $product->id . '.' . $ext;
+
                 $sPath = public_path('temp/' . $tempImage->name);
                 $dPath = public_path('uploads/first_section/' . $newImageName);
 
                 if (File::exists($sPath)) {
                     File::copy($sPath, $dPath);
+
+                    // Optionally delete old image
+                    if (!empty($product->logo)) {
+                        $oldImagePath = public_path('uploads/first_section/' . $product->logo);
+                        if (File::exists($oldImagePath)) {
+                            File::delete($oldImagePath);
+                        }
+                    }
+
                     $product->logo = $newImageName;
                 }
             }

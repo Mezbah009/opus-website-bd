@@ -21,6 +21,38 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'link',
+        'description',
+        'category_id',
+        'sub_category_id',
+        'sub_sub_category_id',
+        'image_id',
+        'meta_title',
+        'meta_description',
+        'meta_keywords'
+    ];
+
+    // Category relationship
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    // Subcategory relationship
+    public function subcategory()
+    {
+        return $this->belongsTo(SubCategory::class, 'sub_category_id');
+    }
+
+    // Sub Subcategory relationship
+    public function subsubcategory()
+    {
+        return $this->belongsTo(SubSubCategory::class, 'sub_sub_category_id');
+    }
+
+
     public function sections()
     {
         return $this->hasMany(ProductFirstSection::class);

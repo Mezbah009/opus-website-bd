@@ -112,6 +112,10 @@
     <link href="{{ asset('front-assets/others/css/style.css')}}" rel="stylesheet"> --}}
     <link href="{{ asset('front-assets/others/css/responsive.css') }}" rel="stylesheet">
 
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
 
 
     <!-- =======================================================
@@ -276,6 +280,19 @@
     <script src="{{ asset('front-assets/others/js/contact_me.js') }}"></script>
     <!-- Custom Theme JavaScript -->
     <script src="{{ asset('front-assets/others/js/script.js') }}"></script>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init({
+                once: true,
+                duration: 500,
+                delay: 50
+            });
+        });
+    </script>
 
 </body>
 

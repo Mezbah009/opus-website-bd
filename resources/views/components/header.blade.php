@@ -8,8 +8,11 @@
         <div class="logo me-auto">
             <!-- <h1><a href="index.html">OPUS</a></h1> -->
             <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="{{ route('front.home') }}"><img src="{{ asset('front-assets/img/opus-logo.png') }}" alt=" Opus logo"
-                    class="img-fluid"></a>
+            <a href="{{ route('front.home') }}">
+                <img src="{{ siteSetting() && siteSetting()->logo ? asset('uploads/logo/' . siteSetting()->logo) : asset('') }}"
+                     alt="Opus logo" class="img-fluid">
+            </a>
+
         </div>
 
         <nav id="navbar" class="navbar">
@@ -21,26 +24,22 @@
 
                 <!-- Dropdown Menu for Product -->
                 <li class="dropdown">
-                    <a href="#"
-                        class="nav-link scrollto dropdown-toggle {{ Request::is('products') ? 'active' : '' }}"
+                    <a href="#" class="nav-link scrollto dropdown-toggle {{ Request::is('products*') ? 'active' : '' }}"
                         data-bs-toggle="dropdown">Product</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('front.products') }}">Enterprise
-                                Solutions</a>
-                        </li>
-                        <li><a class="dropdown-item" href="{{ route('front.fintech') }}">Fintech Solutions</a>
-                        </li>
-                        <li><a class="dropdown-item" href="{{ route('front.mobileApp') }}">Mobile App
-                                Solutions</a>
-                        </li>
-                        <li><a class="dropdown-item" href="{{ route('front.aiSolutions') }}">AI Solutions</a>
-                        </li>
-                        <li><a class="dropdown-item" href="{{ route('front.systemSolutions') }}">System
-                                Solutions</a></li>
-                        <li><a class="dropdown-item" href="{{ route('front.cyberSecurity') }}">Cyber Security
-                                Solutions</a></li>
+                        @if (isset(headerData()['categories']) && headerData()['categories']->isNotEmpty())
+                        @foreach (headerData()['categories'] as $category)
+                            <li>
+                                <a class="dropdown-item" href="{{ route('front.category.products', $category->slug) }}">
+                                    {{ $category->name }}
+                                </a>
+                            </li>
+                        @endforeach
+                    @endif
+
                     </ul>
                 </li>
+
                 <li><a class="nav-link scrollto {{ Request::is('services') ? 'active' : '' }}"
                         href="{{ route('front.services') }}">Services</a></li>
                 <li><a class="nav-link scrollto {{ Request::is('clients') ? 'active' : '' }}"

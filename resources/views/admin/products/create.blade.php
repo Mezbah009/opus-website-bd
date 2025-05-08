@@ -33,36 +33,44 @@
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="button_name">Product Category</label>
-                                <select name="button_name" id="button_name" class="form-control">
-                                    <option value="" selected disabled>Select Product Category</option>
-                                    <option value="filter-sig"> Enterprise Solutions </option>
-                                    <option value="filter-fin">Fintech Solutions</option>
-                                    <option value="filter-mob">Mobile App Solutions</option>
-                                    <option value="filter-ai">AI Solutions</option>
-                                    <option value="filter-sys">System Solutions</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6" id="fintechDropdown" style="display: none;">
-                            <div class="mb-3">
-                                <label for="fin_cat">Fintech Options</label>
-                                <select name="fin_cat" id="fintechOptions" class="form-control">
-                                    <option value="" selected disabled>Select Fintech Option</option>
-                                    <option value="filter-cb">Conventional Banking</option>
-                                    <option value="filter-ib">Islamic Banking</option>
-                                    <option value="filter-mf">Micro-Finance</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
                                 <label for="link">Link</label>
                                 <input type="text" readonly name="slug" id="slug" class="form-control" placeholder="Link">
                                 <p class="error"></p>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="category_id">Main Category</label>
+                                <select name="category_id" id="category_id" class="form-control">
+                                    <option value="" selected disabled>Select Main Category</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                                <p class="error"></p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="sub_category_id">Sub Category</label>
+                                <select name="sub_category_id" id="sub_category_id" class="form-control">
+                                    <option value="" selected disabled>Select Sub Category</option>
+                                </select>
+                                <p class="error"></p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="sub_sub_category_id">Sub Sub Category</label>
+                                <select name="sub_sub_category_id" id="sub_sub_category_id" class="form-control">
+                                    <option value="" selected disabled>Select Sub Sub Category</option>
+                                </select>
+                                <p class="error"></p>
+                            </div>
+                        </div>
+
 
                         <div class="col-md-6">
                             <div class="mb-3">
@@ -70,7 +78,7 @@
                                 <textarea type="text" name="description" id="description" class="form-control" placeholder="Description"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="mb-1">
                                 <label for="image">Image</label>
                                 <input type="hidden" id="image_id" name="image_id">
@@ -224,5 +232,44 @@
         }
     });
 </script>
+
+
+<script>
+    $('#category_id').change(function () {
+        let category_id = $(this).val();
+        $('#sub_category_id').html('<option value="" selected disabled>Loading...</option>');
+        $('#sub_sub_category_id').html('<option value="" selected disabled>Select Sub Sub Category</option>');
+
+        $.ajax({
+            url: "{{ route('getSubCategories') }}",
+            method: 'GET',
+            data: { category_id },
+            success: function (response) {
+                $('#sub_category_id').html('<option value="" selected disabled>Select Sub Category</option>');
+                $.each(response.subcategories, function (key, value) {
+                    $('#sub_category_id').append('<option value="' + value.id + '">' + value.name + '</option>');
+                });
+            }
+        });
+    });
+
+    $('#sub_category_id').change(function () {
+        let sub_category_id = $(this).val();
+        $('#sub_sub_category_id').html('<option value="" selected disabled>Loading...</option>');
+
+        $.ajax({
+            url: "{{ route('getSubSubCategories') }}",
+            method: 'GET',
+            data: { sub_category_id },
+            success: function (response) {
+                $('#sub_sub_category_id').html('<option value="" selected disabled>Select Sub Sub Category</option>');
+                $.each(response.sub_sub_categories, function (key, value) {
+                    $('#sub_sub_category_id').append('<option value="' + value.id + '">' + value.name + '</option>');
+                });
+            }
+        });
+    });
+</script>
+
 
 @endsection

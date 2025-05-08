@@ -92,7 +92,8 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('showcases.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-briefcase"></i> <!-- Represents services or business showcase -->
+                                <i class="nav-icon fas fa-briefcase"></i>
+                                <!-- Represents services or business showcase -->
                                 <p>Service Showcase</p>
                             </a>
                         </li>
@@ -123,7 +124,7 @@
                         </li>
                     </ul>
                 </li>
-                <!-- Other menu items -->
+                <!--Product -->
                 <li class="nav-item">
                     <a href="{{ route('products.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-box"></i>
@@ -131,6 +132,42 @@
                     </a>
                 </li>
 
+
+                    <!--Category Management -->
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-layer-group"></i>
+
+                        <p>
+                            Category
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('categories.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-box"></i>
+                                <p>Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('subcategories.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-box-open"></i>
+                                <p>Subcategory</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('subsubcategories.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-boxes"></i>
+                                <p>SubSubcategory</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                    <!-- -->
                 <li class="nav-item">
                     <a href="{{ route('cyber_security.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-user-friends"></i>
@@ -211,7 +248,7 @@
                     </a>
                 </li> --}}
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('site-settings.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-wrench"></i>
                         <p>Settings</p>
                     </a>

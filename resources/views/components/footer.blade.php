@@ -65,8 +65,9 @@
                     <div class="row" style="padding: 0% 10% 0% 0%">
                         <div class="d-flex" style="margin-bottom: 20px;">
 
-                            <img src="{{ asset('front-assets/img/9001.png') }}" alt="ISO 9001:2015 Certified" loading="lazy"
-                                class="img-fluid" style="width: 150px;height: 150px; margin-right: 10px;">
+                            <img src="{{ asset('front-assets/img/9001.png') }}" alt="ISO 9001:2015 Certified"
+                                loading="lazy" class="img-fluid"
+                                style="width: 150px;height: 150px; margin-right: 10px;">
 
                             <div style="text-align: justify">
 
@@ -79,8 +80,9 @@
                             </div>
                         </div>
                         <div class="d-flex">
-                            <img src="{{ asset('front-assets/img/27001.png') }}" alt="ISO 9001:2015 Certified" loading="lazy"
-                                class="img-fluid" style="width: 150px;height: 150px; margin-right: 10px;">
+                            <img src="{{ asset('front-assets/img/27001.png') }}" alt="ISO 9001:2015 Certified"
+                                loading="lazy" class="img-fluid"
+                                style="width: 150px;height: 150px; margin-right: 10px;">
                             <div style="text-align: justify">
 
                                 <p style="margin-top: 15px;">Make a deal with an ISO 27001:2022 Certified Company
@@ -150,10 +152,16 @@
         </div>
     </div>
 
+
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>Opus</span></strong>. All Rights Reserved
+            &copy; Copyright
+            <strong><span>{{ siteSetting() && siteSetting()->site_title ? siteSetting()->site_title : 'Opus' }}</span></strong>.
+            All Rights Reserved
             Designed by <a href="https://opus-bd.com/">Opus Technology Limited</a>
         </div>
     </div>
+
+    </div>
+
 </footer>

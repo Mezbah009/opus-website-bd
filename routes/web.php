@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\AiSolutionController;
 use App\Http\Controllers\admin\AwardController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\CaseStudyController;
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\CyberSecurityFirstSectionController;
@@ -24,7 +25,10 @@ use App\Http\Controllers\admin\QualityController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\ShowcaseController;
+use App\Http\Controllers\admin\SiteSettingController;
 use App\Http\Controllers\admin\SliderController;
+use App\Http\Controllers\admin\SubCategoryController;
+use App\Http\Controllers\admin\SubSubCategoryController;
 use App\Http\Controllers\admin\TeamController;
 use App\Http\Controllers\admin\TempImagesController;
 use App\Http\Controllers\admin\TestimonialController;
@@ -68,7 +72,10 @@ Route::get('/case-study/{slug}', [FrontController::class, 'showCaseStudy'])->nam
 
 
 Route::get('/jobs', [FrontController::class, 'job'])->name('front.jobs');
+
 Route::get('products/{slug}', [FrontController::class, 'showProduct'])->name('product.show');
+
+
 Route::get('blogs/{slug}', [FrontController::class, 'showBlogPost'])->name('blog.show');
 Route::get('jobs/{slug}', [FrontController::class, 'showJobPost'])->name('job.show');
 Route::get('leaders/{link}', [FrontController::class, 'showLeaderPost'])->name('leader.show');
@@ -78,7 +85,7 @@ Route::get('/blogs', [FrontController::class, 'blog'])->name('front.blog');
 Route::get('/services', [FrontController::class, 'services'])->name('front.services');
 
 
-// Route::get('/categories', [FrontController::class, 'showCategories'])->name('categories.index');
+Route::get('category/{slug}', [FrontController::class, 'categoryProducts'])->name('front.category.products');
 
 
 
@@ -140,6 +147,12 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/products/{products}/edit', [ProductController::class, 'edit'])->name('products.edit');
         Route::put('/products/{products}', [ProductController::class, 'update'])->name('products.update');
         Route::delete('/products/{products}', [ProductController::class, 'destroy'])->name('products.delete');
+
+
+        Route::get('/get-subcategories', [ProductController::class, 'getSubCategories'])->name('getSubCategories');
+        Route::get('/get-sub-subcategories', [ProductController::class, 'getSubSubCategories'])->name('getSubSubCategories');
+
+
 
         // Product First section
         Route::get('/products/{id}/product_first_section', [ProductController::class, 'indexFirstSection'])->name('product_first_section.index');
@@ -339,6 +352,24 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/jobs/{jobs}/edit', [JobController::class, 'edit'])->name('jobs.edit');
         Route::put('/jobs/{jobs}', [JobController::class, 'update'])->name('jobs.update');
         Route::delete('/jobs/{jobs}', [JobController::class, 'destroy'])->name('jobs.delete');
+
+
+        //category
+        Route::resource('categories', CategoryController::class);
+        Route::get('/categories/toggle-status/{category}', [CategoryController::class, 'toggleStatus'])->name('categories.toggleStatus');
+
+        //subcategory
+        Route::resource('subcategories', SubCategoryController::class);
+        Route::get('subcategories/toggle-status/{subcategory}', [SubCategoryController::class, 'toggleStatus'])->name('subcategories.toggleStatus');
+        Route::get('getSubCategories', [SubCategoryController::class, 'getSubCategories'])->name('subcategories.getSubCategories');
+        //subsubcategory
+        Route::resource('subsubcategories', SubSubCategoryController::class);
+        Route::get('subsubcategories/{id}/toggle-status', [SubSubCategoryController::class, 'toggleStatus'])->name('subsubcategories.toggleStatus');
+
+
+        //sitesetting
+        Route::resource('site-settings', SiteSettingController::class);
+
 
 
 

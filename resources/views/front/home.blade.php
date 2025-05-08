@@ -23,20 +23,9 @@
 
                 <div class="carousel-inner" role="listbox">
                     @foreach ($slider as $key => $sliders)
-                        {{-- <div class="carousel-item {{ $key == 0 ? 'active' : '' }}"
-                            style="background-image: url('{{ asset('uploads/slider/' . $sliders->image) }}');">
-                            <div class="carousel-container">
-                                <div class="carousel-content container">
-                                    <h2 class="animate__animated animate__fadeInDown">{{ $sliders->title }}</h2>
-                                    <p class="animate__animated animate__fadeInUp">{{ $sliders->description }}</p>
-                                    <a href="{{ $sliders->link }}"
-                                        class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $sliders->button_name }}</a>
-                                </div>
-                            </div>
-                        </div> --}}
-
-                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}"
-                            data-bg="{{ asset('uploads/slider/' . $sliders->image) }}">
+                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                            <img src="{{ asset('uploads/slider/' . $sliders->image) }}" class="d-block w-100"
+                                alt="{{ $sliders->title }}">
                             <div class="carousel-container">
                                 <div class="carousel-content container">
                                     <h2 class="animate__animated animate__fadeInDown">{{ $sliders->title }}</h2>
@@ -61,51 +50,9 @@
             </div>
         </div>
     </section>
+    <!-- End Hero -->
 
-    <!-- ======= About Us Section ======= -->
-    {{-- <section id="about" class="about">
-    <div class="container" data-aos="fade-up">
 
-        <div class="row no-gutters">
-            <div class="col-lg-6 video-box">
-                <img src="{{ asset('front-assets/img/about.jpg')}}" class="img-fluid" alt="">
-<a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
-    data-vbtype="video" data-autoplay="true"></a>
-</div>
-
-<div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-
-    <div class="section-title">
-        <h2>Who We Are</h2>
-        <p>Opus Technology Limited is a company that specializes in creating, designing, maintaining
-            software applications, developing custom software, mobile apps, web development,
-            artificial intelligence, games, animation and so. Opus Technology Limited started
-            operating from 2012 and since then delivering advanced software that empowers,
-            innovates, and transforms the office completely and digitally for all our clients.</p>
-    </div>
-
-    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-        <div class="icon"><i class="bx bx-rocket"></i></div>
-        <h4 class="title"><a href="">Our Mission</a></h4>
-        <p class="description">We aim to provide world-class software solutions for all our
-            prospective clients from all over the world and build the best innovative software using
-            our cutting edge technology and expert software development team.</p>
-    </div>
-
-    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-        <div class="icon"><i class="bx bx-compass"></i></div>
-        <h4 class="title"><a href="">Our Vision</a></h4>
-        <p class="description">We want to serve customers from every corner of the world and provide
-            them with the best IT solutions so that we are able to create a worldwide goodwill on
-            the IT sector and achieve good worldwide recognition for being one of the best IT
-            companies out there.</p>
-    </div>
-
-</div>
-</div>
-
-</div>
-</section><!-- End About Us Section --> --}}
 
     {{-- firts section --}}
 
@@ -116,9 +63,10 @@
                 <div class="row no-gutters">
                     <div class="col-lg-6 video-box">
                         <img src="{{ asset('uploads/first_section/' . $home_first_sections->image) }}" class="img-fluid"
-                            loading="lazy" alt="">
-                        <a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
-                            data-vbtype="video" data-autoplay="true" target="_blank" rel="noopener noreferrer"></a>
+                            loading="lazy" width="600" height="400" alt="">
+
+                        <a href="#" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"
+                            target="_blank" rel="noopener noreferrer"></a>
                     </div>
 
 
@@ -315,7 +263,7 @@ alt="">
     <!-- End Services Section -->
 
     <!-- ======= Our Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
+    {{-- <section id="portfolio" class="portfolio section-bg">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="section-title">
@@ -327,7 +275,7 @@ alt="">
             <div class="row">
                 <div class="col-lg-12">
                     <ul id="portfolio-flters">
-                        {{-- <li data-filter="*" class="filter-active">All</li> --}}
+
                         <li data-filter=".filter-fin">Fintech</li>
                         <li data-filter=".filter-sig">Signature</li>
                     </ul>
@@ -341,15 +289,9 @@ alt="">
                             style="cursor: pointer;">
                             <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="{{ $section->title }}">
                             <div class="portfolio-info">
-                                {{-- <h4>{{$section->title}}</h4>
-                        <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
-                            {{$section->description}}
-                        </p> --}}
+
                                 <div class="portfolio-links">
-                                    {{-- <a href="/uploads/first_section/{{ $section->logo }}" data-gallery="portfolioGallery"
-                            class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
-                            <a href="{{ route('product.show', ['slug' => $section->link]) }}" title="More Details"><i
-                                    class="bi bi-link"></i></a> --}}
+
                                 </div>
                             </div>
                         </div>
@@ -358,7 +300,73 @@ alt="">
             </div>
 
         </div>
-    </section><!-- End Our Portfolio Section -->
+    </section><!-- End Our Portfolio Section --> --}}
+
+    <section id="portfolio" class="portfolio section-bg">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            {{-- <div class="section-title">
+                <h2>Our {{ $category->name }}</h2>
+                <p>{{ $category->description }}</p>
+            </div>
+
+
+            @if ($subcategories->isNotEmpty())
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul id="portfolio-flters">
+                            <li data-filter="*" class="filter-active">All</li>
+                            @foreach ($subcategories as $subcat)
+                                <li data-filter=".filter-{{ \Str::slug($subcat->name) }}">{{ $subcat->name }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endif
+ --}}
+
+
+            <div class="section-title">
+                <h2>Our Portfolio</h2>
+                <p>Our fintech portfolio features innovative solutions in payment processing, risk management, and financial
+                    services, enhancing efficiency, security, and user experience for businesses and consumers.</p>
+            </div>
+
+            <div class="row portfolio-container">
+                @foreach ($products as $product)
+                    <div
+                        class="col-lg-4 col-md-6 portfolio-item filter-{{ \Str::slug(optional($product->subCategory)->name) }}">
+
+                        <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $product->link]) }}"
+                            style="cursor: pointer;">
+                            <div class="flip-container">
+                                <div class="flipper">
+                                    <!-- Front Side -->
+                                    <div class="front">
+                                        <img src="{{ asset('uploads/first_section/' . $product->logo) }}"
+                                            class="img-fluid" alt="{{ $product->title }}">
+                                    </div>
+                                    <!-- Back Side -->
+                                    <div class="back">
+                                        <div class="portfolio-info">
+                                            {{-- <h4>{{ $product->title }}</h4>
+                                            <p>{{ $product->description }}</p>
+                                            <a href="{{ route('product.show', ['slug' => $product->link]) }}"
+                                                title="More Details">
+                                                <i class="bi bi-arrow-right"></i>
+                                            </a> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+        </div>
+    </section>
+
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
@@ -604,8 +612,8 @@ alt="{{ $member->name }}" height="300px" width="350px">
                     @foreach ($clients as $client)
                         <div class="col-md-12">
                             <a href="{{ $client->link }}" target="_blank">
-                                <img src="{{ asset('uploads/first_section/' . $client->logo) }}" alt="Client Logo" lazy="loading"
-                                    width="150px">
+                                <img src="{{ asset('uploads/first_section/' . $client->logo) }}" alt="Client Logo"
+                                    lazy="loading" width="150px">
                             </a>
 
                         </div>
@@ -744,8 +752,8 @@ alt="{{ $member->name }}" height="300px" width="350px">
                     img.src = bgImage;
                     img.onload = function() {
                         item.style.backgroundImage = `url(${bgImage})`;
-                        item.removeAttribute("data-bg"); // Remove attribute after loading
-                    };
+                    }
+
                 }
             });
         });
