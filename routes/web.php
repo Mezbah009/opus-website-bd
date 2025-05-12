@@ -234,6 +234,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/clients/{clients}/edit', [ClientController::class, 'edit'])->name('clients.edit');
         Route::put('/clients/{clients}', [ClientController::class, 'update'])->name('clients.update');
         Route::delete('/clients/{clients}', [ClientController::class, 'destroy'])->name('clients.delete');
+        //clientCategory
+        Route::resource('client_categories', ClientCategoryController::class);
+        Route::get('client_categories/toggle-status/{clientCategory}', [ClientCategoryController::class, 'toggleStatus'])->name('client_categories.toggleStatus');
+
 
         // Services
         Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
@@ -367,8 +371,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('subsubcategories', SubSubCategoryController::class);
         Route::get('subsubcategories/{id}/toggle-status', [SubSubCategoryController::class, 'toggleStatus'])->name('subsubcategories.toggleStatus');
 
-        Route::resource('client_categories', ClientCategoryController::class);
-        Route::get('client_categories/{id}/toggle-status', [ClientCategoryController::class, 'toggleStatus'])->name('client_categories.toggleStatus');
 
 
         //sitesetting

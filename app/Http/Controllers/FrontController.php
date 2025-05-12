@@ -10,6 +10,7 @@ use App\Models\Blog;
 use App\Models\CaseStudy;
 use App\Models\Category;
 use App\Models\Client;
+use App\Models\ClientCategory;
 use App\Models\Contact;
 use App\Models\CyberSecurityFirstSection;
 use App\Models\CyberSecuritySecondSection;
@@ -263,12 +264,13 @@ class FrontController extends Controller
 
     public function clients()
     {
+        $clients = Client::with('clientCategory')->get();
+        $categories = ClientCategory::all();
 
-        $clients = Client::all();
-        $data['clients'] = $clients;
-
-        return view('front.clients', $data);
+        return view('front.clients', compact('clients', 'categories'));
     }
+
+
 
     public function blog()
     {

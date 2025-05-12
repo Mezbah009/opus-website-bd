@@ -133,7 +133,7 @@
                 </li>
 
 
-                    <!--Category Management -->
+                <!--Category Management -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-layer-group"></i>
@@ -166,40 +166,37 @@
                 </li>
 
 
-
-                    <!-- -->
-                {{-- <li class="nav-item">
-                    <a href="{{ route('cyber_security.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-user-friends"></i>
-                        <p>Cyber Security</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('ai_solutions.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-brain"></i>
-                        <p>Ai Solutions</p>
-                    </a>
-                </li> --}}
-
-
                 <li class="nav-item">
                     <a href="{{ route('team_members.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-user-friends"></i>
                         <p>Team Member</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('clients.index') }}" class="nav-link">
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-handshake"></i>
-                        <p>Clients</p>
+
+                        <p>
+                            Clients
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('client_categories.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-handshake"></i>
-                        <p>Client Categories</p>
-                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('clients.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-handshake"></i>
+                                <p>Clients</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('client_categories.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th-list"></i>
+
+                                <p>Client Categories</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item">

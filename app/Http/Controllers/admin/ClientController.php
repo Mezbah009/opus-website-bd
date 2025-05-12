@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Client;
+use App\Models\ClientCategory;
 use App\Models\TempImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -13,52 +14,61 @@ class ClientController extends Controller
 {
     public function index(Request $request)
     {
-        $sections = Client::latest();
-        if(!empty($request->get('keyword'))){
-            $sections = $sections->where('title','like','%'.$request->get('keyword').'%');
+        $sections = Client::with('clientCategory')->latest();
+
+        if (!empty($request->get('keyword'))) {
+            $keyword = $request->get('keyword');
+            $sections = $sections->where(function ($query) use ($keyword) {
+                $query->where('link', 'like', '%' . $keyword . '%')
+                    ->orWhereHas('clientCategory', function ($q) use ($keyword) {
+                        $q->where('name', 'like', '%' . $keyword . '%');
+                    });
+            });
         }
-        $sections = $sections->latest()->paginate(10);
-        return view('admin.clients.list',compact('sections'));
+
+        $sections = $sections->paginate(10);
+
+        return view('admin.clients.list', compact('sections'));
     }
+
 
     public function create()
     {
-        return view('admin.clients.create');
+        $categories = ClientCategory::where('status', 1)->orderBy('name')->get();
+        return view('admin.clients.create', compact('categories'));
     }
-
 
     public function store(Request $request)
     {
         // Validate the request data
         $validator = Validator::make($request->all(), [
-            'category' => 'nullable|string',
+            'client_category_id' => 'nullable|exists:client_categories,id',
             'link' => 'nullable|string',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validation rules for logo
         ]);
 
         if ($validator->passes()) {
-            $clients = new Client();
-            $clients->category = $request->category;
-            $clients->link = $request->link;
-
+            $client = new Client();
+            $client->client_category_id = $request->client_category_id;
+            $client->link = $request->link;
 
             if (!empty($request->image_id)) {
                 $tempImage = TempImage::find($request->image_id);
 
-                $extArray = explode('.', $tempImage->name);
-                $ext = last($extArray);
-                $newImageName = uniqid() . '.' . $ext; // Generate a unique filename
-                $sPath = public_path() . '/temp/' . $tempImage->name;
-                $dPath = public_path() . '/uploads/first_section/' . $newImageName;
+                if ($tempImage) {
+                    $extArray = explode('.', $tempImage->name);
+                    $ext = last($extArray);
+                    $newImageName = uniqid() . '.' . $ext;
+                    $sPath = public_path() . '/temp/' . $tempImage->name;
+                    $dPath = public_path() . '/uploads/first_section/' . $newImageName;
 
-                File::copy($sPath, $dPath);
-
-                $clients->logo = $newImageName;
+                    File::copy($sPath, $dPath);
+                    $client->logo = $newImageName;
+                }
             }
 
-            $clients->save();
+            $client->save();
 
-            // Redirect to index page
             return redirect()->route('clients.index')->with('success', 'Client added successfully');
         } else {
             return response()->json([
@@ -69,66 +79,70 @@ class ClientController extends Controller
     }
 
 
+
     public function edit($id)
-{
-    $clients = Client::findOrFail($id);
-    return view('admin.clients.edit', compact('clients'));
-}
+    {
+        $client = Client::findOrFail($id);
+        $categories = ClientCategory::where('status', 1)->orderBy('name')->get();
 
-public function update(Request $request, $id)
-{
-    // Validate the request data
-    $validator = Validator::make($request->all(), [
-        'category' => 'nullable|string',
-        'link' => 'nullable|string',
-        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validation rules for logo
-    ]);
+        return view('admin.clients.edit', compact('client', 'categories'));
+    }
 
-    if ($validator->passes()) {
-        $clients = Client::findOrFail($id);
-        $clients->category = $request->category;
-        $clients->link = $request->link;
 
-        if (!empty($request->image_id)) {
-            $tempImage = TempImage::find($request->image_id);
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'client_category_id' => 'nullable|exists:client_categories,id',
+            'link' => 'nullable|string',
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-            $extArray = explode('.', $tempImage->name);
-            $ext = last($extArray);
-            $newImageName = $clients->id . '.' . $ext;
-            $sPath = public_path() . '/temp/' . $tempImage->name;
-            $dPath = public_path() . '/uploads/first_section/' . $newImageName;
+        if ($validator->passes()) {
+            $client = Client::findOrFail($id);
 
-            File::copy($sPath, $dPath);
+            $client->client_category_id = $request->client_category_id;
+            $client->link = $request->link;
 
-            $clients->logo = $newImageName;
-            $clients->save();
+            if (!empty($request->image_id)) {
+                $tempImage = TempImage::find($request->image_id);
+
+                if ($tempImage) {
+                    $extArray = explode('.', $tempImage->name);
+                    $ext = last($extArray);
+                    $newImageName = uniqid() . '.' . $ext;
+                    $sPath = public_path() . '/temp/' . $tempImage->name;
+                    $dPath = public_path() . '/uploads/first_section/' . $newImageName;
+
+                    File::copy($sPath, $dPath);
+                    $client->logo = $newImageName;
+                }
+            }
+
+            $client->save();
+
+            return redirect()->route('clients.index')->with('success', 'Client updated successfully');
+        } else {
+            return response()->json([
+                'status' => false,
+                'errors' => $validator->errors()
+            ]);
         }
+    }
 
-        $clients->save();
 
-        // Redirect to index page
-        return redirect()->route('clients.index')->with('success', 'Client updated successfully');
-    } else {
+
+    public function destroy($id)
+    {
+        $clients = Client::findOrFail($id);
+        $clients->delete();
+
+        // Flash success message
+        session()->flash('success', 'Client deleted successfully');
+
+        // Return JSON response
         return response()->json([
-            'status' => false,
-            'errors' => $validator->errors()
+            'status' => true,
+            'message' => 'Client deleted successfully'
         ]);
     }
-}
-
-
-public function destroy($id)
-{
-    $clients = Client::findOrFail($id);
-    $clients->delete();
-
-    // Flash success message
-    session()->flash('success', 'Client deleted successfully');
-
-    // Return JSON response
-    return response()->json([
-        'status' => true,
-        'message' => 'Client deleted successfully'
-    ]);
-}
 }

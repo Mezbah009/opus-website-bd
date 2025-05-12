@@ -126,7 +126,7 @@ class ClientCategoryController extends Controller
     public function destroy(ClientCategory $clientCategory)
     {
         $clientCategory->delete();
-        return redirect()->route('categories.index')->with('success', 'Category deleted successfully.');
+        return redirect()->route('client_categories.index')->with('success', 'client categories deleted successfully.');
     }
 
 
@@ -135,6 +135,6 @@ class ClientCategoryController extends Controller
         $clientCategory->status = !$clientCategory->status;
         $clientCategory->save();
 
-        return redirect()->route('categories.index')->with('success', 'Category status updated successfully.');
+        return redirect()->route('client_categories.index')->with('success', 'client categories status updated successfully.');
     }
 }
