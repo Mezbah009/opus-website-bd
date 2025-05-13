@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accreditation;
+use App\Models\AiSolution;
+use App\Models\AiSolutionSecondSection;
 use App\Models\Award;
 use App\Models\Blog;
+use App\Models\CaseStudy;
 use App\Models\Client;
 use App\Models\Contact;
+use App\Models\CyberSecurityFirstSection;
+use App\Models\CyberSecuritySecondSection;
 use App\Models\Demo;
 use App\Models\HomeFirstSection;
 use App\Models\HomeSecondSection;
@@ -14,6 +19,7 @@ use App\Models\HomeServicesSection;
 use App\Models\Job;
 use App\Models\Leader;
 use App\Models\Number;
+use App\Models\OurJourney;
 use App\Models\Product;
 use App\Models\ProductFifthSection;
 use App\Models\ProductFirstSection;
@@ -23,6 +29,8 @@ use App\Models\ProductSeventhSection;
 use App\Models\ProductSixthSection;
 use App\Models\ProductThirdSection;
 use App\Models\Quality;
+use App\Models\Service;
+use App\Models\Showcase;
 use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
@@ -36,7 +44,7 @@ class FrontController extends Controller
     public function index()
     {
         $sliders = Slider::where('active', 'Yes')
-            ->orderBy('id', 'desc')->take(3)
+            ->orderBy('id', 'desc')->take(10)
             ->get();
         $data['slider'] = $sliders;
 
@@ -105,6 +113,12 @@ class FrontController extends Controller
         $teamMembers = User::where('role', '!=', 2)->get();
         $data['teamMembers'] = $teamMembers;
 
+        $journeys = OurJourney::all();
+        $data['journeys'] = $journeys;
+
+        $showcases = Showcase::all();
+        $data['showcases'] = $showcases;
+
         return view('front.about', $data);
     }
 
@@ -126,9 +140,16 @@ class FrontController extends Controller
     public function aiSolutions()
     {
         $sections = Product::where("button_name", "filter-ai")->get();
-        $data['sections'] = $sections;
-        return view('front.ai-solutions', $data);
+        $first_sections = AiSolution::all();
+        $second_sections = AiSolutionSecondSection::all();
+
+        return view('front.ai-solutions', [
+            'sections' => $sections,
+            'first_sections' => $first_sections,
+            'second_sections' => $second_sections
+        ]);
     }
+
 
     public function systemSolutions()
     {
@@ -137,15 +158,31 @@ class FrontController extends Controller
         return view('front.system-solutions', $data);
     }
 
+    public function cyberSecurity()
+    {
+        $sections = Product::where("button_name", "filter-sys")->get();
+        $first_sections = CyberSecurityFirstSection::all();
+        $second_sections = CyberSecuritySecondSection::all();
+
+        return view('front.cyber-security', [
+            'sections' => $sections,
+            'first_sections' => $first_sections,
+            'second_sections' => $second_sections
+        ]);
+    }
+
+
+
+
+
 
 
     public function showProduct($slug)
     {
-
         // Retrieve the product based on the slug
         $sections = Product::where('link', $slug)->firstOrFail();
 
-        // Retrieve the first sections related to the product
+        // Retrieve the section data
         $product_first_sections = ProductFirstSection::where('product_id', $sections->id)->get();
         $product_second_sections = ProductSecondSection::where('product_id', $sections->id)->get();
         $product_third_sections = ProductThirdSection::where('product_id', $sections->id)->get();
@@ -154,11 +191,27 @@ class FrontController extends Controller
         $product_sixth_sections = ProductSixthSection::where('product_id', $sections->id)->get();
         $product_seventh_sections = ProductSeventhSection::where('product_id', $sections->id)->get();
 
+        // Prepare meta data
+        $meta_title = $sections->meta_title ?? $sections->title;
+        $meta_description = $sections->meta_description ?? \Str::limit(strip_tags($sections->description ?? ''), 150);
+        $meta_keywords = $sections->meta_keywords ?? 'Opus Technology Limited, Software, IT Solutions';
 
-
-        // Pass the retrieved data to the view
-        return view('front.product-post', compact('sections', 'product_first_sections', 'product_second_sections', 'product_third_sections', 'product_fourth_sections', 'product_fifth_sections', 'product_sixth_sections', 'product_seventh_sections'));
+        // Return view with all variables
+        return view('front.product-post', compact(
+            'sections',
+            'product_first_sections',
+            'product_second_sections',
+            'product_third_sections',
+            'product_fourth_sections',
+            'product_fifth_sections',
+            'product_sixth_sections',
+            'product_seventh_sections',
+            'meta_title',
+            'meta_description',
+            'meta_keywords'
+        ));
     }
+
 
 
 
@@ -217,9 +270,33 @@ class FrontController extends Controller
 
     public function services()
     {
-
-        return view('front.services');
+        $services = Service::all();
+        return view('front.services', compact('services'));
     }
+
+
+    public function caseStudy()
+    {
+
+
+        $caseStudy = CaseStudy::all();
+        $data['caseStudy'] = $caseStudy;
+        return view('front.case-study', $data);
+    }
+
+
+    public function showCaseStudy($slug, Request $request)
+    {
+        $query = CaseStudy::where('slug', $slug);
+
+        if (!empty($request->get('keyword'))) {
+            $query->where('description', 'like', '%' . $request->get('keyword') . '%');
+        }
+
+        $caseStudyPost = $query->firstOrFail();
+        return view('front.case-post', compact('caseStudyPost'));
+    }
+
 
     // public function demo(){
     //     return view('front.demo');
@@ -266,24 +343,24 @@ class FrontController extends Controller
 
     //test api --------
 
-    public function showCategories()
-    {
-        $response = Http::get('https://medicus-ecommerce.opusdemo.com/public/api/categories');
+    // public function showCategories()
+    // {
+    //     $response = Http::get('https://medicus-ecommerce.opusdemo.com/public/api/categories');
 
-        if ($response->successful()) {
-            $categories = $response->json('data'); // Fetch only the 'data' key
-            return view('front.categories.index', compact('categories'));
-        }
+    //     if ($response->successful()) {
+    //         $categories = $response->json('data'); // Fetch only the 'data' key
+    //         return view('front.categories.index', compact('categories'));
+    //     }
 
-        return back()->with('error', 'Failed to fetch categories.');
-    }
+    //     return back()->with('error', 'Failed to fetch categories.');
+    // }
 
 
 
 
     public function job()
     {
-        $response = Http::withOptions(['verify' => false])->get('https://e-hrm.opuserp.com/api/recruitment/gt-all-jobs');
+        $response = Http::withOptions(['verify' => false])->get('https://e-recruitment-admin.opuserp.com/api/recruitment/gt-all-jobs');
 
         if ($response->successful()) {
             $jobs = $response->json(); // Fetch the jobs

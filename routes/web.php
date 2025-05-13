@@ -2,10 +2,14 @@
 
 use App\Http\Controllers\admin\AccreditationController;
 use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\admin\AiSolutionController;
 use App\Http\Controllers\admin\AwardController;
 use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\CaseStudyController;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\ContactController;
+use App\Http\Controllers\admin\CyberSecurityFirstSectionController;
+use App\Http\Controllers\admin\CyberSecuritySecondSectionController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\HomeFirstSectionController;
 use App\Http\Controllers\admin\HomeSecondSectionController;
@@ -13,15 +17,19 @@ use App\Http\Controllers\admin\HomeServicesSectionController;
 use App\Http\Controllers\admin\JobController;
 use App\Http\Controllers\admin\ManagementController;
 use App\Http\Controllers\admin\NumberController;
+use App\Http\Controllers\admin\OurJourneyController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductFirstSectionController;
 use App\Http\Controllers\admin\QualityController;
+use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SettingController;
+use App\Http\Controllers\admin\ShowcaseController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\TeamController;
 use App\Http\Controllers\admin\TempImagesController;
 use App\Http\Controllers\admin\TestimonialController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -45,13 +53,16 @@ use Illuminate\Support\Str;
 Route::get('/', [FrontController::class, 'index'])->name('front.home');
 Route::get('/contact-us', [FrontController::class, 'contact'])->name('front.contact');
 Route::get('/about-us', [FrontController::class, 'about'])->name('front.about');
-Route::get('/products', [FrontController::class, 'products'])->name('front.products');
+Route::get('/enterprise-solutions', [FrontController::class, 'products'])->name('front.products');
 
-
-Route::get('/mobile', [FrontController::class, 'mobileApp'])->name('front.mobileApp');
+Route::get('/mobile-app-solutions', [FrontController::class, 'mobileApp'])->name('front.mobileApp');
 Route::get('/ai-solutions', [FrontController::class, 'aiSolutions'])->name('front.aiSolutions');
 Route::get('/system-solutions', [FrontController::class, 'systemSolutions'])->name('front.systemSolutions');
+Route::get('/cyber-security-solutions', [FrontController::class, 'cyberSecurity'])->name('front.cyberSecurity');
 
+Route::get('/case-study', [FrontController::class, 'caseStudy'])->name('front.caseStudy');
+
+Route::get('/case-study/{slug}', [FrontController::class, 'showCaseStudy'])->name('front.showCaseStudy');
 
 
 
@@ -61,13 +72,13 @@ Route::get('products/{slug}', [FrontController::class, 'showProduct'])->name('pr
 Route::get('blogs/{slug}', [FrontController::class, 'showBlogPost'])->name('blog.show');
 Route::get('jobs/{slug}', [FrontController::class, 'showJobPost'])->name('job.show');
 Route::get('leaders/{link}', [FrontController::class, 'showLeaderPost'])->name('leader.show');
-Route::get('/fintech', [FrontController::class, 'fintech'])->name('front.fintech');
+Route::get('/fintech-solutions', [FrontController::class, 'fintech'])->name('front.fintech');
 Route::get('/clients', [FrontController::class, 'clients'])->name('front.clients');
-Route::get('/blog', [FrontController::class, 'blog'])->name('front.blog');
+Route::get('/blogs', [FrontController::class, 'blog'])->name('front.blog');
 Route::get('/services', [FrontController::class, 'services'])->name('front.services');
 
 
-Route::get('/categories', [FrontController::class, 'showCategories'])->name('categories.index');
+// Route::get('/categories', [FrontController::class, 'showCategories'])->name('categories.index');
 
 
 
@@ -194,7 +205,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/home_services/{home_services}', [HomeServicesSectionController::class, 'update'])->name('home_services_section.update');
         Route::delete('/home_services/{home_services}', [HomeServicesSectionController::class, 'destroy'])->name('home_services_section.delete');
 
-         // Testimonials
+        // Testimonials
         Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials.index');
         Route::get('/testimonials/create', [TestimonialController::class, 'create'])->name('testimonials.create');
         Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
@@ -210,6 +221,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/clients/{clients}', [ClientController::class, 'update'])->name('clients.update');
         Route::delete('/clients/{clients}', [ClientController::class, 'destroy'])->name('clients.delete');
 
+        // Services
+        Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
+        Route::get('/services/create', [ServiceController::class, 'create'])->name('services.create');
+        Route::post('/services', [ServiceController::class, 'store'])->name('services.store');
+        Route::get('/services/{services}/edit', [ServiceController::class, 'edit'])->name('services.edit');
+        Route::put('/services/{services}', [ServiceController::class, 'update'])->name('services.update');
+        Route::delete('/services/{services}', [ServiceController::class, 'destroy'])->name('services.delete');
+
         // Blog
         Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
         Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
@@ -217,6 +236,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/blog/{blog}/edit', [BlogController::class, 'edit'])->name('blog.edit');
         Route::put('/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
         Route::delete('/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.delete');
+
+
+        // Case Study
+        Route::get('/casestudy', [CaseStudyController::class, 'index'])->name('casestudy.index');
+        Route::get('/casestudy/create', [CaseStudyController::class, 'create'])->name('casestudy.create');
+        Route::post('/casestudy', [CaseStudyController::class, 'store'])->name('casestudy.store');
+        Route::get('/casestudy/{blog}/edit', [CaseStudyController::class, 'edit'])->name('casestudy.edit');
+        Route::put('/casestudy/{blog}', [CaseStudyController::class, 'update'])->name('casestudy.update');
+        Route::delete('/casestudy/{blog}', [CaseStudyController::class, 'destroy'])->name('casestudy.delete');
+
 
         // Contact
         Route::resource('contact', ContactController::class)->except('show');
@@ -262,6 +291,47 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/quality/{quality}', [QualityController::class, 'update'])->name('quality.update');
         Route::delete('/quality/{quality}', [QualityController::class, 'destroy'])->name('quality.delete');
 
+
+        //about our journey
+        Route::resource('journeys', OurJourneyController::class);
+
+        //about showcases
+        Route::resource('showcases', ShowcaseController::class);
+
+        // Cyber Security First Section
+        Route::get('/cyber_security', [CyberSecurityFirstSectionController::class, 'index'])->name('cyber_security.index');
+        Route::get('/cyber_security/create', [CyberSecurityFirstSectionController::class, 'create'])->name('cyber_security.create');
+        Route::post('/cyber_security', [CyberSecurityFirstSectionController::class, 'store'])->name('cyber_security.store');
+        Route::get('/cyber_security/{cyber_security}/edit', [CyberSecurityFirstSectionController::class, 'edit'])->name('cyber_security.edit');
+        Route::put('/cyber_security/{cyber_security}', [CyberSecurityFirstSectionController::class, 'update'])->name('cyber_security.update');
+        Route::delete('/cyber_security/{cyber_security}', [CyberSecurityFirstSectionController::class, 'destroy'])->name('cyber_security.destroy');
+
+        // Cyber Security second Section
+        Route::get('/cyber_security_second/create', [CyberSecurityFirstSectionController::class, 'createSecondSection'])->name('secondSection.create');
+        Route::post('/cyber_security_second', [CyberSecurityFirstSectionController::class, 'storeSecondSection'])->name('secondSection.store');
+        Route::get('/cyber_security_second/{cyber_security_second}/edit', [CyberSecurityFirstSectionController::class, 'editSecondSection'])->name('secondSection.edit');
+        Route::put('/cyber_security_second/{cyber_security_second}', [CyberSecurityFirstSectionController::class, 'updateSecondSection'])->name('secondSection.update');
+        Route::delete('/cyber_security_second/{cyber_security_second}', [CyberSecurityFirstSectionController::class, 'destroySecondSection'])->name('secondSection.destroy');
+
+        // ai solution First Section
+        Route::get('/ai_solutions', [AiSolutionController::class, 'index'])->name('ai_solutions.index');
+        Route::get('/ai_solutions/create', [AiSolutionController::class, 'create'])->name('ai_solutions.create');
+        Route::post('/ai_solutions', [AiSolutionController::class, 'store'])->name('ai_solutions.store');
+        Route::get('/ai_solutions/{ai_solutions}/edit', [AiSolutionController::class, 'edit'])->name('ai_solutions.edit');
+        Route::put('/ai_solutions/{ai_solutions}', [AiSolutionController::class, 'update'])->name('ai_solutions.update');
+        Route::delete('/ai_solutions/{ai_solutions}', [AiSolutionController::class, 'destroy'])->name('ai_solutions.destroy');
+
+        // ai solution First Section
+        // Route::get('/ai_solutions_second', [AiSolutionController::class, 'index'])->name('ai_solutions.index');
+        Route::get('/ai_solutions_second/create', [AiSolutionController::class, 'createSecondSection'])->name('aiSecondSection.create');
+        Route::post('/ai_solutions_second', [AiSolutionController::class, 'storeSecondSection'])->name('aiSecondSection.store');
+        Route::get('/ai_solutions_second/{ai_solutions_second}/edit', [AiSolutionController::class, 'editSecondSection'])->name('aiSecondSection.edit');
+        Route::put('/ai_solutions_second/{ai_solutions_second}', [AiSolutionController::class, 'updateSecondSection'])->name('aiSecondSection.update');
+        Route::delete('/ai_solutions_second/{ai_solutions_second}', [AiSolutionController::class, 'destroySecondSection'])->name('aiSecondSection.destroy');
+
+
+
+
         // Jobs
         Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
         Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
@@ -282,13 +352,13 @@ Route::group(['prefix' => 'admin'], function () {
                 'slug' => $slug,
             ]);
         })->name('getSlug');
-
     });
-
-
 });
 
 
 Route::get('/test', function (Request $request) {
     dd($request->all());
 });
+
+Route::get('/sitemap.xml', [SitemapController::class, 'generate']);
+Route::get('/robots.txt', [SitemapController::class, 'robots']);

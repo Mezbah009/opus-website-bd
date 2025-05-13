@@ -1,5 +1,11 @@
 @extends('front.layouts.app')
 
+@php
+    $title = "Managing Director & CEO - Opus Technology Limited";
+    $description = "Learn more about the leadership at Opus Technology, featuring our Managing Director & CEO. Discover their vision, expertise, and commitment to driving innovation in the tech industry.";
+    $keywords = "Managing Director, CEO, leadership, Opus Technology, company vision, innovation, tech industry, leadership insights";
+@endphp
+
 @section('content')
     <style>
         .containerss {
@@ -82,7 +88,7 @@
     <div class="containerss">
         <div class="profile-card">
             <div class="profile-image">
-                <img src="{{ asset('uploads/first_section/' . $leaderPost->image) }}" alt="{{ $leaderPost->name }}">
+                <img src="{{ asset('uploads/first_section/' . $leaderPost->image) }}" loading="lazy" alt="{{ $leaderPost->name }}">
             </div>
 
             <h2>{{ $leaderPost->name }}</h2>

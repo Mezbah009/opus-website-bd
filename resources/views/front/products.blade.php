@@ -1,14 +1,17 @@
 @extends('front.layouts.app')
 
+@php
+    $title = "Enterprise Solutions - Opus Technology";
+    $description = "Opus Technology provides cutting-edge enterprise solutions to streamline business operations, enhance efficiency, and drive digital transformation.";
+    $keywords = "enterprise solutions, business automation, ERP, CRM, cloud computing, digital transformation, Opus Technology";
+@endphp
+
 @section('content')
 
-<div class="contact-bg" style="background-image: url('{{ asset("front-assets/img/product-banner.jpg") }}');">
-    <h2>Our Enterprise Solutions</h2>
-    <div class="line">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+
+<div class="contact-bg lazy-bg" data-bg="{{ asset('front-assets/img/product-banner.jpg') }}">
+    <h1>Our Enterprise Solutions</h1>
+    <div class="line"></div>
 </div>
 
 <!-- ======= Our Portfolio Section ======= -->
@@ -38,7 +41,7 @@
             <div class="col-lg-4 col-md-6 portfolio-item {{$section->button_name}}">
                 <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                     style="cursor: pointer;">
-                    <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="">
+                    <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" loading="lazy" alt="{{$section->title}}">
                     <div class="portfolio-info">
                         {{-- <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
@@ -101,6 +104,31 @@
                 const url = portfolioWrap.getAttribute('data-url');
                 window.location.href = url;
             });
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+        lazyBackgrounds.forEach((bg) => {
+            let observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.backgroundImage =
+                                `url('${entry.target.dataset.bg}')`;
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    rootMargin: "0px 0px 200px 0px"
+                } // Load before entering the viewport
+            );
+
+            observer.observe(bg);
         });
     });
 </script>

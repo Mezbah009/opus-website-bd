@@ -214,7 +214,7 @@
     text-decoration: none;
     color: #ffffff;
     background-color: #0E72B4; /* Change background color to #76ABD8 */
-    padding: 10px 20px;
+    padding: 10px 19px;
     border-radius: 4px;
     margin-right: 10px;
 }
@@ -281,7 +281,7 @@
     .navbar ul {
         flex-direction: column;
         align-items: flex-start;
-        width: 100%;
+        width: 120%;
     }
     .navbar ul li {
         width: 35%;
@@ -350,10 +350,11 @@ h5 {
     margin-bottom: 20px;
 }
 
-ul {
+/* ul {
     list-style: none;
     padding: 0;
-}
+} */
+
 
 ul li {
     margin: 15px 0;

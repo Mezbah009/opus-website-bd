@@ -85,6 +85,19 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('journeys.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-route"></i> <!-- Represents a journey or path -->
+                                <p>Our Journey</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('showcases.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-briefcase"></i> <!-- Represents services or business showcase -->
+                                <p>Service Showcase</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="{{ route('accreditation.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-ribbon"></i>
                                 <p>Accreditation Section</p>
@@ -117,6 +130,22 @@
                         <p>Product</p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('cyber_security.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-user-friends"></i>
+                        <p>Cyber Security</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('ai_solutions.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-brain"></i>
+                        <p>Ai Solutions</p>
+                    </a>
+                </li>
+
+
                 <li class="nav-item">
                     <a href="{{ route('team_members.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-user-friends"></i>
@@ -131,9 +160,23 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('services.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-newspaper"></i>
+                        <p>Service</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('blog.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-newspaper"></i>
                         <p>Blogs</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('casestudy.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-newspaper"></i>
+                        <p>Case Study</p>
                     </a>
                 </li>
                 <li class="nav-item">

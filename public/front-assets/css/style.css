@@ -136,6 +136,7 @@ h6,
     #topbar .contact-info,
     #topbar .social-links {
         margin-top: 5px; /* Add margin between contact info and social links */
+        font-size: 13px;
     }
 }
 
@@ -221,7 +222,7 @@ h6,
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-    color: #428bca;
+    color: #0D4472;
 }
 
 .navbar .dropdown ul {
@@ -255,7 +256,7 @@ h6,
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover > a {
-    color: #428bca;
+    color: #0D4472;
 }
 
 .navbar .dropdown:hover > ul {
@@ -1705,7 +1706,7 @@ section {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    padding-top: 120px;
+    padding-top: 0px;
     padding-bottom: 120px;
     color: #000000;
     text-align: center;

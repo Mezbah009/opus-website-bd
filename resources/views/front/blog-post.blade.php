@@ -1,9 +1,16 @@
 @extends('front.layouts.app')
 
+@php
+    $title = "Opus Technology Limited - Software & IT Solutions in Bangladesh";
+    $description = "Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.";
+    $keywords = "Software Company in Bangladesh, IT Solutions, Enterprise Software, Fintech, AI, Cybersecurity, Mobile Apps, Web Development";
+@endphp
+
 @section('content')
 <div class="container mt-5">
     <div class="row">
-        <div class="col-lg-8">
+        {{-- Change this to col-lg-8 --}}
+        <div class="col-lg-12">
             <!-- Post content-->
             <article>
                 <!-- Post header-->
@@ -24,7 +31,7 @@
                 <p class="fs-5 mb-4">{!!$blogPost->description!!}</p>
             </article>
             <!-- Comments section-->
-            <section class="mb-5">
+            {{-- <section class="mb-5">
                 <div class="card bg-light">
                     <div class="card-body">
                         <!-- Comment form-->
@@ -73,10 +80,10 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
         </div>
         <!-- Side widgets-->
-        <div class="col-lg-4">
+        {{-- <div class="col-lg-4">
             <!-- Search widget-->
             <div class="card mb-4">
                 <div class="card-header">Search</div>
@@ -99,7 +106,7 @@
                 <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use,
                     and feature the Bootstrap 5 card component!</div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 

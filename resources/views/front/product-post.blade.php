@@ -1,5 +1,20 @@
 @extends('front.layouts.app')
 
+{{-- @php
+    $title = "Opus Technology Limited - Software & IT Solutions in Bangladesh";
+    $description = "Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.";
+    $keywords = "Software Company in Bangladesh, IT Solutions, Enterprise Software, Fintech, AI, Cybersecurity, Mobile Apps, Web Development";
+@endphp --}}
+
+
+@php
+    $title = $meta_title ?? 'Opus Technology Limited';
+    $description = $meta_description ?? '';
+    $keywords = $meta_keywords ?? '';
+@endphp
+
+
+
 @section('content')
     <style>
         /* CSS Styling */
@@ -73,8 +88,11 @@
         .btn-primary {
             background-color: #0E72B4;
             color: #ffffff;
-            border-radius: 0px; /* Add rounded corners */
+            border-radius: 0px;
+            /* Add rounded corners */
             transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: 10px;
+            padding: 10px;
             /* Smooth transition for hover effects */
         }
 
@@ -86,10 +104,13 @@
 
         /* Download Brochure Button */
         .btn-secondary {
-            background-color:rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
             color: #0D4472;
-            border-radius: 0px; /* Add rounded corners */
+            border-radius: 0px;
+            /* Add rounded corners */
             transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: 10px;
+            padding: 10px;
         }
 
         .btn-secondary:hover {
@@ -107,7 +128,8 @@
                 style="background-image: url('{{ asset('uploads/first_section/' . $product_first_section->image) }}');">
                 <div class="container">
                     <div class="carousel-content">
-                        <img src="{{ asset('uploads/first_section/' . $product_first_section->logo) }}" alt="Logo">
+                        <img src="{{ asset('uploads/first_section/' . $product_first_section->logo) }}" loading="lazy"
+                            alt="Logo">
                         <h2>{{ $product_first_section->title }}</h2>
                         <button class="btn btn-primary btn-lg">Request Demo</button>
                         @if ($product_first_section->brochure)
@@ -134,13 +156,13 @@
 
                         <div class="section-title">
                             <img src="{{ asset('uploads/first_section/' . $product_second_section->logo) }}"
-                                class="img-fluid" alt="">
+                                class="img-fluid" loading="lazy" alt="">
                             <p>{!! $product_second_section->description !!} </p>
                         </div>
                     </div>
                     <div class="col-lg-6 video-box">
                         <img src="{{ asset('uploads/first_section/' . $product_second_section->image) }}" class="img-fluid"
-                            alt="">
+                            loading="lazy" alt="{{ $product_first_section->title }}">
                     </div>
                 </div>
             @endforeach
@@ -159,7 +181,7 @@
                             <div class="info-box">
                                 @if ($product_third_section->icon)
                                     <img src="{{ asset('uploads/first_section/' . $product_third_section->icon) }}"
-                                        alt="..." width="80px" style="padding: 8px">
+                                        loading="lazy" alt="..." width="80px" style="padding: 8px">
                                 @endif
                                 <h4>{{ $product_third_section->title }}</h4>
                                 <h5>{!! $product_third_section->description !!}</h5>
@@ -179,12 +201,12 @@
                 <div class="row no-gutters">
                     <div class="col-lg-6 video-box">
                         <img src="{{ asset('uploads/first_section/' . $product_fourth_section->image) }}" class="img-fluid"
-                            alt="">
+                            loading="lazy" alt="">
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
                         <div class="">
                             <img src="{{ asset('uploads/first_section/' . $product_fourth_section->logo) }}"
-                                class="img-fluid" alt="">
+                                class="img-fluid" loading="lazy" alt="">
                             <p>{!! $product_fourth_section->description !!} </p>
                         </div>
                     </div>
@@ -206,7 +228,8 @@
                             <div class="col-lg-3 d-flex" data-aos="fade-up">
                                 <div class="info-boxs">
                                     <img src="{{ asset('uploads/first_section/' . $product_fifth_section->icon) }}"
-                                        alt="..." width="80px" style="padding: 8px; display: block; margin: 0 auto;">
+                                        loading="lazy" alt="..." width="80px"
+                                        style="padding: 8px; display: block; margin: 0 auto;">
                                     <h3 style="text-align:center; margin-bottom: 10px;">{{ $product_fifth_section->title }}
                                     </h3>
                                     <p>{!! $product_fifth_section->description !!}
@@ -256,7 +279,7 @@
                         <div class="col-md-12">
                             <a href="{{ $product_seventh_section->link }}" target="_blank">
                                 <img src="{{ asset('uploads/first_section/' . $product_seventh_section->image) }}"
-                                    alt="Client Logo" width="150px">
+                                    loading="lazy" alt="Client Logo" width="150px">
                             </a>
                         </div>
                     @endforeach
@@ -290,5 +313,27 @@
         function redirectToDemo() {
             window.location.href = "{{ route('front.demo') }}";
         }
+    </script>
+
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "SoftwareApplication",
+        "name": "{{ $sections->title }}",
+        "url": "{{ url()->current() }}",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web-based",
+        "creator": {
+        "@type": "Organization",
+        "name": "Opus Technology Limited"
+        },
+        "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "{{ $sections->price ?? 'Contact for Pricing' }}",
+        "availability": "https://schema.org/InStock"
+        }
+    }
     </script>
 @endsection
