@@ -50,7 +50,7 @@ class TestimonialController extends Controller
                 $ext = last($extArray);
                 $newImageName = uniqid() . '.' . $ext; // Generate a unique filename
                 $sPath = public_path() . '/temp/' . $tempImage->name;
-                $dPath = public_path() . '/uploads/first_section/' . $newImageName;
+                $dPath = public_path() . '/uploads/testimonials/' . $newImageName;
 
                 File::copy($sPath, $dPath);
 
@@ -99,7 +99,7 @@ class TestimonialController extends Controller
             $ext = last($extArray);
             $newImageName = $testimonials->id . '.' . $ext;
             $sPath = public_path() . '/temp/' . $tempImage->name;
-            $dPath = public_path() . '/uploads/first_section/' . $newImageName;
+            $dPath = public_path() . '/uploads/testimonials/' . $newImageName;
 
             File::copy($sPath, $dPath);
 

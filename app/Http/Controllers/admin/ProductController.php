@@ -383,20 +383,31 @@ class ProductController extends Controller
 
 
 
+    // public function destroyFirstSection($id)
+    // {
+    //     $section = ProductFirstSection::findOrFail($id);
+    //     $section->delete();
+
+    //     // Flash success message
+    //     session()->flash('success', 'Product First Section deleted successfully');
+
+    //     // Return JSON response
+    //     return response()->json([
+    //         'status' => true,
+    //         'message' => 'Product First Section deleted successfully'
+    //     ]);
+    // }
+
+
     public function destroyFirstSection($id)
-    {
-        $section = ProductFirstSection::findOrFail($id);
-        $section->delete();
+{
+    $section = ProductFirstSection::findOrFail($id);
+    $productId = $section->product_id;
+    $section->delete();
 
-        // Flash success message
-        session()->flash('success', 'Product First Section deleted successfully');
+    return redirect()->route('products.show', $productId)->with('success', 'Product First Section deleted successfully');
+}
 
-        // Return JSON response
-        return response()->json([
-            'status' => true,
-            'message' => 'Product First Section deleted successfully'
-        ]);
-    }
 
 
 

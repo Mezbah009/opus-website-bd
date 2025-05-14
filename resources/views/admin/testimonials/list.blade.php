@@ -57,7 +57,7 @@
                             <td>{{$testimonial->id}}</td>
                             <td>
                                 @if(!empty($testimonial->logo))
-                                <img src="{{asset('uploads/first_section/'.$testimonial->logo)}}" class="img-thumbnail"
+                                <img src="{{asset('uploads/testimonials/'.$testimonial->logo)}}" class="img-thumbnail"
                                     alt="{{$testimonial->title}}" width="50">
                                 @else
                                 <img src="{{asset('admin-assets/img/default.png')}}" class="img-thumbnail"

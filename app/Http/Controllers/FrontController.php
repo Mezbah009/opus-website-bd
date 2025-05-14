@@ -83,7 +83,7 @@ class FrontController extends Controller
 
         // Get categories
         $enterpriseCategory = Category::where('slug', 'enterprise-solutions')->first();
-        $fintechCategory = Category::where('slug', 'fintech-products')->first();
+        $fintechCategory = Category::where('slug', 'fintech-solutions')->first();
 
         // Fetch 3 products from each if available
         $enterpriseProducts = $enterpriseCategory

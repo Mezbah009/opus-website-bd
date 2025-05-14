@@ -305,27 +305,6 @@ alt="">
     <section id="portfolio" class="portfolio section-bg">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-            {{-- <div class="section-title">
-                <h2>Our {{ $category->name }}</h2>
-                <p>{{ $category->description }}</p>
-            </div>
-
-
-            @if ($subcategories->isNotEmpty())
-                <div class="row">
-                    <div class="col-lg-12">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            @foreach ($subcategories as $subcat)
-                                <li data-filter=".filter-{{ \Str::slug($subcat->name) }}">{{ $subcat->name }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            @endif
- --}}
-
-
             <div class="section-title">
                 <h2>Our Portfolio</h2>
                 <p>Our fintech portfolio features innovative solutions in payment processing, risk management, and financial
@@ -636,7 +615,7 @@ alt="{{ $member->name }}" height="300px" width="350px">
                         <!-- Testimonial {{ $loop->iteration }} -->
                         <div class="testimonials item">
                             <div class="testimonial-content">
-                                <img src="{{ asset('uploads/first_section/' . $testimonial->logo) }}"
+                                <img src="{{ asset('uploads/testimonials/' . $testimonial->logo) }}"
                                     alt="Testimonial Logo" lazy="loading">
                                 <div class="testimonial-author">
                                     <div class="author">{{ $testimonial->name }}</div>
