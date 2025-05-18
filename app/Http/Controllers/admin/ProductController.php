@@ -382,6 +382,23 @@ class ProductController extends Controller
     }
 
 
+    public function destroyFirstSection($id)
+    {
+        $section = ProductFirstSection::findOrFail($id);
+        $productId = $section->product_id;
+
+        // Delete the section
+        $section->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Section deleted successfully.',
+            'redirect_url' => route('products.show', $productId),
+        ]);
+    }
+
+
+
 
     // public function destroyFirstSection($id)
     // {
@@ -399,14 +416,14 @@ class ProductController extends Controller
     // }
 
 
-    public function destroyFirstSection($id)
-{
-    $section = ProductFirstSection::findOrFail($id);
-    $productId = $section->product_id;
-    $section->delete();
+    //     public function destroyFirstSection($id)
+    // {
+    //     $section = ProductFirstSection::findOrFail($id);
+    //     $productId = $section->product_id;
+    //     $section->delete();
 
-    return redirect()->route('products.show', $productId)->with('success', 'Product First Section deleted successfully');
-}
+    //     return redirect()->route('products.show', $productId)->with('success', 'Product First Section deleted successfully');
+    // }
 
 
 
@@ -514,17 +531,16 @@ class ProductController extends Controller
     public function destroySecondSection($id)
     {
         $section = ProductSecondSection::findOrFail($id);
+        $productId = $section->product_id; // get the related product ID before deletion
         $section->delete();
 
-        // Flash success message
-        session()->flash('success', 'Product Second Section deleted successfully');
-
-        // Return JSON response
         return response()->json([
             'status' => true,
-            'message' => 'Product Second Section deleted successfully'
+            'message' => 'Product Second Section deleted successfully',
+            'redirect_url' => route('products.show', $productId), // send redirect URL
         ]);
     }
+
 
 
 
@@ -636,15 +652,13 @@ class ProductController extends Controller
     public function destroyThirdSection($id)
     {
         $section = ProductThirdSection::findOrFail($id);
+        $productId = $section->product_id; // Ensure this column exists
         $section->delete();
 
-        // Flash success message
-        session()->flash('success', 'Product Second Section deleted successfully');
-
-        // Return JSON response
         return response()->json([
             'status' => true,
-            'message' => 'Product Second Section deleted successfully'
+            'message' => 'Product Third Section deleted successfully',
+            'redirect_url' => route('products.show', $productId),
         ]);
     }
 
@@ -752,15 +766,13 @@ class ProductController extends Controller
     public function destroyFourthSection($id)
     {
         $section = ProductFourthSection::findOrFail($id);
+        $productId = $section->product_id; // Ensure this column exists in the table
         $section->delete();
 
-        // Flash success message
-        session()->flash('success', 'Product Fourth Section deleted successfully');
-
-        // Return JSON response
         return response()->json([
             'status' => true,
-            'message' => 'Product Fourth Section deleted successfully'
+            'message' => 'Product Fourth Section deleted successfully',
+            'redirect_url' => route('products.show', $productId),
         ]);
     }
 
@@ -873,15 +885,13 @@ class ProductController extends Controller
     public function destroyFifthSection($id)
     {
         $section = ProductFifthSection::findOrFail($id);
+        $productId = $section->product_id; // Ensure this exists in your table
         $section->delete();
 
-        // Flash success message
-        session()->flash('success', 'Product Fifth Section deleted successfully');
-
-        // Return JSON response
         return response()->json([
             'status' => true,
-            'message' => 'Product Fifth Section deleted successfully'
+            'message' => 'Product Fifth Section deleted successfully',
+            'redirect_url' => route('products.show', $productId),
         ]);
     }
 
@@ -985,15 +995,13 @@ class ProductController extends Controller
     public function destroySixthSection($id)
     {
         $section = ProductSixthSection::findOrFail($id);
+        $productId = $section->product_id; // Make sure this field exists
         $section->delete();
 
-        // Flash success message
-        session()->flash('success', 'Product Sixth Section deleted successfully');
-
-        // Return JSON response
         return response()->json([
             'status' => true,
-            'message' => 'Product Sixth Section deleted successfully'
+            'message' => 'Product Sixth Section deleted successfully',
+            'redirect_url' => route('products.show', $productId),
         ]);
     }
 
@@ -1101,15 +1109,13 @@ class ProductController extends Controller
     public function destroySeventhSection($id)
     {
         $section = ProductSeventhSection::findOrFail($id);
+        $productId = $section->product_id; // Ensure this field exists in your table
         $section->delete();
 
-        // Flash success message
-        session()->flash('success', 'Product Seventh Section deleted successfully');
-
-        // Return JSON response
         return response()->json([
             'status' => true,
-            'message' => 'Product Seventh Section deleted successfully'
+            'message' => 'Product Seventh Section deleted successfully',
+            'redirect_url' => route('products.show', $productId),
         ]);
     }
 }

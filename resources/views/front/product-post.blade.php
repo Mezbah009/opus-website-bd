@@ -162,7 +162,7 @@
                     </div>
                     <div class="col-lg-6 video-box">
                         <img src="{{ asset('uploads/first_section/' . $product_second_section->image) }}" class="img-fluid"
-                            loading="lazy" alt="{{ $product_first_section->title }}">
+                            loading="lazy" alt="">
                     </div>
                 </div>
             @endforeach
