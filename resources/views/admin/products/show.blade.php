@@ -88,16 +88,16 @@
                                                 </path>
                                             </svg>
                                         </a>
-                                        <a href="#" onclick="destroySection({{ $first_sec->id }})"
+                                        <a href="#" onclick="destroyFirstSection({{ $first_sec->id }})"
                                             class="text-danger w-4 h-4 mr-1">
-                                            <svg wire:loading.remove.delay="" wire:target=""
-                                                class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
+                                            <svg class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path ath fill-rule="evenodd"
+                                                <path fill-rule="evenodd"
                                                     d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
                                                     clip-rule="evenodd"></path>
                                             </svg>
                                         </a>
+
                                     </td>
                                 </tr>
                             @else
@@ -158,16 +158,16 @@
                                                 </path>
                                             </svg>
                                         </a>
-                                        <a href="#" onclick="destroySection({{ $second_sec->id }})"
+                                        <a href="#" onclick="destroySecondSection({{ $second_sec->id }})"
                                             class="text-danger w-4 h-4 mr-1">
-                                            <svg wire:loading.remove.delay="" wire:target=""
-                                                class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
+                                            <svg class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path ath fill-rule="evenodd"
+                                                <path fill-rule="evenodd"
                                                     d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
                                                     clip-rule="evenodd"></path>
                                             </svg>
                                         </a>
+
                                     </td>
                                 </tr>
                             @else
@@ -233,17 +233,17 @@
                                                     </path>
                                                 </svg>
                                             </a>
-                                            <a href="#" onclick="destroySection({{ $third_sec->id }})"
+                                            <a href="#" onclick="destroyThirdSection({{ $third_sec->id }})"
                                                 class="text-danger w-4 h-4 mr-1">
-                                                <svg wire:loading.remove.delay="" wire:target=""
-                                                    class="filament-link-icon w-4 h-4 mr-1"
+                                                <svg class="filament-link-icon w-4 h-4 mr-1"
                                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                                     fill="currentColor" aria-hidden="true">
-                                                    <path ath fill-rule="evenodd"
+                                                    <path fill-rule="evenodd"
                                                         d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
                                                         clip-rule="evenodd"></path>
                                                 </svg>
                                             </a>
+
                                         </td>
                                     </tr>
                                 @endforeach
@@ -307,16 +307,17 @@
                                                 </path>
                                             </svg>
                                         </a>
-                                        <a href="#" onclick="destroySection({{ $fourth_sec->id }})"
+                                        <a href="#" onclick="destroyFourthSection({{ $fourth_sec->id }})"
                                             class="text-danger w-4 h-4 mr-1">
-                                            <svg wire:loading.remove.delay="" wire:target=""
-                                                class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path ath fill-rule="evenodd"
+                                            <svg class="filament-link-icon w-4 h-4 mr-1"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
                                                     d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
                                                     clip-rule="evenodd"></path>
                                             </svg>
                                         </a>
+
                                     </td>
                                 </tr>
                             @else
@@ -555,97 +556,8 @@
 
 @section('customJs')
     <script>
-        function destroySection(id) {
+        function destroyFirstSection(id) {
             const url = '{{ route('product_first_section.destroy', ':id') }}'.replace(':id', id);
-
-            if (confirm("Are you sure you want to delete this section?")) {
-                $.ajax({
-                    url: url,
-                    type: 'DELETE',
-                    dataType: 'json',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(response) {
-                        if (response.status) {
-                            alert(response.message);
-                            // Redirect to the dynamic product page after deletion
-                            window.location.href = response.redirect_url;
-                        } else {
-                            alert('Delete failed. Please try again.');
-                        }
-                    },
-                    error: function(xhr) {
-                        alert('An error occurred during deletion.');
-                        console.error(xhr.responseText);
-                    }
-                });
-            }
-        }
-    </script>
-
-    <script>
-        function destroySection(id) {
-            const url = '{{ route('product_second_section.destroy', ':id') }}'.replace(':id', id);
-
-            if (confirm("Are you sure you want to delete this section?")) {
-                $.ajax({
-                    url: url,
-                    type: 'DELETE',
-                    dataType: 'json',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(response) {
-                        if (response.status) {
-                            alert(response.message);
-                            // Redirect to the product show page
-                            window.location.href = response.redirect_url;
-                        } else {
-                            alert("Something went wrong while deleting.");
-                        }
-                    },
-                    error: function(xhr) {
-                        console.error(xhr.responseText);
-                        alert("An error occurred. Please try again.");
-                    }
-                });
-            }
-        }
-    </script>
-
-    <script>
-        function destroySection(id) {
-            const url = '{{ route('product_third_section.destroy', ':id') }}'.replace(':id', id);
-
-            if (confirm("Are you sure you want to delete this section?")) {
-                $.ajax({
-                    url: url,
-                    type: 'DELETE',
-                    dataType: 'json',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function(response) {
-                        if (response.status) {
-                            alert(response.message);
-                            window.location.href = response.redirect_url;
-                        } else {
-                            alert("Something went wrong while deleting.");
-                        }
-                    },
-                    error: function(xhr) {
-                        console.error(xhr.responseText);
-                        alert("An error occurred. Please try again.");
-                    }
-                });
-            }
-        }
-    </script>
-
-    <script>
-        function destroySection(id) {
-            const url = '{{ route('product_fourth_section.destroy', ':id') }}'.replace(':id', id);
 
             if (confirm("Are you sure you want to delete this section?")) {
                 $.ajax({
@@ -671,6 +583,97 @@
             }
         }
     </script>
+
+
+    <script>
+        function destroySecondSection(id) {
+            const url = '{{ route('product_second_section.destroy', ':id') }}'.replace(':id', id);
+
+            if (confirm("Are you sure you want to delete this section?")) {
+                $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                    dataType: 'json',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        if (response.status) {
+                            alert(response.message);
+                            window.location.href = response.redirect_url;
+                        } else {
+                            alert("Something went wrong.");
+                        }
+                    },
+                    error: function(xhr) {
+                        console.error(xhr.responseText);
+                        alert("Error occurred. Try again.");
+                    }
+                });
+            }
+        }
+    </script>
+
+
+    <script>
+        function destroyThirdSection(id) {
+            const url = '{{ route('product_third_section.destroy', ':id') }}'.replace(':id', id);
+
+            if (confirm("Are you sure you want to delete this section?")) {
+                $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                    dataType: 'json',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        if (response.status) {
+                            alert(response.message);
+                            window.location.href = response.redirect_url;
+                        } else {
+                            alert("Something went wrong.");
+                        }
+                    },
+                    error: function(xhr) {
+                        console.error(xhr.responseText);
+                        alert("Error occurred. Try again.");
+                    }
+                });
+            }
+        }
+    </script>
+
+
+<script>
+    function destroyFourthSection(id) {
+        const url = '{{ route('product_fourth_section.destroy', ':id') }}'.replace(':id', id);
+
+        if (confirm("Are you sure you want to delete this section?")) {
+            $.ajax({
+                url: url,
+                type: 'DELETE',
+                dataType: 'json',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    if (response.status) {
+                        alert(response.message);
+                        window.location.href = response.redirect_url;
+                    } else {
+                        alert("Something went wrong.");
+                    }
+                },
+                error: function(xhr) {
+                    console.error(xhr.responseText);
+                    alert("Error occurred. Try again.");
+                }
+            });
+        }
+    }
+</script>
+
 
     <script>
         function destroySection(id) {

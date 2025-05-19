@@ -161,9 +161,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/products/{id}/product_first_section', [ProductController::class, 'storeFirstSection'])->name('product_first_section.store');
         Route::get('/product_first_sections/{section_id}/edit', [ProductController::class, 'editFirstSection'])->name('product_first_section.edit');
         Route::put('/products/product_first_sections/{section_id}', [ProductController::class, 'updateFirstSection'])->name('product_first_section.update');
-
-
         Route::delete('/product-first-section/{id}', [ProductController::class, 'destroyFirstSection'])->name('product_first_section.destroy');
+
 
 
         // Product Second section
@@ -175,6 +174,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/product-second-section/{id}', [ProductController::class, 'destroySecondSection'])->name('product_second_section.destroy');
 
 
+
         // Product Third section
         Route::get('/products/{id}/product_third_section', [ProductController::class, 'indexThirdSection'])->name('product_third_section.index');
         Route::get('/products/{id}/product_third_section/create', [ProductController::class, 'createThirdSection'])->name('product_third_section.create');
@@ -184,6 +184,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/product-third-section/{id}', [ProductController::class, 'destroyThirdSection'])->name('product_third_section.destroy');
 
 
+
         // Product Fourth section
         Route::get('/products/{id}/product_fourth_section', [ProductController::class, 'indexFourthSection'])->name('product_fourth_section.index');
         Route::get('/products/{id}/product_fourth_section/create', [ProductController::class, 'createFourthSection'])->name('product_fourth_section.create');
@@ -191,6 +192,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/product_fourth_section/{section_id}/edit', [ProductController::class, 'editFourthSection'])->name('product_fourth_section.edit');
         Route::put('/products/product_fourth_section/{section_id}', [ProductController::class, 'updateFourthSection'])->name('product_fourth_section.update');
         Route::delete('/product-fourth-section/{id}', [ProductController::class, 'destroyFourthSection'])->name('product_fourth_section.destroy');
+
 
 
         // Product Fifth section
