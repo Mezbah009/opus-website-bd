@@ -148,27 +148,47 @@
 
     {{-- second section --}}
 
-    <section id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($product_second_sections as $key => $product_second_section)
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up" style="box-shadow: none;">
+        @foreach ($product_second_sections as $index => $product_second_section)
+            <div class="section-title" style="padding-top: 60px; padding-bottom: 0 !important;">
+                @if (!empty($product_second_section->logo))
+                    <img src="{{ asset('uploads/first_section/' . $product_second_section->logo) }}"
+                        class="img-fluid mb-3" loading="lazy" alt="">
+                @endif
+            </div>
+
+            <div class="about showcase-item {{ $index % 2 == 0 ? 'left' : 'right' }}">
                 <div class="row no-gutters">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-
-                        <div class="section-title">
-                            <img src="{{ asset('uploads/first_section/' . $product_second_section->logo) }}"
+                    @if ($index % 2 == 0)
+                        <!-- Even index: image left, content right -->
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                            <img src="{{ asset('uploads/first_section/' . $product_second_section->image) }}"
                                 class="img-fluid" loading="lazy" alt="">
-                            <p>{!! $product_second_section->description !!} </p>
                         </div>
-                    </div>
-                    <div class="col-lg-6 video-box">
-                        <img src="{{ asset('uploads/first_section/' . $product_second_section->image) }}" class="img-fluid"
-                            loading="lazy" alt="">
-                    </div>
+                        <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                            <div>
+                                <p class="fs-5 mb-4 service-description">{!! $product_second_section->description !!}</p>
+                            </div>
+                        </div>
+                    @else
+                        <!-- Odd index: content left, image right -->
+                        <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                            <div>
+                                <p class="fs-5 mb-4 service-description">{!! $product_second_section->description !!}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                            <img src="{{ asset('uploads/first_section/' . $product_second_section->image) }}"
+                                class="img-fluid" loading="lazy" alt="">
+                        </div>
+                    @endif
                 </div>
-            @endforeach
+            </div>
+        @endforeach
+    </div>
+</section>
 
-        </div>
-    </section>
 
     {{-- Third section --}}
 

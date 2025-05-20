@@ -38,7 +38,8 @@ class ProductController extends Controller
         // Find the product by its ID
         $product = Product::findOrFail($id);
         $first_sec = ProductFirstSection::where('product_id', $product->id)->first();
-        $second_sec = ProductSecondSection::where('product_id', $product->id)->first();
+        $second_secs = ProductSecondSection::where('product_id', $product->id)->get();
+
         $third_secs = ProductThirdSection::where('product_id', $product->id)->get();
         $fourth_sec = ProductFourthSection::where('product_id', $product->id)->first();
         $fifth_secs = ProductFifthSection::where('product_id', $product->id)->get();
@@ -46,7 +47,7 @@ class ProductController extends Controller
         $seventh_secs = ProductSeventhSection::where('product_id', $product->id)->get();
 
         // Return the view with the product details
-        return view('admin.products.show', compact('product', 'first_sec', 'second_sec', 'third_secs', 'fourth_sec', 'fifth_secs', 'sixth_sec', 'seventh_secs'));
+        return view('admin.products.show', compact('product', 'first_sec', 'second_secs', 'third_secs', 'fourth_sec', 'fifth_secs', 'sixth_sec', 'seventh_secs'));
     }
 
     public function create()

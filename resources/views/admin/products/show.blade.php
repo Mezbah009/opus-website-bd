@@ -121,22 +121,22 @@
     </section>
 
     {{-- second section --}}
-    <section class="content">
-
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap">
-                        <thead>
-                            <tr>
-                                <th width="60">ID</th>
-                                <th>Image</th>
-                                <th>Description</th>
-                                <th width="100">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if ($second_sec !== null)
+   <section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th width="60">ID</th>
+                            <th>Image</th>
+                            <th>Description</th>
+                            <th width="100">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if ($second_secs->count())
+                            @foreach ($second_secs as $second_sec)
                                 <tr>
                                     <td>{{ $second_sec->id }}</td>
                                     <td>
@@ -148,7 +148,7 @@
                                                 alt="default image" width="50">
                                         @endif
                                     </td>
-                                    <td>{{ Str::limit($second_sec->description, 50) }}</td>
+                                    <td>{{ \Illuminate\Support\Str::limit($second_sec->description, 50) }}</td>
                                     <td>
                                         <a href="{{ route('product_second_section.edit', $second_sec->id) }}">
                                             <svg class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@
                                                 </path>
                                             </svg>
                                         </a>
-                                        <a href="#" onclick="destroySecondSection({{ $second_sec->id }})"
+                                        <a href="javascript:void(0);" onclick="destroySecondSection({{ $second_sec->id }})"
                                             class="text-danger w-4 h-4 mr-1">
                                             <svg class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -167,20 +167,21 @@
                                                     clip-rule="evenodd"></path>
                                             </svg>
                                         </a>
-
                                     </td>
                                 </tr>
-                            @else
-                                <tr>
-                                    <td colspan="4">No data found</td>
-                                </tr>
-                            @endif
-                        </tbody>
-                    </table>
-                </div>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td colspan="4">No data found</td>
+                            </tr>
+                        @endif
+                    </tbody>
+                </table>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     {{-- end --}}
 
