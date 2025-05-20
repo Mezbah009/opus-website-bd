@@ -215,26 +215,47 @@
 
     {{-- Fourth section --}}
 
-    <section id="about" class="about">
-        <div class="container" data-aos="fade-up" style="box-shadow: none;">
-            @foreach ($product_fourth_sections as $key => $product_fourth_section)
-                <div class="row no-gutters">
-                    <div class="col-lg-6 video-box">
-                        <img src="{{ asset('uploads/first_section/' . $product_fourth_section->image) }}" class="img-fluid"
-                            loading="lazy" alt="">
-                    </div>
-                    <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                        <div class="">
-                            <img src="{{ asset('uploads/first_section/' . $product_fourth_section->logo) }}"
-                                class="img-fluid" loading="lazy" alt="">
-                            <p>{!! $product_fourth_section->description !!} </p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up" style="box-shadow: none;">
+        @foreach ($product_fourth_sections as $index => $product_fourth_section)
+            <div class="section-title" style="padding-top: 60px; padding-bottom: 0 !important;">
+                @if (!empty($product_fourth_section->logo))
+                    <img src="{{ asset('uploads/first_section/' . $product_fourth_section->logo) }}"
+                        class="img-fluid mb-3" loading="lazy" alt="">
+                @endif
+            </div>
 
-        </div>
-    </section>
+            <div class="about showcase-item {{ $index % 2 == 0 ? 'left' : 'right' }}">
+                <div class="row no-gutters">
+                    @if ($index % 2 == 0)
+                        <!-- Image on the left, content on the right -->
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                            <img src="{{ asset('uploads/first_section/' . $product_fourth_section->image) }}"
+                                class="img-fluid" loading="lazy" alt="">
+                        </div>
+                        <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                            <div>
+                                <p class="fs-5 mb-4">{!! $product_fourth_section->description !!}</p>
+                            </div>
+                        </div>
+                    @else
+                        <!-- Content on the left, image on the right -->
+                        <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+                            <div>
+                                <p class="fs-5 mb-4">{!! $product_fourth_section->description !!}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                            <img src="{{ asset('uploads/first_section/' . $product_fourth_section->image) }}"
+                                class="img-fluid" loading="lazy" alt="">
+                        </div>
+                    @endif
+                </div>
+            </div>
+        @endforeach
+    </div>
+</section>
+
     <!-- End  Section -->
 
     {{-- Fifth section --}}

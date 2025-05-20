@@ -270,22 +270,22 @@
     </section>
 
     {{-- Fourth section --}}
-    <section class="content">
-
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap">
-                        <thead>
-                            <tr>
-                                <th width="60">ID</th>
-                                <th>Image</th>
-                                <th>Description</th>
-                                <th width="100">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if ($fourth_sec !== null)
+   <section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th width="60">ID</th>
+                            <th>Image</th>
+                            <th>Description</th>
+                            <th width="100">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if ($fourth_secs->count() > 0)
+                            @foreach ($fourth_secs as $fourth_sec)
                                 <tr>
                                     <td>{{ $fourth_sec->id }}</td>
                                     <td>
@@ -293,8 +293,8 @@
                                             <img src="{{ asset('uploads/first_section/' . $fourth_sec->image) }}"
                                                 class="img-thumbnail" alt="" width="50">
                                         @else
-                                            <img src="{{ asset('admin-assets/img/default.png') }}" class="img-thumbnail"
-                                                alt="default image" width="50">
+                                            <img src="{{ asset('admin-assets/img/default.png') }}"
+                                                class="img-thumbnail" alt="default image" width="50">
                                         @endif
                                     </td>
                                     <td>{{ Str::limit($fourth_sec->description, 50) }}</td>
@@ -318,20 +318,21 @@
                                                     clip-rule="evenodd"></path>
                                             </svg>
                                         </a>
-
                                     </td>
                                 </tr>
-                            @else
-                                <tr>
-                                    <td colspan="4">No data found</td>
-                                </tr>
-                            @endif
-                        </tbody>
-                    </table>
-                </div>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td colspan="4">No data found</td>
+                            </tr>
+                        @endif
+                    </tbody>
+                </table>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     {{-- end --}}
 
