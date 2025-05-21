@@ -16,6 +16,7 @@ use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\HomeFirstSectionController;
 use App\Http\Controllers\admin\HomeSecondSectionController;
 use App\Http\Controllers\admin\HomeServicesSectionController;
+use App\Http\Controllers\admin\HomeThirdSectionController;
 use App\Http\Controllers\admin\JobController;
 use App\Http\Controllers\admin\ManagementController;
 use App\Http\Controllers\admin\NumberController;
@@ -140,6 +141,20 @@ Route::group(['prefix' => 'admin'], function () {
         Route::put('/home_second_section/{second_section}', [HomeSecondSectionController::class, 'update'])->name('home_second_sections.update');
         Route::delete('/home_second_section/{second_section}', [HomeSecondSectionController::class, 'destroy'])->name('home_second_sections.delete');
 
+
+        // Home third section
+        Route::get('/home-third-sections', [HomeThirdSectionController::class, 'index'])->name('home-third-sections.index');
+        Route::get('/home-third-sections/create', [HomeThirdSectionController::class, 'create'])->name('home-third-sections.create');
+        Route::post('/home-third-sections', [HomeThirdSectionController::class, 'store'])->name('home-third-sections.store');
+        Route::get('/home-third-sections/{id}/edit', [HomeThirdSectionController::class, 'edit'])->name('home-third-sections.edit');
+        Route::put('/home-third-sections/{id}', [HomeThirdSectionController::class, 'update'])->name('home-third-sections.update');
+
+        Route::delete('/home-third-sections/{id}', [HomeThirdSectionController::class, 'destroy'])->name('home-third-sections.delete');
+
+
+        // Route::resource('home-third-sections', HomeThirdSectionController::class);
+
+
         // Home Product section
         Route::get('/products', [ProductController::class, 'index'])->name('products.index');
         Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
@@ -221,7 +236,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/products/{id}/product_seventh_section', [ProductController::class, 'storeSeventhSection'])->name('product_seventh_section.store');
         Route::get('/product_seventh_section/{section_id}/edit', [ProductController::class, 'editSeventhSection'])->name('product_seventh_section.edit');
         Route::put('/products/product_seventh_section/{section_id}', [ProductController::class, 'updateSeventhSection'])->name('product_seventh_section.update');
-       Route::delete('/product-seventh-section/{id}', [ProductController::class, 'destroySeventhSection'])->name('product_seventh_section.destroy');
+        Route::delete('/product-seventh-section/{id}', [ProductController::class, 'destroySeventhSection'])->name('product_seventh_section.destroy');
 
 
         // Home Service section

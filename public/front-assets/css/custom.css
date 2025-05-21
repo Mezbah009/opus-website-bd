@@ -493,3 +493,21 @@ a.text-white:hover {
     visibility: visible;
     opacity: 1;
 }
+
+
+
+.custom-primary-btn {
+    background-color: #1C5C93 !important;
+    color: #fff !important;
+    border: none;
+    padding: 10px 25px;
+    font-weight: 500;
+    text-align: left;
+    text-transform: capitalize;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.custom-primary-btn:hover {
+    background-color: #154872 !important;
+}

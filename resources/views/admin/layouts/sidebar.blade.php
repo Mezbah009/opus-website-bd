@@ -58,6 +58,13 @@
                                 <p>Home Service Section</p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('home-third-sections.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-info-circle"></i>
+                                <p>Home third Section</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{ route('testimonials.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-quote-left"></i>

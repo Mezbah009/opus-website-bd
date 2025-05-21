@@ -133,6 +133,8 @@ alt="">
 
 
 
+
+
     <!-- ======= About Lists Section ======= -->
     <section class="about-lists">
         <div class="container">
@@ -345,6 +347,68 @@ alt="">
 
         </div>
     </section>
+    <!-- End Our Portfolio Section -->
+
+
+        <!-- ======= home third Section ======= -->
+
+    {{-- @foreach ($home_third_section as $index => $home_third_section)
+        <section class="about py-5" style="background-color: {{ $index % 2 == 0 ? '#f5f9fc' : '#ffffff' }};">
+            <div class="container" data-aos="fade-up" style="box-shadow: none;">
+                <div class="row no-gutters align-items-center">
+                    @if ($index % 2 == 0)
+                        <!-- Even index: image left, content right -->
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
+                            <img src="{{ asset('uploads/home_third_sections/' . $home_third_section->image) }}"
+                                class="img-fluid" loading="lazy" alt="">
+                        </div>
+                        <div class="col-lg-6 d-flex flex-column justify-content-center about-content section-title">
+                            <div class="section-title text-left" style="padding-top: 60px; padding-bottom: 0 !important;">
+                                @if (!empty($home_third_section->logo))
+                                    <img src="{{ asset('uploads/home_third_sections/' . $home_third_section->logo) }}"
+                                        class="img-fluid mb-3" loading="lazy" alt="" style="max-width: 150px;">
+                                @endif
+                            </div>
+                            <h2 class="text-left">{{ $home_third_section->title }}</h2>
+                            <div>
+                                <p class="fs-5 mb-4 service-description text-left">{!! $home_third_section->description !!}</p>
+                            </div>
+                            <div class="text-left d-flex justify-content-start" style="padding-top: 20px;">
+                                <a class="btn custom-primary-btn" href="{{ $home_third_section->link }}" role="button">
+                                    Read More <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    @else
+                        <!-- Odd index: content left, image right -->
+                        <div class="col-lg-6 d-flex flex-column justify-content-center about-content section-title">
+                            <div class="section-title text-left" style="padding-top: 60px; padding-bottom: 0 !important;">
+                                @if (!empty($home_third_section->logo))
+                                    <img src="{{ asset('uploads/home_third_sections/' . $home_third_section->logo) }}"
+                                        class="img-fluid mb-3" loading="lazy" alt="" style="max-width: 120px;">
+                                @endif
+                            </div>
+                            <h2 class="text-left">{{ $home_third_section->title }}</h2>
+                            <div>
+                                <p class="fs-5 mb-4 service-description text-left">{!! $home_third_section->description !!}</p>
+                            </div>
+                            <div class="text-left d-flex justify-content-start" style="padding-top: 20px;">
+                                <a class="btn custom-primary-btn" href="{{ $home_third_section->link }}" role="button">
+                                    Read More <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center mt-4 mt-lg-0">
+                            <img src="{{ asset('uploads/home_third_sections/' . $home_third_section->image) }}"
+                                class="img-fluid" loading="lazy" alt="">
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </section>
+    @endforeach --}}
+
+    <!-- End home third Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
