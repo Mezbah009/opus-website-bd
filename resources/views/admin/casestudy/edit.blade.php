@@ -45,7 +45,7 @@
                                         value="{{ $casestudy->slug }}">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="excerpt">Excerpt</label>
                                     <textarea name="excerpt" id="excerpt" class="form-control" required>{{ $casestudy->excerpt }}</textarea>

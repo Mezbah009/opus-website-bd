@@ -46,7 +46,7 @@
                                     <p class="error"></p>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="excerpt">Excerpt</label>
                                     <textarea name="excerpt" id="excerpt" class="form-control" placeholder="Excerpt" required></textarea>
