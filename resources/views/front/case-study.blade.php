@@ -71,19 +71,43 @@
     .card .btn {
         width: 100%;
         /* Ensures consistency */
-        background-color: #007bff;
+        background-color: #0E72B4;
         color: white;
-        font-weight: bold;
+        /* font-weight: bold; */
         padding: 10px;
         border-radius: 5px;
         text-align: center;
         margin-top: auto;
         /* Pushes to bottom */
     }
+
+
+    .fixed-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #fff;
+    }
+
+    .fixed-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+
+    .card .btn:hover {
+        background-color: #0D4472;
+        color: #fff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
 </style>
 
 @section('content')
-
     <div class="contact-bg lazy-bg" data-bg="{{ asset('front-assets/img/case.jpg') }}">
         <h1>Case Study</h1>
         <div class="line"></div>
