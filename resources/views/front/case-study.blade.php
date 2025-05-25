@@ -14,84 +14,19 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        /* Ensures proper alignment */
     }
 
     .fixed-card {
         display: flex;
         flex-direction: column;
         height: 100%;
-        border: 1px solid #ddd;
-        /* Optional: Adds a border */
-        border-radius: 8px;
-        /* Optional: Rounds corners */
+        border: 0px solid #ddd !important;
+        border-radius: 0 !important;
+        /* Force remove rounding */
         overflow: hidden;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        /* Optional: Adds shadow */
-    }
-
-    .card-img-top {
-        height: 150px;
-        /* Ensures images are same size */
-        object-fit: contain;
-        /* Ensures the image fits */
-        padding: 10px;
-        /* Optional: Adds spacing */
-    }
-
-    .card-block {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        /* Ensures content is balanced */
-        padding: 15px;
-    }
-
-    .card-title {
-        min-height: 50px;
-        /* Ensures uniformity */
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .card-text-excerpt {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        /* Limits text to 3 lines */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-size: 14px;
-        min-height: 4.5em;
-        /* Adjust based on line-clamp */
-    }
-
-    .card .btn {
-        width: 100%;
-        /* Ensures consistency */
-        background-color: #0E72B4;
-        color: white;
-        /* font-weight: bold; */
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
-        margin-top: auto;
-        /* Pushes to bottom */
-    }
-
-
-    .fixed-card {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
         background-color: #fff;
+        box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .fixed-card:hover {
@@ -99,6 +34,51 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
 
+    .card-img-top {
+        height: 150px;
+        object-fit: contain;
+        padding: 10px;
+    }
+
+    .card-block {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    .card-title {
+        min-height: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #666!important;
+
+    }
+
+    .card-text-excerpt {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        min-height: 4.5em;
+        color: #444!important;
+    }
+
+    .card .btn {
+        width: 100%;
+        background-color: #0E72B4;
+        color: white;
+        padding: 10px;
+        border-radius: 0 !important;
+        /* Force remove rounding */
+        text-align: center;
+        margin-top: auto;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
     .card .btn:hover {
         background-color: #0D4472;
@@ -106,6 +86,7 @@
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 </style>
+
 
 @section('content')
     <div class="contact-bg lazy-bg" data-bg="{{ asset('front-assets/img/case.jpg') }}">
