@@ -66,14 +66,23 @@
 
         .card .btn {
             width: 37%;
-            background-color: #007bff;
+            background-color: #0E72B4;
             color: white;
-            font-weight: bold;
+            /* font-weight: bold; */
             padding: 10px;
             border-radius: 5px;
             text-align: center;
             margin-top: auto;
         }
+
+        .card .btn:hover {
+            background-color: #0D4472;
+            color: #fff;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+
+
     </style>
 
 

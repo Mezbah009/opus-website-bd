@@ -26,7 +26,8 @@
                                 <div class="mb-3">
                                     <label for="order_by">Order By</label>
                                     <input type="number" class="form-control" id="order_by" name="order_by"
-                                        placeholder="Order (e.g. 1)">
+                                        value="{{ old('order_by', $nextOrderBy ?? 0) }}" placeholder="Order (e.g. 1)">
+
                                     <p class="error"></p>
                                 </div>
                             </div>
