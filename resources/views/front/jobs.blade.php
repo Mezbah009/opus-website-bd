@@ -1,9 +1,11 @@
 @extends('front.layouts.app')
 
 @php
-    $title = "Jobs - Careers at Opus Technology Limited";
-    $description = "Explore exciting job opportunities at Opus Technology. Join our dynamic team and help us drive innovative technology solutions. Find your next career here!";
-    $keywords = "jobs, careers, employment opportunities, tech jobs, Opus Technology, job openings, technology careers, join our team";
+    $title = 'Jobs - Careers at Opus Technology Limited';
+    $description =
+        'Explore exciting job opportunities at Opus Technology. Join our dynamic team and help us drive innovative technology solutions. Find your next career here!';
+    $keywords =
+        'jobs, careers, employment opportunities, tech jobs, Opus Technology, job openings, technology careers, join our team';
 @endphp
 
 @section('content')
@@ -90,9 +92,13 @@
 
 
 
-
-
-
+        @if (!empty($error))
+            <div class="col-12">
+                <div class="alert alert-danger">
+                    {{ $error }}
+                </div>
+            </div>
+        @endif
 
         <div class="container mt-5">
             <div class="row">
@@ -124,13 +130,10 @@
 
                                     <!-- View Details Button -->
                                     <div class="mt-3">
-                                        <a
-                                    href="https://career.opuserp.com/JobRequisition/JobGridById/{{ $job['Id'] }}"
-                                    class="view-details-btn"
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-                                    View Details
-                                </a>
+                                        <a href="https://career.opuserp.com/JobRequisition/JobGridById/{{ $job['Id'] }}"
+                                            class="view-details-btn" target="_blank" rel="noopener noreferrer">
+                                            View Details
+                                        </a>
                                     </div>
                                 </div>
                             </div>
