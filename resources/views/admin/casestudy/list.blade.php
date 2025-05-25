@@ -40,6 +40,7 @@
                         <thead>
                             <tr>
                                 <th width="60">ID</th>
+                                <th>Order By</th>
                                 <th>Image</th>
                                 <th>Title</th>
                                 <th width="100">Action</th>
@@ -50,6 +51,7 @@
                                 @foreach ($caseStudies as $caseStudy)
                                     <tr>
                                         <td>{{ $caseStudy->id }}</td>
+                                          <td>{{ $caseStudy->order_by }}</td>
                                         <td>
                                             @if (!empty($caseStudy->image))
                                                 <img src="{{ asset('uploads/casestudies/' . $caseStudy->image) }}"

@@ -275,14 +275,12 @@ class FrontController extends Controller
     }
 
 
-    public function caseStudy()
-    {
+public function caseStudy()
+{
+    $caseStudy = CaseStudy::orderBy('order_by', 'asc')->get();
+    return view('front.case-study', ['caseStudy' => $caseStudy]);
+}
 
-
-        $caseStudy = CaseStudy::all();
-        $data['caseStudy'] = $caseStudy;
-        return view('front.case-study', $data);
-    }
 
 
     public function showCaseStudy($slug, Request $request)

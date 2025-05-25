@@ -21,14 +21,24 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">
+
+                            <div class="col-md-2">
+                                <div class="mb-3">
+                                    <label for="order_by">Order By</label>
+                                    <input type="number" class="form-control" id="order_by" name="order_by"
+                                        placeholder="Order (e.g. 1)">
+                                    <p class="error"></p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
                                 <div class="mb-3">
                                     <label for="title">Title</label>
                                     <input type="text" class="form-control" id="title" name="title" required>
                                     <p class="error"></p>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <div class="mb-3">
                                     <label for="slug">Slug</label>
                                     <input type="text" readonly name="slug" id="slug" class="form-control"
@@ -36,7 +46,7 @@
                                     <p class="error"></p>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="excerpt">Excerpt</label>
                                     <textarea name="excerpt" id="excerpt" class="form-control" placeholder="Excerpt" required></textarea>

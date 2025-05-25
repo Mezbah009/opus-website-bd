@@ -92,10 +92,6 @@
 
     <section id="blog-card" class="padding-top-bottom-90">
 
-
-
-
-
         <div class="container">
             <div class="section-title">
                 <h2>Case Study</h2>
