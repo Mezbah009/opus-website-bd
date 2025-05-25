@@ -275,11 +275,11 @@ class FrontController extends Controller
     }
 
 
-public function caseStudy()
-{
-    $caseStudy = CaseStudy::orderBy('order_by', 'asc')->get();
-    return view('front.case-study', ['caseStudy' => $caseStudy]);
-}
+    public function caseStudy()
+    {
+        $caseStudy = CaseStudy::orderBy('order_by', 'asc')->get();
+        return view('front.case-study', ['caseStudy' => $caseStudy]);
+    }
 
 
 
@@ -356,15 +356,37 @@ public function caseStudy()
 
 
 
+    // public function job()
+    // {
+    //     $response = Http::withOptions(['verify' => false])->get('https://e-recruitment-admin.opuserp.com/api/recruitment/gt-all-jobs');
+
+    //     if ($response->successful()) {
+    //         $jobs = $response->json(); // Fetch the jobs
+    //         return view('front.jobs', compact('jobs'));
+    //     }
+
+    //     return back()->with('error', 'Failed to fetch job data.');
+    // }
+
+
+
     public function job()
     {
-        $response = Http::withOptions(['verify' => false])->get('https://e-recruitment-admin.opuserp.com/api/recruitment/gt-all-jobs');
+        try {
+            $response = Http::withOptions(['verify' => false])->get('https://e-recruitment-admin.opuserp.com/api/recruitment/gt-all-jobs');
 
-        if ($response->successful()) {
-            $jobs = $response->json(); // Fetch the jobs
-            return view('front.jobs', compact('jobs'));
+            if ($response->successful()) {
+                $jobs = $response->json();
+                return view('front.jobs', compact('jobs'));
+            } else {
+                // API responded but with error status
+                $error = 'API responded with an error.';
+            }
+        } catch (\Exception $e) {
+            // API call failed (server down, timeout, etc.)
+            $error = 'API is not working. Please try again later.';
         }
 
-        return back()->with('error', 'Failed to fetch job data.');
+        return view('front.jobs', ['jobs' => [], 'error' => $error]);
     }
 }
