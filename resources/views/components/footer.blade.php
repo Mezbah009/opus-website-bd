@@ -96,10 +96,31 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <h1 style="font-size: 20px;">Important Link</h1>
+                <h1 style="font-size: 20px;">Important Links</h1>
                 <ul class="list-unstyled">
                     <li><a href="{{ route('front.home') }}" class="text-white">Home</a></li>
                     <li><a href="{{ route('front.about') }}" class="text-white">About</a></li>
+                     <li class="dropdown">
+                    <a href="#"
+                        class="nav-link scrollto dropdown-toggle {{ Request::is('products') ? 'active' : '' }}"
+                        data-bs-toggle="dropdown">Product</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('front.products') }}">Enterprise
+                                Solutions</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{{ route('front.fintech') }}">Fintech Solutions</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{{ route('front.mobileApp') }}">Mobile App
+                                Solutions</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{{ route('front.aiSolutions') }}">AI Solutions</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{{ route('front.systemSolutions') }}">System
+                                Solutions</a></li>
+                        <li><a class="dropdown-item" href="{{ route('front.cyberSecurity') }}">Cyber Security
+                                Solutions</a></li>
+                    </ul>
+                </li>
                     <li><a href="{{ route('front.clients') }}" class="text-white">Clients</a></li>
                     <li><a href="{{ route('front.services') }}" class="text-white">Services</a></li>
                     <li><a href="{{ route('front.blog') }}" class="text-white">Blogs</a></li>
