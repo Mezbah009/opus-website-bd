@@ -133,7 +133,7 @@
                 <!-- /Blog Comments Section -->
 
                 <!-- Comment Form Section -->
-                <section id="comment-form" class="comment-form section">
+                <section id="comment-form" class="comment-form section" style="padding: 60px 0px 10px;" >
                     <div class="container">
 
                         <!-- Flash Messages -->

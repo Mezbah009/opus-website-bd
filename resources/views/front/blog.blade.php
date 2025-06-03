@@ -1,7 +1,7 @@
 @extends('front.layouts.app')
 
 @php
-    $title = 'Blogs - Opus Technology Limited';
+    $title = 'Blog - Opus Technology Limited';
     $description =
         'Read the latest blogs from Opus Technology, where we share insights on the latest trends, technological advancements, and industry news. Stay updated with expert opinions and thought leadership.';
     $keywords =
@@ -13,7 +13,7 @@
 
     <!-- Recent Posts Section -->
     <div class="contact-bg lazy-bg" data-bg="{{ asset('front-assets/img/blogs.jpg') }}">
-        <h1>Blogs</h1>
+        <h1>Blog</h1>
         <div class="line"></div>
     </div>
 
