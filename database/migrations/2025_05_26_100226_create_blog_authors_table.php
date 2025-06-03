@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('blog_authors', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('category')->nullable();
-            $table->string('title');
-            $table->date('date');
-            $table->text('excerpt');
-            $table->string('slug')->unique();
+            $table->string('name');
+            $table->string('email')->unique()->nullable();
+            $table->string('bio')->nullable();
+            $table->string('profile_image')->nullable(); // Optional profile picture
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('blog_authors');
     }
 };
