@@ -626,7 +626,6 @@
 
     <!-- End Our Team Section -->
 
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let lazyBackgrounds = document.querySelectorAll(".lazy-bg");
