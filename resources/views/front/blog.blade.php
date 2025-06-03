@@ -209,4 +209,29 @@
 
         </div>
     </div><!-- /Recent Posts Section -->
+
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+            lazyBackgrounds.forEach((bg) => {
+                let observer = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.backgroundImage =
+                                    `url('${entry.target.dataset.bg}')`;
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        rootMargin: "0px 0px 200px 0px"
+                    } // Load before entering the viewport
+                );
+
+                observer.observe(bg);
+            });
+        });
+    </script>
 @endsection
