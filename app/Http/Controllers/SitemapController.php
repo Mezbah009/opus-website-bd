@@ -14,84 +14,100 @@ class SitemapController extends Controller
 {
     public function generate()
     {
-        ob_clean(); // Clear any whitespace
+        ob_clean(); // Clear whitespace
 
+        // Static URLs
+        $staticUrls = [
+            URL::to('/'),
+            URL::to('/about-us'),
+            URL::to('/enterprise-solutions'),
+            URL::to('/fintech-solutions'),
+            URL::to('/mobile-app-solutions'),
+            URL::to('/ai-solutions'),
+            URL::to('/system-solutions'),
+            URL::to('/cyber-security-solutions'),
+            URL::to('/services'),
+            URL::to('/clients'),
+            URL::to('/case-study'),
+            URL::to('/blogs'),
+            URL::to('/jobs'),
+            URL::to('/contact-us'),
+        ];
+
+        // Start XML document
         $sitemap = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
         $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ';
         $sitemap .= 'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . PHP_EOL;
 
-        // Static URLs
-        $staticUrls = [
-            '/',
-            '/about-us',
-            '/enterprise-solutions',
-            '/fintech-solutions',
-            '/mobile-app-solutions',
-            '/ai-solutions',
-            '/system-solutions',
-            '/cyber-security-solutions',
-            '/services',
-            '/clients',
-            '/case-study',
-            '/blogs',
-            '/jobs',
-            '/contact-us',
-        ];
-
-        foreach ($staticUrls as $path) {
-            $sitemap .= $this->generateUrlBlock(URL::to($path));
+        // Add Static URLs
+        foreach ($staticUrls as $url) {
+            $sitemap .= '    <url>' . PHP_EOL;
+            $sitemap .= '        <loc>' . htmlspecialchars($url, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
+            $sitemap .= '        <lastmod>' . now()->toAtomString() . '</lastmod>' . PHP_EOL;
+            $sitemap .= '        <changefreq>daily</changefreq>' . PHP_EOL;
+            $sitemap .= '        <priority>0.8</priority>' . PHP_EOL;
+            $sitemap .= '    </url>' . PHP_EOL;
         }
 
-        // Products
+        // Add Products with Images & Titles
         $products = Product::select('link', 'updated_at', 'logo', 'title')->get();
         foreach ($products as $product) {
-            $url = URL::to('/products/' . $product->link);
-            $image = $product->logo ? asset('uploads/first_section/' . $product->logo) : null;
-            $sitemap .= $this->generateUrlBlock($url, $product->updated_at, $image, $product->title);
+            $productUrl = URL::to('/products/' . $product->link);
+            $imageUrl = asset('uploads/first_section/' . $product->logo);
+
+            $sitemap .= '    <url>' . PHP_EOL;
+            $sitemap .= '        <loc>' . htmlspecialchars($productUrl, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
+            $sitemap .= '        <lastmod>' . $product->updated_at->toAtomString() . '</lastmod>' . PHP_EOL;
+            $sitemap .= '        <changefreq>daily</changefreq>' . PHP_EOL;
+            $sitemap .= '        <priority>0.7</priority>' . PHP_EOL;
+
+            // Add Product Image with Title
+            if (!empty($product->logo)) {
+                $sitemap .= '        <image:image>' . PHP_EOL;
+                $sitemap .= '            <image:loc>' . htmlspecialchars($imageUrl, ENT_XML1, 'UTF-8') . '</image:loc>' . PHP_EOL;
+                $sitemap .= '            <image:title>' . htmlspecialchars($product->title, ENT_XML1, 'UTF-8') . '</image:title>' . PHP_EOL;
+                $sitemap .= '        </image:image>' . PHP_EOL;
+            }
+
+            $sitemap .= '    </url>' . PHP_EOL;
         }
 
-        // Blogs (only published)
-        // $blogs = Blog::where('is_published', 1)
-        //     ->whereNotNull('published_at')
-        //     ->select('slug', 'updated_at', 'image', 'title')
-        //     ->get();
+        // Add Blogs with Images
+        $blogs = Blog::select('slug', 'updated_at', 'feature_image', 'title')->get();
+        foreach ($blogs as $blog) {
+            $blogUrl = URL::to('/blogs/' . $blog->slug);
+            $blogImageUrl = asset('uploads/blogs/' . $blog->feature_image);
 
-        // foreach ($blogs as $blog) {
-        //     $url = URL::to('/blogs/' . $blog->slug);
-        //     $image = $blog->image ? asset('uploads/blogs/' . $blog->image) : null;
-        //     $sitemap .= $this->generateUrlBlock($url, $blog->updated_at, $image, $blog->title);
-        // }
+            $sitemap .= '    <url>' . PHP_EOL;
+            $sitemap .= '        <loc>' . htmlspecialchars($blogUrl, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
+            $sitemap .= '        <lastmod>' . $blog->updated_at->toAtomString() . '</lastmod>' . PHP_EOL;
+            $sitemap .= '        <changefreq>daily</changefreq>' . PHP_EOL;
+            $sitemap .= '        <priority>0.7</priority>' . PHP_EOL;
 
-        // Case Studies
+            if (!empty($blog->feature_image)) {
+                $sitemap .= '        <image:image>' . PHP_EOL;
+                $sitemap .= '            <image:loc>' . htmlspecialchars($blogImageUrl, ENT_XML1, 'UTF-8') . '</image:loc>' . PHP_EOL;
+                $sitemap .= '            <image:title>' . htmlspecialchars($blog->title, ENT_XML1, 'UTF-8') . '</image:title>' . PHP_EOL;
+                $sitemap .= '        </image:image>' . PHP_EOL;
+            }
+
+            $sitemap .= '    </url>' . PHP_EOL;
+        }
+
+        // Add Case Studies
         $caseStudies = CaseStudy::select('slug', 'updated_at')->get();
         foreach ($caseStudies as $caseStudy) {
-            $url = URL::to('/case-study/' . $caseStudy->slug);
-            $sitemap .= $this->generateUrlBlock($url, $caseStudy->updated_at);
+            $sitemap .= '    <url>' . PHP_EOL;
+            $sitemap .= '        <loc>' . htmlspecialchars(URL::to('/case-study/' . $caseStudy->slug), ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
+            $sitemap .= '        <lastmod>' . $caseStudy->updated_at->toAtomString() . '</lastmod>' . PHP_EOL;
+            $sitemap .= '        <changefreq>daily</changefreq>' . PHP_EOL;
+            $sitemap .= '        <priority>0.7</priority>' . PHP_EOL;
+            $sitemap .= '    </url>' . PHP_EOL;
         }
 
         $sitemap .= '</urlset>';
 
         return response($sitemap, 200)->header('Content-Type', 'application/xml');
-    }
-
-    private function generateUrlBlock($loc, $lastmod = null, $imageUrl = null, $imageTitle = null)
-    {
-        $block = '    <url>' . PHP_EOL;
-        $block .= '        <loc>' . htmlspecialchars($loc, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
-        $block .= '        <lastmod>' . ($lastmod ? $lastmod->toAtomString() : now()->toAtomString()) . '</lastmod>' . PHP_EOL;
-        $block .= '        <changefreq>daily</changefreq>' . PHP_EOL;
-        $block .= '        <priority>0.7</priority>' . PHP_EOL;
-
-        if ($imageUrl && $imageTitle) {
-            $block .= '        <image:image>' . PHP_EOL;
-            $block .= '            <image:loc>' . htmlspecialchars($imageUrl, ENT_XML1, 'UTF-8') . '</image:loc>' . PHP_EOL;
-            $block .= '            <image:title>' . htmlspecialchars($imageTitle, ENT_XML1, 'UTF-8') . '</image:title>' . PHP_EOL;
-            $block .= '        </image:image>' . PHP_EOL;
-        }
-
-        $block .= '    </url>' . PHP_EOL;
-
-        return $block;
     }
 
 
