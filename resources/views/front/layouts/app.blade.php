@@ -209,6 +209,7 @@
     <main id="main">
 
         @yield('content')
+        @yield('scripts')
 
     </main><!-- End #main -->
 
