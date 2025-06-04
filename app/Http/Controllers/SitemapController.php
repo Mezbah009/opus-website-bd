@@ -51,16 +51,16 @@ class SitemapController extends Controller
         }
 
         // Blogs (only published)
-        $blogs = Blog::where('is_published', 1)
-            ->whereNotNull('published_at')
-            ->select('slug', 'updated_at', 'image', 'title')
-            ->get();
+        // $blogs = Blog::where('is_published', 1)
+        //     ->whereNotNull('published_at')
+        //     ->select('slug', 'updated_at', 'image', 'title')
+        //     ->get();
 
-        foreach ($blogs as $blog) {
-            $url = URL::to('/blogs/' . $blog->slug);
-            $image = $blog->image ? asset('uploads/blogs/' . $blog->image) : null;
-            $sitemap .= $this->generateUrlBlock($url, $blog->updated_at, $image, $blog->title);
-        }
+        // foreach ($blogs as $blog) {
+        //     $url = URL::to('/blogs/' . $blog->slug);
+        //     $image = $blog->image ? asset('uploads/blogs/' . $blog->image) : null;
+        //     $sitemap .= $this->generateUrlBlock($url, $blog->updated_at, $image, $blog->title);
+        // }
 
         // Case Studies
         $caseStudies = CaseStudy::select('slug', 'updated_at')->get();
