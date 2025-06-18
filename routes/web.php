@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\BlogTagController;
 use App\Http\Controllers\admin\CaseStudyController;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\ContactController;
+use App\Http\Controllers\admin\ContactFormController;
 use App\Http\Controllers\admin\CyberSecurityFirstSectionController;
 use App\Http\Controllers\admin\CyberSecuritySecondSectionController;
 use App\Http\Controllers\admin\HomeController;
@@ -55,6 +56,7 @@ use Illuminate\Support\Str;
 
 Route::get('/', [FrontController::class, 'index'])->name('front.home');
 Route::get('/contact-us', [FrontController::class, 'contact'])->name('front.contact');
+Route::post('/contact-us', [FrontController::class, 'storeContactForm'])->name('contact_us.store');
 Route::get('/about-us', [FrontController::class, 'about'])->name('front.about');
 Route::get('/enterprise-solutions', [FrontController::class, 'products'])->name('front.products');
 
@@ -354,6 +356,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/jobs/{jobs}/edit', [JobController::class, 'edit'])->name('jobs.edit');
         Route::put('/jobs/{jobs}', [JobController::class, 'update'])->name('jobs.update');
         Route::delete('/jobs/{jobs}', [JobController::class, 'destroy'])->name('jobs.delete');
+
+
+        //contact messages
+        Route::get('/contact-messages', [ContactFormController::class, 'index'])->name('admin.contact.index');
+        Route::delete('/contact-messages/{id}', [ContactFormController::class, 'destroy'])->name('admin.contact.destroy');
+        Route::get('/contact-forms/export', [ContactFormController::class, 'export'])->name('admin.contact.export');
+       Route::get('/admin/contact/{id}', [ContactFormController::class, 'show'])->name('admin.contact.show');
+
+
+
 
 
 
