@@ -2,7 +2,7 @@
 
 @php
     $title = "Managing Director & CEO - Opus Technology Limited";
-    $description = "Learn more about the leadership at Opus Technology, featuring our Managing Director & CEO. Discover their vision, expertise, and commitment to driving innovation in the tech industry.";
+    $description = "Meet the leadership at Opus Technology—our CEO shares a bold vision, deep expertise, and a strong drive for innovation in the tech industry.";
     $keywords = "Managing Director, CEO, leadership, Opus Technology, company vision, innovation, tech industry, leadership insights";
 @endphp
 
