@@ -2,7 +2,7 @@
 
 @php
     $title = "System Solutions - Opus Technology Limited";
-    $description = "Opus Technology provides comprehensive system solutions that cater to businesses of all sizes. We offer system integration, automation, and optimization to streamline your operations and improve efficiency.";
+    $description = "Opus Technology offers comprehensive system solutions, including integration, automation, and optimization, to streamline operations and boost efficiency for businesses.";
     $keywords = "system solutions, system integration, business automation, IT optimization, Opus Technology, technology solutions, business systems, enterprise systems";
 @endphp
 

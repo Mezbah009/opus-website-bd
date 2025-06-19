@@ -3,7 +3,7 @@
 @php
     $title = 'Cyber Security Solutions - Opus Technology Limited';
     $description =
-        'Opus Technology offers robust cyber security solutions to protect your business from digital threats. Our services ensure your data, networks, and systems remain secure against evolving cyber risks.';
+        'Opus Technology provides strong cybersecurity solutions to protect your business from digital threats, ensuring your data, networks, and systems stay secure.';
     $keywords =
         'cyber security, digital security solutions, network security, data protection, cyber threats, security services, Opus Technology';
 @endphp

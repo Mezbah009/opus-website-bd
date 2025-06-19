@@ -2,7 +2,7 @@
 
 @php
     $title = "Our Services - Opus Technology Limited";
-    $description = "Explore the wide range of services offered by Opus Technology. From software development to digital marketing, we provide end-to-end solutions to drive your business success.";
+    $description = "Explore Opus Technology’s services, from software development to digital marketing. We offer end-to-end solutions to drive your business success.";
     $keywords = "IT services, software development, digital marketing, custom solutions, business solutions, Opus Technology, service provider, technology solutions";
 @endphp
 
