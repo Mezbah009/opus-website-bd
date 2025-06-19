@@ -3,7 +3,7 @@
 @php
     $title = 'Case Study - Opus Technology Limited';
     $description =
-        'Explore the case studies of how Opus Technology has helped businesses achieve remarkable results through our innovative technology solutions. Learn about our successful projects and their impact on various industries.';
+        'Explore Opus Technology’s case studies to see how our innovative solutions have helped businesses achieve remarkable results and impact various industries.';
     $keywords =
         'case study, technology solutions, business success, Opus Technology, case studies, technology impact, business transformation, project success';
 @endphp

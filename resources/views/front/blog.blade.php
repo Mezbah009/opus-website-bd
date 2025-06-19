@@ -3,7 +3,7 @@
 @php
     $title = 'Blog - Opus Technology Limited';
     $description =
-        'Read the latest blogs from Opus Technology, where we share insights on the latest trends, technological advancements, and industry news. Stay updated with expert opinions and thought leadership.';
+        'Read Opus Technology’s latest blogs for insights on trends, tech advancements, and industry news. Stay updated with expert opinions and thought leadership.';
     $keywords =
         'blogs, technology trends, industry news, Opus Technology, expert opinions, tech blogs, technology insights, thought leadership';
 @endphp

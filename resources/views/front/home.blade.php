@@ -3,9 +3,9 @@
 @php
     $title = 'Opus Technology Limited - Software & IT Solutions';
     $description =
-        'Opus Technology Limited is a leading software company in Bangladesh providing microfinance solutions, enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.';
+        'Opus Technology Limited is a leading software company in Bangladesh, providing microfinance, fintech, AI, ERP, HR payroll, and web/mobile app solutions.';
     $keywords =
-        'Software Company in Bangladesh, IT Solutions, Enterprise Software, Microfinance solutions, Fintech, AI, Cybersecurity, Mobile Apps, Web Development';
+        'Opus Technology, software company Bangladesh, IT solutions Bangladesh, fintech services, AI solutions, cybersecurity experts, enterprise software solutions, microfinance software, mobile app development, web development services, IT consultancy, digital transformation, technology services Bangladesh.';
 @endphp
 
 @section('content')

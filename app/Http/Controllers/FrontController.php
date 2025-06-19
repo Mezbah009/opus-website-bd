@@ -13,6 +13,7 @@ use App\Models\CaseStudy;
 use App\Models\Client;
 use App\Models\Comment;
 use App\Models\Contact;
+use App\Models\ContactForm;
 use App\Models\CyberSecurityFirstSection;
 use App\Models\CyberSecuritySecondSection;
 use App\Models\Demo;
@@ -255,9 +256,9 @@ class FrontController extends Controller
     // }
 
 
-    
 
-        //blog section
+
+    //blog section
     private function getSidebarData()
     {
         return [
@@ -528,5 +529,25 @@ class FrontController extends Controller
         }
 
         return view('front.jobs', ['jobs' => [], 'error' => $error]);
+    }
+
+
+    // Contact Form Submission
+    public function storeContactForm(Request $request)
+    {
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+
+        $contact = ContactForm::create($request->all());
+
+        // Optional: send a confirmation email
+        // Mail::to($contact->email)->send(new \App\Mail\ContactConfirmationMail($contact));
+
+        return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
     }
 }
