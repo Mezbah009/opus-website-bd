@@ -14,6 +14,7 @@ use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\ContactFormController;
 use App\Http\Controllers\admin\CyberSecurityFirstSectionController;
 use App\Http\Controllers\admin\CyberSecuritySecondSectionController;
+use App\Http\Controllers\admin\DemoController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\HomeFirstSectionController;
 use App\Http\Controllers\admin\HomeSecondSectionController;
@@ -347,8 +348,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/ai_solutions_second/{ai_solutions_second}', [AiSolutionController::class, 'destroySecondSection'])->name('aiSecondSection.destroy');
 
 
-
-
         // Jobs
         Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
         Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
@@ -362,8 +361,12 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/contact-messages', [ContactFormController::class, 'index'])->name('admin.contact.index');
         Route::delete('/contact-messages/{id}', [ContactFormController::class, 'destroy'])->name('admin.contact.destroy');
         Route::get('/contact-forms/export', [ContactFormController::class, 'export'])->name('admin.contact.export');
-       Route::get('/admin/contact/{id}', [ContactFormController::class, 'show'])->name('admin.contact.show');
+        Route::get('/admin/contact/{id}', [ContactFormController::class, 'show'])->name('admin.contact.show');
 
+        //demo request
+        Route::get('demos', [DemoController::class, 'index'])->name('demos.index');
+        Route::delete('demos/{id}', [DemoController::class, 'destroy'])->name('demos.destroy');
+        Route::get('demos/export', [DemoController::class, 'export'])->name('demos.export');
 
 
 

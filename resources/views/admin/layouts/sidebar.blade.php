@@ -92,7 +92,8 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('showcases.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-briefcase"></i> <!-- Represents services or business showcase -->
+                                <i class="nav-icon fas fa-briefcase"></i>
+                                <!-- Represents services or business showcase -->
                                 <p>Service Showcase</p>
                             </a>
                         </li>
@@ -166,7 +167,7 @@
                     </a>
                 </li>
 
-              <!-- Blogs menu with submenus -->
+                <!-- Blogs menu with submenus -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-pen-fancy"></i>
@@ -239,6 +240,12 @@
                     <a href="{{ route('admin.contact.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-envelope"></i>
                         <p>Contact Messages</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('demos.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-video"></i>
+                        <p>Demo Requests</p>
                     </a>
                 </li>
                 <li class="nav-item">

@@ -131,7 +131,7 @@
                         <img src="{{ asset('uploads/first_section/' . $product_first_section->logo) }}" loading="lazy"
                             alt="Logo">
                         <h2>{{ $product_first_section->title }}</h2>
-                        <button class="btn btn-primary btn-lg">Request Demo</button>
+                        <a href="{{ route('front.demo') }}" class="btn btn-primary btn-lg">Request Demo</a>
                         @if ($product_first_section->brochure)
                             <a href="{{ asset('uploads/first_section/' . $product_first_section->brochure) }}"
                                 class="btn btn-secondary btn-lg" target="_blank">Download Brochure</a>
