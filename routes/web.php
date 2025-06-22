@@ -102,7 +102,7 @@ Route::post('/blog/comment/store', [FrontController::class, 'storeComment'])->na
 
 // Demo route
 Route::get('/request-demo', [FrontController::class, 'demo'])->name('front.demo');
-Route::post('/save-demo', [FrontController::class, 'store'])->name('demo.store');
+Route::post('/save-demo', [FrontController::class, 'storeDemo'])->name('demo.store');
 
 
 Route::group(['prefix' => 'admin'], function () {

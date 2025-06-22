@@ -43,6 +43,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\ContactFormSubmitted;
+use App\Mail\DemoFormSubmitted;
 
 class FrontController extends Controller
 {
@@ -461,7 +462,7 @@ class FrontController extends Controller
         return view('front.demo', compact('products'));
     }
 
-    public function store(Request $request)
+    public function storeDemo(Request $request)
     {
         $request->validate([
             'first_name' => 'required|string|max:255',
@@ -472,7 +473,8 @@ class FrontController extends Controller
             'org_name' => 'required|string|max:255',
         ]);
 
-        Demo::create($request->all());
+        $demo = Demo::create($request->all());
+        Mail::to('mezba@opus-bd.com')->send(new DemoFormSubmitted($demo));
 
         return redirect()->back()->with('success', 'Your message has been sent!');
     }
