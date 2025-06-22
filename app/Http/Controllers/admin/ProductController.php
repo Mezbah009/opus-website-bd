@@ -65,7 +65,7 @@ class ProductController extends Controller
             'fin_cat' => 'nullable|string',
             'meta_title' => 'nullable|string',
             'meta_description' => 'nullable|string',
-            'meta_keywords' => 'nullable|string|max:300',
+            'meta_keywords' => 'nullable|string',  // removed max length limit
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -133,7 +133,7 @@ class ProductController extends Controller
             'slug' => 'nullable|string',
             'meta_title' => 'nullable|string',
             'meta_description' => 'nullable|string',
-            'meta_keywords' => 'nullable|string|max:300',
+            'meta_keywords' => 'nullable|string',  // removed max length limit
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
