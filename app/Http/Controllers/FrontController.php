@@ -42,6 +42,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use App\Mail\ContactFormSubmitted;
 
 class FrontController extends Controller
 {
@@ -533,9 +534,9 @@ class FrontController extends Controller
 
 
     // Contact Form Submission
+
     public function storeContactForm(Request $request)
     {
-
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email',
@@ -545,8 +546,8 @@ class FrontController extends Controller
 
         $contact = ContactForm::create($request->all());
 
-        // Optional: send a confirmation email
-        // Mail::to($contact->email)->send(new \App\Mail\ContactConfirmationMail($contact));
+        // Send to admin email
+        Mail::to('mezba@opus-bd.com')->send(new ContactFormSubmitted($contact));
 
         return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
     }
