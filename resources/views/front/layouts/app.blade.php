@@ -14,7 +14,10 @@
     <meta name="author" content="Opus Technology Limited">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="{{ url()->current() }}">
+    {{-- <link rel="canonical" href="{{ url()->current() }}"> --}}
+    <link rel="canonical" href="{{ 'https://opus-bd.com' . request()->getRequestUri() }}">
+    
+
 
 
     <!-- Open Graph Meta Tags -->
@@ -114,13 +117,7 @@
 
 
 
-    <!-- =======================================================
-  * Template Name: Mamba
-  * Template URL: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-======================================================== -->
+
 
 
     <!-- Google Tag Manager -->
