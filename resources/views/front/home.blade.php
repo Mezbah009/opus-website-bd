@@ -39,7 +39,7 @@
                             data-bg="{{ asset('uploads/slider/' . $sliders->image) }}">
                             <div class="carousel-container">
                                 <div class="carousel-content container">
-                                    <h2 class="animate__animated animate__fadeInDown">{{ $sliders->title }}</h2>
+                                    <h1 class="animate__animated animate__fadeInDown">{{ $sliders->title }}</h1>
                                     <p class="animate__animated animate__fadeInUp">{{ $sliders->description }}</p>
                                     <a href="{{ $sliders->link }}"
                                         class="btn-get-started animate__animated animate__fadeInUp scrollto">
@@ -125,7 +125,7 @@
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
                         <div class="section-title">
-                            <h2>{{ $home_first_sections->title }}</h2>
+                            <h1>{{ $home_first_sections->title }}</h1>
                             <p>{!! $home_first_sections->description !!} </p>
                             <a href="{{ $home_first_sections->link }}"
                                 class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_first_sections->button_name }}</a>
@@ -289,7 +289,7 @@ alt="">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Our Services</h2>
+                <h1>Our Services</h1>
                 <p>Our company specializes in creating bespoke software solutions across
                     various domains, ensuring top-quality, efficiency, and innovation in
                     each project. Our expertise spans custom software development,
@@ -319,7 +319,7 @@ alt="">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="section-title">
-                <h2>Our Portfolio</h2>
+                <h1>Our Portfolio</h1>
                 <p>Our fintech portfolio features innovative solutions in payment processing, risk management, and financial
                     services, enhancing efficiency, security, and user experience for businesses and consumers.</p>
             </div>
@@ -339,7 +339,8 @@ alt="">
                     <div class="col-lg-4 col-md-6 portfolio-item {{ $section->button_name }}">
                         <div class="portfolio-wrap" data-url="{{ route('product.show', ['slug' => $section->link]) }}"
                             style="cursor: pointer;">
-                            <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid" alt="{{ $section->title }}">
+                            <img src="{{ asset('uploads/first_section/' . $section->logo) }}" class="img-fluid"
+                                alt="{{ $section->title }}">
                             <div class="portfolio-info">
                                 {{-- <h4>{{$section->title}}</h4>
                         <p style="word-wrap: break-word; padding-right:10px; padding-left:10px;">
@@ -364,8 +365,8 @@ alt="">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Industries
-                    We Serve</h2>
+                <h1>Industries
+                    We Serve</h1>
                 <p>At Opus Technology, we specialize in crafting custom software solutions
                     that address the unique needs of various industries. From finance and
                     healthcare to education, retail, wholesale, and beyond, our expertise
@@ -542,7 +543,7 @@ alt="{{ $member->name }}" height="300px" width="350px">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
+                <h1>Frequently Asked Questions</h1>
             </div>
 
             <div class="row  d-flex align-items-stretch">
@@ -594,7 +595,7 @@ alt="{{ $member->name }}" height="300px" width="350px">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title text-center">
-                        <h3>They Trust Us</h3>
+                        <h1>They Trust Us</h1>
                         {{-- <p>Duis aute irure dolor in reprehenderit in voluptate</p> --}}
                     </div>
                 </div>
@@ -604,8 +605,8 @@ alt="{{ $member->name }}" height="300px" width="350px">
                     @foreach ($clients as $client)
                         <div class="col-md-12">
                             <a href="{{ $client->link }}" target="_blank">
-                                <img src="{{ asset('uploads/first_section/' . $client->logo) }}" alt="Client Logo" lazy="loading"
-                                    width="150px">
+                                <img src="{{ asset('uploads/first_section/' . $client->logo) }}" alt="Client Logo"
+                                    lazy="loading" width="150px">
                             </a>
 
                         </div>

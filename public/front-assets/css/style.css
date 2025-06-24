@@ -463,6 +463,13 @@ h6,
     font-weight: 900;
 }
 
+#hero h1 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 48px;
+    font-weight: 900;
+}
+
 #hero p {
     width: 80%;
     animation-delay: 0.4s;
@@ -577,6 +584,14 @@ section {
 }
 
 .section-title h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    color: #5c768d;
+}
+
+.section-title h1 {
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 20px;

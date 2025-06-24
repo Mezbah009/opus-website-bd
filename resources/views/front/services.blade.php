@@ -24,7 +24,7 @@
 <div class="container" data-aos="fade-up" style="box-shadow: none;">
     @foreach ($services as $index => $service)
     <div class="section-title" style="padding-top: 60px; padding-bottom: 0 !important;">
-        <h2>{{ $service->title }}</h2>
+        <h1>{{ $service->title }}</h1>
     </div>
 
     <div id="about" class="about showcase-item {{ $index % 2 == 0 ? 'left' : 'right' }}">

@@ -379,7 +379,7 @@
 
     <section class="counts section-bg">
         <div class="section-title" style="padding-top: 0px">
-            <h2>Our Journey Creating Memories</h2>
+            <h1>Our Journey Creating Memories</h1>
         </div>
         <div class="container">
             <div class="timeline">
@@ -405,8 +405,8 @@
 
     <section>
         <div class="section-title" style="padding-top: 60px">
-            <h2></h2>
-            <h2>Global Presence</h2>
+
+            <h1>Global Presence</h1>
         </div>
 
         <div id="about" class="about">
@@ -444,7 +444,7 @@
 
     <section class="service-showcase">
         <div class="section-title">
-            <h2>Service Showcase</h2>
+            <h1>Service Showcase</h1>
         </div>
         <div class="container">
             @foreach ($showcases as $index => $showcase)
@@ -467,8 +467,7 @@
     {{-- Accreditation section --}}
 
     <div class="section-title" style="padding-top: 60px">
-        <h2></h2>
-        <h2>Accreditation</h2>
+        <h1>Accreditation</h1>
     </div>
 
     <div id="about" class="about">
@@ -496,8 +495,7 @@
     {{-- Awards section --}}
 
     <div class="section-title">
-        <h2></h2>
-        <h2>Awards</h2>
+        <h1>Awards</h1>
     </div>
 
     <div id="about" class="about">
@@ -522,8 +520,7 @@
 
     <section>
         <div class="section-title" style="padding-top: 30px">
-            <h2></h2>
-            <h2>Quality Management</h2>
+            <h1>Quality Management</h1>
         </div>
 
         <div id="about" class="about">
@@ -551,7 +548,7 @@
 
     {{-- Top management --}}
     <div class="section-title" style="padding-top: 30px">
-        <h2>Our Team</h2>
+        <h1>Our Team</h1>
         <h3><strong>Top Management</strong></h3>
     </div>
 
@@ -586,7 +583,7 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Core Management Team</h2>
+            <h1>Core Management Team</h1>
             <p>Our team consists of skilled professionals dedicated to innovation, excellence, and delivering top-notch
                 solutions.</p>
         </div><!-- End Section Title -->
