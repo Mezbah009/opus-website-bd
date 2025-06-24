@@ -18,7 +18,7 @@
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="section-title">
-            <h2>Our Fintech Products</h2>
+            <h1>Our Fintech Products</h1>
             <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company. We provide state-of-the-art fintech solutions designed to transform financial services and empower businesses to thrive in the digital economy.</p>
         </div>
 

@@ -22,7 +22,7 @@
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="section-title">
-            <h2>Our System Solutions</h2>
+            <h1>Our System Solutions</h1>
             <p>Our server monitoring tools ServerCop and Database monitoring tools
                 DBPilot, ensure optimal performance and security. Track key metrics,
                 identify issues proactively, and optimize your IT infrastructure.</p>
