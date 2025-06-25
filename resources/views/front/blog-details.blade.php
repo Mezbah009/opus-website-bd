@@ -1,9 +1,11 @@
 @extends('front.layouts.app')
 
 @php
-    $title = "Blog - Opus Technology Limited";
-    $description = "Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.";
-    $keywords = "Software Company in Bangladesh, IT Solutions, Enterprise Software, Fintech, AI, Cybersecurity, Mobile Apps, Web Development";
+    $title = $blog->title . ' - Opus Technology Limited';
+    $description = $blog->excerpt
+        ? Str::limit(strip_tags($blog->excerpt), 160)
+        : Str::limit(strip_tags($blog->content), 160);
+    $keywords = implode(', ', $blog->tags->pluck('name')->toArray()); // optional if you have tags
 @endphp
 
 @section('content')
