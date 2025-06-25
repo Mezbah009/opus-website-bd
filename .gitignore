@@ -1,3 +1,4 @@
+# Ignore specific files and directories
 .phpunit.cache
 /node_modules
 /public/build
@@ -5,7 +6,7 @@
 /public/storage
 /public/uploads
 /storage/*.key
-# /vendor ← Removed to allow committing vendor folder
+/vendor
 .env
 .env.backup
 .env.production
