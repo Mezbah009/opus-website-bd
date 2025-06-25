@@ -86,8 +86,8 @@ Route::get('/services', [FrontController::class, 'services'])->name('front.servi
 // blog Frontend Routes
 Route::get('/blog', [FrontController::class, 'blog'])->name('front.blog');
 Route::get('/blog/search', [FrontController::class, 'searchBlog'])->name('front.blog.search');
-Route::get('/blogs/category/{id}', [FrontController::class, 'categoryWiseBlog'])->name('front.blog.category');
-Route::get('/blogs/tag/{id}', [FrontController::class, 'tagWiseBlog'])->name('front.blog.tag');
+Route::get('/blog/category/{id}', [FrontController::class, 'categoryWiseBlog'])->name('front.blog.category');
+Route::get('/blog/tag/{id}', [FrontController::class, 'tagWiseBlog'])->name('front.blog.tag');
 Route::get('/blog/{slug}', [FrontController::class, 'blogDetails'])->name('front.blog.details');
 Route::post('/blog/comment/store', [FrontController::class, 'storeComment'])->name('blog.comment.store');
 
