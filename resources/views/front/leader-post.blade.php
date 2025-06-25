@@ -1,9 +1,22 @@
 @extends('front.layouts.app')
 
 @php
-    $title = "Managing Director & CEO - Opus Technology Limited";
-    $description = "Meet the leadership at Opus Technology—our CEO shares a bold vision, deep expertise, and a strong drive for innovation in the tech industry.";
-    $keywords = "Managing Director, CEO, leadership, Opus Technology, company vision, innovation, tech industry, leadership insights";
+    use Illuminate\Support\Str;
+
+    $title = ($leaderPost->name ?? 'Leader') . ' - ' . ($leaderPost->designation ?? '') . ' | Opus Technology Limited';
+
+    $description = $leaderPost->sub_description
+        ? Str::limit(strip_tags($leaderPost->sub_description), 160)
+        : Str::limit(strip_tags($leaderPost->description), 160);
+
+    $keywords = implode(', ', array_filter([
+        $leaderPost->name,
+        $leaderPost->designation,
+        'Leadership',
+        'Opus Technology',
+        'Tech Industry',
+        'Innovation'
+    ]));
 @endphp
 
 @section('content')
