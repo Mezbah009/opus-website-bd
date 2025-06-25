@@ -392,3 +392,13 @@ Route::get('/test', function (Request $request) {
 
 Route::get('/sitemap.xml', [SitemapController::class, 'generate']);
 Route::get('/robots.txt', [SitemapController::class, 'robots']);
+
+
+
+
+Route::get('/clear-config', function () {
+    \Artisan::call('config:clear');
+    \Artisan::call('cache:clear');
+    \Artisan::call('config:cache');
+    return 'Config and cache cleared';
+});
