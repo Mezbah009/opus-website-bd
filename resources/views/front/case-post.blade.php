@@ -1,11 +1,12 @@
 @extends('front.layouts.app')
 
 @php
-    $title = "Case Study - Opus Technology Limited";
-    $description = "Opus Technology Limited is a leading software company in Bangladesh providing enterprise solutions, fintech, AI, cybersecurity, and IT consultancy.";
-    $keywords = "Software Company in Bangladesh, IT Solutions, Enterprise Software, Fintech, AI, Cybersecurity, Mobile Apps, Web Development";
+    $title = $caseStudyPost->title . ' - Opus Technology Limited';
+    $description = $caseStudyPost->excerpt
+        ? Str::limit(strip_tags($caseStudyPost->excerpt), 160)
+        : Str::limit(strip_tags($caseStudyPost->description), 160);
+    $keywords = $caseStudyPost->title; // Optional: replace with tags if you use them
 @endphp
-
 
 @section('content')
     <br><br>
