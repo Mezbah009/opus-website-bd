@@ -315,7 +315,7 @@
         }
     </script>
 
-
+    {{--
     <script type="application/ld+json">
     {
         "@context": "https://schema.org/",
@@ -335,5 +335,30 @@
         "availability": "https://schema.org/InStock"
         }
     }
-    </script>
+    </script> --}}
+@endsection
+
+@section('scripts')
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ $sections->title }}",
+  "operatingSystem": "Web-based",
+  "applicationCategory": "FinanceApplication",
+  "url": "{{ url()->current() }}",
+  "image": "{{ asset('uploads/first_section/' . $sections->logo) }}",
+  "description": "{{ Str::limit(strip_tags($sections->description), 200) }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Opus Technology Limited",
+    "url": "https://opus-bd.com"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "25"
+  }
+}
+</script>
 @endsection
