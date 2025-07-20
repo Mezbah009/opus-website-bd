@@ -116,7 +116,7 @@
                 <div class="row no-gutters">
                     <div class="col-lg-6 video-box">
                         <img src="{{ asset('uploads/first_section/' . $home_first_sections->image) }}" class="img-fluid"
-                            loading="lazy" alt="">
+                            loading="lazy" alt="{{ $home_first_sections->title }}">
                         <a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true" target="_blank" rel="noopener noreferrer"></a>
                     </div>
@@ -125,7 +125,7 @@
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
                         <div class="section-title">
-                            <h1>{{ $home_first_sections->title }}</h1>
+                            <h2>{{ $home_first_sections->title }}</h2>
                             <p>{!! $home_first_sections->description !!} </p>
                             <a href="{{ $home_first_sections->link }}"
                                 class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ $home_first_sections->button_name }}</a>
@@ -289,7 +289,7 @@ alt="">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h1>Our Services</h1>
+                <h2>Our Services</h2>
                 <p>Our company specializes in creating bespoke software solutions across
                     various domains, ensuring top-quality, efficiency, and innovation in
                     each project. Our expertise spans custom software development,
@@ -302,7 +302,7 @@ alt="">
                     <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                         <div class="icon"> <a href="{{ route('front.services') }}"><img
                                     src="{{ asset('uploads/first_section/' . $home_services_sections->icon) }}"
-                                    class="img-fluid" alt="" width="50%"> </a></div>
+                                    class="img-fluid" alt="{{ $home_services_sections->title }}" width="50%"> </a></div>
                         <h2 class="title"><a
                                 href="{{ route('front.services') }}">{{ $home_services_sections->title }}</a></h2>
                         {{-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
@@ -319,7 +319,7 @@ alt="">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="section-title">
-                <h1>Our Portfolio</h1>
+                <h2>Our Portfolio</h2>
                 <p>Our fintech portfolio features innovative solutions in payment processing, risk management, and financial
                     services, enhancing efficiency, security, and user experience for businesses and consumers.</p>
             </div>
@@ -365,8 +365,8 @@ alt="">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h1>Industries
-                    We Serve</h1>
+                <h2>Industries
+                    We Serve</h2>
                 <p>At Opus Technology, we specialize in crafting custom software solutions
                     that address the unique needs of various industries. From finance and
                     healthcare to education, retail, wholesale, and beyond, our expertise
@@ -376,66 +376,66 @@ alt="">
             <div class="row">
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/1.png') }}"
-                                class="img-fluid" alt="" width="50%"> </a></div>
+                                class="img-fluid" alt="Financial" width="50%"> </a></div>
                     <h2 class="title"><a href="">Financial</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/2.png') }}"
-                                class="img-fluid" alt="" width="50%"> </a></div>
+                                class="img-fluid" alt="Healthcare" width="50%"> </a></div>
                     <h2 class="title"><a href="">Healthcare</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/3.png') }}"
-                                class="img-fluid" alt="" width="50%"> </a></div>
+                                class="img-fluid" alt="Education" width="50%"> </a></div>
                     <h2 class="title"><a href="">Education</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/4.png') }}"
-                                class="img-fluid" alt="" width="50%"> </a></div>
+                                class="img-fluid" alt="Government" width="50%"> </a></div>
                     <h2 class="title"><a href="">Transportation</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/5.png') }}"
-                                class="img-fluid" alt="" width="50%"> </a></div>
+                                class="img-fluid" alt="Manufacturing" width="50%"> </a></div>
                     <h2 class="title"><a href="">Manufacturing</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/6.png') }}"
-                                class="img-fluid" alt="" width="50%"> </a></div>
+                                class="img-fluid" alt="Logistics" width="50%"> </a></div>
                     <h2 class="title"><a href="">Wholesale</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/7.png') }}"
-                                class="img-fluid" alt="" width="50%"> </a></div>
+                                class="img-fluid" alt="Retail" width="50%"> </a></div>
                     <h2 class="title"><a href="">Retail</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/8.png') }}"
-                                class="img-fluid" alt="" width="50%"> </a></div>
+                                class="img-fluid" alt="Wholesale" width="50%"> </a></div>
                     <h2 class="title"><a href="">Construction</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img src="{{ asset('front-assets/img/industrylogo/9.png') }}"
-                                class="img-fluid" alt="" width="50%"> </a></div>
+                                class="img-fluid" alt="Entertainment" width="50%"> </a></div>
                     <h2 class="title"><a href="">Entertainment</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img
                                 src="{{ asset('front-assets/img/industrylogo/10.png') }}" class="img-fluid"
-                                alt="" width="50%"> </a></div>
+                                alt="Garments" width="50%"> </a></div>
                     <h2 class="title"><a href="">Garments</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img
                                 src="{{ asset('front-assets/img/industrylogo/11.png') }}" class="img-fluid"
-                                alt="" width="50%"> </a></div>
+                                alt="Tourism" width="50%"> </a></div>
                     <h2 class="title"><a href="">Tourism</a></h2>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                     <div class="icon"> <a href=""><img
                                 src="{{ asset('front-assets/img/industrylogo/12.png') }}" class="img-fluid"
-                                alt="" width="50%"> </a></div>
-                    <h2 class="title"><a href="">Engery</a></h2>
+                                alt="Energy" width="50%"> </a></div>
+                    <h2 class="title"><a href="">Energy</a></h2>
                 </div>
             </div>
         </div>
@@ -543,7 +543,7 @@ alt="{{ $member->name }}" height="300px" width="350px">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h1>Frequently Asked Questions</h1>
+                <h2>Frequently Asked Questions</h2>
             </div>
 
             <div class="row  d-flex align-items-stretch">
@@ -595,7 +595,7 @@ alt="{{ $member->name }}" height="300px" width="350px">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title text-center">
-                        <h1>They Trust Us</h1>
+                        <h2>They Trust Us</h2>
                         {{-- <p>Duis aute irure dolor in reprehenderit in voluptate</p> --}}
                     </div>
                 </div>
