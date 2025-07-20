@@ -277,12 +277,15 @@
                 <div class="clients">
                     @foreach ($product_seventh_sections as $product_seventh_section)
                         <div class="col-md-12">
-                            <a href="{{ $product_seventh_section->link }}" target="_blank">
+                            <a href="{{ $product_seventh_section->link }}" target="_blank"
+                                aria-label="Visit {{ $product_seventh_section->title ?? 'Partner Website' }}">
                                 <img src="{{ asset('uploads/first_section/' . $product_seventh_section->image) }}"
-                                    loading="lazy" alt="Client Logo" width="150px">
+                                    loading="lazy" alt="{{ $product_seventh_section->title ?? 'Partner Logo' }}"
+                                    title="{{ $product_seventh_section->title ?? '' }}" width="150px">
                             </a>
                         </div>
                     @endforeach
+
                 </div>
             </div>
 
@@ -314,7 +317,6 @@
             window.location.href = "{{ route('front.demo') }}";
         }
     </script>
-
 @endsection
 
 @section('scripts')
