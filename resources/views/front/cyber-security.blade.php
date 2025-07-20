@@ -91,7 +91,7 @@
                             </div>
                             <div class="col-lg-6 video-box">
                                 <img src="{{ asset($first_section->image) }}" class="img-fluid" loading="lazy"
-                                    alt="">
+                                    alt="Cyber Security Solutions">
                             </div>
                         </div>
                     @endforeach

@@ -315,27 +315,6 @@
         }
     </script>
 
-    {{--
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org/",
-        "@type": "SoftwareApplication",
-        "name": "{{ $sections->title }}",
-        "url": "{{ url()->current() }}",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web-based",
-        "creator": {
-        "@type": "Organization",
-        "name": "Opus Technology Limited"
-        },
-        "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "price": "{{ $sections->price ?? 'Contact for Pricing' }}",
-        "availability": "https://schema.org/InStock"
-        }
-    }
-    </script> --}}
 @endsection
 
 @section('scripts')
