@@ -99,7 +99,7 @@
 
         <div class="container">
             <div class="section-title">
-                <h1>Case Study</h1>
+                <h2>Case Study</h2>
                 <p>Opus Technology Ltd is a leading Software Development and IT consulting service provider company.
                     Combining unparalleled experience, domain expertise, best practices & comprehensive capabilities across
                     various industries & business functions, it collaborates with customers to help them effectively address

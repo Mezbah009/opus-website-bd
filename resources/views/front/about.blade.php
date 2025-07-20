@@ -379,7 +379,7 @@
 
     <section class="counts section-bg">
         <div class="section-title" style="padding-top: 0px">
-            <h1>Our Journey Creating Memories</h1>
+            <h2>Our Journey Creating Memories</h2>
         </div>
         <div class="container">
             <div class="timeline">
@@ -406,7 +406,7 @@
     <section>
         <div class="section-title" style="padding-top: 60px">
 
-            <h1>Global Presence</h1>
+            <h2>Global Presence</h2>
         </div>
 
         <div id="about" class="about">
@@ -444,7 +444,7 @@
 
     <section class="service-showcase">
         <div class="section-title">
-            <h1>Service Showcase</h1>
+            <h2>Service Showcase</h2>
         </div>
         <div class="container">
             @foreach ($showcases as $index => $showcase)
@@ -467,7 +467,7 @@
     {{-- Accreditation section --}}
 
     <div class="section-title" style="padding-top: 60px">
-        <h1>Accreditation</h1>
+        <h2>Accreditation</h2>
     </div>
 
     <div id="about" class="about">
@@ -495,7 +495,7 @@
     {{-- Awards section --}}
 
     <div class="section-title">
-        <h1>Awards</h1>
+        <h2>Awards</h2>
     </div>
 
     <div id="about" class="about">
@@ -504,7 +504,7 @@
                 <div class="row no-gutters">
                     <div class="col-lg-12 video-box">
                         <img src="{{ asset('uploads/first_section/' . $award->image) }}" class="img-fluid"
-                            loading="lazy" alt="">
+                            loading="lazy" alt="Awards">
                     </div>
 
                 </div>
@@ -520,7 +520,7 @@
 
     <section>
         <div class="section-title" style="padding-top: 30px">
-            <h1>Quality Management</h1>
+            <h2>Quality Management</h2>
         </div>
 
         <div id="about" class="about">
@@ -548,7 +548,7 @@
 
     {{-- Top management --}}
     <div class="section-title" style="padding-top: 30px">
-        <h1>Our Team</h1>
+        <h2>Our Team</h2>
         <h3><strong>Top Management</strong></h3>
     </div>
 
@@ -583,7 +583,7 @@
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h1>Core Management Team</h1>
+            <h2>Core Management Team</h2>
             <p>Our team consists of skilled professionals dedicated to innovation, excellence, and delivering top-notch
                 solutions.</p>
         </div><!-- End Section Title -->

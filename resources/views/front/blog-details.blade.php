@@ -31,8 +31,8 @@
                                     class="img-fluid">
                             </div>
 
-                            <h2 class="title">{{ $blog->title }}
-                            </h2>
+                            <h1 class="title">{{ $blog->title }}
+                            </h1>
 
                             <div class="meta-top">
                                 <ul>
