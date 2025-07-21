@@ -63,6 +63,16 @@
             /* Adjust margin as needed */
         }
 
+
+        .custom-section h1 {
+            color: rgb(0, 0, 0);
+            /* Text color */
+            font-size: 24px;
+            /* Font size */
+            margin-bottom: 20px;
+            /* Adjust margin as needed */
+        }
+
         .custom-section .btn-download {
             background-color: #fff;
             /* Button background color */
@@ -130,7 +140,7 @@
                     <div class="carousel-content">
                         <img src="{{ asset('uploads/first_section/' . $product_first_section->logo) }}" loading="lazy"
                             alt="Logo">
-                        <h2>{{ $product_first_section->title }}</h2>
+                        <h1>{{ $product_first_section->title }}</h1>
                         <a href="{{ route('front.demo') }}" class="btn btn-primary btn-lg">Request Demo</a>
                         @if ($product_first_section->brochure)
                             <a href="{{ asset('uploads/first_section/' . $product_first_section->brochure) }}"
@@ -252,7 +262,7 @@
                 <div class="row no-gutters">
                     <div class="col-lg-12 d-flex flex-column justify-content-center about-content">
                         <div class="section-title">
-                            <h1>{{ $product_sixth_section->title }}</h1>
+                            <h2>{{ $product_sixth_section->title }}</h2>
                             <p>{!! $product_sixth_section->description !!} </p>
                         </div>
                     </div>
