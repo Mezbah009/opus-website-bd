@@ -21,6 +21,32 @@
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
 
+            <!-- Modal -->
+            <div x-show="showModal" x-transition
+                class="fixed inset-0 flex items-center justify-center z-50 bg-white bg-opacity-50">
+
+                <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative" @click.away="showModal = false"
+                    style="padding: 20px;">
+                    <h2 class="text-xl font-semibold mb-4">Contact Message Details</h2>
+
+                    <template x-if="selectedMessage">
+                        <div class="space-y-2">
+                            <p><strong>Name:</strong> <span x-text="selectedMessage.name"></span></p>
+                            <p><strong>Email:</strong> <span x-text="selectedMessage.email"></span></p>
+                            <p><strong>Subject:</strong> <span x-text="selectedMessage.subject"></span></p>
+                            <p><strong>Message:</strong></p>
+                            <p x-text="selectedMessage.message" class="whitespace-pre-line bg-gray-100 p-2 rounded"></p>
+                        </div>
+                    </template>
+
+                    <div class="mt-4 text-right">
+                        <button class="btn btn-secondary" @click="showModal = false">Close</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Modal -->
+
             <div class="card">
                 <div class="card-body p-0">
                     <table class="table table-bordered table-hover">
@@ -78,29 +104,7 @@
                 </div>
             </div>
 
-            <!-- Modal -->
-            <div x-show="showModal" x-transition
-                class="fixed inset-0 flex items-center justify-center z-50 bg-white bg-opacity-50">
 
-                <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative" @click.away="showModal = false"
-                    style="padding: 20px;">
-                    <h2 class="text-xl font-semibold mb-4">Contact Message Details</h2>
-
-                    <template x-if="selectedMessage">
-                        <div class="space-y-2">
-                            <p><strong>Name:</strong> <span x-text="selectedMessage.name"></span></p>
-                            <p><strong>Email:</strong> <span x-text="selectedMessage.email"></span></p>
-                            <p><strong>Subject:</strong> <span x-text="selectedMessage.subject"></span></p>
-                            <p><strong>Message:</strong></p>
-                            <p x-text="selectedMessage.message" class="whitespace-pre-line bg-gray-100 p-2 rounded"></p>
-                        </div>
-                    </template>
-
-                    <div class="mt-4 text-right">
-                        <button class="btn btn-secondary" @click="showModal = false">Close</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 @endsection
