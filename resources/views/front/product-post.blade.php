@@ -15,121 +15,8 @@
 
 
 
+
 @section('content')
-    <style>
-        /* CSS Styling */
-        .custom-section {
-            padding: 100px;
-            /* Adjust padding as needed */
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .custom-section::before {
-            content: "";
-            background-color: rgba(13 30 45 / 4%);
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            overflow: hidden;
-        }
-
-        .custom-section .container {
-            position: relative;
-            z-index: 1;
-            text-align: left;
-            padding-top: 150px;
-            /* Center align content */
-        }
-
-        .custom-section img {
-            max-height: 100px;
-            /* Set max height for the logo */
-            margin-bottom: 20px;
-            /* Adjust margin as needed */
-        }
-
-        .custom-section h2 {
-            color: rgb(0, 0, 0);
-            /* Text color */
-            font-size: 24px;
-            /* Font size */
-            margin-bottom: 20px;
-            /* Adjust margin as needed */
-        }
-
-
-        .custom-section h1 {
-            color: rgb(0, 0, 0);
-            /* Text color */
-            font-size: 24px;
-            /* Font size */
-            margin-bottom: 20px;
-            /* Adjust margin as needed */
-        }
-
-        .custom-section .btn-download {
-            background-color: #fff;
-            /* Button background color */
-            color: #333;
-            /* Button text color */
-            padding: 10px 20px;
-            /* Adjust padding as needed */
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            /* Font size */
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .custom-section .btn-download:hover {
-            background-color: #eee;
-            /* Button hover background color */
-        }
-
-
-        /* Request Demo Button */
-        .btn-primary {
-            background-color: #0E72B4;
-            color: #ffffff;
-            border-radius: 0px;
-            /* Add rounded corners */
-            transition: background-color 0.3s ease, color 0.3s ease;
-            margin-top: 10px;
-            padding: 10px;
-            /* Smooth transition for hover effects */
-        }
-
-        .btn-primary:hover {
-            background-color: #0D4472;
-            /* Darker shade for hover */
-            color: #ffffff;
-        }
-
-        /* Download Brochure Button */
-        .btn-secondary {
-            background-color: rgb(255, 255, 255);
-            color: #0D4472;
-            border-radius: 0px;
-            /* Add rounded corners */
-            transition: background-color 0.3s ease, color 0.3s ease;
-            margin-top: 10px;
-            padding: 10px;
-        }
-
-        .btn-secondary:hover {
-            background-color: #0D4472;
-            /* Darker shade for hover */
-            color: #ffffff;
-        }
-    </style>
-
     {{-- first Section --}}
 
     <div class="" data-aos="">
@@ -331,25 +218,35 @@
 
 @section('scripts')
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "{{ $sections->title }}",
-  "operatingSystem": "Web-based",
-  "applicationCategory": "FinanceApplication",
-  "url": "{{ url()->current() }}",
-  "image": "{{ asset('uploads/first_section/' . $sections->logo) }}",
-  "description": "{{ Str::limit(strip_tags($sections->description), 200) }}",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Opus Technology Limited",
-    "url": "https://opus-bd.com"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.7",
-    "reviewCount": "25"
-  }
+    {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "{{ $sections->title }}",
+    "operatingSystem": "Web-based",
+    "applicationCategory": "BusinessApplication",
+    "softwareVersion": "v3.2",
+    "url": "{{ url()->current() }}",
+    "image": "{{ asset('uploads/first_section/' . $sections->logo) }}",
+    "description": "{{ Str::limit(strip_tags($sections->description), 200) }}",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Opus Technology Limited",
+        "url": "https://opus-bd.com"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "25"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "Contact for pricing",
+        "priceCurrency": "BDT",
+        "availability": "https://schema.org/InStock"
+    },
+    "datePublished": "2024-10-01",
+    "dateModified": "2025-07-28"
 }
 </script>
+
 @endsection
