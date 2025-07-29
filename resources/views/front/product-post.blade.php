@@ -194,7 +194,7 @@
                                     <img src="{{ asset('uploads/first_section/' . $product_third_section->icon) }}"
                                         loading="lazy" alt="{{ $product_third_section->title }}" width="80px" style="padding: 8px">
                                 @endif
-                                <h4>{{ $product_third_section->title }}</h4>
+                                <h2 style="font-size: 23px;">{{ $product_third_section->title }}</h2>
                                 <h5>{!! $product_third_section->description !!}</h5>
                             </div>
                         </div>
@@ -241,8 +241,8 @@
                                     <img src="{{ asset('uploads/first_section/' . $product_fifth_section->icon) }}"
                                         loading="lazy" alt="{{ $product_fifth_section->title }}" width="80px"
                                         style="padding: 8px; display: block; margin: 0 auto;">
-                                    <h3 style="text-align:center; margin-bottom: 10px;">{{ $product_fifth_section->title }}
-                                    </h3>
+                                    <h2 style="text-align:center; margin-bottom: 10px; font-size: 23px;">{{ $product_fifth_section->title }}
+                                    </h2>
                                     <p>{!! $product_fifth_section->description !!}
                                     </p>
                                 </div>
