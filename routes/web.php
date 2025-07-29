@@ -392,3 +392,5 @@ Route::get('/test', function (Request $request) {
 
 Route::get('/sitemap.xml', [SitemapController::class, 'generate']);
 Route::get('/robots.txt', [SitemapController::class, 'robots']);
+
+Route::get('/robots.txt', [SitemapController::class, 'robots']);
