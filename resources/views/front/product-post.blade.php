@@ -14,18 +14,6 @@
 @endphp
 
 
-@php
-    $applicationCategories = [
-        'enterprise'     => 'EnterpriseApplication',
-        'fintech'        => 'FinancialApplication',
-        'mobile'         => 'MobileApplication',
-        'ai'             => 'AIApplication',
-        'system'         => 'SystemApplication',
-        'cybersecurity'  => 'SecurityApplication'
-    ];
-    $appCategory = $applicationCategories[$sections->category] ?? 'BusinessApplication';
-@endphp
-
 
 
 @section('content')
@@ -152,7 +140,7 @@
                 <div class="container">
                     <div class="carousel-content">
                         <img src="{{ asset('uploads/first_section/' . $product_first_section->logo) }}" loading="lazy"
-                            alt="Logo">
+                            alt="{{ $product_first_section->title }}">
                         <h1>{{ $product_first_section->title }}</h1>
                         <a href="{{ route('front.demo') }}" class="btn btn-primary btn-lg">Request Demo</a>
                         @if ($product_first_section->brochure)
@@ -204,7 +192,7 @@
                             <div class="info-box">
                                 @if ($product_third_section->icon)
                                     <img src="{{ asset('uploads/first_section/' . $product_third_section->icon) }}"
-                                        loading="lazy" alt="..." width="80px" style="padding: 8px">
+                                        loading="lazy" alt="{{ $product_third_section->title }}" width="80px" style="padding: 8px">
                                 @endif
                                 <h4>{{ $product_third_section->title }}</h4>
                                 <h5>{!! $product_third_section->description !!}</h5>
@@ -224,7 +212,7 @@
                 <div class="row no-gutters">
                     <div class="col-lg-6 video-box">
                         <img src="{{ asset('uploads/first_section/' . $product_fourth_section->image) }}" class="img-fluid"
-                            loading="lazy" alt="">
+                            loading="lazy" alt="benefits image">
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
                         <div class="">
@@ -251,7 +239,7 @@
                             <div class="col-lg-3 d-flex" data-aos="fade-up">
                                 <div class="info-boxs">
                                     <img src="{{ asset('uploads/first_section/' . $product_fifth_section->icon) }}"
-                                        loading="lazy" alt="..." width="80px"
+                                        loading="lazy" alt="{{ $product_fifth_section->title }}" width="80px"
                                         style="padding: 8px; display: block; margin: 0 auto;">
                                     <h3 style="text-align:center; margin-bottom: 10px;">{{ $product_fifth_section->title }}
                                     </h3>
