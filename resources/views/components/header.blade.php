@@ -25,10 +25,10 @@
                         class="nav-link scrollto dropdown-toggle {{ Request::is('products') ? 'active' : '' }}"
                         data-bs-toggle="dropdown">Product</a>
                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('front.fintech') }}">Fintech Solutions</a>
+                        </li>
                         <li><a class="dropdown-item" href="{{ route('front.products') }}">Enterprise
                                 Solutions</a>
-                        </li>
-                        <li><a class="dropdown-item" href="{{ route('front.fintech') }}">Fintech Solutions</a>
                         </li>
                         <li><a class="dropdown-item" href="{{ route('front.mobileApp') }}">Mobile App
                                 Solutions</a>

@@ -50,7 +50,7 @@ class FrontController extends Controller
     public function index()
     {
         $sliders = Slider::where('active', 'Yes')
-            ->orderBy('id', 'desc')->take(5)
+            ->orderBy('id', 'desc')->take(15)
             ->get();
         $data['slider'] = $sliders;
 
@@ -76,8 +76,8 @@ class FrontController extends Controller
         // $sections = Product::all()->take(6);
         // $data['sections']= $sections;
 
-        $sectionsFilterFin = Product::where('button_name', 'filter-fin')->take(3)->get();
-        $sectionsFilterSig = Product::where('button_name', 'filter-sig')->take(3)->get();
+        $sectionsFilterFin = Product::where('button_name', 'filter-fin')->take(6)->get();
+        $sectionsFilterSig = Product::where('button_name', 'filter-sig')->take(0)->get();
         $sections = $sectionsFilterFin->merge($sectionsFilterSig);
 
         $data['sections'] = $sections;

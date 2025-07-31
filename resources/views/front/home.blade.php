@@ -117,7 +117,7 @@
                     <div class="col-lg-6 video-box">
                         <img src="{{ asset('uploads/first_section/' . $home_first_sections->image) }}" class="img-fluid"
                             loading="lazy" alt="{{ $home_first_sections->title }}">
-                        <a href="https://youtu.be/eNz-5QvXmog?si=P5S7DF078CSD3xj1" class="venobox play-btn mb-4"
+                        <a href="#" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true" target="_blank" rel="noopener noreferrer"></a>
                     </div>
 
@@ -186,7 +186,7 @@ alt="">
 
 
     <!-- ======= About Lists Section ======= -->
-    <section class="about-lists">
+    {{-- <section class="about-lists">
         <div class="container">
             <div class="row no-gutters">
 
@@ -234,55 +234,10 @@ alt="">
 
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- End About Lists Section -->
 
-    <!-- ======= Counts Section ======= -->
-    <section class="counts section-bg">
-        <div class="container">
 
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
-                    <div class="count-box">
-                        <i class="bi bi-simple-smile" style="color: #20b38e;"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Successful Project </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="count-box">
-                        <i class="bi bi-document-folder" style="color: #c042ff;"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Customers Worldwide</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="count-box">
-                        <i class="bi bi-live-support" style="color: #46d1ff;"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Resources</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
-                    <div class="count-box">
-                        <i class="bi bi-users-alt-5" style="color: #ffb459;"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Technical Resources</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Counts Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -328,8 +283,8 @@ alt="">
                 <div class="col-lg-12">
                     <ul id="portfolio-flters">
                         {{-- <li data-filter="*" class="filter-active">All</li> --}}
-                        <li data-filter=".filter-fin">Fintech</li>
-                        <li data-filter=".filter-sig">Signature</li>
+                        {{-- <li data-filter=".filter-fin">Fintech</li> --}}
+                        {{-- <li data-filter=".filter-sig">Signature</li> --}}
                     </ul>
                 </div>
             </div>
@@ -647,6 +602,53 @@ alt="{{ $member->name }}" height="300px" width="350px">
         </div>
     </section>
     <!-- End Testimonial Section -->
+
+     <!-- ======= Counts Section ======= -->
+    <section class="counts section-bg">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
+                    <div class="count-box">
+                        <i class="bi bi-simple-smile" style="color: #20b38e;"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Successful Project </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="count-box">
+                        <i class="bi bi-document-folder" style="color: #c042ff;"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Customers Worldwide</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="count-box">
+                        <i class="bi bi-live-support" style="color: #46d1ff;"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Resources</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="count-box">
+                        <i class="bi bi-users-alt-5" style="color: #ffb459;"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Technical Resources</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Counts Section -->
 
 
     <!-- ======= Contact Us Section ======= -->
