@@ -240,7 +240,7 @@ alt="">
 
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    {{-- <section id="services" class="services">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -260,13 +260,13 @@ alt="">
                                     class="img-fluid" alt="{{ $home_services_sections->title }}" width="50%"> </a></div>
                         <h2 class="title"><a
                                 href="{{ route('front.services') }}">{{ $home_services_sections->title }}</a></h2>
-                        {{-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                    excepturi sint occaecati cupiditate non provident</p> --}}
+                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                    excepturi sint occaecati cupiditate non provident</p>
                     </div>
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- End Services Section -->
 
     <!-- ======= Our Portfolio Section ======= -->
