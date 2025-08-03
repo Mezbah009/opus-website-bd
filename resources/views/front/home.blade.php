@@ -387,7 +387,7 @@ alt="">
 
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    {{-- <section id="services" class="services">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -465,7 +465,7 @@ alt="">
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- End Services Section -->
 
     <!-- ======= Our Team Section ======= -->
