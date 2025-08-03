@@ -315,6 +315,73 @@ alt="">
 
         </div>
     </section><!-- End Our Portfolio Section -->
+
+     <!-- How We Work Section -->
+    <section id="how-we-work" class="how-we-work section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>How We Work</h2>
+        <p>We combine strategy, technology, and agile development to deliver custom software solutions—on time, on point, and built around your goals.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="steps-wrapper">
+
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="step-item">
+                <div class="step-circle">
+                  <span>1</span>
+                </div>
+                <h3>Discovery</h3>
+                <p>We begin by understanding your goals through in-depth analysis and collaborative consultation.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="step-item">
+                <div class="step-circle">
+                  <span>2</span>
+                </div>
+                <h3>Planning</h3>
+                <p>We craft a strategic roadmap tailored to your objectives, timeline, and technical needs.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="step-item">
+                <div class="step-circle">
+                  <span>3</span>
+                </div>
+                <h3>Execution</h3>
+                <p>Our team builds and implements solutions with precision, keeping communication clear and continuous.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="step-item">
+                <div class="step-circle">
+                  <span>4</span>
+                </div>
+                <h3>Delivery</h3>
+                <p>We deploy the final product with full support, ensuring long-term success and satisfaction.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /How We Work Section -->
+
+
+
+
+
+
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
