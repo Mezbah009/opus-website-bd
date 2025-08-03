@@ -117,8 +117,8 @@
                     <div class="col-lg-6 video-box">
                         <img src="{{ asset('uploads/first_section/' . $home_first_sections->image) }}" class="img-fluid"
                             loading="lazy" alt="{{ $home_first_sections->title }}">
-                        <a href="#" class="venobox play-btn mb-4"
-                            data-vbtype="video" data-autoplay="true" target="_blank" rel="noopener noreferrer"></a>
+                        <a href="#" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"
+                            target="_blank" rel="noopener noreferrer"></a>
                     </div>
 
 
@@ -316,66 +316,70 @@ alt="">
         </div>
     </section><!-- End Our Portfolio Section -->
 
-     <!-- How We Work Section -->
-    <section id="how-we-work" class="how-we-work section">
+    <!-- How We Work Section -->
+    {{-- <section id="how-we-work" class="how-we-work section">
 
-      <!-- Section Title -->
-      <div class="container section-title">
-        <h2>How We Work</h2>
-        <p>We combine strategy, technology, and agile development to deliver custom software solutions—on time, on point, and built around your goals.</p>
-      </div><!-- End Section Title -->
+        <!-- Section Title -->
+        <div class="container section-title">
+            <h2>How We Work</h2>
+            <p>We combine strategy, technology, and agile development to deliver custom software solutions—on time, on
+                point, and built around your goals.</p>
+        </div><!-- End Section Title -->
 
-      <div class="container">
+        <div class="container">
 
-        <div class="steps-wrapper">
+            <div class="steps-wrapper">
 
-          <div class="row">
-            <div class="col-lg-3 col-md-6">
-              <div class="step-item">
-                <div class="step-circle">
-                  <span>1</span>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="step-item">
+                            <div class="step-circle">
+                                <span>1</span>
+                            </div>
+                            <h3>Discovery</h3>
+                            <p>We begin by understanding your goals through in-depth analysis and collaborative
+                                consultation.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="step-item">
+                            <div class="step-circle">
+                                <span>2</span>
+                            </div>
+                            <h3>Planning</h3>
+                            <p>We craft a strategic roadmap tailored to your objectives, timeline, and technical needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="step-item">
+                            <div class="step-circle">
+                                <span>3</span>
+                            </div>
+                            <h3>Execution</h3>
+                            <p>Our team builds and implements solutions with precision, keeping communication clear and
+                                continuous.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="step-item">
+                            <div class="step-circle">
+                                <span>4</span>
+                            </div>
+                            <h3>Delivery</h3>
+                            <p>We deploy the final product with full support, ensuring long-term success and satisfaction.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <h3>Discovery</h3>
-                <p>We begin by understanding your goals through in-depth analysis and collaborative consultation.</p>
-              </div>
-            </div>
 
-            <div class="col-lg-3 col-md-6">
-              <div class="step-item">
-                <div class="step-circle">
-                  <span>2</span>
-                </div>
-                <h3>Planning</h3>
-                <p>We craft a strategic roadmap tailored to your objectives, timeline, and technical needs.</p>
-              </div>
             </div>
-
-            <div class="col-lg-3 col-md-6">
-              <div class="step-item">
-                <div class="step-circle">
-                  <span>3</span>
-                </div>
-                <h3>Execution</h3>
-                <p>Our team builds and implements solutions with precision, keeping communication clear and continuous.</p>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <div class="step-item">
-                <div class="step-circle">
-                  <span>4</span>
-                </div>
-                <h3>Delivery</h3>
-                <p>We deploy the final product with full support, ensuring long-term success and satisfaction.</p>
-              </div>
-            </div>
-          </div>
 
         </div>
 
-      </div>
-
-    </section><!-- /How We Work Section -->
+    </section><!-- /How We Work Section --> --}}
 
 
 
@@ -670,7 +674,7 @@ alt="{{ $member->name }}" height="300px" width="350px">
     </section>
     <!-- End Testimonial Section -->
 
-     <!-- ======= Counts Section ======= -->
+    <!-- ======= Counts Section ======= -->
     <section class="counts section-bg">
         <div class="container">
 
