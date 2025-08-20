@@ -305,6 +305,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{ asset('front-assets/others/js/script.js') }}"></script>
 
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
 </body>
 
 </html>
