@@ -475,7 +475,7 @@ class FrontController extends Controller
 
         $demo = Demo::create($request->all());
          // Send to admin email
-        Mail::to('sales@opus-bd.com')->send(new DemoFormSubmitted($demo));
+        // Mail::to('sales@opus-bd.com')->send(new DemoFormSubmitted($demo));
 
         return redirect()->back()->with('success', 'Your message has been sent!');
     }
@@ -550,7 +550,7 @@ class FrontController extends Controller
         $contact = ContactForm::create($request->all());
 
         // Send to admin email
-        Mail::to('sales@opus-bd.com')->send(new ContactFormSubmitted($contact));
+        // Mail::to('sales@opus-bd.com')->send(new ContactFormSubmitted($contact));
 
         return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
     }
