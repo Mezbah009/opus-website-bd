@@ -123,7 +123,7 @@ text-align: justify;">
 
                         {{-- Google reCAPTCHA --}}
                         <div class="form-group">
-                            {!! NoCaptcha::display(['data-callback' => 'enableSubmit']) !!}
+                            {!! Anhskohbo\NoCaptcha\Facades\NoCaptcha::display(['data-callback' => 'enableSubmit']) !!}
                         </div>
 
                         <div class="text-center">
