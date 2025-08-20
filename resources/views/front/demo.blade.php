@@ -123,7 +123,7 @@
 
                         {{-- Google reCAPTCHA --}}
                         <div class="form-group" style="margin-bottom: 20px;">
-                            {!! NoCaptcha::display(['data-callback' => 'enableSubmit']) !!}
+                            {!! Anhskohbo\NoCaptcha\Facades\NoCaptcha::display(['data-callback' => 'enableSubmit']) !!}
                         </div>
 
                         <div class="text-center">
