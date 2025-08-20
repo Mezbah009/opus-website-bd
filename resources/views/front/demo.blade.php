@@ -91,26 +91,25 @@
                         @csrf
                         <div class="row">
                             <div class="col-lg-6 form-group">
-                                <input type="text" name="first_name" class="form-control" id="first_name"
-                                    placeholder="First Name" required>
+                                <input type="text" name="first_name" class="form-control" placeholder="First Name"
+                                    required>
                             </div>
                             <div class="col-lg-6 form-group">
-                                <input type="text" name="last_name" class="form-control" id="last_name"
-                                    placeholder="Last Name" required>
+                                <input type="text" name="last_name" class="form-control" placeholder="Last Name"
+                                    required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6 form-group">
-                                <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Your Email" required>
+                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                             </div>
                             <div class="col-lg-6 form-group">
-                                <input type="tel" class="form-control" name="mobile" id="mobile"
-                                    placeholder="Your Phone Number" required>
+                                <input type="tel" class="form-control" name="mobile" id="phone"
+                                    placeholder="+8801234567890" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <select class="form-control" id="product_id" name="product_id" required>
+                            <select class="form-control" name="product_id" required>
                                 <option value="" disabled selected>Select a product</option>
                                 @foreach ($products as $product)
                                     <option value="{{ $product->id }}">{{ $product->title }}</option>
@@ -118,15 +117,31 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="org_name" id="org_name"
-                                placeholder="Organization Name" required>
+                            <input type="text" name="org_name" class="form-control" placeholder="Organization Name"
+                                required>
                         </div>
+
+                        {{-- Google reCAPTCHA --}}
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            {!! NoCaptcha::display(['data-callback' => 'enableSubmit']) !!}
+                        </div>
+
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+                            <button type="submit" class="btn btn-primary" id="submitBtn" disabled>Send Message</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
+
+    {{-- Scripts --}}
+    {!! NoCaptcha::renderJs() !!}
+
+    <script>
+        function enableSubmit() {
+            document.getElementById("submitBtn").disabled = false;
+        }
+    </script>
 @endsection

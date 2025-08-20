@@ -462,23 +462,44 @@ class FrontController extends Controller
         return view('front.demo', compact('products'));
     }
 
+    // public function storeDemo(Request $request)
+    // {
+    //     $request->validate([
+    //         'first_name' => 'required|string|max:255',
+    //         'last_name' => 'required|string|max:255',
+    //         'email' => 'required|email|max:255',
+    //         'mobile' => 'required|string|max:20',
+    //         'product_id' => 'required|exists:products,id',
+    //         'org_name' => 'required|string|max:255',
+    //     ]);
+
+    //     $demo = Demo::create($request->all());
+    //     // Send to admin email
+    //     // Mail::to('sales@opus-bd.com')->send(new DemoFormSubmitted($demo));
+
+    //     return redirect()->back()->with('success', 'Your message has been sent!');
+    // }
+
+
     public function storeDemo(Request $request)
     {
         $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'mobile' => 'required|string|max:20',
+            'first_name' => 'required|string|max:30',
+            'last_name'  => 'required|string|max:30',
+            'email'      => 'required|email|max:255',
+            'mobile'     => 'required|regex:/^\+\d{1,3}\d{7,15}$/', // e.g. +8801234567890
             'product_id' => 'required|exists:products,id',
-            'org_name' => 'required|string|max:255',
+            'org_name'   => 'required|string|max:255',
+            'g-recaptcha-response' => 'required|captcha', // ✅ validate reCAPTCHA
         ]);
 
         $demo = Demo::create($request->all());
-         // Send to admin email
-        // Mail::to('sales@opus-bd.com')->send(new DemoFormSubmitted($demo));
+
+        Mail::to('sales@opus-bd.com')->send(new DemoFormSubmitted($demo));
 
         return redirect()->back()->with('success', 'Your message has been sent!');
     }
+
 
 
 
@@ -538,19 +559,39 @@ class FrontController extends Controller
 
     // Contact Form Submission
 
+    // public function storeContactForm(Request $request)
+    // {
+    //     $request->validate([
+    //         'name' => 'required|string|max:255',
+    //         'email' => 'required|email',
+    //         'subject' => 'required',
+    //         'message' => 'required',
+    //     ]);
+
+    //     $contact = ContactForm::create($request->all());
+
+    //     // Send to admin email
+    //     Mail::to('sales@opus-bd.com')->send(new ContactFormSubmitted($contact));
+
+    //     return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
+    // }
+
     public function storeContactForm(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
-            'subject' => 'required',
-            'message' => 'required',
+            'name'    => 'required|string|max:60',
+            'email'   => 'required|email',
+            'subject' => 'required|string|max:50',
+            'message' => 'required|string',
+            'g-recaptcha-response' => 'required|captcha',
+
+
         ]);
 
         $contact = ContactForm::create($request->all());
 
         // Send to admin email
-        // Mail::to('sales@opus-bd.com')->send(new ContactFormSubmitted($contact));
+        Mail::to('sales@opus-bd.com')->send(new ContactFormSubmitted($contact));
 
         return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
     }
