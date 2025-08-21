@@ -49,7 +49,8 @@
                                     </li>
                                     <li class="d-flex align-items-center">
                                         <i class="bi bi-chat-dots"></i>
-                                        <a href="javascript:void(0);">{{ $blog->comments->count() }} Comments</a> {{-- Replace with dynamic comment count if available --}}
+                                        <a href="javascript:void(0);">{{ $blog->comments->count() }} Comments</a>
+                                        {{-- Replace with dynamic comment count if available --}}
                                     </li>
                                 </ul>
                             </div>
@@ -134,7 +135,7 @@
                 <!-- /Blog Comments Section -->
 
                 <!-- Comment Form Section -->
-                <section id="comment-form" class="comment-form section" style="padding: 60px 0px 10px;" >
+                <section id="comment-form" class="comment-form section" style="padding: 60px 0px 10px;">
                     <div class="container">
 
                         <!-- Flash Messages -->
@@ -157,7 +158,7 @@
                         @endif
 
 
-                        <form action="{{ route('blog.comment.store') }}" method="POST">
+                        <form action="{{ route('blog.comment.store') }}" method="POST" class="php-email-form">
                             @csrf
                             <input type="hidden" name="blog_id" value="{{ $blog->id }}">
                             <input type="hidden" name="parent_id" id="parent_id" value="">
@@ -184,9 +185,14 @@
                                     <textarea name="comment" class="form-control" placeholder="Your Comment*" required></textarea>
                                 </div>
                             </div>
+                            {{-- Google reCAPTCHA --}}
+                            <div class="form-group">
+                                {!! NoCaptcha::display(['data-callback' => 'enableSubmit']) !!}
+                            </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Post Comment</button>
+                                {{-- <button type="submit" class="btn btn-primary" disabled>Post Comment</button> --}}
+                                <button id="submitBtn" type="submit" class="btn btn-primary" disabled>Post Comment</button>
                             </div>
                         </form>
 
@@ -195,9 +201,9 @@
                 </section><!-- /Comment Form Section -->
 
                 <br>
-                  <br>
-                    <br>
-                      <br>
+                <br>
+                <br>
+                <br>
 
             </div>
 
@@ -248,7 +254,7 @@
                                     <h4><a
                                             href="{{ route('front.blog.details', $recent->slug) }}">{{ Str::limit($recent->title, 50) }}</a>
                                     </h4>
-                                        @if ($recent->published_at)
+                                    @if ($recent->published_at)
                                         <time datetime="{{ $recent->published_at }}">
                                             {{ $recent->published_at->format('M d, Y') }}
                                         </time>
@@ -297,6 +303,16 @@
         function cancelReply() {
             document.getElementById('parent_id').value = '';
             document.getElementById('replying-to').style.display = 'none';
+        }
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    {!! NoCaptcha::renderJs() !!}
+
+
+    <script>
+        function enableSubmit() {
+            document.getElementById("submitBtn").disabled = false;
         }
     </script>
 @endsection

@@ -181,8 +181,6 @@ class FrontController extends Controller
 
 
 
-
-
     public function showProduct($slug)
     {
         // Retrieve the product based on the slug
@@ -378,6 +376,7 @@ class FrontController extends Controller
             'website' => 'nullable|url',
             'comment' => 'required|string',
             'parent_id' => 'nullable|exists:comments,id',
+            'g-recaptcha-response' => 'required|captcha', // ✅ validate reCAPTCHA
 
         ]);
 
@@ -385,9 +384,6 @@ class FrontController extends Controller
 
         return back()->with('success', 'Your comment has been posted.');
     }
-
-
-
 
 
 
@@ -439,11 +435,6 @@ class FrontController extends Controller
     }
 
 
-    // public function demo(){
-    //     return view('front.demo');
-    // }
-
-
 
     // public function job()
     // {
@@ -461,24 +452,6 @@ class FrontController extends Controller
         $products = Product::all(); // Retrieve all products
         return view('front.demo', compact('products'));
     }
-
-    // public function storeDemo(Request $request)
-    // {
-    //     $request->validate([
-    //         'first_name' => 'required|string|max:255',
-    //         'last_name' => 'required|string|max:255',
-    //         'email' => 'required|email|max:255',
-    //         'mobile' => 'required|string|max:20',
-    //         'product_id' => 'required|exists:products,id',
-    //         'org_name' => 'required|string|max:255',
-    //     ]);
-
-    //     $demo = Demo::create($request->all());
-    //     // Send to admin email
-    //     // Mail::to('sales@opus-bd.com')->send(new DemoFormSubmitted($demo));
-
-    //     return redirect()->back()->with('success', 'Your message has been sent!');
-    // }
 
 
     public function storeDemo(Request $request)
@@ -504,7 +477,6 @@ class FrontController extends Controller
 
 
 
-
     //test api --------
 
     // public function showCategories()
@@ -521,20 +493,7 @@ class FrontController extends Controller
 
 
 
-
-    // public function job()
-    // {
-    //     $response = Http::withOptions(['verify' => false])->get('https://e-recruitment-admin.opuserp.com/api/recruitment/gt-all-jobs');
-
-    //     if ($response->successful()) {
-    //         $jobs = $response->json(); // Fetch the jobs
-    //         return view('front.jobs', compact('jobs'));
-    //     }
-
-    //     return back()->with('error', 'Failed to fetch job data.');
-    // }
-
-
+    //job api
 
     public function job()
     {
@@ -558,23 +517,6 @@ class FrontController extends Controller
 
 
     // Contact Form Submission
-
-    // public function storeContactForm(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => 'required|string|max:255',
-    //         'email' => 'required|email',
-    //         'subject' => 'required',
-    //         'message' => 'required',
-    //     ]);
-
-    //     $contact = ContactForm::create($request->all());
-
-    //     // Send to admin email
-    //     Mail::to('sales@opus-bd.com')->send(new ContactFormSubmitted($contact));
-
-    //     return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
-    // }
 
     public function storeContactForm(Request $request)
     {
