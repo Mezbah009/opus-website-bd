@@ -370,8 +370,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-
-
         Route::get('/getSlug', function (Request $request) {
             $slug = '';
             if (!empty($request->title)) {
