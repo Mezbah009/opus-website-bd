@@ -23,6 +23,7 @@ use App\Http\Controllers\admin\JobController;
 use App\Http\Controllers\admin\ManagementController;
 use App\Http\Controllers\admin\NumberController;
 use App\Http\Controllers\admin\OurJourneyController;
+use App\Http\Controllers\admin\PageController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductFirstSectionController;
 use App\Http\Controllers\admin\QualityController;
@@ -369,6 +370,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('demos/export', [DemoController::class, 'export'])->name('demos.export');
 
 
+        Route::resource('pages', PageController::class);
 
         Route::get('/getSlug', function (Request $request) {
             $slug = '';

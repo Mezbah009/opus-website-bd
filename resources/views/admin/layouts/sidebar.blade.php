@@ -254,6 +254,13 @@
                         <p>Numbers & Email</p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('pages.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-file-alt"></i>
+                        <p>Pages</p>
+                    </a>
+                </li>
                 {{--
                 <li class="nav-item">
                     <a href="" class="nav-link">

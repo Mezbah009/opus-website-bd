@@ -44,6 +44,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\ContactFormSubmitted;
 use App\Mail\DemoFormSubmitted;
+use App\Models\Page;
 
 class FrontController extends Controller
 {
@@ -536,5 +537,25 @@ class FrontController extends Controller
         Mail::to('sales@opus-bd.com')->send(new ContactFormSubmitted($contact));
 
         return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
+    }
+
+
+
+    // Show single page by slug
+    public function page($slug)
+    {
+        $page = Page::where('slug', $slug)->first();
+        if ($page == null) {
+            abort(404);
+        }
+        return view('front.page', compact('page'));
+    }
+
+    // Show single page by slug
+    public function showPage($slug)
+    {
+        $page = Page::where('slug', $slug)->firstOrFail();
+
+        return view('front.page', compact('page'));
     }
 }
